@@ -1,0 +1,90 @@
+STOP MET VRAGEN. BESLISSINGEN ZIJN AL GEMAAKT:
+- Keuze: C (complete rebuild)
+- Variants: B (varianten zijn WÉL nodig: maat/kleur/bundles)
+Je moet nu bouwen, fixen en bewijzen. Geen rapporten zonder git diff + werkende smoke tests.
+
+DOEL (acceptance criteria)
+1) Sticky “Add to Cart” bar mag ALLEEN op product detail pagina’s, NOOIT op home/FAQ/footer/category.
+2) Pawsy mag NIET overlappen met sticky bar (mobile). Content mag niet onder sticky bar verdwijnen.
+3) Product images mogen niet “?” placeholders tonen: altijd echte image of fallback placeholder.
+4) Variants zijn écht: product kan meerdere varianten hebben met options (size/color/bundle) + eigen price + sku + image.
+5) Cart werkt met variants: item = productId + variantId, qty updates, subtotal, remove, persist localStorage.
+6) Bewijs dat nieuwe build live is: voeg in footer zichtbaar toe: “DeployedFixStamp: <ISO datetime>”.
+7) Geef exact aan: welke bestanden zijn aangepast (paths) + toon git diff --stat.
+
+WERKWIJZE (verplicht, stap voor stap)
+A) INSPECT & BEWIJS
+- Run in shell en plak output:
+  git status
+  git diff --stat
+  find . -maxdepth 5 -name package.json -print
+  grep -R "Build:" -n . | head -n 50
+  grep -R "Add to Cart" -n src . | head -n 80
+  grep -R "Pawsy" -n src . | head -n 80
+
+B) DATA + VARIANTS (B is gekozen)
+- Zoek de productdata bron in /data (zoals products*.json).
+- Normaliseer naar één interne Product shape:
+  Product: { id, title, category, images[], description, basePrice, variants[] }
+  Variant: { id, sku, options:{size?,color?,bundle?}, price, image? }
+- Als variants ontbreken maar er zijn velden die opties impliceren: bouw variants.
+- Als er écht geen variant-info is: maak 1 default variant maar laat het systeem 100% compatibel met echte variants.
+- Zorg dat PDP een variant selector toont zodra variants.length > 1.
+- Zorg dat selectedVariant price + image update.
+
+C) CART (met variants)
+- 1 bron van waarheid (1 store/context). Geen dubbele stores.
+- localStorage key: "getpawsy_cart_v1"
+- Cart item key: productId + variantId
+- Badge count = reduce(qty), geen losse count-state.
+- Cart UI toont items inclusief variant options (bv “Size: L / Color: Blue”).
+
+D) STICKY ADD-TO-CART BAR (ALLEEN PDP)
+- Vind of maak component StickyAddToCartBar.
+- Render alleen op PDP:
+  - óf alleen in ProductDetailPage opnemen
+  - óf route-guard: als pathname niet matcht /product/ of /products/ => return null
+  - én product.id moet bestaan
+- Voeg globale bottom spacing toe zodat content nooit onder sticky bar valt:
+  - CSS var: --bottom-ui (default 0px)
+  - wanneer sticky bar mount: set --bottom-ui naar de balkhoogte (bijv 88px)
+  - cleanup bij unmount => 0px
+  - main/body padding-bottom: calc(var(--bottom-ui) + env(safe-area-inset-bottom))
+
+E) PAWSY OVERLAP FIX
+- Pawsy container bottom:
+  bottom: calc(var(--bottom-ui) + 16px + env(safe-area-inset-bottom));
+- Pawsy panel max-height:
+  max-height: calc(100vh - (var(--bottom-ui) + 32px));
+  overflow: auto;
+
+F) BROKEN IMAGES FIX
+- In ProductCard en PDP image:
+  - implementeer onError fallback naar /images/placeholder.png
+  - als externe URLs via proxy moeten: route consistent via bestaande proxy of maak /api/image-proxy?url=
+  - voorkom dat lege string of undefined als src gebruikt wordt
+
+G) FOOTER LIVE BEWIJS
+- In footer waar “Build: … canary …” staat:
+  - voeg regel toe: “DeployedFixStamp: <ISO datetime>”
+  - Toon dit altijd.
+
+H) CLEAN REBUILD + SMOKE TESTS
+- rm -rf dist build .next .vite .cache 2>/dev/null || true
+- npm ci || npm install
+- Start app (npm run dev/start wat past)
+- Smoke tests:
+  1) Home/FAQ: GEEN sticky bar zichtbaar
+  2) PDP: sticky bar zichtbaar, overlapt Pawsy niet, content niet eronder
+  3) Product cards: geen “?” images
+  4) Add to cart met variant: cart toont juiste variant + subtotal klopt
+
+I) OUTPUT (verplicht)
+- Plak:
+  git diff --stat
+  lijst met aangepaste files
+  waar DeployedFixStamp zichtbaar is
+- Sluit af met instructie:
+  “Ga naar Publishing → Republish om dit live te zetten.”
+
+GA NU UITVOEREN. GEEN EXTRA VRAGEN.

@@ -142,6 +142,7 @@ img, svg, video, canvas, iframe {
   /* Layout */
   --container-max: 1200px;
   --header-height: 64px;
+  --bottom-ui: 0px;
   
   /* Pawsy Mascot - 2x mobile (110px), 3x desktop (150-180px) */
   --pawsy-size: clamp(110px, 15vw, 180px);
