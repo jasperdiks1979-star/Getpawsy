@@ -1098,6 +1098,26 @@
       window.addEventListener('resize', updatePawsyPosition);
       window.addEventListener('load', updatePawsyPosition);
       
+      // Toggle sticky-active class on Pawsy widget for mobile sticky bar
+      function updatePawsyPosition() {
+        const pawsyWidget = document.getElementById('pawsy-widget') || document.getElementById('pawsyContainer');
+        const stickyBar = document.querySelector('.pdp-sticky-bar');
+        if (pawsyWidget && stickyBar) {
+          const isMobile = window.innerWidth < 768;
+          const stickyVisible = isMobile && getComputedStyle(stickyBar).display !== 'none';
+          if (stickyVisible) {
+            pawsyWidget.classList.add('sticky-active');
+            document.documentElement.style.setProperty('--bottom-ui', '88px');
+          } else {
+            pawsyWidget.classList.remove('sticky-active');
+            document.documentElement.style.setProperty('--bottom-ui', '0px');
+          }
+        }
+      }
+      updatePawsyPosition();
+      window.addEventListener('resize', updatePawsyPosition);
+      window.addEventListener('load', updatePawsyPosition);
+      
       if (productVariants.length > 0) {
         const firstOpts = productVariants[0].options || productVariants[0].optionValues || {};
         Object.entries(firstOpts).forEach(([k, v]) => {
