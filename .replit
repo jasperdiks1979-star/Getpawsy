@@ -7,7 +7,7 @@ channel = "stable-25_05"
 packages = ["unzip"]
 
 [workflows]
-runButton = "Project"
+runButton = "Run Push To GitHub"
 
 [[workflows.workflow]]
 name = "Project"
