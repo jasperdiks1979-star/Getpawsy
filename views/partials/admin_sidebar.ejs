@@ -1,0 +1,15 @@
+<div class="sidebar">
+  <h2>🐾 GetPawsy Admin</h2>
+  <ul>
+    <li><a href="/admin" class="<%= currentPage === 'dashboard' ? 'active' : '' %>">📊 Dashboard</a></li>
+    <li><a href="/admin/orders" class="<%= currentPage === 'orders' ? 'active' : '' %>">📦 Orders</a></li>
+    <li><a href="/admin/products" class="<%= currentPage === 'products' ? 'active' : '' %>">🛒 Products</a></li>
+    <li><a href="/admin/users" class="<%= currentPage === 'users' ? 'active' : '' %>">👥 Users</a></li>
+    <li><a href="/admin/loyalty" class="<%= currentPage === 'loyalty' ? 'active' : '' %>">🏆 Loyalty</a></li>
+    <li><a href="/admin/analytics" class="<%= currentPage === 'analytics' ? 'active' : '' %>">📈 Analytics</a></li>
+    <li><a href="/admin/settings" class="<%= currentPage === 'settings' ? 'active' : '' %>">⚙️ Settings</a></li>
+  </ul>
+  <div class="sidebar-footer">
+    <a href="/logout" class="logout-btn">🚪 Logout</a>
+  </div>
+</div>

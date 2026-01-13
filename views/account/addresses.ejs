@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>My Addresses | GetPawsy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/js/pawsy.js" defer></script>
+  <style>
+    <%- include('../partials/account_styles') %>
+    .pawsy-modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .pawsy-modal-overlay.active {
+      display: flex;
+    }
+    .pawsy-modal {
+      background: white;
+      border-radius: var(--pawsy-radius-lg);
+      padding: 2rem;
+      width: 90%;
+      max-width: 500px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .pawsy-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .pawsy-modal-header h2 {
+      margin: 0;
+    }
+    .pawsy-modal-close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--pawsy-gray-500);
+    }
+    .pawsy-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 500px) {
+      .pawsy-form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="pawsy-body">
+  <%- include("../partials/header") %>
+  
+  <main class="pawsy-main">
+    <div class="pawsy-container">
+      <div class="pawsy-account-page">
+        <h1 class="pawsy-page-title">My Addresses</h1>
+
+        <div class="pawsy-account-layout">
+          <%- include('../partials/account_sidebar', { activePage: 'addresses' }) %>
+
+          <div class="pawsy-account-content">
+            <section class="pawsy-account-section">
+              <div class="pawsy-section-header">
+                <h2>Saved Addresses 🏠</h2>
+                <button class="pawsy-btn pawsy-btn-primary" onclick="openAddressModal()">+ Add Address</button>
+              </div>
+              
+              <% if (typeof addresses !== 'undefined' && addresses.length > 0) { %>
+                <div class="pawsy-addresses-grid">
+                  <% addresses.forEach(addr => { %>
+                    <div class="pawsy-address-card">
+                      <% if (addr.isDefault) { %>
+                        <span class="pawsy-default-badge">Default</span>
+                      <% } %>
+                      <% if (addr.label) { %>
+                        <p class="pawsy-address-label" style="font-size: 0.8rem; color: var(--pawsy-primary); font-weight: 600; margin-bottom: 0.5rem;"><%= addr.label %></p>
+                      <% } %>
+                      <p class="pawsy-address-name"><%= addr.name %></p>
+                      <p><%= addr.street %></p>
+                      <p><%= addr.city %>, <%= addr.state %> <%= addr.zip %></p>
+                      <p><%= addr.country %></p>
+                      <div class="pawsy-address-actions">
+                        <form action="/account/addresses/delete/<%= addr.id %>" method="POST" style="display: inline;" onsubmit="return confirm('Delete this address?')">
+                          <button type="submit" class="pawsy-btn-text pawsy-btn-sm">Delete</button>
+                        </form>
+                      </div>
+                    </div>
+                  <% }) %>
+                </div>
+              <% } else { %>
+                <div class="pawsy-empty-state">
+                  <div class="pawsy-empty-icon">🏠</div>
+                  <h3>No addresses saved</h3>
+                  <p>Add your first address for faster checkout!</p>
+                  <button class="pawsy-btn pawsy-btn-primary" onclick="openAddressModal()">Add Address</button>
+                </div>
+              <% } %>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="pawsy-modal-overlay" id="address-modal">
+    <div class="pawsy-modal">
+      <div class="pawsy-modal-header">
+        <h2>Add New Address</h2>
+        <button class="pawsy-modal-close" onclick="closeAddressModal()">&times;</button>
+      </div>
+      <form action="/account/addresses/add" method="POST" class="pawsy-settings-form">
+        <div class="pawsy-form-group">
+          <label for="label">Address Label</label>
+          <input type="text" id="label" name="label" class="pawsy-input" placeholder="Home, Office, etc." required>
+        </div>
+        <div class="pawsy-form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" class="pawsy-input" value="<%= user && user.name ? user.name : '' %>" required>
+        </div>
+        <div class="pawsy-form-group">
+          <label for="street">Street Address</label>
+          <input type="text" id="street" name="street" class="pawsy-input" placeholder="123 Main Street" required>
+        </div>
+        <div class="pawsy-form-row">
+          <div class="pawsy-form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" class="pawsy-input" required>
+          </div>
+          <div class="pawsy-form-group">
+            <label for="state">State/Province</label>
+            <input type="text" id="state" name="state" class="pawsy-input" required>
+          </div>
+        </div>
+        <div class="pawsy-form-row">
+          <div class="pawsy-form-group">
+            <label for="zip">ZIP/Postal Code</label>
+            <input type="text" id="zip" name="zip" class="pawsy-input" required>
+          </div>
+          <div class="pawsy-form-group">
+            <label for="country">Country</label>
+            <input type="text" id="country" name="country" class="pawsy-input" value="USA">
+          </div>
+        </div>
+        <div class="pawsy-form-group">
+          <label class="pawsy-checkbox">
+            <input type="checkbox" name="isDefault" value="true">
+            <span>Set as default address</span>
+          </label>
+        </div>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+          <button type="submit" class="pawsy-btn pawsy-btn-primary">Save Address</button>
+          <button type="button" class="pawsy-btn pawsy-btn-outline" onclick="closeAddressModal()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <%- include("../partials/footer") %>
+  <%- include("../partials/pawsy_widget") %>
+
+  <script>
+    function openAddressModal() {
+      document.getElementById('address-modal').classList.add('active');
+    }
+    function closeAddressModal() {
+      document.getElementById('address-modal').classList.remove('active');
+    }
+    document.getElementById('address-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeAddressModal();
+    });
+  </script>
+</body>
+</html>

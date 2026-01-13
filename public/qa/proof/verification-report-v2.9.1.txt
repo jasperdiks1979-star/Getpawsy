@@ -1,0 +1,55 @@
+===============================================================================
+GETPAWSY VERIFICATION REPORT - V2.9.1
+===============================================================================
+Date: 2025-12-28
+Fix: Server-Rendered Category Routes Fix
+
+ISSUE:
+Browser requests to /small-pets, /dogs, /cats were being intercepted by the
+SPA fallback in server.js instead of being handled by the EJS-based routes.
+
+ROOT CAUSE:
+The isServerRendered check in server.js line 1404 did not include these paths,
+so the SPA fallback served public/index.html (homepage) instead of allowing
+the redirect to /collection/* routes.
+
+FIX APPLIED:
+Added /small-pets, /dogs, /cats to isServerRendered check in server.js:
+
+  const isServerRendered = req.path.startsWith("/product/") || 
+                           req.path.startsWith("/collection/") ||
+                           req.path.startsWith("/small-pets") ||
+                           req.path.startsWith("/dogs") ||
+                           req.path.startsWith("/cats") ||
+                           req.path.startsWith("/c/") || 
+                           req.path.startsWith("/admin");
+
+PRODUCTION TEST RESULTS (https://getpawsy.pet):
+-----------------------------------------------
+| Route         | Redirects To              | Products | Status |
+|---------------|---------------------------|----------|--------|
+| /small-pets   | /collection/small-pets    | 129      | PASS   |
+| /dogs         | /collection/dogs          | 259      | PASS   |
+| /cats         | /collection/cats          | 186      | PASS   |
+
+VERIFICATION:
+- "No products found" NOT visible on any page
+- Product grids showing correctly
+- Server-side rendering working (EJS templates used)
+- Redirects (301) functioning correctly
+
+COMMITS:
+- 51edc16: Fix category routes to display products correctly
+- 94d5a1d: Published your App
+- 5b855f2: Published your App
+
+PRODUCTION VERSION:
+- gitSha: 94d5a1d
+- fingerprint: GP-20251228171141-SQLI07
+
+ARTIFACTS:
+- Screenshot: public/qa/proof/prod-small-pets-FINAL.png
+- This report: public/qa/proof/verification-report-v2.9.1.txt
+
+STATUS: RESOLVED
+===============================================================================

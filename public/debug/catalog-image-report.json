@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-01-09T10:24:30.908Z",
+  "summary": {
+    "totalProducts": 539,
+    "productsWithImages": 539,
+    "productsMissingImages": 0,
+    "productsNormalized": 539,
+    "invalidUrlsRemoved": 0
+  },
+  "missingImagesSample": [],
+  "imageStats": {
+    "singleImage": 67,
+    "multipleImages": 472,
+    "noImages": 0
+  }
+}

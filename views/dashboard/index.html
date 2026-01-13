@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>GetPawsy Super Dashboard</title>
+<link rel='stylesheet' href='/dashboard/style.css'>
+<script src='/dashboard/app.js' defer></script>
+</head>
+<body class='light'>
+
+<header>
+  <h1>🐾 GetPawsy Super Dashboard v2.0</h1>
+  <button id='toggleMode'>🌙 Dark Mode</button>
+</header>
+
+<section id='actions' class='actions'>
+  <button class='btn-primary' onclick="runTask('monitor')">Run Breakpoint Monitor</button>
+  <button class='btn-warning' onclick="runTask('fixer')">Run Breakpoint Fixer</button>
+  <button class='btn-danger' onclick="runTask('auto')">Run Auto-Loop</button>
+  <button class='btn-secondary' onclick="location.reload()">Refresh</button>
+</section>
+
+<section>
+  <h2>📸 Screenshots</h2>
+  <div id='screens' class='grid'></div>
+</section>
+
+<section>
+  <h2>📊 Breakpoint Analyse</h2>
+  <div id='analysis' class='grid'></div>
+</section>
+
+<section>
+  <h2>🔍 Hero Compare</h2>
+  <div id='compare' class='compare-container'>
+    <div class='compare-slide'>
+      <img id='oldImg' src='/public/images/hero/hero-desktop-1920x700.jpg' alt='Current Hero'>
+      <span>Current</span>
+    </div>
+    <div class='compare-slide'>
+      <img id='newImg' src='/public/images/hero/hero-desktop-1920x700.jpg' alt='Optimized Hero'>
+      <span>Optimized</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>GetPawsy Dashboard — Powered by AI ✨</p>
+</footer>
+
+</body>
+</html>

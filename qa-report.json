@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "timestamp": "2025-12-20T22:05:29.420Z",
+    "baseUrl": "http://localhost:5000",
+    "totalTests": 34,
+    "passed": 32,
+    "failed": 2,
+    "skipped": 0,
+    "passRate": "94.1%"
+  },
+  "summary": {
+    "status": "FAIL",
+    "criticalFailures": [
+      {
+        "suite": "shop.spec.js > Shop - Navigation",
+        "test": "Header navigation links work",
+        "error": "TimeoutError: locator.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('a[href=\"/dogs\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <a href=\"/dogs\" class=\"nav-link\" data-i18n=\"navDogs\">Dogs</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"pet-profile-overlay\" onclick=\"closePetProfileModal()\"></div> from <div id=\"petProfileModal\" class=\"pet-profile-modal active\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"pet-profile-overlay\" onclick=\"closePetProfileModal()\"></div> from <div id=\"petProfileModal\" class=\"pet-profile-modal active\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"pet-profile-overlay\" onclick=\"closePetProfileModal()\"></div> from <div id=\"petProfileModal\" class=\"pet-profile-modal active\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n",
+        "location": "shop.spec.js"
+      },
+      {
+        "suite": "shop.spec.js > Shop - Product Detail Page",
+        "test": "Product page loads with valid content",
+        "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+        "location": "shop.spec.js"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "suite": "admin.spec.js > Admin - Authentication",
+      "name": "Admin login page loads",
+      "status": "passed",
+      "duration": 4423,
+      "error": null
+    },
+    {
+      "suite": "admin.spec.js > Admin - Authentication",
+      "name": "Admin login with valid credentials",
+      "status": "passed",
+      "duration": 7607,
+      "error": null
+    },
+    {
+      "suite": "admin.spec.js > Admin - Authentication",
+      "name": "Admin routes require authentication",
+      "status": "passed",
+      "duration": 4079,
+      "error": null
+    },
+    {
+      "suite": "admin.spec.js > Admin - API Endpoints (Unauthenticated)",
+      "name": "Admin API returns 401 without auth",
+      "status": "passed",
+      "duration": 480,
+      "error": null
+    },
+    {
+      "suite": "admin.spec.js > Admin - API Endpoints (Unauthenticated)",
+      "name": "Admin QA dashboard requires auth",
+      "status": "passed",
+      "duration": 21,
+      "error": null
+    },
+    {
+      "suite": "admin.spec.js > Admin - Authenticated Session",
+      "name": "Admin dashboard loads after login",
+      "status": "passed",
+      "duration": 2793,
+      "error": null
+    },
+    {
+      "suite": "admin.spec.js > Admin - Authenticated Session",
+      "name": "Admin categories page loads",
+      "status": "passed",
+      "duration": 2366,
+      "error": null
+    },
+    {
+      "suite": "admin.spec.js > Admin - Authenticated Session",
+      "name": "Admin jobs API works when authenticated",
+      "status": "passed",
+      "duration": 748,
+      "error": null
+    },
+    {
+      "suite": "admin.spec.js > Admin - Authenticated Session",
+      "name": "Admin QA dashboard returns data when authenticated",
+      "status": "passed",
+      "duration": 230,
+      "error": null
+    },
+    {
+      "suite": "admin.spec.js > Admin - Authenticated Session",
+      "name": "Admin product health endpoint works",
+      "status": "passed",
+      "duration": 581,
+      "error": null
+    },
+    {
+      "suite": "admin.spec.js > Admin - Bulk Operations (Read Only)",
+      "name": "Export issues endpoint returns CSV",
+      "status": "passed",
+      "duration": 100,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Route Smoke Tests",
+      "name": "Homepage (/) loads correctly",
+      "status": "passed",
+      "duration": 3971,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Route Smoke Tests",
+      "name": "Dogs Landing (/dogs) loads correctly",
+      "status": "passed",
+      "duration": 5416,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Route Smoke Tests",
+      "name": "Cats Landing (/cats) loads correctly",
+      "status": "passed",
+      "duration": 5512,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Route Smoke Tests",
+      "name": "Collections (/collections) loads correctly",
+      "status": "passed",
+      "duration": 3998,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Route Smoke Tests",
+      "name": "Categories (/categories) loads correctly",
+      "status": "passed",
+      "duration": 4259,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Health Endpoints",
+      "name": "/health returns 200",
+      "status": "passed",
+      "duration": 73,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Health Endpoints",
+      "name": "/healthz returns 200",
+      "status": "passed",
+      "duration": 132,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Health Endpoints",
+      "name": "/api/health returns 200",
+      "status": "passed",
+      "duration": 69,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Health Endpoints",
+      "name": "/api/version returns 200",
+      "status": "passed",
+      "duration": 89,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Health Endpoints",
+      "name": "/api/build returns 200",
+      "status": "passed",
+      "duration": 378,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Navigation",
+      "name": "Header navigation links work",
+      "status": "failed",
+      "duration": 12232,
+      "error": "TimeoutError: locator.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('a[href=\"/dogs\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <a href=\"/dogs\" class=\"nav-link\" data-i18n=\"navDogs\">Dogs</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"pet-profile-overlay\" onclick=\"closePetProfileModal()\"></div> from <div id=\"petProfileModal\" class=\"pet-profile-modal active\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"pet-profile-overlay\" onclick=\"closePetProfileModal()\"></div> from <div id=\"petProfileModal\" class=\"pet-profile-modal active\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"pet-profile-overlay\" onclick=\"closePetProfileModal()\"></div> from <div id=\"petProfileModal\" class=\"pet-profile-modal active\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n"
+    },
+    {
+      "suite": "shop.spec.js > Shop - Navigation",
+      "name": "Footer links are present",
+      "status": "passed",
+      "duration": 10724,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Navigation",
+      "name": "Logo links to homepage",
+      "status": "passed",
+      "duration": 12283,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Products API",
+      "name": "Products API returns data",
+      "status": "passed",
+      "duration": 811,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Products API",
+      "name": "Products are pet-eligible only",
+      "status": "passed",
+      "duration": 408,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Product Detail Page",
+      "name": "Product page loads with valid content",
+      "status": "failed",
+      "duration": 31529,
+      "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+    },
+    {
+      "suite": "shop.spec.js > Shop - Product Detail Page",
+      "name": "Product images load without errors",
+      "status": "passed",
+      "duration": 3672,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Search",
+      "name": "Search returns results for \"dog\"",
+      "status": "passed",
+      "duration": 16688,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Search",
+      "name": "Search API returns results",
+      "status": "passed",
+      "duration": 516,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Cart",
+      "name": "Cart icon is visible",
+      "status": "passed",
+      "duration": 14480,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Cart",
+      "name": "Add to cart updates cart count",
+      "status": "passed",
+      "duration": 2933,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Pawsy Mascot",
+      "name": "Pawsy widget is visible",
+      "status": "passed",
+      "duration": 5824,
+      "error": null
+    },
+    {
+      "suite": "shop.spec.js > Shop - Pawsy Mascot",
+      "name": "Pawsy video loads",
+      "status": "passed",
+      "duration": 5309,
+      "error": null
+    }
+  ],
+  "failures": [
+    {
+      "suite": "shop.spec.js > Shop - Navigation",
+      "test": "Header navigation links work",
+      "error": "TimeoutError: locator.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('a[href=\"/dogs\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <a href=\"/dogs\" class=\"nav-link\" data-i18n=\"navDogs\">Dogs</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"pet-profile-overlay\" onclick=\"closePetProfileModal()\"></div> from <div id=\"petProfileModal\" class=\"pet-profile-modal active\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"pet-profile-overlay\" onclick=\"closePetProfileModal()\"></div> from <div id=\"petProfileModal\" class=\"pet-profile-modal active\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div class=\"pet-profile-overlay\" onclick=\"closePetProfileModal()\"></div> from <div id=\"petProfileModal\" class=\"pet-profile-modal active\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n",
+      "location": "shop.spec.js"
+    },
+    {
+      "suite": "shop.spec.js > Shop - Product Detail Page",
+      "test": "Product page loads with valid content",
+      "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+      "location": "shop.spec.js"
+    }
+  ]
+}

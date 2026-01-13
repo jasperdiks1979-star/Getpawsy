@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-01-13T14:57:00.854Z",
+  "totalScanned": 569,
+  "blocked": 0,
+  "notPetApproved": 20,
+  "approved": 549,
+  "blockedSamples": [],
+  "notPetSamples": [
+    {
+      "id": "1991249060212760577",
+      "title": "Dog Food Storage Cabinet with Bowls & Dog Feeding ",
+      "reasons": [
+        "Explicitly marked is_pet_product=false"
+      ]
+    },
+    {
+      "id": "cj_2003467052895547394",
+      "title": " 62\" Rabbit Hutch, Wooden Bunny Hutch, Guinea Pig ",
+      "reasons": [
+        "Explicitly marked is_pet_product=false"
+      ]
+    },
+    {
+      "id": "cj_2003452939948826626",
+      "title": " 19.7' x 7.5' x 4.9' Outdoor Dog Kennel for Large-",
+      "reasons": [
+        "Explicitly marked is_pet_product=false"
+      ]
+    },
+    {
+      "id": "cj_2003451756969308162",
+      "title": " Wicker Dog House Outdoor with Canopy, Rattan Dog ",
+      "reasons": [
+        "Explicitly marked is_pet_product=false"
+      ]
+    },
+    {
+      "id": "cj_2003454183944597505",
+      "title": " Outdoor Dog Kennel with Roof with Escape-proof Lo",
+      "reasons": [
+        "Explicitly marked is_pet_product=false"
+      ]
+    },
+    {
+      "id": "cj_2003452902330114049",
+      "title": " 6.6' x 6.6' x 7.8' Dog Kennel Outdoor for Small M",
+      "reasons": [
+        "Explicitly marked is_pet_product=false"
+      ]
+    },
+    {
+      "id": "cj_2003454235937189889",
+      "title": " 5.9' x 4' x 6' Outdoor Dog Kennel with Roof, Rota",
+      "reasons": [
+        "Explicitly marked is_pet_product=false"
+      ]
+    },
+    {
+      "id": "cj_2003455433953288193",
+      "title": " Dog Sofa Bed w/ Adjustable Armrest & Backrest for",
+      "reasons": [
+        "Explicitly marked is_pet_product=false"
+      ]
+    },
+    {
+      "id": "cj_2003451943271903233",
+      "title": " 15x15 Dog Kennel with Cover, Secure Outdoor Dog F",
+      "reasons": [
+        "Explicitly marked is_pet_product=false"
+      ]
+    },
+    {
+      "id": "cj_2003452979183022082",
+      "title": " 19.7' x 7.5' x 7.5' Outdoor Dog Kennel for Large-",
+      "reasons": [
+        "Explicitly marked is_pet_product=false"
+      ]
+    }
+  ]
+}

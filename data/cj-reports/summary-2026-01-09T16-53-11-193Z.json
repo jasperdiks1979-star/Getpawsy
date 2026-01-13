@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-01-09T16:53:11.195Z",
+  "totalProducts": 539,
+  "productsWithCjProductId": 526,
+  "productsMissingCjProductId": 13,
+  "productsWithMappedVariants": 325,
+  "totalVariants": 1303,
+  "totalMappedVariants": 1089,
+  "productsWithIssues": 225,
+  "productsWithFixes": 526,
+  "applyMode": false
+}

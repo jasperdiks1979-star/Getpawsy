@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>QA Dashboard - GetPawsy Admin</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a1a2e; color: #eee; padding: 20px; min-height: 100vh; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    h1 { color: #E07A5F; margin-bottom: 20px; }
+    .card { background: #16213e; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+    .card h2 { color: #E07A5F; margin-bottom: 15px; font-size: 1.2rem; }
+    .btn { background: #E07A5F; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 1rem; margin-right: 10px; margin-bottom: 10px; }
+    .btn:hover { background: #c66a52; }
+    .btn:disabled { background: #666; cursor: not-allowed; }
+    .btn-secondary { background: #0f3460; }
+    .btn-secondary:hover { background: #1a4c8a; }
+    .status { padding: 8px 16px; border-radius: 20px; display: inline-block; font-weight: bold; }
+    .status.pass { background: #2ecc71; color: #fff; }
+    .status.fail { background: #e74c3c; color: #fff; }
+    .status.running { background: #f39c12; color: #fff; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; }
+    .stat { background: #0f3460; padding: 15px; border-radius: 8px; text-align: center; }
+    .stat-value { font-size: 2rem; font-weight: bold; color: #E07A5F; }
+    .stat-label { color: #aaa; font-size: 0.9rem; margin-top: 5px; }
+    .screenshots { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin-top: 15px; }
+    .screenshot { background: #0f3460; border-radius: 8px; overflow: hidden; }
+    .screenshot img { width: 100%; height: auto; display: block; }
+    .screenshot-label { padding: 10px; text-align: center; color: #aaa; font-size: 0.9rem; }
+    .error-list { background: #2c1810; border-radius: 8px; padding: 15px; margin-top: 15px; }
+    .error-item { color: #e74c3c; padding: 5px 0; border-bottom: 1px solid #3c2820; }
+    .error-item:last-child { border-bottom: none; }
+    .token-input { background: #0f3460; border: 1px solid #333; color: #fff; padding: 10px 15px; border-radius: 8px; width: 300px; margin-right: 10px; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 20px; }
+    #log { background: #0a0a15; border-radius: 8px; padding: 15px; font-family: monospace; font-size: 0.85rem; max-height: 300px; overflow-y: auto; white-space: pre-wrap; color: #aaa; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🐾 GetPawsy QA Dashboard</h1>
+    
+    <div class="card">
+      <h2>Run QA Tests</h2>
+      <div class="actions">
+        <input type="password" id="tokenInput" class="token-input" placeholder="Enter QA Token" value="">
+        <button class="btn" onclick="runQA('fast')" id="fastBtn">▶️ Run FAST QA</button>
+        <button class="btn" onclick="runQA('full')" id="fullBtn">▶️ Run FULL QA</button>
+        <button class="btn btn-secondary" onclick="refreshReport()">🔄 Refresh</button>
+      </div>
+      <div id="log"></div>
+    </div>
+    
+    <div class="card" id="reportCard" style="display: none;">
+      <h2>Latest Report</h2>
+      <div id="reportStatus"></div>
+      <div class="grid" id="statsGrid"></div>
+      <div id="errorsSection"></div>
+    </div>
+    
+    <div class="card" id="screenshotsCard" style="display: none;">
+      <h2>Proof Screenshots</h2>
+      <div class="screenshots" id="screenshotsGrid"></div>
+    </div>
+  </div>
+  
+  <script>
+    const tokenFromUrl = new URLSearchParams(window.location.search).get('token');
+    if (tokenFromUrl) {
+      document.getElementById('tokenInput').value = tokenFromUrl;
+    }
+    
+    function getToken() {
+      return document.getElementById('tokenInput').value || '';
+    }
+    
+    function log(msg) {
+      const el = document.getElementById('log');
+      el.textContent += new Date().toLocaleTimeString() + ' - ' + msg + '\n';
+      el.scrollTop = el.scrollHeight;
+    }
+    
+    async function runQA(mode) {
+      const token = getToken();
+      if (!token) {
+        log('ERROR: Please enter QA token');
+        return;
+      }
+      
+      document.getElementById('fastBtn').disabled = true;
+      document.getElementById('fullBtn').disabled = true;
+      log('Starting ' + mode.toUpperCase() + ' QA run...');
+      
+      try {
+        const res = await fetch('/api/qa/run?mode=' + mode + '&token=' + encodeURIComponent(token), {
+          method: 'POST',
+          headers: { 'x-qa-token': token }
+        });
+        const data = await res.json();
+        
+        if (res.ok) {
+          log('QA started: ' + data.runId);
+          log('Waiting for results...');
+          
+          setTimeout(() => pollForResults(token), 3000);
+        } else {
+          log('ERROR: ' + (data.error || 'Failed to start QA'));
+          document.getElementById('fastBtn').disabled = false;
+          document.getElementById('fullBtn').disabled = false;
+        }
+      } catch (err) {
+        log('ERROR: ' + err.message);
+        document.getElementById('fastBtn').disabled = false;
+        document.getElementById('fullBtn').disabled = false;
+      }
+    }
+    
+    async function pollForResults(token, attempts = 0) {
+      if (attempts > 60) {
+        log('Timeout waiting for results');
+        document.getElementById('fastBtn').disabled = false;
+        document.getElementById('fullBtn').disabled = false;
+        return;
+      }
+      
+      try {
+        const res = await fetch('/api/qa/latest?token=' + encodeURIComponent(token), {
+          headers: { 'x-qa-token': token }
+        });
+        
+        if (res.ok) {
+          const data = await res.json();
+          const age = Date.now() - new Date(data.startedAt).getTime();
+          
+          if (age < 120000) {
+            log('QA complete: ' + (data.pass ? 'PASS ✅' : 'FAIL ❌'));
+            displayReport(data);
+            loadScreenshots(token);
+            document.getElementById('fastBtn').disabled = false;
+            document.getElementById('fullBtn').disabled = false;
+            return;
+          }
+        }
+        
+        setTimeout(() => pollForResults(token, attempts + 1), 2000);
+      } catch (err) {
+        setTimeout(() => pollForResults(token, attempts + 1), 2000);
+      }
+    }
+    
+    async function refreshReport() {
+      const token = getToken();
+      if (!token) {
+        log('Please enter QA token');
+        return;
+      }
+      
+      log('Refreshing report...');
+      
+      try {
+        const res = await fetch('/api/qa/latest?token=' + encodeURIComponent(token), {
+          headers: { 'x-qa-token': token }
+        });
+        
+        if (res.ok) {
+          const data = await res.json();
+          displayReport(data);
+          loadScreenshots(token);
+          log('Report refreshed');
+        } else {
+          log('No report found');
+        }
+      } catch (err) {
+        log('Error: ' + err.message);
+      }
+    }
+    
+    function displayReport(report) {
+      document.getElementById('reportCard').style.display = 'block';
+      
+      const statusHtml = `
+        <span class="status ${report.pass ? 'pass' : 'fail'}">${report.pass ? 'PASS' : 'FAIL'}</span>
+        <span style="margin-left: 15px; color: #aaa;">
+          Run: ${report.runId} | Mode: ${report.mode} | Duration: ${report.durationMs}ms
+        </span>
+      `;
+      document.getElementById('reportStatus').innerHTML = statusHtml;
+      
+      const dc = report.dataChecks || {};
+      const cc = dc.categoryCounts || {};
+      
+      document.getElementById('statsGrid').innerHTML = `
+        <div class="stat">
+          <div class="stat-value">${dc.totalProducts || 0}</div>
+          <div class="stat-label">Total Products</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">${cc.dogs || 0}</div>
+          <div class="stat-label">Dogs</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">${cc.cats || 0}</div>
+          <div class="stat-label">Cats</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">${cc.smallPets || 0}</div>
+          <div class="stat-label">Small Pets</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color: ${dc.missingImagesCount > 0 ? '#e74c3c' : '#2ecc71'}">${dc.missingImagesCount || 0}</div>
+          <div class="stat-label">Missing Images</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color: ${dc.smallPetsContaminationCount > 0 ? '#e74c3c' : '#2ecc71'}">${dc.smallPetsContaminationCount || 0}</div>
+          <div class="stat-label">Contamination</div>
+        </div>
+      `;
+      
+      const allErrors = [...(dc.errors || []), ...(report.uiChecks?.errors || [])];
+      if (allErrors.length > 0) {
+        document.getElementById('errorsSection').innerHTML = `
+          <div class="error-list">
+            <strong>Errors:</strong>
+            ${allErrors.map(e => '<div class="error-item">• ' + e + '</div>').join('')}
+          </div>
+        `;
+      } else {
+        document.getElementById('errorsSection').innerHTML = '';
+      }
+    }
+    
+    async function loadScreenshots(token) {
+      try {
+        const res = await fetch('/api/qa/screenshots?token=' + encodeURIComponent(token), {
+          headers: { 'x-qa-token': token }
+        });
+        
+        if (res.ok) {
+          const data = await res.json();
+          if (data.screenshots && data.screenshots.length > 0) {
+            document.getElementById('screenshotsCard').style.display = 'block';
+            document.getElementById('screenshotsGrid').innerHTML = data.screenshots.map(s => `
+              <div class="screenshot">
+                <a href="${s}" target="_blank">
+                  <img src="${s}" alt="${s.split('/').pop()}" loading="lazy">
+                </a>
+                <div class="screenshot-label">${s.split('/').pop()}</div>
+              </div>
+            `).join('');
+          }
+        }
+      } catch (err) {
+        console.error('Failed to load screenshots:', err);
+      }
+    }
+    
+    if (tokenFromUrl) {
+      refreshReport();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "dogs": {
+    "collectionIds": [],
+    "collectionHandles": [
+      "dogs",
+      "dog",
+      "dog-products"
+    ],
+    "categoryNames": [
+      "Dogs",
+      "Dog"
+    ]
+  },
+  "cats": {
+    "collectionIds": [],
+    "collectionHandles": [
+      "cats",
+      "cat",
+      "cat-products"
+    ],
+    "categoryNames": [
+      "Cats",
+      "Cat"
+    ]
+  }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>My Account | GetPawsy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/css/ai.css">
+  <script src="/js/pawsy.js" defer></script>
+  <script src="/js/ai.js" defer></script>
+  <style>
+    <%- include('../partials/account_styles') %>
+    .pawsy-recent-orders {
+      margin-top: 2rem;
+    }
+    .pawsy-recent-orders h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body class="pawsy-body">
+  <%- include("../partials/header") %>
+  
+  <main class="pawsy-main">
+    <div class="pawsy-container">
+      <div class="pawsy-account-page">
+        <h1 class="pawsy-page-title">My Account</h1>
+
+        <div class="pawsy-account-layout">
+          <%- include('../partials/account_sidebar', { activePage: 'dashboard' }) %>
+
+          <div class="pawsy-account-content">
+            <% 
+              const rewardsData = typeof rewards !== 'undefined' ? rewards : { points: 0, tier: 'Bronze' };
+              const tierInfoData = typeof tierInfo !== 'undefined' ? tierInfo : { progress: 0, pointsNeeded: 500, nextTier: 'Silver' };
+              const tierColors = {
+                'Bronze': '#CD7F32',
+                'Silver': '#C0C0C0',
+                'Gold': '#FFD700',
+                'Platinum': '#E5E4E2'
+              };
+            %>
+            <div class="pawsy-loyalty-banner" style="background: linear-gradient(135deg, <%= tierColors[rewardsData.tier] || '#CD7F32' %> 0%, <%= tierColors[rewardsData.tier] === '#FFD700' ? '#FFA500' : tierColors[rewardsData.tier] || '#A0522D' %> 100%);">
+              <div class="pawsy-loyalty-icon">🏆</div>
+              <div class="pawsy-loyalty-info">
+                <div class="pawsy-loyalty-level">
+                  <span class="pawsy-level-badge"><%= rewardsData.tier %></span>
+                  <span class="pawsy-points"><%= rewardsData.points %> Points</span>
+                </div>
+                <div class="pawsy-loyalty-progress">
+                  <div class="pawsy-progress-bar">
+                    <div class="pawsy-progress-fill" style="width: <%= tierInfoData.progress %>%"></div>
+                  </div>
+                  <span class="pawsy-next-level">
+                    <% if (tierInfoData.nextTier) { %>
+                      <%= tierInfoData.pointsNeeded %> more to <%= tierInfoData.nextTier %>
+                    <% } else { %>
+                      Max Level!
+                    <% } %>
+                  </span>
+                </div>
+              </div>
+              <a href="/account/rewards" class="pawsy-loyalty-cta">View Rewards</a>
+            </div>
+
+            <div id="pet-profile-card"></div>
+            
+            <div id="loyalty-ai-progress"></div>
+
+            <section class="pawsy-account-section" id="dashboard">
+              <h2>Welcome back<%= user && user.name ? ', ' + user.name.split(' ')[0] : '' %>! 🐾</h2>
+              
+              <div class="pawsy-account-cards">
+                <a href="/account/orders" class="pawsy-account-card">
+                  <span class="pawsy-card-icon">📦</span>
+                  <div class="pawsy-card-info">
+                    <h3>Orders</h3>
+                    <p><%= typeof orders !== 'undefined' ? orders.length : 0 %> total</p>
+                  </div>
+                </a>
+                <a href="/account/wishlist" class="pawsy-account-card">
+                  <span class="pawsy-card-icon">❤️</span>
+                  <div class="pawsy-card-info">
+                    <h3>Wishlist</h3>
+                    <p><%= typeof wishlist !== 'undefined' ? wishlist.length : 0 %> items</p>
+                  </div>
+                </a>
+                <a href="/account/addresses" class="pawsy-account-card">
+                  <span class="pawsy-card-icon">🏠</span>
+                  <div class="pawsy-card-info">
+                    <h3>Addresses</h3>
+                    <p><%= typeof addresses !== 'undefined' ? addresses.length : 0 %> saved</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="pawsy-quick-actions">
+                <h3>Quick Actions</h3>
+                <div class="pawsy-actions-grid">
+                  <a href="/collections" class="pawsy-action-btn">🛍️ Continue Shopping</a>
+                  <a href="/account/settings" class="pawsy-action-btn">⚙️ Edit Profile</a>
+                  <a href="/account/rewards" class="pawsy-action-btn">🏆 View Rewards</a>
+                </div>
+              </div>
+
+              <% if (typeof orders !== 'undefined' && orders.length > 0) { %>
+                <div class="pawsy-recent-orders">
+                  <h3>Recent Orders</h3>
+                  <div class="pawsy-orders-list">
+                    <% orders.slice(0, 3).forEach(order => { %>
+                      <div class="pawsy-order-item">
+                        <div class="pawsy-order-info">
+                          <span class="pawsy-order-id">#<%= order.id %></span>
+                          <span class="pawsy-order-date"><%= new Date(order.createdAt).toLocaleDateString() %></span>
+                        </div>
+                        <div class="pawsy-order-status pawsy-status-<%= order.status.toLowerCase() %>">
+                          <%= order.status %>
+                        </div>
+                        <div class="pawsy-order-total">$<%= order.total.toFixed(2) %></div>
+                        <a href="/account/orders/<%= order.id %>" class="pawsy-btn pawsy-btn-outline pawsy-btn-sm">View</a>
+                      </div>
+                    <% }) %>
+                  </div>
+                  <% if (orders.length > 3) { %>
+                    <a href="/account/orders" style="display: block; text-align: center; margin-top: 1rem; color: var(--pawsy-primary); font-weight: 600;">View All Orders →</a>
+                  <% } %>
+                </div>
+              <% } %>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include("../partials/footer") %>
+  <%- include("../partials/pawsy_widget") %>
+</body>
+</html>

@@ -1,0 +1,89 @@
+{
+  "completed": {
+    "CJMY1797958": "/cache/images/cj_scraped_CJMY1797958_e721d511.jpg",
+    "CJGX1597441": "/cache/images/cj_scraped_CJGX1597441_699472f6.jpg",
+    "CJJJCWGY00736": "/cache/images/cj_scraped_CJJJCWGY00736_a583596b.jpg",
+    "CJGY1354527": "/cache/images/cj_scraped_CJGY1354527_9b0b7d69.jpg",
+    "CJJJCWGY00320": "/cache/images/cj_scraped_CJJJCWGY00320_48bbac20.jpg",
+    "CJJJCWGY00568": "/cache/images/cj_scraped_CJJJCWGY00568_6b57c8ac.png",
+    "CJGY1765347": "/cache/images/cj_scraped_CJGY1765347_84f7ae19.png",
+    "CJGY1157230": "/cache/images/cj_scraped_CJGY1157230_4eb25307.jpg",
+    "CJWJWJMR00725": "/cache/images/cj_scraped_CJWJWJMR00725_84f7ae19.png",
+    "CJJJCWGY00551": "/cache/images/cj_scraped_CJJJCWGY00551_ee0fd3b2.jpg",
+    "CJMY1571810": "/cache/images/cj_scraped_CJMY1571810_84f7ae19.png",
+    "CJGY2064580": "/cache/images/cj_scraped_CJGY2064580_ca28fbb8.jpg",
+    "CJJJCWMY00710": "/cache/images/cj_scraped_CJJJCWMY00710_40fb61cf.jpg",
+    "CJPH2161250": "/cache/images/cj_scraped_CJPH2161250_84f7ae19.png",
+    "CJGY1158150": "/cache/images/cj_scraped_CJGY1158150_e384ec25.jpg"
+  },
+  "failed": [
+    {
+      "spu": "CJYC1548746",
+      "reason": "Invalid URL"
+    },
+    {
+      "spu": "CJJJCWMY00142",
+      "reason": "Invalid URL"
+    },
+    {
+      "spu": "CJJJCWMY00128",
+      "reason": "Invalid URL"
+    },
+    {
+      "spu": "CJYD1816679",
+      "reason": "Invalid URL"
+    },
+    {
+      "spu": "CJJJCWGY03039",
+      "reason": "Invalid URL"
+    },
+    {
+      "spu": "CJST2388261",
+      "reason": "Invalid URL"
+    },
+    {
+      "spu": "CJTC2264881",
+      "reason": "Invalid URL"
+    },
+    {
+      "spu": "CJCT2346588",
+      "reason": "Invalid URL"
+    },
+    {
+      "spu": "CJPB2235288",
+      "reason": "Invalid URL"
+    },
+    {
+      "spu": "CJTC2190835",
+      "reason": "Invalid URL"
+    },
+    {
+      "spu": "CJCT2253124",
+      "reason": "Invalid URL"
+    },
+    {
+      "spu": "CJPM2296425",
+      "reason": "Invalid URL"
+    },
+    {
+      "spu": "CJFT2398190",
+      "reason": "Invalid URL"
+    },
+    {
+      "spu": "CJHC2191775",
+      "reason": "Invalid URL"
+    },
+    {
+      "spu": "CJFT2428499",
+      "reason": "Invalid URL"
+    },
+    {
+      "spu": "CJCT2470386",
+      "reason": "Invalid URL"
+    },
+    {
+      "spu": "CJDT2471699",
+      "reason": "Invalid URL"
+    }
+  ]
+}

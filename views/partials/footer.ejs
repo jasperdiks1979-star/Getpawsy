@@ -1,0 +1,94 @@
+<footer class="pawsy-footer">
+  <div class="pawsy-footer-container">
+    <div class="pawsy-footer-grid">
+      <div class="pawsy-footer-brand">
+        <a href="/" class="pawsy-footer-logo">🐾 GetPawsy</a>
+        <p>Premium toys, beds & essentials for happy dogs and cats. Quality guaranteed, fast U.S. shipping.</p>
+        <div class="pawsy-footer-social">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+
+      <div class="pawsy-footer-links">
+        <h4>Shop</h4>
+        <a href="/collection/dogs">Dog Products</a>
+        <a href="/collection/cats">Cat Products</a>
+        <a href="/collection/small-pets">Small Pet Products</a>
+        <a href="/collections">All Products</a>
+      </div>
+
+      <div class="pawsy-footer-links">
+        <h4>Support</h4>
+        <a href="/contact">Contact Us</a>
+        <a href="/faq">FAQ</a>
+        <a href="/legal/shipping">Shipping Info</a>
+        <a href="/legal/returns">Returns</a>
+      </div>
+
+      <div class="pawsy-footer-links">
+        <h4>Account</h4>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        <a href="/account">My Account</a>
+        <a href="/cart">Cart</a>
+      </div>
+
+      <div class="pawsy-footer-newsletter">
+        <h4>Stay Updated</h4>
+        <p>Get exclusive deals & pet care tips</p>
+        <form class="pawsy-newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="Your email" required>
+          <button type="submit" class="pawsy-btn pawsy-btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="pawsy-footer-bottom">
+      <p>&copy; 2024 GetPawsy. All rights reserved. <span style="opacity:0.6;font-size:11px;margin-left:8px;">Build:<%= typeof buildStamp !== 'undefined' ? buildStamp : 'v3.0' %> | Env=prod | canary:20260112-2035</span></p>
+      <% if (typeof qaMode !== 'undefined' && qaMode) { %>
+      <div id="qa-badge" style="position:fixed;bottom:10px;left:10px;background:#ff6b00;color:#fff;padding:4px 10px;border-radius:4px;font-size:12px;font-weight:bold;z-index:9999;">
+        QA Mode | Build: <%= typeof buildId !== 'undefined' ? buildId : 'dev' %> | <%= typeof commitSha !== 'undefined' ? commitSha.substring(0,7) : 'no-git' %>
+      </div>
+      <div id="qa-debug-panel" style="position:fixed;bottom:40px;left:10px;background:#1a1a2e;color:#eee;padding:10px 14px;border-radius:6px;font-size:11px;font-family:monospace;z-index:9998;max-width:320px;box-shadow:0 2px 10px rgba(0,0,0,0.3);">
+        <div style="font-weight:bold;margin-bottom:6px;color:#ff6b00;">DEBUG PANEL</div>
+        <div>Route: <span id="qa-route" style="color:#4ade80;">-</span></div>
+        <div>Cart Items: <span id="qa-cart-count" style="color:#60a5fa;">0</span></div>
+        <div>Last Add: <span id="qa-last-add" style="color:#f59e0b;">none</span></div>
+        <div>Variant: <span id="qa-variant" style="color:#a78bfa;">-</span></div>
+      </div>
+      <script>
+        (function() {
+          const dbg = document.getElementById('qa-debug-panel');
+          if (!dbg) return;
+          function update() {
+            document.getElementById('qa-route').textContent = window.location.pathname;
+            const count = window.CartStore ? window.CartStore.getCount() : 0;
+            document.getElementById('qa-cart-count').textContent = count;
+          }
+          update();
+          setInterval(update, 500);
+          window.qaLogAdd = function(productId, variantId) {
+            const ts = new Date().toLocaleTimeString();
+            document.getElementById('qa-last-add').textContent = productId.substring(0,10) + '... @' + ts;
+            if (variantId) document.getElementById('qa-variant').textContent = variantId;
+          };
+        })();
+      </script>
+      <% } %>
+      <div class="pawsy-footer-legal">
+        <a href="/legal/privacy">Privacy</a>
+        <a href="/legal/terms">Terms</a>
+        <a href="/legal/refund">Refunds</a>
+        <a href="/legal/cookies">Cookies</a>
+        <a href="/legal/about">About Us</a>
+        <a href="/legal/ai">AI Transparency</a>
+        <a href="/legal/eu-gdpr">GDPR (EU)</a>
+        <a href="/legal/california-ai">California AI</a>
+        <a href="/legal/accessibility">Accessibility</a>
+        <a href="/legal/pet-safety">Pet Safety</a>
+      </div>
+    </div>
+  </div>
+</footer>

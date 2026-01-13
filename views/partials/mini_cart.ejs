@@ -1,0 +1,32 @@
+<div class="pawsy-mini-cart-overlay" id="miniCartOverlay"></div>
+<aside class="pawsy-mini-cart" id="miniCart">
+  <div class="pawsy-mini-cart-header">
+    <h3>Your Cart</h3>
+    <button class="pawsy-mini-cart-close" id="miniCartClose">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+  <div class="pawsy-mini-cart-items" id="miniCartItems">
+    <div class="pawsy-mini-cart-empty">
+      <span class="pawsy-mini-cart-empty-icon">🛒</span>
+      <p>Your cart is empty</p>
+      <a href="/collections" class="pawsy-btn pawsy-btn-primary">Start Shopping</a>
+    </div>
+  </div>
+  <div class="pawsy-mini-cart-footer" id="miniCartFooter" style="display: none;">
+    <div class="pawsy-mini-cart-subtotal">
+      <span>Subtotal</span>
+      <span id="miniCartSubtotal">$0.00</span>
+    </div>
+    <div class="pawsy-mini-cart-shipping">
+      <span id="shippingMessage">Add $50.00 for FREE shipping</span>
+      <div class="pawsy-shipping-progress">
+        <div class="pawsy-shipping-progress-bar" id="shippingProgressBar" style="width: 0%"></div>
+      </div>
+    </div>
+    <a href="/cart" class="pawsy-btn pawsy-btn-outline pawsy-btn-block">View Cart</a>
+    <button type="button" class="pawsy-btn pawsy-btn-primary pawsy-btn-block" onclick="if(typeof startCheckoutUnified==='function'){startCheckoutUnified();}else{window.location.href='/checkout';}">Checkout</button>
+  </div>
+</aside>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Return Policy | GetPawsy</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .legal-page { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    .legal-page h1 { color: var(--pawsy-primary, #6366f1); margin-bottom: 10px; }
+    .legal-page .last-updated { color: #666; font-size: 14px; margin-bottom: 30px; }
+    .legal-page h2 { color: #333; margin: 30px 0 15px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
+    .legal-page p, .legal-page li { line-height: 1.8; color: #444; }
+    .legal-page ul { padding-left: 25px; margin: 15px 0; }
+    .legal-page .highlight { background: #f8f9ff; padding: 20px; border-radius: 12px; border-left: 4px solid var(--pawsy-primary, #6366f1); margin: 20px 0; }
+    .legal-page .success-box { background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #22c55e; margin: 20px 0; }
+    .legal-page .warning-box { background: #fffbeb; padding: 20px; border-radius: 12px; border-left: 4px solid #f59e0b; margin: 20px 0; }
+    .legal-page .steps { counter-reset: step; }
+    .legal-page .step { position: relative; padding-left: 50px; margin: 20px 0; }
+    .legal-page .step::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 0; width: 35px; height: 35px; background: var(--pawsy-primary, #6366f1); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+  <main class="legal-page">
+    <h1>Return Policy</h1>
+    <p class="last-updated">Last Updated: December 2024</p>
+
+    <div class="success-box">
+      <p><strong>30-Day Easy Returns!</strong> We want you and your furry friends to be completely happy with your purchase. If you're not satisfied, we've got you covered.</p>
+    </div>
+
+    <h2>30-Day Return Window</h2>
+    <p>You have <strong>30 days</strong> from the date of delivery to return most items for a full refund or exchange. The return window begins when your package is marked as delivered.</p>
+
+    <h2>AI Returns Assistant</h2>
+    <div class="highlight">
+      <p>GetPawsy uses an AI-powered Returns Assistant to streamline your return experience. Our AI can:</p>
+      <ul>
+        <li>Process return requests 24/7</li>
+        <li>Provide instant return eligibility decisions</li>
+        <li>Generate prepaid return labels</li>
+        <li>Track your return status</li>
+      </ul>
+      <p>For complex cases, your request will be reviewed by our customer service team.</p>
+    </div>
+
+    <h2>Conditions for Returns</h2>
+    <h3>Eligible Items</h3>
+    <ul>
+      <li>Items in original, unused condition</li>
+      <li>Items with original packaging and tags</li>
+      <li>Items purchased within the last 30 days</li>
+      <li>Defective or damaged items (report within 48 hours)</li>
+    </ul>
+
+    <h3>Non-Returnable Items</h3>
+    <div class="warning-box">
+      <ul>
+        <li>Used or opened pet food and treats</li>
+        <li>Personalized or custom items</li>
+        <li>Items marked as "Final Sale"</li>
+        <li>Items damaged through misuse</li>
+        <li>Items without original packaging</li>
+      </ul>
+    </div>
+
+    <h2>How to Return an Item</h2>
+    <div class="steps">
+      <div class="step">
+        <h4>Initiate Your Return</h4>
+        <p>Log into your account and go to "Order History." Select the order and click "Request Return." Our AI Returns Assistant will guide you through the process.</p>
+      </div>
+      <div class="step">
+        <h4>Get Your Return Label</h4>
+        <p>Once approved, you'll receive a prepaid return shipping label via email. Print the label and attach it to your package.</p>
+      </div>
+      <div class="step">
+        <h4>Pack Your Item</h4>
+        <p>Place the item in its original packaging (if available) or use a secure box. Include all accessories and tags.</p>
+      </div>
+      <div class="step">
+        <h4>Ship Your Return</h4>
+        <p>Drop off your package at any USPS, UPS, or FedEx location. Keep your tracking number for reference.</p>
+      </div>
+      <div class="step">
+        <h4>Receive Your Refund</h4>
+        <p>Once we receive and inspect your return, your refund will be processed within 5-7 business days.</p>
+      </div>
+    </div>
+
+    <h2>Damaged or Defective Items</h2>
+    <p>If you receive a damaged or defective item:</p>
+    <ul>
+      <li>Report the issue within 48 hours of delivery</li>
+      <li>Take photos of the damage</li>
+      <li>Contact our support team or use the AI Returns Assistant</li>
+      <li>We'll provide a free return label and full refund or replacement</li>
+    </ul>
+
+    <h2>Exchanges</h2>
+    <p>Want to exchange for a different size or color?</p>
+    <ul>
+      <li>Process a return for the original item</li>
+      <li>Place a new order for the desired item</li>
+      <li>Contact support if you need help coordinating</li>
+    </ul>
+
+    <h2>Return Shipping</h2>
+    <ul>
+      <li><strong>Defective/Wrong Items:</strong> Free return shipping</li>
+      <li><strong>Change of Mind:</strong> $5.99 deducted from refund (or use prepaid label)</li>
+      <li><strong>International Returns:</strong> Customer pays return shipping</li>
+    </ul>
+
+    <h2>Refund Timeline</h2>
+    <p>After we receive your return:</p>
+    <ul>
+      <li><strong>Processing:</strong> 1-3 business days</li>
+      <li><strong>Refund Issued:</strong> 5-7 business days to original payment method</li>
+      <li><strong>Store Credit:</strong> Available immediately upon approval</li>
+    </ul>
+
+    <h2>Contact Us</h2>
+    <p>Need help with a return?</p>
+    <ul>
+      <li>Email: returns@getpawsy.com</li>
+      <li>Use the Pawsy AI chatbot for instant assistance</li>
+      <li>Visit: <a href="/contact">Contact Page</a></li>
+    </ul>
+  </main>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>

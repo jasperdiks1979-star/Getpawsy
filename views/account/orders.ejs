@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>My Orders | GetPawsy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/css/ai.css">
+  <script src="/js/pawsy.js" defer></script>
+  <script src="/js/ai.js" defer></script>
+  <style>
+    <%- include('../partials/account_styles') %>
+    .pawsy-order-items-preview {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .pawsy-order-item-thumb {
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      object-fit: cover;
+      background: white;
+      border: 1px solid var(--pawsy-gray-200);
+    }
+    .pawsy-order-more {
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      background: var(--pawsy-gray-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--pawsy-gray-600);
+    }
+  </style>
+</head>
+<body class="pawsy-body">
+  <%- include("../partials/header") %>
+  
+  <main class="pawsy-main">
+    <div class="pawsy-container">
+      <div class="pawsy-account-page">
+        <h1 class="pawsy-page-title">My Orders</h1>
+
+        <div class="pawsy-account-layout">
+          <%- include('../partials/account_sidebar', { activePage: 'orders' }) %>
+
+          <div class="pawsy-account-content">
+            <div id="ai-order-insights"></div>
+            
+            <section class="pawsy-account-section">
+              <h2>Order History 📦</h2>
+              <% if (typeof orders !== 'undefined' && orders.length > 0) { %>
+                <div class="pawsy-orders-list">
+                  <% orders.forEach(order => { %>
+                    <div class="pawsy-order-item" style="display: block; padding: 1.25rem;">
+                      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                        <div>
+                          <span class="pawsy-order-id" style="font-size: 1.1rem;">#<%= order.id %></span>
+                          <span class="pawsy-order-date" style="margin-left: 1rem;"><%= new Date(order.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) %></span>
+                          <div class="pawsy-order-items-preview">
+                            <% order.items.slice(0, 3).forEach(item => { %>
+                              <img src="<%= item.image || '/images/placeholder.png' %>" alt="<%= item.name %>" class="pawsy-order-item-thumb">
+                            <% }) %>
+                            <% if (order.items.length > 3) { %>
+                              <div class="pawsy-order-more">+<%= order.items.length - 3 %></div>
+                            <% } %>
+                          </div>
+                        </div>
+                        <div style="text-align: right;">
+                          <div class="pawsy-order-status pawsy-status-<%= order.status.toLowerCase() %>" style="margin-bottom: 0.5rem;">
+                            <%= order.status.charAt(0).toUpperCase() + order.status.slice(1) %>
+                          </div>
+                          <div class="pawsy-order-total" style="font-size: 1.2rem;">$<%= order.total.toFixed(2) %></div>
+                        </div>
+                      </div>
+                      <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                        <a href="/account/orders/<%= order.id %>" class="pawsy-btn pawsy-btn-primary pawsy-btn-sm">View Details</a>
+                        <% if (order.trackingNumber) { %>
+                          <a href="#" class="pawsy-btn pawsy-btn-outline pawsy-btn-sm">Track Package</a>
+                        <% } %>
+                      </div>
+                    </div>
+                  <% }) %>
+                </div>
+              <% } else { %>
+                <div class="pawsy-empty-state">
+                  <div class="pawsy-empty-icon">📦</div>
+                  <h3>No orders yet</h3>
+                  <p>When you place orders, they will appear here for easy tracking.</p>
+                  <a href="/collections" class="pawsy-btn pawsy-btn-primary">Start Shopping</a>
+                </div>
+              <% } %>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include("../partials/footer") %>
+  <%- include("../partials/pawsy_widget") %>
+</body>
+</html>

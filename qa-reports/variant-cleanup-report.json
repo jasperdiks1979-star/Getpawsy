@@ -1,0 +1,62 @@
+{
+  "timestamp": "2025-12-21T09:43:14.558Z",
+  "totalProducts": 414,
+  "productsWithVariants": 414,
+  "totalVariantsBefore": 2575,
+  "totalVariantsAfter": 1210,
+  "variantsRemoved": 1365,
+  "optionsCleaned": 18456,
+  "duplicatesRemoved": 1365,
+  "singleVariantProducts": 323,
+  "imagesFixed": 0,
+  "examples": [
+    {
+      "id": "2512191016261601300",
+      "title": "Natural Rubber Bite-resistant Stress-relieving Dog",
+      "variantsBefore": 2,
+      "variantsAfter": 2,
+      "sampleOptions": {
+        "Size": "M",
+        "Color": "Purple"
+      }
+    },
+    {
+      "id": "2512190809221624100",
+      "title": "Dog Car Seat Cushion A Must-have For Small And Med",
+      "variantsBefore": 3,
+      "variantsAfter": 1,
+      "sampleOptions": {
+        "Size": "Medium",
+        "Color": "brown"
+      }
+    },
+    {
+      "id": "2512190632151613800",
+      "title": "Warm Large Dog Bed Pet Mat Cat Bed Dog Bed Dog Mat",
+      "variantsBefore": 63,
+      "variantsAfter": 20,
+      "sampleOptions": {
+        "Size": "S",
+        "Color": "Brown"
+      }
+    },
+    {
+      "id": "2512190142381620100",
+      "title": "Dog-shaped Dishwashing And Kitchen-cleaning Sponge",
+      "variantsBefore": 64,
+      "variantsAfter": 1,
+      "sampleOptions": {
+        "Size": "4"
+      }
+    },
+    {
+      "id": "2001892329022332929",
+      "title": "Dog Car Seat Cover Pet Safety Protector Mat Rear B",
+      "variantsBefore": 65,
+      "variantsAfter": 1,
+      "sampleOptions": {
+        "Type": "Standard"
+      }
+    }
+  ]
+}

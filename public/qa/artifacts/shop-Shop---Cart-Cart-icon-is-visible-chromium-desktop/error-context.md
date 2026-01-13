@@ -1,0 +1,1085 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]: Fast US shipping when available • Secure checkout • 30-day returns
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "GetPawsy" [ref=e6] [cursor=pointer]:
+        - /url: /
+      - navigation "Main navigation" [ref=e7]:
+        - link "Dogs" [ref=e8] [cursor=pointer]:
+          - /url: /dogs
+        - link "Cats" [ref=e9] [cursor=pointer]:
+          - /url: /cats
+        - link "Small Pets" [ref=e10] [cursor=pointer]:
+          - /url: /small-pets
+        - link "Toys" [ref=e11] [cursor=pointer]:
+          - /url: /toys
+        - link "Feeding" [ref=e12] [cursor=pointer]:
+          - /url: /feeding
+        - link "Accessories" [ref=e13] [cursor=pointer]:
+          - /url: /accessories
+      - search [ref=e14]:
+        - searchbox "Search products…" [ref=e15]
+        - button "Search" [ref=e16] [cursor=pointer]:
+          - img [ref=e17]
+      - generic [ref=e20]:
+        - button "EN" [ref=e21] [cursor=pointer]
+        - generic [ref=e22]: "|"
+        - button "NL" [ref=e23] [cursor=pointer]
+      - button "Cart" [ref=e24] [cursor=pointer]
+  - main [ref=e25]:
+    - generic [ref=e26]:
+      - img "Happy golden retriever and orange tabby cat" [ref=e29]
+      - generic [ref=e32]:
+        - generic [ref=e34]: AI Powered Picks
+        - heading "Premium Pet Essentials" [level=1] [ref=e35]
+        - paragraph [ref=e36]: Hand-picked products for happy dogs and cats. Fast US shipping, curated by Pawsy AI.
+        - generic [ref=e37]:
+          - link "🐕 Shop Dogs" [ref=e38] [cursor=pointer]:
+            - /url: "#dog-products"
+            - generic [ref=e39]: 🐕
+            - generic [ref=e40]: Shop Dogs
+          - link "🐱 Shop Cats" [ref=e41] [cursor=pointer]:
+            - /url: "#cat-products"
+            - generic [ref=e42]: 🐱
+            - generic [ref=e43]: Shop Cats
+          - link "Browse All" [ref=e44] [cursor=pointer]:
+            - /url: "#shop"
+        - generic [ref=e45]:
+          - generic [ref=e46]: ✓ US Shipping
+          - generic [ref=e47]: ✓ Curated Picks
+          - generic [ref=e48]: ✓ Easy Returns
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - generic [ref=e52]: ✓
+        - generic [ref=e53]: Fast US Shipping (3-7 days)
+      - generic [ref=e54]:
+        - generic [ref=e55]: ✓
+        - generic [ref=e56]: 30-Day Returns
+      - generic [ref=e57]:
+        - generic [ref=e58]: ✓
+        - generic [ref=e59]: Secure Checkout
+      - generic [ref=e60]:
+        - generic [ref=e61]: ✓
+        - generic [ref=e62]: Pawsy AI Help 24/7
+    - generic [ref=e64]:
+      - paragraph [ref=e65]: Shopping for a dog or a cat?
+      - generic [ref=e66]:
+        - button "🐕 Dogs" [ref=e67] [cursor=pointer]
+        - button "🐱 Cats" [ref=e68] [cursor=pointer]
+        - button "Both" [ref=e69] [cursor=pointer]
+    - generic [ref=e70]:
+      - heading "What does your pet need today?" [level=2] [ref=e71]
+      - paragraph [ref=e72]: Quick links to popular needs
+      - generic [ref=e73]:
+        - link "🛏️ Sleep & Comfort" [ref=e74] [cursor=pointer]:
+          - /url: /need/sleep-comfort
+          - generic [ref=e75]: 🛏️
+          - generic [ref=e76]: Sleep & Comfort
+        - link "🎾 Play & Energy" [ref=e77] [cursor=pointer]:
+          - /url: /need/play-energy
+          - generic [ref=e78]: 🎾
+          - generic [ref=e79]: Play & Energy
+        - link "🍽️ Feeding" [ref=e80] [cursor=pointer]:
+          - /url: /need/feeding
+          - generic [ref=e81]: 🍽️
+          - generic [ref=e82]: Feeding
+        - link "✨ Grooming" [ref=e83] [cursor=pointer]:
+          - /url: /need/grooming
+          - generic [ref=e84]: ✨
+          - generic [ref=e85]: Grooming
+        - link "💊 Health & Wellness" [ref=e86] [cursor=pointer]:
+          - /url: /need/health-wellness
+          - generic [ref=e87]: 💊
+          - generic [ref=e88]: Health & Wellness
+    - generic [ref=e90]:
+      - generic [ref=e91]:
+        - heading "Featured Collections" [level=2] [ref=e92]
+        - paragraph [ref=e93]: Explore our curated picks for every pet
+      - generic [ref=e94]:
+        - link "Happy dog with toys 🐕 Dogs Explore dog essentials Shop Dogs →" [ref=e95] [cursor=pointer]:
+          - /url: /dogs
+          - img "Happy dog with toys" [ref=e96]
+          - generic [ref=e98]:
+            - generic [ref=e99]: 🐕
+            - heading "Dogs" [level=3] [ref=e100]
+            - paragraph [ref=e101]: Explore dog essentials
+            - generic [ref=e102]: Shop Dogs →
+        - link "Cute cat relaxing 🐈 Cats Discover cat favorites Shop Cats →" [ref=e103] [cursor=pointer]:
+          - /url: /cats
+          - img "Cute cat relaxing" [ref=e104]
+          - generic [ref=e106]:
+            - generic [ref=e107]: 🐈
+            - heading "Cats" [level=3] [ref=e108]
+            - paragraph [ref=e109]: Discover cat favorites
+            - generic [ref=e110]: Shop Cats →
+        - link "Best selling pet products ⭐ Best Sellers Top-rated by pet parents Shop Best Sellers →" [ref=e111] [cursor=pointer]:
+          - /url: "#top-picks"
+          - img "Best selling pet products" [ref=e112]
+          - generic [ref=e114]:
+            - generic [ref=e115]: ⭐
+            - heading "Best Sellers" [level=3] [ref=e116]
+            - paragraph [ref=e117]: Top-rated by pet parents
+            - generic [ref=e118]: Shop Best Sellers →
+    - generic [ref=e119]:
+      - heading "Shop by Category" [level=2] [ref=e120]
+      - paragraph [ref=e121]: Explore our curated collections
+      - generic [ref=e122]:
+        - button "Previous category" [disabled] [ref=e123]:
+          - img [ref=e124]
+        - generic [ref=e126]:
+          - link "Pet beds and comfort Sleep & Comfort" [ref=e127] [cursor=pointer]:
+            - /url: /c/dogs/sleep
+            - generic [ref=e128]:
+              - img "Pet beds and comfort" [ref=e129]
+              - generic [ref=e130]: Sleep & Comfort
+          - link "Pet toys and play Toys & Play" [ref=e131] [cursor=pointer]:
+            - /url: /c/dogs/toys
+            - generic [ref=e132]:
+              - img "Pet toys and play" [ref=e133]
+              - generic [ref=e134]: Toys & Play
+          - link "Pet feeding supplies Feeding" [ref=e135] [cursor=pointer]:
+            - /url: /c/dogs/feeding
+            - generic [ref=e136]:
+              - img "Pet feeding supplies" [ref=e137]
+              - generic [ref=e138]: Feeding
+          - link "Pet grooming supplies Grooming" [ref=e139] [cursor=pointer]:
+            - /url: /c/dogs/grooming
+            - generic [ref=e140]:
+              - img "Pet grooming supplies" [ref=e141]
+              - generic [ref=e142]: Grooming
+          - link "Pet health and wellness Health & Wellness" [ref=e143] [cursor=pointer]:
+            - /url: /c/dogs/health
+            - generic [ref=e144]:
+              - img "Pet health and wellness" [ref=e145]
+              - generic [ref=e146]: Health & Wellness
+          - link "Dog walking gear Walking" [ref=e147] [cursor=pointer]:
+            - /url: /c/dogs/walking
+            - generic [ref=e148]:
+              - img "Dog walking gear" [ref=e149]
+              - generic [ref=e150]: Walking
+          - link "Pet training tools Training" [ref=e151] [cursor=pointer]:
+            - /url: /c/dogs/training
+            - generic [ref=e152]:
+              - img "Pet training tools" [ref=e153]
+              - generic [ref=e154]: Training
+          - link "Pet travel gear Travel" [ref=e155] [cursor=pointer]:
+            - /url: /c/dogs/travel
+            - generic [ref=e156]:
+              - img "Pet travel gear" [ref=e157]
+              - generic [ref=e158]: Travel
+        - button "Next category" [ref=e159] [cursor=pointer]:
+          - img [ref=e160]
+    - generic [ref=e162]:
+      - heading "New Arrivals" [level=2] [ref=e163]
+      - paragraph [ref=e164]: Fresh additions to our collection
+    - generic [ref=e165]:
+      - heading "Top Picks for You" [level=2] [ref=e166]
+      - paragraph [ref=e167]: Hand-selected favorites, curated by Pawsy AI
+    - heading "All Products" [level=2] [ref=e169]
+    - generic [ref=e170]:
+      - heading "🐕 Top Picks for Dogs" [level=2] [ref=e171]
+      - paragraph [ref=e172]: Hand-picked favorites for happy pups
+      - generic [ref=e173]:
+        - button "Previous" [disabled] [ref=e174]: ‹
+        - generic [ref=e175]:
+          - link "🐕 Dog 🇺🇸 Fast Shipping Quick view Dog Car Ramp, 75\" x 20\" Extra Long and Wide, Non-Slip Surface, Folding Portable Pet Ramp for Large, Dog Car Ramp, 75\" x 20\" Extra Long and Wide, Non-Slip Surface, Folding Portable Pet Ramp for Large, $9.95 Add" [ref=e177] [cursor=pointer]:
+            - /url: /product/1991248375670935554
+            - generic [ref=e178]:
+              - generic [ref=e179]:
+                - generic: 🐕 Dog
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e180]
+                - img "Dog Car Ramp, 75\" x 20\" Extra Long and Wide, Non-Slip Surface, Folding Portable Pet Ramp for Large," [ref=e181]
+              - generic [ref=e182]:
+                - heading "Dog Car Ramp, 75\" x 20\" Extra Long and Wide, Non-Slip Surface, Folding Portable Pet Ramp for Large," [level=3] [ref=e183]
+                - generic [ref=e184]:
+                  - generic [ref=e185]: $9.95
+                  - button "Add" [ref=e186]
+          - link "🐕 Dog 🇺🇸 Fast Shipping Quick view Pet Stroller For Dogs And Cats - Foldable, Lightweight, And Durable - Ideal For Small To Medium Pets Pet Stroller For Dogs And Cats - Foldable, Lightweight, And Durable - Ideal For Small To Medium Pets $9.95 Add" [ref=e188] [cursor=pointer]:
+            - /url: /product/1991786961910530050
+            - generic [ref=e189]:
+              - generic [ref=e190]:
+                - generic: 🐕 Dog
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e191]
+                - img "Pet Stroller For Dogs And Cats - Foldable, Lightweight, And Durable - Ideal For Small To Medium Pets" [ref=e192]
+              - generic [ref=e193]:
+                - heading "Pet Stroller For Dogs And Cats - Foldable, Lightweight, And Durable - Ideal For Small To Medium Pets" [level=3] [ref=e194]
+                - generic [ref=e195]:
+                  - generic [ref=e196]: $9.95
+                  - button "Add" [ref=e197]
+          - link "🐕 Dog 🇺🇸 Fast Shipping Quick view Silicone Lick Mat For Pet Dogs Slow Food Plate Rice Bowl For Small Medium Dog Anti Gulping Choking F Silicone Lick Mat For Pet Dogs Slow Food Plate Rice Bowl For Small Medium Dog Anti Gulping Choking F $9.95 Add" [ref=e199] [cursor=pointer]:
+            - /url: /product/1721808426021834752
+            - generic [ref=e200]:
+              - generic [ref=e201]:
+                - generic: 🐕 Dog
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e202]
+                - img "Silicone Lick Mat For Pet Dogs Slow Food Plate Rice Bowl For Small Medium Dog Anti Gulping Choking F" [ref=e203]
+              - generic [ref=e204]:
+                - heading "Silicone Lick Mat For Pet Dogs Slow Food Plate Rice Bowl For Small Medium Dog Anti Gulping Choking F" [level=3] [ref=e205]
+                - generic [ref=e206]:
+                  - generic [ref=e207]: $9.95
+                  - button "Add" [ref=e208]
+          - link "🐕 Dog 🇺🇸 Fast Shipping Quick view Pet Stroller Foldable 4 Wheels Travel Dog Stroller Reversible Handle Up To 44lbs Pet Stroller Foldable 4 Wheels Travel Dog Stroller Reversible Handle Up To 44lbs $9.95 Add" [ref=e210] [cursor=pointer]:
+            - /url: /product/1993007032305479682
+            - generic [ref=e211]:
+              - generic [ref=e212]:
+                - generic: 🐕 Dog
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e213]
+                - img "Pet Stroller Foldable 4 Wheels Travel Dog Stroller Reversible Handle Up To 44lbs" [ref=e214]
+              - generic [ref=e215]:
+                - heading "Pet Stroller Foldable 4 Wheels Travel Dog Stroller Reversible Handle Up To 44lbs" [level=3] [ref=e216]
+                - generic [ref=e217]:
+                  - generic [ref=e218]: $9.95
+                  - button "Add" [ref=e219]
+          - link "🐕 Dog 🇺🇸 Fast Shipping Quick view Elevated Dog Bowls with Storage Elevated Dog Bowls with Storage $9.95 Add" [ref=e221] [cursor=pointer]:
+            - /url: /product/1991248909085741057
+            - generic [ref=e222]:
+              - generic [ref=e223]:
+                - generic: 🐕 Dog
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e224]
+                - img "Elevated Dog Bowls with Storage" [ref=e225]
+              - generic [ref=e226]:
+                - heading "Elevated Dog Bowls with Storage" [level=3] [ref=e227]
+                - generic [ref=e228]:
+                  - generic [ref=e229]: $9.95
+                  - button "Add" [ref=e230]
+          - link "🐕 Dog 🇺🇸 Fast Shipping Quick view Honeycomb Embossed Dual-Color Pet Leash Set Is Stylish And Fashionable. The Embossed Surface Enhance Honeycomb Embossed Dual-Color Pet Leash Set Is Stylish And Fashionable. The Embossed Surface Enhance $9.95 Add" [ref=e232] [cursor=pointer]:
+            - /url: /product/1996870075989405697
+            - generic [ref=e233]:
+              - generic [ref=e234]:
+                - generic: 🐕 Dog
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e235]
+                - img "Honeycomb Embossed Dual-Color Pet Leash Set Is Stylish And Fashionable. The Embossed Surface Enhance" [ref=e236]
+              - generic [ref=e237]:
+                - heading "Honeycomb Embossed Dual-Color Pet Leash Set Is Stylish And Fashionable. The Embossed Surface Enhance" [level=3] [ref=e238]
+                - generic [ref=e239]:
+                  - generic [ref=e240]: $9.95
+                  - button "Add" [ref=e241]
+          - link "🐕 Dog 🇺🇸 Fast Shipping Quick view Dog Egg Crates For Mothers, Newborn Puppy Supplies And Essentials Built Comfortably Dog Egg Crates For Mothers, Newborn Puppy Supplies And Essentials Built Comfortably $9.95 Add" [ref=e243] [cursor=pointer]:
+            - /url: /product/1856263027474452480
+            - generic [ref=e244]:
+              - generic [ref=e245]:
+                - generic: 🐕 Dog
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e246]
+                - img "Dog Egg Crates For Mothers, Newborn Puppy Supplies And Essentials Built Comfortably" [ref=e247]
+              - generic [ref=e248]:
+                - heading "Dog Egg Crates For Mothers, Newborn Puppy Supplies And Essentials Built Comfortably" [level=3] [ref=e249]
+                - generic [ref=e250]:
+                  - generic [ref=e251]: $9.95
+                  - button "Add" [ref=e252]
+          - link "🐕 Dog 🇺🇸 Fast Shipping Quick view Dog Flying Disc Dog Flying Disc Durable And Interactive Flying Disc For Medium And Large Dogs Perfec Dog Flying Disc Dog Flying Disc Durable And Interactive Flying Disc For Medium And Large Dogs Perfec $9.95 Add" [ref=e254] [cursor=pointer]:
+            - /url: /product/1806928748680728576
+            - generic [ref=e255]:
+              - generic [ref=e256]:
+                - generic: 🐕 Dog
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e257]
+                - img "Dog Flying Disc Dog Flying Disc Durable And Interactive Flying Disc For Medium And Large Dogs Perfec" [ref=e258]
+              - generic [ref=e259]:
+                - heading "Dog Flying Disc Dog Flying Disc Durable And Interactive Flying Disc For Medium And Large Dogs Perfec" [level=3] [ref=e260]
+                - generic [ref=e261]:
+                  - generic [ref=e262]: $9.95
+                  - button "Add" [ref=e263]
+          - link "🐕 Dog 🇺🇸 Fast Shipping Quick view Dog Car Seat, Dog Booster Seat For Car With A Storage Pocket, Clip-On Safety Leash, Sponge And PP Co Dog Car Seat, Dog Booster Seat For Car With A Storage Pocket, Clip-On Safety Leash, Sponge And PP Co $9.95 Add" [ref=e265] [cursor=pointer]:
+            - /url: /product/1991407459189784578
+            - generic [ref=e266]:
+              - generic [ref=e267]:
+                - generic: 🐕 Dog
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e268]
+                - img "Dog Car Seat, Dog Booster Seat For Car With A Storage Pocket, Clip-On Safety Leash, Sponge And PP Co" [ref=e269]
+              - generic [ref=e270]:
+                - heading "Dog Car Seat, Dog Booster Seat For Car With A Storage Pocket, Clip-On Safety Leash, Sponge And PP Co" [level=3] [ref=e271]
+                - generic [ref=e272]:
+                  - generic [ref=e273]: $9.95
+                  - button "Add" [ref=e274]
+          - link "🐕 Dog 🇺🇸 Fast Shipping Quick view The New Dual-Color Embossed Pet Leash Set Is A Pet Product That Combines Appearance, Fun And Practic The New Dual-Color Embossed Pet Leash Set Is A Pet Product That Combines Appearance, Fun And Practic $9.95 Add" [ref=e276] [cursor=pointer]:
+            - /url: /product/1996846464031129601
+            - generic [ref=e277]:
+              - generic [ref=e278]:
+                - generic: 🐕 Dog
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e279]
+                - img "The New Dual-Color Embossed Pet Leash Set Is A Pet Product That Combines Appearance, Fun And Practic" [ref=e280]
+              - generic [ref=e281]:
+                - heading "The New Dual-Color Embossed Pet Leash Set Is A Pet Product That Combines Appearance, Fun And Practic" [level=3] [ref=e282]
+                - generic [ref=e283]:
+                  - generic [ref=e284]: $9.95
+                  - button "Add" [ref=e285]
+          - link "🐕 Dog 🇺🇸 Fast Shipping Quick view Dog Whelping Box With Window Transparent Playpen For Large Dog 76x49x30 In Dog Whelping Box With Window Transparent Playpen For Large Dog 76x49x30 In $9.95 Add" [ref=e287] [cursor=pointer]:
+            - /url: /product/1992943667305553921
+            - generic [ref=e288]:
+              - generic [ref=e289]:
+                - generic: 🐕 Dog
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e290]
+                - img "Dog Whelping Box With Window Transparent Playpen For Large Dog 76x49x30 In" [ref=e291]
+              - generic [ref=e292]:
+                - heading "Dog Whelping Box With Window Transparent Playpen For Large Dog 76x49x30 In" [level=3] [ref=e293]
+                - generic [ref=e294]:
+                  - generic [ref=e295]: $9.95
+                  - button "Add" [ref=e296]
+          - link "🐕 Dog 🇺🇸 Fast Shipping Quick view Pet Stroller, 4 Wheels Dog Stroller Rotate With Brakes, 66 Lbs Weight Capacity, Puppy Stroller With Pet Stroller, 4 Wheels Dog Stroller Rotate With Brakes, 66 Lbs Weight Capacity, Puppy Stroller With $9.95 Add" [ref=e298] [cursor=pointer]:
+            - /url: /product/1993007067604742145
+            - generic [ref=e299]:
+              - generic [ref=e300]:
+                - generic: 🐕 Dog
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e301]
+                - img "Pet Stroller, 4 Wheels Dog Stroller Rotate With Brakes, 66 Lbs Weight Capacity, Puppy Stroller With" [ref=e302]
+              - generic [ref=e303]:
+                - heading "Pet Stroller, 4 Wheels Dog Stroller Rotate With Brakes, 66 Lbs Weight Capacity, Puppy Stroller With" [level=3] [ref=e304]
+                - generic [ref=e305]:
+                  - generic [ref=e306]: $9.95
+                  - button "Add" [ref=e307]
+        - button "Next" [ref=e308] [cursor=pointer]: ›
+    - generic [ref=e309]:
+      - heading "🐱 Top Picks for Cats" [level=2] [ref=e310]
+      - paragraph [ref=e311]: Curated essentials for curious kitties
+      - generic [ref=e312]:
+        - button "Previous" [disabled] [ref=e313]: ‹
+        - generic [ref=e314]:
+          - link "🐱 Cat 🇺🇸 Fast Shipping Quick view Catio Outdoor Cat Enclosure Catio Outdoor Cat Enclosure $9.95 Add" [ref=e316] [cursor=pointer]:
+            - /url: /product/1991252164423487489
+            - generic [ref=e317]:
+              - generic [ref=e318]:
+                - generic: 🐱 Cat
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e319]
+                - img "Catio Outdoor Cat Enclosure" [ref=e320]
+              - generic [ref=e321]:
+                - heading "Catio Outdoor Cat Enclosure" [level=3] [ref=e322]
+                - generic [ref=e323]:
+                  - generic [ref=e324]: $9.95
+                  - button "Add" [ref=e325]
+          - link "🐱 Cat 🇺🇸 Fast Shipping Quick view 20.5\" Weaved Cat Bed 20.5\" Weaved Cat Bed $9.95 Add" [ref=e327] [cursor=pointer]:
+            - /url: /product/1991250243151237121
+            - generic [ref=e328]:
+              - generic [ref=e329]:
+                - generic: 🐱 Cat
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e330]
+                - img "20.5\" Weaved Cat Bed" [ref=e331]
+              - generic [ref=e332]:
+                - heading "20.5\" Weaved Cat Bed" [level=3] [ref=e333]
+                - generic [ref=e334]:
+                  - generic [ref=e335]: $9.95
+                  - button "Add" [ref=e336]
+          - link "🐱 Cat 🇺🇸 Fast Shipping Quick view Outdoor Cat House Cat Enclosures 110 Large Kitten Playpen With Platforms,Upgrade Waterproof Cover-gr Outdoor Cat House Cat Enclosures 110 Large Kitten Playpen With Platforms,Upgrade Waterproof Cover-gr $9.95 Add" [ref=e338] [cursor=pointer]:
+            - /url: /product/1892139061461774338
+            - generic [ref=e339]:
+              - generic [ref=e340]:
+                - generic: 🐱 Cat
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e341]
+                - img "Outdoor Cat House Cat Enclosures 110 Large Kitten Playpen With Platforms,Upgrade Waterproof Cover-gr" [ref=e342]
+              - generic [ref=e343]:
+                - heading "Outdoor Cat House Cat Enclosures 110 Large Kitten Playpen With Platforms,Upgrade Waterproof Cover-gr" [level=3] [ref=e344]
+                - generic [ref=e345]:
+                  - generic [ref=e346]: $9.95
+                  - button "Add" [ref=e347]
+          - link "🐱 Cat 🇺🇸 Fast Shipping Quick view Large Outdoor Cat House for 3 Kitties Large Outdoor Cat House for 3 Kitties $9.95 Add" [ref=e349] [cursor=pointer]:
+            - /url: /product/1991251901889417218
+            - generic [ref=e350]:
+              - generic [ref=e351]:
+                - generic: 🐱 Cat
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e352]
+                - img "Large Outdoor Cat House for 3 Kitties" [ref=e353]
+              - generic [ref=e354]:
+                - heading "Large Outdoor Cat House for 3 Kitties" [level=3] [ref=e355]
+                - generic [ref=e356]:
+                  - generic [ref=e357]: $9.95
+                  - button "Add" [ref=e358]
+          - link "🐱 Cat 🇺🇸 Fast Shipping Quick view Cat Litter Box with Lid Cat Litter Box with Lid $9.95 Add" [ref=e360] [cursor=pointer]:
+            - /url: /product/1991251169224200193
+            - generic [ref=e361]:
+              - generic [ref=e362]:
+                - generic: 🐱 Cat
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e363]
+                - img "Cat Litter Box with Lid" [ref=e364]
+              - generic [ref=e365]:
+                - heading "Cat Litter Box with Lid" [level=3] [ref=e366]
+                - generic [ref=e367]:
+                  - generic [ref=e368]: $9.95
+                  - button "Add" [ref=e369]
+          - link "🐱 Cat 🇺🇸 Fast Shipping Quick view Wooden Outdoor Cat House, Wild Cat Shelter Kitten Tree Wooden Outdoor Cat House, Wild Cat Shelter Kitten Tree $9.95 Add" [ref=e371] [cursor=pointer]:
+            - /url: /product/1855860959337140224
+            - generic [ref=e372]:
+              - generic [ref=e373]:
+                - generic: 🐱 Cat
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e374]
+                - img "Wooden Outdoor Cat House, Wild Cat Shelter Kitten Tree" [ref=e375]
+              - generic [ref=e376]:
+                - heading "Wooden Outdoor Cat House, Wild Cat Shelter Kitten Tree" [level=3] [ref=e377]
+                - generic [ref=e378]:
+                  - generic [ref=e379]: $9.95
+                  - button "Add" [ref=e380]
+          - link "🐱 Cat 🇺🇸 Fast Shipping Quick view Cat Tunnel With Cat Bed For Indoor, Soft Plush Peekaboo Cat Cave Donut Tunnel, For Cats Kittens, Rab Cat Tunnel With Cat Bed For Indoor, Soft Plush Peekaboo Cat Cave Donut Tunnel, For Cats Kittens, Rab $9.95 Add" [ref=e382] [cursor=pointer]:
+            - /url: /product/1993555922728558593
+            - generic [ref=e383]:
+              - generic [ref=e384]:
+                - generic: 🐱 Cat
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e385]
+                - img "Cat Tunnel With Cat Bed For Indoor, Soft Plush Peekaboo Cat Cave Donut Tunnel, For Cats Kittens, Rab" [ref=e386]
+              - generic [ref=e387]:
+                - heading "Cat Tunnel With Cat Bed For Indoor, Soft Plush Peekaboo Cat Cave Donut Tunnel, For Cats Kittens, Rab" [level=3] [ref=e388]
+                - generic [ref=e389]:
+                  - generic [ref=e390]: $9.95
+                  - button "Add" [ref=e391]
+          - link "🐱 Cat 🇺🇸 Fast Shipping Quick view Outdoor Cat House Outdoor Cat House $9.95 Add" [ref=e393] [cursor=pointer]:
+            - /url: /product/1991250058522169345
+            - generic [ref=e394]:
+              - generic [ref=e395]:
+                - generic: 🐱 Cat
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e396]
+                - img "Outdoor Cat House" [ref=e397]
+              - generic [ref=e398]:
+                - heading "Outdoor Cat House" [level=3] [ref=e399]
+                - generic [ref=e400]:
+                  - generic [ref=e401]: $9.95
+                  - button "Add" [ref=e402]
+          - link "🐱 Cat 🇺🇸 Fast Shipping Quick view Pet Dental Powder - Freshens Breath, Protects Gums And Strengthens Teeth. An Essential For Daily Ora Pet Dental Powder - Freshens Breath, Protects Gums And Strengthens Teeth. An Essential For Daily Ora $9.95 Add" [ref=e404] [cursor=pointer]:
+            - /url: /product/1993882260050169858
+            - generic [ref=e405]:
+              - generic [ref=e406]:
+                - generic: 🐱 Cat
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e407]
+                - img "Pet Dental Powder - Freshens Breath, Protects Gums And Strengthens Teeth. An Essential For Daily Ora" [ref=e408]
+              - generic [ref=e409]:
+                - heading "Pet Dental Powder - Freshens Breath, Protects Gums And Strengthens Teeth. An Essential For Daily Ora" [level=3] [ref=e410]
+                - generic [ref=e411]:
+                  - generic [ref=e412]: $9.95
+                  - button "Add" [ref=e413]
+          - link "🐱 Cat 🇺🇸 Fast Shipping Quick view Cat Tree House with Scratching Post and Wheels Cat Tree House with Scratching Post and Wheels $9.95 Add" [ref=e415] [cursor=pointer]:
+            - /url: /product/1991251862223884289
+            - generic [ref=e416]:
+              - generic [ref=e417]:
+                - generic: 🐱 Cat
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e418]
+                - img "Cat Tree House with Scratching Post and Wheels" [ref=e419]
+              - generic [ref=e420]:
+                - heading "Cat Tree House with Scratching Post and Wheels" [level=3] [ref=e421]
+                - generic [ref=e422]:
+                  - generic [ref=e423]: $9.95
+                  - button "Add" [ref=e424]
+          - link "🐱 Cat 🇺🇸 Fast Shipping Quick view Cat Shelves for Indoor Cats Cat Shelves for Indoor Cats $9.95 Add" [ref=e426] [cursor=pointer]:
+            - /url: /product/1991250658972393474
+            - generic [ref=e427]:
+              - generic [ref=e428]:
+                - generic: 🐱 Cat
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e429]
+                - img "Cat Shelves for Indoor Cats" [ref=e430]
+              - generic [ref=e431]:
+                - heading "Cat Shelves for Indoor Cats" [level=3] [ref=e432]
+                - generic [ref=e433]:
+                  - generic [ref=e434]: $9.95
+                  - button "Add" [ref=e435]
+          - link "🐱 Cat 🇺🇸 Fast Shipping Quick view Dog Ramp, Folding Pet Ramp For Bed, Adjustable Dog Ramp For Small, Large, Old Dogs & Cats, Wooden Pe Dog Ramp, Folding Pet Ramp For Bed, Adjustable Dog Ramp For Small, Large, Old Dogs & Cats, Wooden Pe $9.95 Add" [ref=e437] [cursor=pointer]:
+            - /url: /product/1992943318395023361
+            - generic [ref=e438]:
+              - generic [ref=e439]:
+                - generic: 🐱 Cat
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e440]
+                - img "Dog Ramp, Folding Pet Ramp For Bed, Adjustable Dog Ramp For Small, Large, Old Dogs & Cats, Wooden Pe" [ref=e441]
+              - generic [ref=e442]:
+                - heading "Dog Ramp, Folding Pet Ramp For Bed, Adjustable Dog Ramp For Small, Large, Old Dogs & Cats, Wooden Pe" [level=3] [ref=e443]
+                - generic [ref=e444]:
+                  - generic [ref=e445]: $9.95
+                  - button "Add" [ref=e446]
+        - button "Next" [ref=e447] [cursor=pointer]: ›
+    - generic [ref=e448]:
+      - heading "🐹 Small Pets Picks" [level=2] [ref=e449]
+      - paragraph [ref=e450]: Curated favorites for rabbits, hamsters, birds & more
+      - generic [ref=e451]:
+        - button "Previous" [disabled] [ref=e452]: ‹
+        - generic [ref=e453]:
+          - link "🐹 Small Pet 🇺🇸 Fast Shipping Quick view Rabbit Cage Outdoor, 62\" Wooden Outdoor Rabbit Hutch, Small Animal Habitat with Detachable Run and Elevated Main House, Natural Rabbit Cage Outdoor, 62\" Wooden Outdoor Rabbit Hutch, Small Animal Habitat with Detachable Run and Elevated Main House, Natural $187.99 Add" [ref=e455] [cursor=pointer]:
+            - /url: /product/cj_2003459431347298305
+            - generic [ref=e456]:
+              - generic [ref=e457]:
+                - generic: 🐹 Small Pet
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e458]
+                - img "Rabbit Cage Outdoor, 62\" Wooden Outdoor Rabbit Hutch, Small Animal Habitat with Detachable Run and Elevated Main House, Natural" [ref=e459]
+              - generic [ref=e460]:
+                - heading "Rabbit Cage Outdoor, 62\" Wooden Outdoor Rabbit Hutch, Small Animal Habitat with Detachable Run and Elevated Main House, Natural" [level=3] [ref=e461]
+                - generic [ref=e462]:
+                  - generic [ref=e463]: $187.99
+                  - button "Add" [ref=e464]
+          - link "🐹 Small Pet 🇺🇸 Fast Shipping Quick view 62\" Rabbit Hutch, Wooden Bunny Hutch, Guinea Pig Cage, Small Animal Enclosure with Run Area, Removable Tray, Asphalt Roof, Lockable Doors and Ramp, for Rabbits, Chickens, Ducks, Nature Wood 62\" Rabbit Hutch, Wooden Bunny Hutch, Guinea Pig Cage, Small Animal Enclosure with Run Area, Removable Tray, Asphalt Roof, Lockable Doors and Ramp, for Rabbits, Chickens, Ducks, Nature Wood $269.99 Add" [ref=e466] [cursor=pointer]:
+            - /url: /product/cj_2003467052895547394
+            - generic [ref=e467]:
+              - generic [ref=e468]:
+                - generic: 🐹 Small Pet
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e469]
+                - img "62\" Rabbit Hutch, Wooden Bunny Hutch, Guinea Pig Cage, Small Animal Enclosure with Run Area, Removable Tray, Asphalt Roof, Lockable Doors and Ramp, for Rabbits, Chickens, Ducks, Nature Wood" [ref=e470]
+              - generic [ref=e471]:
+                - heading "62\" Rabbit Hutch, Wooden Bunny Hutch, Guinea Pig Cage, Small Animal Enclosure with Run Area, Removable Tray, Asphalt Roof, Lockable Doors and Ramp, for Rabbits, Chickens, Ducks, Nature Wood" [level=3] [ref=e472]
+                - generic [ref=e473]:
+                  - generic [ref=e474]: $269.99
+                  - button "Add" [ref=e475]
+          - link "🐹 Small Pet 🇺🇸 Fast Shipping Quick view PawHut Two-Tier Antiseptic Wood Rabbit Hutch, 92cm Guinea Pig Hutch With Run - Orange PawHut Two-Tier Antiseptic Wood Rabbit Hutch, 92cm Guinea Pig Hutch With Run - Orange $155.99 Add" [ref=e477] [cursor=pointer]:
+            - /url: /product/cj_2003288444580573186
+            - generic [ref=e478]:
+              - generic [ref=e479]:
+                - generic: 🐹 Small Pet
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e480]
+                - img "PawHut Two-Tier Antiseptic Wood Rabbit Hutch, 92cm Guinea Pig Hutch With Run - Orange" [ref=e481]
+              - generic [ref=e482]:
+                - heading "PawHut Two-Tier Antiseptic Wood Rabbit Hutch, 92cm Guinea Pig Hutch With Run - Orange" [level=3] [ref=e483]
+                - generic [ref=e484]:
+                  - generic [ref=e485]: $155.99
+                  - button "Add" [ref=e486]
+          - link "🐹 Small Pet 🇺🇸 Fast Shipping Quick view PawHut Chinchillas Small Rabbit Guinea Pig Small Animal Cage, Pet Playhouse, With Platform, Ramp, 99 X 52 X 53cm, Blue PawHut Chinchillas Small Rabbit Guinea Pig Small Animal Cage, Pet Playhouse, With Platform, Ramp, 99 X 52 X 53cm, Blue $116.99 Add" [ref=e488] [cursor=pointer]:
+            - /url: /product/cj_2003403386902736898
+            - generic [ref=e489]:
+              - generic [ref=e490]:
+                - generic: 🐹 Small Pet
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e491]
+                - img "PawHut Chinchillas Small Rabbit Guinea Pig Small Animal Cage, Pet Playhouse, With Platform, Ramp, 99 X 52 X 53cm, Blue" [ref=e492]
+              - generic [ref=e493]:
+                - heading "PawHut Chinchillas Small Rabbit Guinea Pig Small Animal Cage, Pet Playhouse, With Platform, Ramp, 99 X 52 X 53cm, Blue" [level=3] [ref=e494]
+                - generic [ref=e495]:
+                  - generic [ref=e496]: $116.99
+                  - button "Add" [ref=e497]
+          - link "🐹 Small Pet 🇺🇸 Fast Shipping Quick view Large Wooden Rabbit Hutch Small Animal Habitat Enclosure Outdoor Run and Lockable Doors - Natural Large Wooden Rabbit Hutch Small Animal Habitat Enclosure Outdoor Run and Lockable Doors - Natural $150.99 Add" [ref=e499] [cursor=pointer]:
+            - /url: /product/cj_2003467534565224450
+            - generic [ref=e500]:
+              - generic [ref=e501]:
+                - generic: 🐹 Small Pet
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e502]
+                - img "Large Wooden Rabbit Hutch Small Animal Habitat Enclosure Outdoor Run and Lockable Doors - Natural" [ref=e503]
+              - generic [ref=e504]:
+                - heading "Large Wooden Rabbit Hutch Small Animal Habitat Enclosure Outdoor Run and Lockable Doors - Natural" [level=3] [ref=e505]
+                - generic [ref=e506]:
+                  - generic [ref=e507]: $150.99
+                  - button "Add" [ref=e508]
+          - link "🐹 Small Pet 🇺🇸 Fast Shipping Quick view 64\" Wooden Outdoor Rabbit Hutch Playpen Tortoise House Habitat with Run and Enclosed Cover 64\" Wooden Outdoor Rabbit Hutch Playpen Tortoise House Habitat with Run and Enclosed Cover $243.99 Add" [ref=e510] [cursor=pointer]:
+            - /url: /product/cj_2003464912300187649
+            - generic [ref=e511]:
+              - generic [ref=e512]:
+                - generic: 🐹 Small Pet
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e513]
+                - img "64\" Wooden Outdoor Rabbit Hutch Playpen Tortoise House Habitat with Run and Enclosed Cover" [ref=e514]
+              - generic [ref=e515]:
+                - heading "64\" Wooden Outdoor Rabbit Hutch Playpen Tortoise House Habitat with Run and Enclosed Cover" [level=3] [ref=e516]
+                - generic [ref=e517]:
+                  - generic [ref=e518]: $243.99
+                  - button "Add" [ref=e519]
+          - link "🐹 Small Pet 🇺🇸 Fast Shipping Quick view Indoor Rabbit Enclosure, 48\" Weatherproof Wooden Rabbit Hutch, with Slanted Asphalt Roof & Fun Outdoor Run for Bunnies & Ferrets - Gray Indoor Rabbit Enclosure, 48\" Weatherproof Wooden Rabbit Hutch, with Slanted Asphalt Roof & Fun Outdoor Run for Bunnies & Ferrets - Gray $191.99 Add" [ref=e521] [cursor=pointer]:
+            - /url: /product/cj_2003465317183500290
+            - generic [ref=e522]:
+              - generic [ref=e523]:
+                - generic: 🐹 Small Pet
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e524]
+                - img "Indoor Rabbit Enclosure, 48\" Weatherproof Wooden Rabbit Hutch, with Slanted Asphalt Roof & Fun Outdoor Run for Bunnies & Ferrets - Gray" [ref=e525]
+              - generic [ref=e526]:
+                - heading "Indoor Rabbit Enclosure, 48\" Weatherproof Wooden Rabbit Hutch, with Slanted Asphalt Roof & Fun Outdoor Run for Bunnies & Ferrets - Gray" [level=3] [ref=e527]
+                - generic [ref=e528]:
+                  - generic [ref=e529]: $191.99
+                  - button "Add" [ref=e530]
+          - link "🐹 Small Pet 🇺🇸 Fast Shipping Quick view 54\" 2-Story Weatherproof Stackable Elevated Wooden Rabbit Hutch with Enclosed Run and Pull-Out Trays 54\" 2-Story Weatherproof Stackable Elevated Wooden Rabbit Hutch with Enclosed Run and Pull-Out Trays $243.99 Add" [ref=e532] [cursor=pointer]:
+            - /url: /product/cj_2003465259402768386
+            - generic [ref=e533]:
+              - generic [ref=e534]:
+                - generic: 🐹 Small Pet
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e535]
+                - img "54\" 2-Story Weatherproof Stackable Elevated Wooden Rabbit Hutch with Enclosed Run and Pull-Out Trays" [ref=e536]
+              - generic [ref=e537]:
+                - heading "54\" 2-Story Weatherproof Stackable Elevated Wooden Rabbit Hutch with Enclosed Run and Pull-Out Trays" [level=3] [ref=e538]
+                - generic [ref=e539]:
+                  - generic [ref=e540]: $243.99
+                  - button "Add" [ref=e541]
+          - link "🐹 Small Pet 🇺🇸 Fast Shipping Quick view 54\" 2-Story Large Rabbit Hutch Bunny Cage Wooden Pet House Small Animal Habitat with Lockable Doors, No Leak Tray and waterproof Roof for Rabbits, Chickens, Ducks, Outdoor/Indoor Natural 54\" 2-Story Large Rabbit Hutch Bunny Cage Wooden Pet House Small Animal Habitat with Lockable Doors, No Leak Tray and waterproof Roof for Rabbits, Chickens, Ducks, Outdoor/Indoor Natural $257.99 Add" [ref=e543] [cursor=pointer]:
+            - /url: /product/cj_2003459502197481474
+            - generic [ref=e544]:
+              - generic [ref=e545]:
+                - generic: 🐹 Small Pet
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e546]
+                - img "54\" 2-Story Large Rabbit Hutch Bunny Cage Wooden Pet House Small Animal Habitat with Lockable Doors, No Leak Tray and waterproof Roof for Rabbits, Chickens, Ducks, Outdoor/Indoor Natural" [ref=e547]
+              - generic [ref=e548]:
+                - heading "54\" 2-Story Large Rabbit Hutch Bunny Cage Wooden Pet House Small Animal Habitat with Lockable Doors, No Leak Tray and waterproof Roof for Rabbits, Chickens, Ducks, Outdoor/Indoor Natural" [level=3] [ref=e549]
+                - generic [ref=e550]:
+                  - generic [ref=e551]: $257.99
+                  - button "Add" [ref=e552]
+          - link "🐹 Small Pet 🇺🇸 Fast Shipping Quick view 89\"L Outdoor Rabbit Hutch, Guinea Pig Cage Indoor Outdoor Wooden Bunny Hutch with Double Runs, Weatherproof Roof, Removable Tray, Ramps, Orange 89\"L Outdoor Rabbit Hutch, Guinea Pig Cage Indoor Outdoor Wooden Bunny Hutch with Double Runs, Weatherproof Roof, Removable Tray, Ramps, Orange $342.99 Add" [ref=e554] [cursor=pointer]:
+            - /url: /product/cj_2003465515483721729
+            - generic [ref=e555]:
+              - generic [ref=e556]:
+                - generic: 🐹 Small Pet
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e557]
+                - img "89\"L Outdoor Rabbit Hutch, Guinea Pig Cage Indoor Outdoor Wooden Bunny Hutch with Double Runs, Weatherproof Roof, Removable Tray, Ramps, Orange" [ref=e558]
+              - generic [ref=e559]:
+                - heading "89\"L Outdoor Rabbit Hutch, Guinea Pig Cage Indoor Outdoor Wooden Bunny Hutch with Double Runs, Weatherproof Roof, Removable Tray, Ramps, Orange" [level=3] [ref=e560]
+                - generic [ref=e561]:
+                  - generic [ref=e562]: $342.99
+                  - button "Add" [ref=e563]
+          - link "🐹 Small Pet 🇺🇸 Fast Shipping Quick view Wooden Large Rabbit Hutch with Double Runs, Removable Tray, Ramps, Roof, 78\" x 19\" x 34\", Outdoor Use, Gray Wooden Large Rabbit Hutch with Double Runs, Removable Tray, Ramps, Roof, 78\" x 19\" x 34\", Outdoor Use, Gray $229.99 Add" [ref=e565] [cursor=pointer]:
+            - /url: /product/cj_2003467583022018561
+            - generic [ref=e566]:
+              - generic [ref=e567]:
+                - generic: 🐹 Small Pet
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e568]
+                - img "Wooden Large Rabbit Hutch with Double Runs, Removable Tray, Ramps, Roof, 78\" x 19\" x 34\", Outdoor Use, Gray" [ref=e569]
+              - generic [ref=e570]:
+                - heading "Wooden Large Rabbit Hutch with Double Runs, Removable Tray, Ramps, Roof, 78\" x 19\" x 34\", Outdoor Use, Gray" [level=3] [ref=e571]
+                - generic [ref=e572]:
+                  - generic [ref=e573]: $229.99
+                  - button "Add" [ref=e574]
+          - link "🐹 Small Pet 🇺🇸 Fast Shipping Quick view 89\"L Outdoor Rabbit Hutch, Guinea Pig Cage Indoor Outdoor Wooden Bunny Hutch with Double Runs, Weatherproof Roof, Removable Tray, Ramps, Gray 89\"L Outdoor Rabbit Hutch, Guinea Pig Cage Indoor Outdoor Wooden Bunny Hutch with Double Runs, Weatherproof Roof, Removable Tray, Ramps, Gray $411.99 Add" [ref=e576] [cursor=pointer]:
+            - /url: /product/cj_2003465547326877697
+            - generic [ref=e577]:
+              - generic [ref=e578]:
+                - generic: 🐹 Small Pet
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e579]
+                - img "89\"L Outdoor Rabbit Hutch, Guinea Pig Cage Indoor Outdoor Wooden Bunny Hutch with Double Runs, Weatherproof Roof, Removable Tray, Ramps, Gray" [ref=e580]
+              - generic [ref=e581]:
+                - heading "89\"L Outdoor Rabbit Hutch, Guinea Pig Cage Indoor Outdoor Wooden Bunny Hutch with Double Runs, Weatherproof Roof, Removable Tray, Ramps, Gray" [level=3] [ref=e582]
+                - generic [ref=e583]:
+                  - generic [ref=e584]: $411.99
+                  - button "Add" [ref=e585]
+        - button "Next" [ref=e586] [cursor=pointer]: ›
+    - generic [ref=e587]:
+      - heading "🏆 Best Sellers" [level=2] [ref=e588]
+      - paragraph [ref=e589]: Our top 10 most loved products
+      - generic [ref=e590]:
+        - button "Previous" [disabled] [ref=e591]: ‹
+        - generic [ref=e592]:
+          - link "#1 🇺🇸 Fast Shipping Quick view Pet Playpen, Small Animal Cage Indoor Portable Metal Wire Yard Fence For Small Animals, Guinea Pigs, Pet Playpen, Small Animal Cage Indoor Portable Metal Wire Yard Fence For Small Animals, Guinea Pigs, $9.95 Add" [ref=e594] [cursor=pointer]:
+            - /url: /product/1991773771676569602
+            - generic [ref=e595]:
+              - generic [ref=e596]:
+                - generic: "#1"
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e597]
+                - img "Pet Playpen, Small Animal Cage Indoor Portable Metal Wire Yard Fence For Small Animals, Guinea Pigs," [ref=e598]
+              - generic [ref=e599]:
+                - heading "Pet Playpen, Small Animal Cage Indoor Portable Metal Wire Yard Fence For Small Animals, Guinea Pigs," [level=3] [ref=e600]
+                - generic [ref=e601]:
+                  - generic [ref=e602]: $9.95
+                  - button "Add" [ref=e603]
+          - link "#2 🇺🇸 Fast Shipping Quick view Small Kennel End Table With Two Open Sides And Lockable Door Small Kennel End Table With Two Open Sides And Lockable Door $9.95 Add" [ref=e605] [cursor=pointer]:
+            - /url: /product/1855894482974560256
+            - generic [ref=e606]:
+              - generic [ref=e607]:
+                - generic: "#2"
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e608]
+                - img "Small Kennel End Table With Two Open Sides And Lockable Door" [ref=e609]
+              - generic [ref=e610]:
+                - heading "Small Kennel End Table With Two Open Sides And Lockable Door" [level=3] [ref=e611]
+                - generic [ref=e612]:
+                  - generic [ref=e613]: $9.95
+                  - button "Add" [ref=e614]
+          - link "#3 🇺🇸 Fast Shipping Quick view 71 Inch Flower Cat Tree With Large Condo Removable Flower Cushion And Hammock Pink 71 Inch Flower Cat Tree With Large Condo Removable Flower Cushion And Hammock Pink $9.95 Add" [ref=e616] [cursor=pointer]:
+            - /url: /product/1993527282507468801
+            - generic [ref=e617]:
+              - generic [ref=e618]:
+                - generic: "#3"
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e619]
+                - img "71 Inch Flower Cat Tree With Large Condo Removable Flower Cushion And Hammock Pink" [ref=e620]
+              - generic [ref=e621]:
+                - heading "71 Inch Flower Cat Tree With Large Condo Removable Flower Cushion And Hammock Pink" [level=3] [ref=e622]
+                - generic [ref=e623]:
+                  - generic [ref=e624]: $9.95
+                  - button "Add" [ref=e625]
+          - link "#4 🇺🇸 Fast Shipping Quick view Cat Shelf for Wall Cat Shelf for Wall $9.95 Add" [ref=e627] [cursor=pointer]:
+            - /url: /product/1991250315872079874
+            - generic [ref=e628]:
+              - generic [ref=e629]:
+                - generic: "#4"
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e630]
+                - img "Cat Shelf for Wall" [ref=e631]
+              - generic [ref=e632]:
+                - heading "Cat Shelf for Wall" [level=3] [ref=e633]
+                - generic [ref=e634]:
+                  - generic [ref=e635]: $9.95
+                  - button "Add" [ref=e636]
+          - link "#5 🇺🇸 Fast Shipping Quick view Pink Cat Houses - Soft Bed Tent Cave For Indoor Cats With Removable Cushion Pad Pink Cat Houses - Soft Bed Tent Cave For Indoor Cats With Removable Cushion Pad $9.95 Add" [ref=e638] [cursor=pointer]:
+            - /url: /product/1807710310313644032
+            - generic [ref=e639]:
+              - generic [ref=e640]:
+                - generic: "#5"
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e641]
+                - img "Pink Cat Houses - Soft Bed Tent Cave For Indoor Cats With Removable Cushion Pad" [ref=e642]
+              - generic [ref=e643]:
+                - heading "Pink Cat Houses - Soft Bed Tent Cave For Indoor Cats With Removable Cushion Pad" [level=3] [ref=e644]
+                - generic [ref=e645]:
+                  - generic [ref=e646]: $9.95
+                  - button "Add" [ref=e647]
+          - link "#6 🇺🇸 Fast Shipping Quick view Dog Bike Trailer Dog Bike Trailer $9.95 Add" [ref=e649] [cursor=pointer]:
+            - /url: /product/1991180368349270017
+            - generic [ref=e650]:
+              - generic [ref=e651]:
+                - generic: "#6"
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e652]
+                - img "Dog Bike Trailer" [ref=e653]
+              - generic [ref=e654]:
+                - heading "Dog Bike Trailer" [level=3] [ref=e655]
+                - generic [ref=e656]:
+                  - generic [ref=e657]: $9.95
+                  - button "Add" [ref=e658]
+          - link "#7 🇺🇸 Fast Shipping Quick view L Dog House Outdoor Indoor for Small L Dog House Outdoor Indoor for Small $9.95 Add" [ref=e660] [cursor=pointer]:
+            - /url: /product/1991246685539065857
+            - generic [ref=e661]:
+              - generic [ref=e662]:
+                - generic: "#7"
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e663]
+                - img "L Dog House Outdoor Indoor for Small" [ref=e664]
+              - generic [ref=e665]:
+                - heading "L Dog House Outdoor Indoor for Small" [level=3] [ref=e666]
+                - generic [ref=e667]:
+                  - generic [ref=e668]: $9.95
+                  - button "Add" [ref=e669]
+          - link "#8 🇺🇸 Fast Shipping Quick view Cat Tree Tower, 65-inch Large Cat Tree, With Hammocks And Scratch Columns, A Comfortable And Fun Cat Cat Tree Tower, 65-inch Large Cat Tree, With Hammocks And Scratch Columns, A Comfortable And Fun Cat $9.95 Add" [ref=e671] [cursor=pointer]:
+            - /url: /product/1991795763679121410
+            - generic [ref=e672]:
+              - generic [ref=e673]:
+                - generic: "#8"
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e674]
+                - img "Cat Tree Tower, 65-inch Large Cat Tree, With Hammocks And Scratch Columns, A Comfortable And Fun Cat" [ref=e675]
+              - generic [ref=e676]:
+                - heading "Cat Tree Tower, 65-inch Large Cat Tree, With Hammocks And Scratch Columns, A Comfortable And Fun Cat" [level=3] [ref=e677]
+                - generic [ref=e678]:
+                  - generic [ref=e679]: $9.95
+                  - button "Add" [ref=e680]
+          - link "#9 🇺🇸 Fast Shipping Quick view Cat House Cat House $9.95 Add" [ref=e682] [cursor=pointer]:
+            - /url: /product/1991252195956264961
+            - generic [ref=e683]:
+              - generic [ref=e684]:
+                - generic: "#9"
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e685]
+                - img "Cat House" [ref=e686]
+              - generic [ref=e687]:
+                - heading "Cat House" [level=3] [ref=e688]
+                - generic [ref=e689]:
+                  - generic [ref=e690]: $9.95
+                  - button "Add" [ref=e691]
+          - link "#10 🇺🇸 Fast Shipping Quick view Dog Stroller for Large Medium Small Dogs up to 66 Lbs. 23.5\" in Body Length Dog Stroller for Large Medium Small Dogs up to 66 Lbs. 23.5\" in Body Length $9.95 Add" [ref=e693] [cursor=pointer]:
+            - /url: /product/1991244999902138370
+            - generic [ref=e694]:
+              - generic [ref=e695]:
+                - generic: "#10"
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e696]
+                - img "Dog Stroller for Large Medium Small Dogs up to 66 Lbs. 23.5\" in Body Length" [ref=e697]
+              - generic [ref=e698]:
+                - heading "Dog Stroller for Large Medium Small Dogs up to 66 Lbs. 23.5\" in Body Length" [level=3] [ref=e699]
+                - generic [ref=e700]:
+                  - generic [ref=e701]: $9.95
+                  - button "Add" [ref=e702]
+        - button "Next" [ref=e703] [cursor=pointer]: ›
+    - generic [ref=e704]:
+      - heading "🔥 Trending Now" [level=2] [ref=e705]
+      - paragraph [ref=e706]: Popular this week
+      - generic [ref=e707]:
+        - button "Previous" [disabled] [ref=e708]: ‹
+        - generic [ref=e709]:
+          - link "🔥 Trending 🇺🇸 Fast Shipping Quick view 3-Tier Cat Cage Enclosure Indoor Cat Cage Playpen With Hammock Toy Ball Ladder DIY Iron Wire Cat Hou 3-Tier Cat Cage Enclosure Indoor Cat Cage Playpen With Hammock Toy Ball Ladder DIY Iron Wire Cat Hou $9.95 Add" [ref=e711] [cursor=pointer]:
+            - /url: /product/1990604523990343681
+            - generic [ref=e712]:
+              - generic [ref=e713]:
+                - generic: 🔥 Trending
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e714]
+                - img "3-Tier Cat Cage Enclosure Indoor Cat Cage Playpen With Hammock Toy Ball Ladder DIY Iron Wire Cat Hou" [ref=e715]
+              - generic [ref=e716]:
+                - heading "3-Tier Cat Cage Enclosure Indoor Cat Cage Playpen With Hammock Toy Ball Ladder DIY Iron Wire Cat Hou" [level=3] [ref=e717]
+                - generic [ref=e718]:
+                  - generic [ref=e719]: $9.95
+                  - button "Add" [ref=e720]
+          - link "🔥 Trending 🇺🇸 Fast Shipping Quick view Pet Feeding Station Pet Dish Bowl Set with Storage Pet Feeding Station Pet Dish Bowl Set with Storage $9.95 Add" [ref=e722] [cursor=pointer]:
+            - /url: /product/1991249014612287489
+            - generic [ref=e723]:
+              - generic [ref=e724]:
+                - generic: 🔥 Trending
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e725]
+                - img "Pet Feeding Station Pet Dish Bowl Set with Storage" [ref=e726]
+              - generic [ref=e727]:
+                - heading "Pet Feeding Station Pet Dish Bowl Set with Storage" [level=3] [ref=e728]
+                - generic [ref=e729]:
+                  - generic [ref=e730]: $9.95
+                  - button "Add" [ref=e731]
+          - link "🔥 Trending 🇺🇸 Fast Shipping Quick view 2-story Cat House Outdoor 2-story Cat House Outdoor $9.95 Add" [ref=e733] [cursor=pointer]:
+            - /url: /product/1991250136800464897
+            - generic [ref=e734]:
+              - generic [ref=e735]:
+                - generic: 🔥 Trending
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e736]
+                - img "2-story Cat House Outdoor" [ref=e737]
+              - generic [ref=e738]:
+                - heading "2-story Cat House Outdoor" [level=3] [ref=e739]
+                - generic [ref=e740]:
+                  - generic [ref=e741]: $9.95
+                  - button "Add" [ref=e742]
+          - link "🔥 Trending 🇺🇸 Fast Shipping Quick view Floor-to-Ceiling Cat Tree Cat Climbing Tower with Sisal-Covered Scratching Posts Natural Cat Tree Ac Floor-to-Ceiling Cat Tree Cat Climbing Tower with Sisal-Covered Scratching Posts Natural Cat Tree Ac $9.95 Add" [ref=e744] [cursor=pointer]:
+            - /url: /product/1991250283638853633
+            - generic [ref=e745]:
+              - generic [ref=e746]:
+                - generic: 🔥 Trending
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e747]
+                - img "Floor-to-Ceiling Cat Tree Cat Climbing Tower with Sisal-Covered Scratching Posts Natural Cat Tree Ac" [ref=e748]
+              - generic [ref=e749]:
+                - heading "Floor-to-Ceiling Cat Tree Cat Climbing Tower with Sisal-Covered Scratching Posts Natural Cat Tree Ac" [level=3] [ref=e750]
+                - generic [ref=e751]:
+                  - generic [ref=e752]: $9.95
+                  - button "Add" [ref=e753]
+          - link "🔥 Trending 🇺🇸 Fast Shipping Quick view Wall Mounted Cat Shelves, Cat Wall Shelves And Perches With Jumping Boards, Cat Beds, Hammocks & Cat Wall Mounted Cat Shelves, Cat Wall Shelves And Perches With Jumping Boards, Cat Beds, Hammocks & Cat $9.95 Add" [ref=e755] [cursor=pointer]:
+            - /url: /product/1990621631432286209
+            - generic [ref=e756]:
+              - generic [ref=e757]:
+                - generic: 🔥 Trending
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e758]
+                - img "Wall Mounted Cat Shelves, Cat Wall Shelves And Perches With Jumping Boards, Cat Beds, Hammocks & Cat" [ref=e759]
+              - generic [ref=e760]:
+                - heading "Wall Mounted Cat Shelves, Cat Wall Shelves And Perches With Jumping Boards, Cat Beds, Hammocks & Cat" [level=3] [ref=e761]
+                - generic [ref=e762]:
+                  - generic [ref=e763]: $9.95
+                  - button "Add" [ref=e764]
+          - link "🔥 Trending 🇺🇸 Fast Shipping Quick view 33in Cat Tree, Multi-level Cat Tower With Cat Scratching Post With Curved Perch, Cozy Cat Condo, Pad 33in Cat Tree, Multi-level Cat Tower With Cat Scratching Post With Curved Perch, Cozy Cat Condo, Pad $9.95 Add" [ref=e766] [cursor=pointer]:
+            - /url: /product/1996066115422294017
+            - generic [ref=e767]:
+              - generic [ref=e768]:
+                - generic: 🔥 Trending
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e769]
+                - img "33in Cat Tree, Multi-level Cat Tower With Cat Scratching Post With Curved Perch, Cozy Cat Condo, Pad" [ref=e770]
+              - generic [ref=e771]:
+                - heading "33in Cat Tree, Multi-level Cat Tower With Cat Scratching Post With Curved Perch, Cozy Cat Condo, Pad" [level=3] [ref=e772]
+                - generic [ref=e773]:
+                  - generic [ref=e774]: $9.95
+                  - button "Add" [ref=e775]
+          - link "🔥 Trending 🇺🇸 Fast Shipping Quick view 2-in-1 Pet Grooming Gloves & Brushes For Cats And Dogs High-Efficiency Hair Removal & Massage Gloves 2-in-1 Pet Grooming Gloves & Brushes For Cats And Dogs High-Efficiency Hair Removal & Massage Gloves $9.95 Add" [ref=e777] [cursor=pointer]:
+            - /url: /product/1993155042347737090
+            - generic [ref=e778]:
+              - generic [ref=e779]:
+                - generic: 🔥 Trending
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e780]
+                - img "2-in-1 Pet Grooming Gloves & Brushes For Cats And Dogs High-Efficiency Hair Removal & Massage Gloves" [ref=e781]
+              - generic [ref=e782]:
+                - heading "2-in-1 Pet Grooming Gloves & Brushes For Cats And Dogs High-Efficiency Hair Removal & Massage Gloves" [level=3] [ref=e783]
+                - generic [ref=e784]:
+                  - generic [ref=e785]: $9.95
+                  - button "Add" [ref=e786]
+          - link "🔥 Trending 🇺🇸 Fast Shipping Quick view Pet Stroller 4-Wheels Dog Stroller Carrier 160lbs Weight Capacity Portable Pet Stroller 4-Wheels Dog Stroller Carrier 160lbs Weight Capacity Portable $9.95 Add" [ref=e788] [cursor=pointer]:
+            - /url: /product/1993006928471289857
+            - generic [ref=e789]:
+              - generic [ref=e790]:
+                - generic: 🔥 Trending
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e791]
+                - img "Pet Stroller 4-Wheels Dog Stroller Carrier 160lbs Weight Capacity Portable" [ref=e792]
+              - generic [ref=e793]:
+                - heading "Pet Stroller 4-Wheels Dog Stroller Carrier 160lbs Weight Capacity Portable" [level=3] [ref=e794]
+                - generic [ref=e795]:
+                  - generic [ref=e796]: $9.95
+                  - button "Add" [ref=e797]
+          - link "🔥 Trending 🇺🇸 Fast Shipping Quick view Elevated Dog Bed For Large Dogs Portable Raised Dog Cot With Teslin Mesh L Elevated Dog Bed For Large Dogs Portable Raised Dog Cot With Teslin Mesh L $9.95 Add" [ref=e799] [cursor=pointer]:
+            - /url: /product/1992955763424149505
+            - generic [ref=e800]:
+              - generic [ref=e801]:
+                - generic: 🔥 Trending
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e802]
+                - img "Elevated Dog Bed For Large Dogs Portable Raised Dog Cot With Teslin Mesh L" [ref=e803]
+              - generic [ref=e804]:
+                - heading "Elevated Dog Bed For Large Dogs Portable Raised Dog Cot With Teslin Mesh L" [level=3] [ref=e805]
+                - generic [ref=e806]:
+                  - generic [ref=e807]: $9.95
+                  - button "Add" [ref=e808]
+          - link "🔥 Trending 🇺🇸 Fast Shipping Quick view Cat Carrier With Wheels, Airline Approved Rolling Pet Carrier With Telescopic Handle And Shoulder St Cat Carrier With Wheels, Airline Approved Rolling Pet Carrier With Telescopic Handle And Shoulder St $9.95 Add" [ref=e810] [cursor=pointer]:
+            - /url: /product/1992919985088282626
+            - generic [ref=e811]:
+              - generic [ref=e812]:
+                - generic: 🔥 Trending
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e813]
+                - img "Cat Carrier With Wheels, Airline Approved Rolling Pet Carrier With Telescopic Handle And Shoulder St" [ref=e814]
+              - generic [ref=e815]:
+                - heading "Cat Carrier With Wheels, Airline Approved Rolling Pet Carrier With Telescopic Handle And Shoulder St" [level=3] [ref=e816]
+                - generic [ref=e817]:
+                  - generic [ref=e818]: $9.95
+                  - button "Add" [ref=e819]
+          - link "🔥 Trending 🇺🇸 Fast Shipping Quick view Puppy Dog Whelping Pen Box Adjustable Door Height For Medium Dogs 73x38x19.7 In Puppy Dog Whelping Pen Box Adjustable Door Height For Medium Dogs 73x38x19.7 In $9.95 Add" [ref=e821] [cursor=pointer]:
+            - /url: /product/1993013779396075521
+            - generic [ref=e822]:
+              - generic [ref=e823]:
+                - generic: 🔥 Trending
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e824]
+                - img "Puppy Dog Whelping Pen Box Adjustable Door Height For Medium Dogs 73x38x19.7 In" [ref=e825]
+              - generic [ref=e826]:
+                - heading "Puppy Dog Whelping Pen Box Adjustable Door Height For Medium Dogs 73x38x19.7 In" [level=3] [ref=e827]
+                - generic [ref=e828]:
+                  - generic [ref=e829]: $9.95
+                  - button "Add" [ref=e830]
+          - link "🔥 Trending 🇺🇸 Fast Shipping Quick view Puppy Toothbrush Clean Teeth Interactive Corn Toys Dog Toys Aggressive Chewers Dog Chew Toys Puppy Toothbrush Clean Teeth Interactive Corn Toys Dog Toys Aggressive Chewers Dog Chew Toys $9.95 Add" [ref=e832] [cursor=pointer]:
+            - /url: /product/1803614417658466304
+            - generic [ref=e833]:
+              - generic [ref=e834]:
+                - generic: 🔥 Trending
+                - generic: 🇺🇸 Fast Shipping
+                - button "Quick view" [ref=e835]
+                - img "Puppy Toothbrush Clean Teeth Interactive Corn Toys Dog Toys Aggressive Chewers Dog Chew Toys" [ref=e836]
+              - generic [ref=e837]:
+                - heading "Puppy Toothbrush Clean Teeth Interactive Corn Toys Dog Toys Aggressive Chewers Dog Chew Toys" [level=3] [ref=e838]
+                - generic [ref=e839]:
+                  - generic [ref=e840]: $9.95
+                  - button "Add" [ref=e841]
+        - button "Next" [ref=e842] [cursor=pointer]: ›
+    - text: 🔍
+  - complementary [ref=e843]:
+    - generic [ref=e844]:
+      - heading "Your cart" [level=3] [ref=e845]
+      - button "✕" [ref=e846] [cursor=pointer]
+    - generic [ref=e848]:
+      - generic [ref=e849]: 🛒
+      - paragraph [ref=e850]: Your cart is empty
+      - link "Start Shopping" [ref=e851] [cursor=pointer]:
+        - /url: /collections
+  - generic [ref=e853]:
+    - generic:
+      - generic: See anything you like?
+    - button "Chat with Pawsy AI" [ref=e854] [cursor=pointer]
+  - generic [ref=e856]:
+    - heading "Why pet parents love GetPawsy" [level=2] [ref=e857]
+    - paragraph [ref=e858]: We're on a mission to make pet parenting easier. Every product is hand-picked for quality, safety, and your pet's happiness.
+    - generic [ref=e859]:
+      - generic [ref=e860]:
+        - generic [ref=e861]: 🐾
+        - heading "Pet-First Quality" [level=3] [ref=e862]
+        - paragraph [ref=e863]: Only non-toxic, durable products make the cut
+      - generic [ref=e864]:
+        - generic [ref=e865]: 💚
+        - heading "Happiness Guaranteed" [level=3] [ref=e866]
+        - paragraph [ref=e867]: 30-day returns, no questions asked
+      - generic [ref=e868]:
+        - generic [ref=e869]: 🎁
+        - heading "Surprise & Delight" [level=3] [ref=e870]
+        - paragraph [ref=e871]: New curated picks added weekly
+  - generic [ref=e873]:
+    - heading "What Pet Parents Say" [level=2] [ref=e874]
+    - paragraph [ref=e875]: Real reviews from happy customers
+    - generic [ref=e876]:
+      - generic [ref=e877]:
+        - generic [ref=e878]: ★★★★★
+        - paragraph [ref=e879]: "\"My golden retriever absolutely loves his new bed! The quality is amazing and it arrived super fast. Will definitely order again!\""
+        - generic [ref=e880]:
+          - generic [ref=e881]: Sarah M.
+          - generic [ref=e882]: Golden Retriever Mom
+      - generic [ref=e883]:
+        - generic [ref=e884]: ★★★★★
+        - paragraph [ref=e885]: "\"Finally found toys that my cats can't destroy in 5 minutes! Great selection and the AI assistant helped me find exactly what I needed.\""
+        - generic [ref=e886]:
+          - generic [ref=e887]: Mike R.
+          - generic [ref=e888]: 2 Cats Dad
+      - generic [ref=e889]:
+        - generic [ref=e890]: ★★★★★
+        - paragraph [ref=e891]: "\"Love the premium quality of the grooming supplies. My pup looks like he just came from the salon! Fast shipping too.\""
+        - generic [ref=e892]:
+          - generic [ref=e893]: Emma T.
+          - generic [ref=e894]: Poodle Owner
+  - generic [ref=e896]:
+    - heading "Pawfect Moments" [level=2] [ref=e897]
+    - paragraph [ref=e898]: See happy pets enjoying their GetPawsy finds
+    - generic [ref=e899]:
+      - img "Happy golden retriever" [ref=e901]
+      - img "Playful cat" [ref=e903]
+      - img "Relaxing pup" [ref=e905]
+      - img "Pet playtime" [ref=e907]
+      - img "Cozy pet" [ref=e909]
+      - img "Happy pets" [ref=e911]
+  - generic [ref=e913]:
+    - generic [ref=e914]:
+      - strong [ref=e915]: We value your privacy
+      - paragraph [ref=e916]: We use cookies to enhance your browsing experience, serve personalized ads, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.
+    - generic [ref=e917]:
+      - button "Reject All" [ref=e918] [cursor=pointer]
+      - button "Customize" [ref=e919] [cursor=pointer]
+      - button "Accept All" [ref=e920] [cursor=pointer]
+  - generic [ref=e922]:
+    - generic [ref=e923]:
+      - heading "Join the Pawsy Pack" [level=3] [ref=e924]
+      - paragraph [ref=e925]: Get exclusive deals, new arrivals & pet care tips delivered to your inbox.
+    - generic [ref=e926]:
+      - textbox "Enter your email" [ref=e927]
+      - button "Subscribe" [ref=e928] [cursor=pointer]
+    - paragraph [ref=e929]: No spam, unsubscribe anytime. We respect your inbox.
+  - contentinfo [ref=e930]:
+    - generic [ref=e931]:
+      - generic [ref=e932]: Designed with love for pets
+      - generic [ref=e933]: ·
+      - generic [ref=e934]: Curated by Pawsy AI
+    - navigation [ref=e935]:
+      - link "Privacy" [ref=e936] [cursor=pointer]:
+        - /url: /legal/privacy
+      - link "Terms" [ref=e937] [cursor=pointer]:
+        - /url: /legal/terms
+      - link "Returns" [ref=e938] [cursor=pointer]:
+        - /url: /legal/returns
+      - link "Contact" [ref=e939] [cursor=pointer]:
+        - /url: /contact
+      - link "Preferences" [ref=e940] [cursor=pointer]:
+        - /url: "#"
+      - link "Cookies" [ref=e941] [cursor=pointer]:
+        - /url: "#"
+    - paragraph [ref=e942]: © 2025 GetPawsy
+    - text: "Build: undefined • Commit: unknown • Slug: undefined 709 products"
+  - generic [ref=e945]:
+    - button "Close" [ref=e946] [cursor=pointer]: ×
+    - generic [ref=e947]:
+      - generic [ref=e948]: 🐾
+      - heading "Tell Pawsy about your pet" [level=2] [ref=e949]
+      - paragraph [ref=e950]: So we can pick the best products for you (20 seconds)
+    - generic [ref=e952]:
+      - generic [ref=e953]: What type of pet do you have?
+      - generic [ref=e954]:
+        - button "🐕 Dog" [ref=e955] [cursor=pointer]:
+          - generic [ref=e956]: 🐕
+          - generic [ref=e957]: Dog
+        - button "🐈 Cat" [ref=e958] [cursor=pointer]:
+          - generic [ref=e959]: 🐈
+          - generic [ref=e960]: Cat
+    - button "Skip for now" [ref=e961] [cursor=pointer]
+```

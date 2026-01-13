@@ -1,0 +1,173 @@
+{
+  "generatedAt": "2026-01-09T21:09:26.380Z",
+  "summary": {
+    "totalProducts": 539,
+    "productsWithCjProductId": 526,
+    "productsMissingCjProductId": 13,
+    "totalVariants": 1303,
+    "variantsWithCjVariantId": 1089,
+    "variantsMissingCjVariantId": 0,
+    "fullyMapped": 526,
+    "partiallyMapped": 11,
+    "notMapped": 2
+  },
+  "missingProductMapping": [
+    {
+      "id": "DEE56FA4-F797-43E3-9BD8-0BC8EE993892",
+      "slug": "dog-toy-play-funny-pet-puppy-chew-squeaker-squeaky-plush-sound-toys-clean-teeth",
+      "title": "Dog Toy Play Funny Pet Puppy Chew Squeaker Squeaky Plush Sou",
+      "missingFields": [
+        "cjProductId"
+      ]
+    },
+    {
+      "id": "50434994-F7B3-4DAD-AE52-835EED9C3CC2",
+      "slug": "dog-raincoatwaterproof-dog-rain-jacket-with-safety-reflective-stripehooded-slick",
+      "title": "Dog Raincoat,Waterproof Dog Rain Jacket With Safety Reflecti",
+      "missingFields": [
+        "cjProductId"
+      ]
+    },
+    {
+      "id": "cj_50487F85-3F15-463B-BADA-6BB15CA1E172",
+      "slug": "portable-dog-sling-for-back-legs-hip-support-harness-to-help-lift-rear-for-canin",
+      "title": "Portable Dog Sling For Back Legs, Hip Support Harness To Hel",
+      "missingFields": [
+        "cjProductId"
+      ]
+    },
+    {
+      "id": "cj_F70C029C-846B-4996-A3FA-35AAA059655F",
+      "slug": "k9-baseball-cap",
+      "title": "K9 baseball cap",
+      "missingFields": [
+        "cjProductId"
+      ]
+    },
+    {
+      "id": "cj_4C343FD5-9CDD-4B01-BFE0-37EB973651EA",
+      "slug": "k9-six-finger-telescopic-eating-chicken-artifact",
+      "title": "K9 six-finger telescopic eating chicken artifact",
+      "missingFields": [
+        "cjProductId"
+      ]
+    },
+    {
+      "id": "cj_40C22753-2F3A-4860-80AB-EE621B563FDF",
+      "slug": "tactical-large-dog-vest-dog-patrol-equipment-pet-dog-clothes-k9-chest-strap",
+      "title": "Tactical large dog vest dog patrol equipment pet dog clothes",
+      "missingFields": [
+        "cjProductId"
+      ]
+    },
+    {
+      "id": "cj_988B0F88-EA4A-4996-8AF0-71AF82E4625C",
+      "slug": "medium-and-large-dogs-explosion-proof-rushing-k9-chest-straps-pet-supplies-tract",
+      "title": "Medium and large dogs explosion-proof rushing K9 chest strap",
+      "missingFields": [
+        "cjProductId"
+      ]
+    },
+    {
+      "id": "cj_C01F594B-2F91-4A34-AFEF-08B8A3EA27CA",
+      "slug": "explosion-proof-oxford-cloth-k9-chest-back-dog-strap",
+      "title": "Explosion-proof Oxford Cloth K9 Chest Back Dog Strap",
+      "missingFields": [
+        "cjProductId"
+      ]
+    },
+    {
+      "id": "cj_F3318ABD-22AB-44DB-BAF1-248E0A06E8AF",
+      "slug": "yorkshire-terrier-pup-imitation-dog",
+      "title": "Yorkshire terrier pup, imitation dog",
+      "missingFields": [
+        "cjProductId"
+      ]
+    },
+    {
+      "id": "cj_8C1AFDC0-8C84-44CF-A3E0-13B348FA319F",
+      "slug": "my-doggy-top-dog-diamond-embroidery",
+      "title": "My Doggy Top | Dog diamond embroidery",
+      "missingFields": [
+        "cjProductId"
+      ]
+    },
+    {
+      "id": "cj_7F1108E5-6138-47C3-93C8-D3F718D6D2F9",
+      "slug": "doggo-desktop-lamp",
+      "title": "Doggo Desktop Lamp",
+      "missingFields": [
+        "cjProductId"
+      ]
+    },
+    {
+      "id": "cj_6DBD3FB1-B8AF-4F55-A164-6612EC458E0D",
+      "slug": "feline-funny-cat-stick",
+      "title": "Feline Funny Cat Stick",
+      "missingFields": [
+        "cjProductId"
+      ]
+    },
+    {
+      "id": "cj_B660F8B7-F65D-4CF4-BF42-46078A59494F",
+      "slug": "feline-funny-cat-stick-1",
+      "title": "Feline Funny Cat Stick",
+      "missingFields": [
+        "cjProductId"
+      ]
+    }
+  ],
+  "missingVariantMapping": [],
+  "fullyMappedProducts": [
+    "1996064726721794050",
+    "1996111912750710786",
+    "1996100265990180865",
+    "1993916062320009218",
+    "1993885211980353537",
+    "1993882260050169858",
+    "1993155042347737090",
+    "1993006928471289857",
+    "1993039311227625473",
+    "1993007032305479682",
+    "1993006996016361474",
+    "1992955820617003009",
+    "1993007067604742145",
+    "1993006962566787073",
+    "1992488017443860482",
+    "1992473230051815426",
+    "1992483683275927554",
+    "1991786961910530050",
+    "1991750114320744449",
+    "1991773771676569602",
+    "1991244926845751298",
+    "1991249014612287489",
+    "1991248814751649793",
+    "1991061266784509954",
+    "1991089054435762178",
+    "1991245205112655874",
+    "1991249103250513921",
+    "1991247435350597634",
+    "1991244853858525186",
+    "1991245633315397633",
+    "1998322673329934337",
+    "1998322616719413249",
+    "1996839415274844162",
+    "1996846464031129601",
+    "1996830523526524930",
+    "1996836586367791105",
+    "1996870075989405697",
+    "1996493861430915074",
+    "1996128475470004225",
+    "1995425463360872450",
+    "1994702521858703361",
+    "1993164615406215169",
+    "1992943318395023361",
+    "1992942895668576257",
+    "1992943707889639426",
+    "1993013779396075521",
+    "1992943361081131009",
+    "1992955763424149505",
+    "1992943667305553921",
+    "1992943746850529281"
+  ]
+}

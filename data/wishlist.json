@@ -1,0 +1,35 @@
+[
+  {
+    "userId": "admin-001",
+    "items": [
+      {
+        "productId": "dog-toy-002",
+        "name": "Rope Tug Toy",
+        "price": 9.99,
+        "image": "/public/images/products/dog-toy-2.jpg",
+        "addedAt": "2025-12-01T10:00:00.000Z"
+      },
+      {
+        "productId": "cat-bed-001",
+        "name": "Cozy Cat Cave Bed",
+        "price": 45.99,
+        "image": "/public/images/products/cat-bed-1.jpg",
+        "addedAt": "2025-12-05T14:30:00.000Z"
+      },
+      {
+        "productId": "dog-groom-002",
+        "name": "De-shedding Brush",
+        "price": 19.99,
+        "image": "/public/images/products/grooming-2.jpg",
+        "addedAt": "2025-12-08T09:15:00.000Z"
+      },
+      {
+        "productId": "test-product-001",
+        "name": "Test Product",
+        "price": 19.99,
+        "image": "/public/images/placeholder.png",
+        "addedAt": "2025-12-10T08:03:15.202Z"
+      }
+    ]
+  }
+]

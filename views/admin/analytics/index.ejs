@@ -1,0 +1,48 @@
+<%- include('../../partials/admin_header') %>
+<%- include('../../partials/admin_sidebar') %>
+
+<div class="admin-container">
+  <div class="admin-content">
+    <h1>📊 Realtime Analytics Dashboard</h1>
+
+    <div class="card">
+      <h2>Live Users: <span id="liveUsers" style="color: #00c4a7; font-weight: 700;">0</span></h2>
+      <p style="color: #888; margin: 0;">Active users in the last 15 seconds</p>
+    </div>
+
+    <div class="card">
+      <h3>Live Sessions</h3>
+      <div style="max-height: 300px; overflow-y: auto; background: #1a1a2e; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 12px;">
+        <pre id="sessionDump" style="margin: 0; color: #00c4a7;">Loading...</pre>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Cart Activity</h3>
+      <div style="max-height: 300px; overflow-y: auto; background: #1a1a2e; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 12px;">
+        <pre id="cartDump" style="margin: 0; color: #ffd700;">Loading...</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const liveUsers = document.getElementById("liveUsers");
+const sessionDump = document.getElementById("sessionDump");
+const cartDump = document.getElementById("cartDump");
+
+const stream = new EventSource("/admin/analytics/stream");
+stream.onmessage = (e) => {
+  const data = JSON.parse(e.data);
+  liveUsers.innerText = data.activeUsers;
+  sessionDump.innerText = JSON.stringify(data.sessions, null, 2);
+  cartDump.innerText = JSON.stringify(data.carts, null, 2);
+};
+
+stream.onerror = () => {
+  liveUsers.innerText = "0";
+  sessionDump.innerText = "Stream disconnected";
+};
+</script>
+
+<%- include('../../partials/admin_footer') %>

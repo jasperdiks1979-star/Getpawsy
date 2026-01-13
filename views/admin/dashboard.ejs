@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title><%= typeof title !== 'undefined' ? title : 'Dashboard' %> | GetPawsy Admin</title>
+  <link rel="stylesheet" href="/css/admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #0f0f0f; color: #eaeaea; }
+    .admin-container { display: flex; min-height: 100vh; }
+    .admin-main { margin-left: 260px; padding: 0; flex: 1; background: #1a1a1a; min-height: 100vh; }
+    .admin-content { padding: 25px; }
+    .dashboard-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 20px; }
+    .dash-card { background: #222; padding: 25px; border-radius: 12px; text-align: center; transition: transform 0.2s; }
+    .dash-card:hover { transform: translateY(-3px); }
+    .dash-card h3 { font-size: 2.5rem; color: #00c4a7; margin-bottom: 10px; }
+    .dash-card p { color: #999; font-size: 1rem; }
+    .welcome-banner { background: linear-gradient(135deg, #00c4a7 0%, #00a88e 100%); padding: 30px; border-radius: 12px; margin-bottom: 30px; color: #000; }
+    .welcome-banner h1 { font-size: 1.8rem; margin-bottom: 10px; }
+    .welcome-banner p { opacity: 0.8; }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <%- include("../partials/admin/admin_sidebar", { active: typeof active !== 'undefined' ? active : 'dashboard' }) %>
+    
+    <main class="admin-main">
+      <%- include("../partials/admin/admin_header", { pageTitle: typeof pageTitle !== 'undefined' ? pageTitle : 'Dashboard' }) %>
+      
+      <div class="admin-content">
+        <div class="welcome-banner">
+          <h1>Welcome to GetPawsy Admin V15</h1>
+          <p>Manage your products, orders, and customers from one place.</p>
+        </div>
+        
+        <section class="dashboard-cards">
+          <div class="dash-card">
+            <h3><%= typeof stats !== 'undefined' ? stats.products : 0 %></h3>
+            <p>Total Products</p>
+          </div>
+          <div class="dash-card">
+            <h3><%= typeof stats !== 'undefined' ? stats.orders : 0 %></h3>
+            <p>Total Orders</p>
+          </div>
+          <div class="dash-card">
+            <h3><%= typeof stats !== 'undefined' ? stats.users : 0 %></h3>
+            <p>Registered Users</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

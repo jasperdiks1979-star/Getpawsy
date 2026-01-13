@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>My Wishlist | GetPawsy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/css/ai.css">
+  <script src="/js/pawsy.js" defer></script>
+  <script src="/js/ai.js" defer></script>
+  <style>
+    <%- include('../partials/account_styles') %>
+  </style>
+</head>
+<body class="pawsy-body">
+  <%- include("../partials/header") %>
+  
+  <main class="pawsy-main">
+    <div class="pawsy-container">
+      <div class="pawsy-account-page">
+        <h1 class="pawsy-page-title">My Wishlist</h1>
+
+        <div class="pawsy-account-layout">
+          <%- include('../partials/account_sidebar', { activePage: 'wishlist' }) %>
+
+          <div class="pawsy-account-content">
+            <div id="ai-wishlist-ideas"></div>
+            
+            <section class="pawsy-account-section">
+              <h2>Saved Items ❤️</h2>
+              
+              <% if (typeof wishlist !== 'undefined' && wishlist.length > 0) { %>
+                <div class="pawsy-wishlist-grid">
+                  <% wishlist.forEach(item => { %>
+                    <div class="pawsy-wishlist-card" id="wishlist-item-<%= item.productId %>">
+                      <div class="pawsy-wishlist-image">
+                        <img src="<%= item.image || '/images/placeholder.png' %>" alt="<%= item.name %>">
+                        <form action="/account/wishlist/remove/<%= item.productId %>" method="POST" style="display: inline;">
+                          <button type="submit" class="pawsy-wishlist-remove" title="Remove from wishlist">✕</button>
+                        </form>
+                      </div>
+                      <div class="pawsy-wishlist-info">
+                        <h3><%= item.name %></h3>
+                        <p class="pawsy-wishlist-price">$<%= (item.price || 0).toFixed(2) %></p>
+                        <p style="font-size: 0.8rem; color: var(--pawsy-gray-500);">Added <%= new Date(item.addedAt).toLocaleDateString() %></p>
+                        <div class="pawsy-wishlist-actions">
+                          <form action="/cart/add/<%= item.productId %>" method="POST" style="display: inline;">
+                            <button type="submit" class="pawsy-btn pawsy-btn-primary pawsy-btn-sm">Add to Cart</button>
+                          </form>
+                          <a href="/product/<%= item.productId %>" class="pawsy-btn pawsy-btn-outline pawsy-btn-sm">View</a>
+                        </div>
+                      </div>
+                    </div>
+                  <% }) %>
+                </div>
+              <% } else { %>
+                <div class="pawsy-empty-state">
+                  <div class="pawsy-empty-icon">❤️</div>
+                  <h3>Your wishlist is empty</h3>
+                  <p>Save items you love for later! Click the heart icon on any product to add it here.</p>
+                  <a href="/collections" class="pawsy-btn pawsy-btn-primary">Browse Products</a>
+                </div>
+              <% } %>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include("../partials/footer") %>
+  <%- include("../partials/pawsy_widget") %>
+</body>
+</html>

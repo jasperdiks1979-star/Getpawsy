@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2025-12-28T12:25:31.132Z",
+  "rawReport": "test-results/results-raw.json",
+  "tests": [
+    {
+      "project": "Desktop Chromium",
+      "title": "1) /small-pets shows products (no \"No products found\")",
+      "file": "getpawsy.visual.e2e.spec.js",
+      "status": "passed",
+      "durationMs": 21875,
+      "error": null
+    },
+    {
+      "project": "Desktop Chromium",
+      "title": "2) PDP shows main image (not \"No image\")",
+      "file": "getpawsy.visual.e2e.spec.js",
+      "status": "passed",
+      "durationMs": 19183,
+      "error": null
+    },
+    {
+      "project": "Desktop Chromium",
+      "title": "3) Cart system is present and functional",
+      "file": "getpawsy.visual.e2e.spec.js",
+      "status": "passed",
+      "durationMs": 16001,
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+<aside class="pawsy-account-sidebar">
+  <nav class="pawsy-account-nav">
+    <a href="/account" class="pawsy-account-link <%= activePage === 'dashboard' ? 'active' : '' %>">
+      <span class="pawsy-account-icon">📊</span>
+      Dashboard
+    </a>
+    <a href="/account/orders" class="pawsy-account-link <%= activePage === 'orders' ? 'active' : '' %>">
+      <span class="pawsy-account-icon">📦</span>
+      Orders
+    </a>
+    <a href="/account/addresses" class="pawsy-account-link <%= activePage === 'addresses' ? 'active' : '' %>">
+      <span class="pawsy-account-icon">🏠</span>
+      Addresses
+    </a>
+    <a href="/account/wishlist" class="pawsy-account-link <%= activePage === 'wishlist' ? 'active' : '' %>">
+      <span class="pawsy-account-icon">❤️</span>
+      Wishlist
+    </a>
+    <a href="/account/rewards" class="pawsy-account-link <%= activePage === 'rewards' ? 'active' : '' %>">
+      <span class="pawsy-account-icon">🏆</span>
+      Loyalty Rewards
+    </a>
+    <a href="/account/settings" class="pawsy-account-link <%= activePage === 'settings' ? 'active' : '' %>">
+      <span class="pawsy-account-icon">⚙️</span>
+      Settings
+    </a>
+    <a href="/logout" class="pawsy-account-link pawsy-logout">
+      <span class="pawsy-account-icon">🚪</span>
+      Logout
+    </a>
+  </nav>
+</aside>

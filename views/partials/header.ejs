@@ -1,0 +1,145 @@
+<header class="pawsy-header">
+  <div class="pawsy-header-container">
+    <a href="/" class="pawsy-logo">
+      <span class="pawsy-logo-icon">🐾</span>
+      <span class="pawsy-logo-text">GetPawsy</span>
+    </a>
+
+    <nav class="pawsy-nav" id="pawsyNav">
+      <div class="pawsy-nav-group">
+        <a href="/" class="pawsy-nav-link">Home</a>
+        
+        <div class="pawsy-dropdown">
+          <a href="/collection/dogs" class="pawsy-nav-link pawsy-dropdown-trigger">
+            Dogs <span class="pawsy-dropdown-arrow">▼</span>
+          </a>
+          <div class="pawsy-mega-menu">
+            <div class="pawsy-mega-section">
+              <h4>Shop by Category</h4>
+              <a href="/collection/dogs?filter=beds">Beds & Blankets</a>
+              <a href="/collection/dogs?filter=toys">Toys & Games</a>
+              <a href="/collection/dogs?filter=grooming">Grooming</a>
+              <a href="/collection/dogs?filter=harnesses">Harnesses & Leashes</a>
+              <a href="/collection/dogs?filter=accessories">Accessories</a>
+            </div>
+            <div class="pawsy-mega-section">
+              <h4>Popular</h4>
+              <a href="/collection/dogs?sort=bestselling">Best Sellers</a>
+              <a href="/collection/dogs?sort=newest">New Arrivals</a>
+              <a href="/collection/dogs?filter=sale">On Sale</a>
+            </div>
+            <div class="pawsy-mega-promo">
+              <span style="font-size: 40px;">🐕</span>
+              <p>Free shipping on orders $50+</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pawsy-dropdown">
+          <a href="/collection/cats" class="pawsy-nav-link pawsy-dropdown-trigger">
+            Cats <span class="pawsy-dropdown-arrow">▼</span>
+          </a>
+          <div class="pawsy-mega-menu">
+            <div class="pawsy-mega-section">
+              <h4>Shop by Category</h4>
+              <a href="/collection/cats?filter=beds">Beds & Hideaways</a>
+              <a href="/collection/cats?filter=toys">Toys & Teasers</a>
+              <a href="/collection/cats?filter=scratchers">Scratchers & Trees</a>
+              <a href="/collection/cats?filter=grooming">Grooming</a>
+              <a href="/collection/cats?filter=accessories">Accessories</a>
+            </div>
+            <div class="pawsy-mega-section">
+              <h4>Popular</h4>
+              <a href="/collection/cats?sort=bestselling">Best Sellers</a>
+              <a href="/collection/cats?sort=newest">New Arrivals</a>
+              <a href="/collection/cats?filter=sale">On Sale</a>
+            </div>
+            <div class="pawsy-mega-promo">
+              <span style="font-size: 40px;">🐈</span>
+              <p>Quality guaranteed</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pawsy-dropdown">
+          <a href="/collection/small-pets" class="pawsy-nav-link pawsy-dropdown-trigger">
+            Small Pets <span class="pawsy-dropdown-arrow">▼</span>
+          </a>
+          <div class="pawsy-mega-menu">
+            <div class="pawsy-mega-section">
+              <h4>Shop by Category</h4>
+              <a href="/collection/small-pets/beds">Beds & Hideaways</a>
+              <a href="/collection/small-pets/toys">Toys & Games</a>
+              <a href="/collection/small-pets/cages">Cages & Habitats</a>
+              <a href="/collection/small-pets/food">Food & Treats</a>
+              <a href="/collection/small-pets/accessories">Accessories</a>
+            </div>
+            <div class="pawsy-mega-section">
+              <h4>By Pet Type</h4>
+              <a href="/collection/small-pets?filter=rabbits">Rabbits</a>
+              <a href="/collection/small-pets?filter=hamsters">Hamsters</a>
+              <a href="/collection/small-pets?filter=birds">Birds</a>
+              <a href="/collection/small-pets?filter=fish">Fish & Aquatics</a>
+            </div>
+            <div class="pawsy-mega-promo">
+              <span style="font-size: 40px;">🐰</span>
+              <p>Everything for small friends</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="/collection/toys" class="pawsy-nav-link">Toys</a>
+        <a href="/collection/feeding" class="pawsy-nav-link">Feeding</a>
+        <a href="/collection/accessories" class="pawsy-nav-link">Accessories</a>
+      </div>
+
+      <div class="pawsy-nav-actions">
+        <a href="/search" class="pawsy-nav-icon" title="Search">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.35-4.35"/>
+          </svg>
+        </a>
+        <a href="/account" class="pawsy-nav-icon" title="Account">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </a>
+        <button class="pawsy-cart-btn" id="pawsyCartBtn" title="Cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="pawsy-cart-count cart-badge" id="pawsyCartCount" data-cart-count>0</span>
+        </button>
+      </div>
+    </nav>
+
+    <button class="pawsy-mobile-toggle" id="pawsyMobileToggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<div class="pawsy-mini-cart" id="pawsyMiniCart">
+  <div class="pawsy-mini-cart-header">
+    <h3>Your Cart</h3>
+    <button class="pawsy-mini-cart-close" id="pawsyMiniCartClose">&times;</button>
+  </div>
+  <div class="pawsy-mini-cart-items" id="pawsyMiniCartItems">
+    <p class="pawsy-mini-cart-empty">Your cart is empty</p>
+  </div>
+  <div class="pawsy-mini-cart-footer">
+    <div class="pawsy-mini-cart-total">
+      <span>Subtotal:</span>
+      <span id="pawsyMiniCartTotal">$0.00</span>
+    </div>
+    <a href="/cart" class="pawsy-btn pawsy-btn-secondary">View Cart</a>
+    <button type="button" class="pawsy-btn pawsy-btn-primary" onclick="if(typeof startCheckoutUnified==='function'){startCheckoutUnified();}else{window.location.href='/checkout';}">Checkout</button>
+  </div>
+</div>
+<div class="pawsy-mini-cart-overlay" id="pawsyMiniCartOverlay"></div>

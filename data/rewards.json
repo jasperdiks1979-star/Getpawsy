@@ -1,0 +1,64 @@
+[
+  {
+    "userId": "admin-001",
+    "points": 815,
+    "tier": "Silver",
+    "lifetimeSpend": 179.91,
+    "lifetimePoints": 750,
+    "joinedAt": "2025-10-01T00:00:00.000Z",
+    "lastEarned": "2025-12-08T14:45:00.000Z",
+    "history": [
+      {
+        "type": "earn",
+        "points": 50,
+        "reason": "Product review bonus",
+        "date": "2025-12-10T10:10:41.101Z"
+      },
+      {
+        "type": "earn",
+        "points": 15,
+        "reason": "Daily bonus (1 day streak)",
+        "date": "2025-12-10T10:09:32.414Z"
+      },
+      {
+        "type": "earn",
+        "points": 112,
+        "reason": "Order ORD-001",
+        "date": "2025-11-15T10:30:00.000Z"
+      },
+      {
+        "type": "earn",
+        "points": 27,
+        "reason": "Order ORD-002",
+        "date": "2025-12-01T08:15:00.000Z"
+      },
+      {
+        "type": "earn",
+        "points": 41,
+        "reason": "Order ORD-003",
+        "date": "2025-12-08T14:45:00.000Z"
+      },
+      {
+        "type": "earn",
+        "points": 50,
+        "reason": "Product Review",
+        "date": "2025-11-20T12:00:00.000Z"
+      },
+      {
+        "type": "earn",
+        "points": 100,
+        "reason": "Welcome Bonus",
+        "date": "2025-10-01T00:00:00.000Z"
+      },
+      {
+        "type": "earn",
+        "points": 420,
+        "reason": "Referral Bonus",
+        "date": "2025-11-01T00:00:00.000Z"
+      }
+    ],
+    "redeemedRewards": [],
+    "streak": 1,
+    "dailyBonus": "2025-12-10T10:09:32.414Z"
+  }
+]

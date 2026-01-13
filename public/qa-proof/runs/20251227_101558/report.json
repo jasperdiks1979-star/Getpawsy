@@ -1,0 +1,51 @@
+{
+  "runId": "20251227_101558",
+  "mode": "full",
+  "baseUrl": "https://ad4651eb-04dc-4511-8d1e-8ab38af776d9-00-14rjwa0yfp52y.janeway.replit.dev",
+  "startedAt": "2025-12-27T10:15:58.133Z",
+  "durationMs": 4848,
+  "pass": true,
+  "dataChecks": {
+    "pass": true,
+    "errors": [],
+    "totalProducts": 480,
+    "missingImagesCount": 0,
+    "categoryCounts": {
+      "dogs": 190,
+      "cats": 136,
+      "smallPets": 72,
+      "other": 0
+    },
+    "smallPetsContaminationCount": 0
+  },
+  "uiChecks": {
+    "pass": true,
+    "errors": [],
+    "routeChecks": [
+      {
+        "route": "/",
+        "status": "pass"
+      },
+      {
+        "route": "/dogs",
+        "status": "pass"
+      },
+      {
+        "route": "/cats",
+        "status": "pass"
+      },
+      {
+        "route": "/small-pets",
+        "status": "pass"
+      },
+      {
+        "route": "/product/wooden-outdoor-cat-house-wild-cat-shelter-kitten-tree",
+        "status": "pass"
+      },
+      {
+        "route": "/js/cart-*.js",
+        "status": "pass"
+      }
+    ]
+  }
+}

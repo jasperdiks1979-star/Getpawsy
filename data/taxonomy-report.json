@@ -1,0 +1,729 @@
+{
+  "timestamp": "2026-01-08T23:43:26.775Z",
+  "stats": {
+    "total": 539,
+    "checked": 539,
+    "needsFix": 539,
+    "fixed": 0,
+    "byPetType": {
+      "dog": 246,
+      "cat": 193,
+      "small-pet": 100,
+      "other": 0
+    },
+    "byMainCategory": {
+      "dogs": 246,
+      "cats": 193,
+      "small-pets": 100
+    }
+  },
+  "changes": [
+    {
+      "id": "1996064726721794050",
+      "title": "Stylish And Spacious Foldable Soft Pet C",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1996111912750710786",
+      "title": "Dog Bed - Warm Plush Pet Bed With Remova",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1996100265990180865",
+      "title": "Outdoor Cat Play Tent With Tunnel, Porta",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1993916062320009218",
+      "title": "Gardner Small Dog Outdoor Waterproof Por",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1993885211980353537",
+      "title": "Pet Tear Stain Removal Powder - Natural ",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1993882260050169858",
+      "title": "Pet Dental Powder - Freshens Breath, Pro",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1993155042347737090",
+      "title": "2-in-1 Pet Grooming Gloves & Brushes For",
+      "changes": [
+        "subcategorySlug: accessories -> grooming"
+      ]
+    },
+    {
+      "id": "1993006928471289857",
+      "title": "Pet Stroller 4-Wheels Dog Stroller Carri",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1993039311227625473",
+      "title": "Wood Pet Stairs/Pet Steps, 2-in-1 Foldab",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1993007032305479682",
+      "title": "Pet Stroller Foldable 4 Wheels Travel Do",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1993006996016361474",
+      "title": "Pet Stroller Foldable 4 Wheels Dog Strol",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1992955820617003009",
+      "title": "Elevated Lounge Pet Bed Foldable Bunk Do",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1993007067604742145",
+      "title": "Pet Stroller, 4 Wheels Dog Stroller Rota",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1993006962566787073",
+      "title": "Pet Stroller Foldable 3 Wheels Dog Strol",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1992488017443860482",
+      "title": "Cat Walking Rope, Vest Style Dog Cartoon",
+      "changes": [
+        "subcategorySlug: accessories -> collars-leashes"
+      ]
+    },
+    {
+      "id": "1992473230051815426",
+      "title": "Dog Toys, Sound-sounding, Food-hiding, E",
+      "changes": [
+        "subcategorySlug: accessories -> toys"
+      ]
+    },
+    {
+      "id": "1992483683275927554",
+      "title": "Pet Colorful Teething Toy Balls, Teethin",
+      "changes": [
+        "subcategorySlug: accessories -> toys"
+      ]
+    },
+    {
+      "id": "1991786961910530050",
+      "title": "Pet Stroller For Dogs And Cats - Foldabl",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1991750114320744449",
+      "title": "Cross-border Dog Bowl, Double-ear Handle",
+      "changes": [
+        "subcategorySlug: accessories -> feeding"
+      ]
+    },
+    {
+      "id": "1991773771676569602",
+      "title": "Pet Playpen, Small Animal Cage Indoor Po",
+      "changes": [
+        "petType: small_pet -> small-pet",
+        "subcategorySlug: accessories -> guinea-pigs"
+      ]
+    },
+    {
+      "id": "1991244926845751298",
+      "title": "2-in-1 Pet Bike Trailer for Small Dogs",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991249014612287489",
+      "title": "Pet Feeding Station Pet Dish Bowl Set wi",
+      "changes": [
+        "subcategorySlug: accessories -> feeding"
+      ]
+    },
+    {
+      "id": "1991248814751649793",
+      "title": "Raised Pet Food Elevated Feeder with 2 S",
+      "changes": [
+        "subcategorySlug: accessories -> feeding"
+      ]
+    },
+    {
+      "id": "1991061266784509954",
+      "title": "Dog Chew Toy With Rubber Tire & Tug Of W",
+      "changes": [
+        "subcategorySlug: accessories -> toys"
+      ]
+    },
+    {
+      "id": "1991089054435762178",
+      "title": "Pet Stroller, 4 Wheels Dog Stroller Rota",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1991245205112655874",
+      "title": "Foldable Pet Swimming Pool",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991249103250513921",
+      "title": "Pet Feeding Station",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991247435350597634",
+      "title": "Pet Sofa Dog Sofa for Small Dogs with St",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991244853858525186",
+      "title": "Pet Stroller Foldable Dog Cat Travel Car",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1991245633315397633",
+      "title": "44'' Strong Pet Dog Crate Mobility Cage ",
+      "changes": [
+        "petType: dog -> small-pet",
+        "mainCategorySlug: dogs -> small-pets",
+        "subcategorySlug: accessories -> birds"
+      ]
+    },
+    {
+      "id": "1998322673329934337",
+      "title": "Tiara-Shaped Convertible Dog Bed And Sof",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1998322616719413249",
+      "title": "Large Dog Bed 67x43x8 Inches - Super Sof",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1996839415274844162",
+      "title": "Dog Ramp",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1996846464031129601",
+      "title": "The New Dual-Color Embossed Pet Leash Se",
+      "changes": [
+        "subcategorySlug: accessories -> collars-leashes"
+      ]
+    },
+    {
+      "id": "1996830523526524930",
+      "title": "UV Printing Camouflage Embossed Pet Leas",
+      "changes": [
+        "subcategorySlug: accessories -> collars-leashes"
+      ]
+    },
+    {
+      "id": "1996836586367791105",
+      "title": "2-in-1 Dog Crate End Table - Rustic Brow",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1996870075989405697",
+      "title": "Honeycomb Embossed Dual-Color Pet Leash ",
+      "changes": [
+        "subcategorySlug: accessories -> collars-leashes"
+      ]
+    },
+    {
+      "id": "1996493861430915074",
+      "title": "Adjustable Bandana Leather Pet Collar Tr",
+      "changes": [
+        "subcategorySlug: accessories -> collars-leashes"
+      ]
+    },
+    {
+      "id": "1996128475470004225",
+      "title": "Premium Plush Dog Bed With Removable Was",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1995425463360872450",
+      "title": "Dog Playpen Indoor Fence Height Metal Ex",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1994702521858703361",
+      "title": "47.2 Mobile Dog Crate With Flip-Top Feed",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1993164615406215169",
+      "title": "Interactive Dog Treat Ball, A Chewing To",
+      "changes": [
+        "subcategorySlug: accessories -> toys"
+      ]
+    },
+    {
+      "id": "1992943318395023361",
+      "title": "Dog Ramp, Folding Pet Ramp For Bed, Adju",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1992942895668576257",
+      "title": "Dog Dryer, 2800W/4.3HP Dog Blow Dryer, P",
+      "changes": [
+        "petType: dog -> small-pet",
+        "mainCategorySlug: dogs -> small-pets",
+        "subcategorySlug: accessories -> rabbits"
+      ]
+    },
+    {
+      "id": "1992943707889639426",
+      "title": "Dog Whelping Box With Window Transparent",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1993013779396075521",
+      "title": "Puppy Dog Whelping Pen Box Adjustable Do",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1992943361081131009",
+      "title": "Dog Ramp, Folding Pet Ramp For Bed, Adju",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1992955763424149505",
+      "title": "Elevated Dog Bed For Large Dogs Portable",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1992943667305553921",
+      "title": "Dog Whelping Box With Window Transparent",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1992943746850529281",
+      "title": "Dog Whelping Box With Window Transparent",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1992955595612528642",
+      "title": "Elevated Dog Bed For Large Dog Portable ",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1992942857831084034",
+      "title": "Dog Dryer, 2800W/4.3HP Dog Blow Dryer, P",
+      "changes": [
+        "petType: dog -> small-pet",
+        "mainCategorySlug: dogs -> small-pets",
+        "subcategorySlug: accessories -> rabbits"
+      ]
+    },
+    {
+      "id": "1991492625343873025",
+      "title": "Scooby-Doo Durable Squeaky Set Of Dog Ba",
+      "changes": [
+        "subcategorySlug: accessories -> toys"
+      ]
+    },
+    {
+      "id": "1991407459189784578",
+      "title": "Dog Car Seat, Dog Booster Seat For Car W",
+      "changes": [
+        "subcategorySlug: accessories -> collars-leashes"
+      ]
+    },
+    {
+      "id": "1991247020261302274",
+      "title": "Automatic Dog Ball Launcher with 26-79 F",
+      "changes": [
+        "subcategorySlug: accessories -> toys"
+      ]
+    },
+    {
+      "id": "1990996021906956290",
+      "title": "Stainless Steel Dog Washing Station, 127",
+      "changes": [
+        "subcategorySlug: accessories -> grooming"
+      ]
+    },
+    {
+      "id": "1991180368349270017",
+      "title": "Dog Bike Trailer",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991247361706332161",
+      "title": "Dog Sofa Couch Bed with Washable Cushion",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991245237379436545",
+      "title": "Outdoor Dog Kennel Galvanized Fence with",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1991248488560627714",
+      "title": "6 Piece Dog Agility Set with Adjustable ",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991248375670935554",
+      "title": "Dog Car Ramp, 75\" x 20\" Extra Long and W",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991245594123821058",
+      "title": "Dog Kennel Heavy Duty Playpen with Galva",
+      "changes": [
+        "subcategorySlug: accessories -> feeding"
+      ]
+    },
+    {
+      "id": "1991245035423698945",
+      "title": "2-in-1 Dog Bike Trailer Pet Stroller Car",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1991249060212760577",
+      "title": "Dog Food Storage Cabinet with Bowls & Do",
+      "changes": [
+        "subcategorySlug: accessories -> feeding"
+      ]
+    },
+    {
+      "id": "1991247777249288193",
+      "title": "Elevated Dog Ramp for Bed",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991245302634418177",
+      "title": "Outdoor Dog Kennel with Roof",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1991248004710588418",
+      "title": "Wooden Dog Ramp with Removable Guardrail",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991245895694278658",
+      "title": "Dog Crate",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1991245703133782017",
+      "title": "Outdoor Dog Kennel with Rotating Bowl Ho",
+      "changes": [
+        "subcategorySlug: accessories -> feeding"
+      ]
+    },
+    {
+      "id": "1991245470326886401",
+      "title": "Dog House Outdoor with Canopy",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991248973839458305",
+      "title": "Large Elevated Dog Bowls with Storage Ca",
+      "changes": [
+        "subcategorySlug: accessories -> feeding"
+      ]
+    },
+    {
+      "id": "1991246085775941634",
+      "title": "Dog House for Medium and Small Dogs",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1990986368192012289",
+      "title": "Stainless Steel Dog Washing Station, 127",
+      "changes": [
+        "subcategorySlug: accessories -> collars-leashes"
+      ]
+    },
+    {
+      "id": "1991247477595627521",
+      "title": "Elevated Dog Bed with Removable Canopy",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991180407968665602",
+      "title": "Dog Bike Trailer 2-In-1 Pet Stroller wit",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1991248909085741057",
+      "title": "Elevated Dog Bowls with Storage",
+      "changes": [
+        "subcategorySlug: accessories -> feeding"
+      ]
+    },
+    {
+      "id": "1991245809144815618",
+      "title": "34'' 2-in-1 Dog Kennel",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1991246649321250817",
+      "title": "Outdoor Dog Kennel with Two-Room Design",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1991246557196881922",
+      "title": "Outdoor Dog Bed with Canopy",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991245737925533698",
+      "title": "Dog Playpen with Door & Removable Cover ",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991246152146608129",
+      "title": "Cabin-Style Dog House for Large Dogs wit",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991251206486396930",
+      "title": "Dog Crate End Table",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1991244999902138370",
+      "title": "Dog Stroller for Large Medium Small Dogs",
+      "changes": [
+        "subcategorySlug: accessories -> travel-carriers"
+      ]
+    },
+    {
+      "id": "1991245102712918018",
+      "title": "Dog Bed",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991247975203659778",
+      "title": "Dog Ramp with Removable Guardrails",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991247398553968642",
+      "title": "Raised Dog Sofa",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991245383584485378",
+      "title": "Dog House Outdoor",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1991246685539065857",
+      "title": "L Dog House Outdoor Indoor for Small",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    },
+    {
+      "id": "1998279478282907650",
+      "title": "Cat Toys - Interactive Toy For Cat , Kit",
+      "changes": [
+        "subcategorySlug: accessories -> toys"
+      ]
+    },
+    {
+      "id": "1996395851484209154",
+      "title": "Interactive Rolling Cat Ball",
+      "changes": [
+        "subcategorySlug: accessories -> toys"
+      ]
+    },
+    {
+      "id": "1996402356062965762",
+      "title": "Interactive Rolling Cat Ball",
+      "changes": [
+        "subcategorySlug: accessories -> toys"
+      ]
+    },
+    {
+      "id": "1996404100507553794",
+      "title": "Interactive Rolling Cat Ball",
+      "changes": [
+        "subcategorySlug: accessories -> toys"
+      ]
+    },
+    {
+      "id": "1996097390082297857",
+      "title": "33in Cat Tree, Multi-level Cat Tower Wit",
+      "changes": [
+        "subcategorySlug: accessories -> scratchers"
+      ]
+    },
+    {
+      "id": "1996058560674942978",
+      "title": "Multi-level Natural Pear Wood Cat Tree, ",
+      "changes": [
+        "subcategorySlug: accessories -> toys"
+      ]
+    },
+    {
+      "id": "1996066115422294017",
+      "title": "33in Cat Tree, Multi-level Cat Tower Wit",
+      "changes": [
+        "subcategorySlug: accessories -> scratchers"
+      ]
+    },
+    {
+      "id": "1996062625648119810",
+      "title": "27.5in Cat Tree, Multi-level Cat Tower W",
+      "changes": [
+        "subcategorySlug: accessories -> scratchers"
+      ]
+    },
+    {
+      "id": "1996092785891045377",
+      "title": "27.5in Cat Tree, Multi-level Cat Tower W",
+      "changes": [
+        "subcategorySlug: accessories -> scratchers"
+      ]
+    },
+    {
+      "id": "1996088933869965313",
+      "title": "33in Cat Tree, Multi-level Cat Tower Wit",
+      "changes": [
+        "subcategorySlug: accessories -> scratchers"
+      ]
+    },
+    {
+      "id": "1993889907646898178",
+      "title": "Gardner Pets Large Cat Tree For Medium T",
+      "changes": [
+        "subcategorySlug: accessories -> scratchers"
+      ]
+    },
+    {
+      "id": "1993528254033338369",
+      "title": "71 Inch Flower Cat Tree With Large Condo",
+      "changes": [
+        "subcategorySlug: accessories -> beds-furniture"
+      ]
+    }
+  ]
+}

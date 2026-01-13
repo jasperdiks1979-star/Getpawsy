@@ -1,0 +1,45 @@
+{
+  "points_per_dollar": 10,
+  "levels": {
+    "Bronze": {
+      "min_points": 0,
+      "discount": 0,
+      "free_shipping_threshold": 50,
+      "perks": ["Member-only sales access"]
+    },
+    "Silver": {
+      "min_points": 500,
+      "discount": 5,
+      "free_shipping_threshold": 35,
+      "perks": ["5% off all orders", "Early access to new products", "Birthday bonus points"]
+    },
+    "Gold": {
+      "min_points": 2000,
+      "discount": 10,
+      "free_shipping_threshold": 25,
+      "perks": ["10% off all orders", "Free shipping on $25+", "Priority customer support", "Exclusive Gold member products"]
+    },
+    "Pawsy Elite": {
+      "min_points": 5000,
+      "discount": 15,
+      "free_shipping_threshold": 0,
+      "perks": ["15% off all orders", "FREE shipping always", "VIP support hotline", "Exclusive Elite products", "Free gift with every order"]
+    }
+  },
+  "rewards": [
+    {"id": "free_shipping", "name": "Free Shipping", "points_cost": 100, "type": "free_shipping", "description": "Free shipping on your next order"},
+    {"id": "discount_5", "name": "$5 Off", "points_cost": 250, "type": "discount_code", "value": 5, "description": "$5 off your next order"},
+    {"id": "discount_10", "name": "$10 Off", "points_cost": 450, "type": "discount_code", "value": 10, "description": "$10 off your next order"},
+    {"id": "bonus_points", "name": "50 Bonus Points", "points_cost": 200, "type": "bonus_points", "value": 50, "description": "Get 50 bonus points instantly"},
+    {"id": "discount_20", "name": "$20 Off", "points_cost": 800, "type": "discount_code", "value": 20, "description": "$20 off your next order"},
+    {"id": "mystery_box", "name": "Mystery Pet Box", "points_cost": 1500, "type": "product", "description": "A surprise box of pet goodies!"}
+  ],
+  "bonus_actions": {
+    "first_purchase": 100,
+    "review": 25,
+    "referral": 200,
+    "birthday": 50,
+    "newsletter_signup": 25,
+    "social_share": 15
+  }
+}

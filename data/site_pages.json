@@ -1,0 +1,68 @@
+{
+  "pages": [
+    {
+      "slug": "shipping",
+      "title": "Shipping Policy",
+      "url": "/legal/shipping",
+      "type": "policy",
+      "summary": "GetPawsy shipping information for US customers",
+      "content": "GetPawsy Shipping Policy - Fast US Shipping\n\nShipping Coverage:\n- All 50 US States including Alaska and Hawaii\n- US Territories: Puerto Rico, Guam, US Virgin Islands (additional fees may apply)\n- APO/FPO Military Addresses\n- No international shipping currently available\n\nShipping Options:\n- Standard Shipping: 5-7 business days, $5.99 (Free on orders $50+)\n- Express Shipping: 2-3 business days, $12.99\n- Priority Shipping: 1-2 business days, $19.99\n- Alaska/Hawaii: 7-10 business days, $9.99 (Free on orders $75+)\n\nOrder Processing:\n- Orders before 2:00 PM EST ship same business day\n- Orders after 2:00 PM EST ship next business day\n- Peak seasons may add 1-2 processing days\n\nShipping Carriers:\n- USPS: Standard and Priority Mail\n- UPS: Ground and Express services\n- FedEx: Express and Priority services\n\nTracking:\n- All orders include tracking via email\n- Check order history in your account\n- Ask Pawsy AI for tracking updates\n\nSignature Requirements:\n- Orders under $100: No signature required\n- Orders $100+: Signature may be required\n\nLost or Stolen Packages:\n- Report within 7 days of marked delivery\n- Check with neighbors and building management first\n- Contact support for assistance",
+      "updatedAt": "2024-12-22"
+    },
+    {
+      "slug": "returns",
+      "title": "Return Policy",
+      "url": "/legal/returns",
+      "type": "policy",
+      "summary": "GetPawsy 30-day return policy",
+      "content": "GetPawsy Return Policy - 30-Day Easy Returns\n\nReturn Window:\n- 30 days from delivery date for most items\n- Report damaged items within 48 hours\n\nEligible Items:\n- Unused items in original condition\n- Original packaging and tags included\n- Items purchased within last 30 days\n- Defective or damaged items\n\nNon-Returnable Items:\n- Used or opened pet food and treats\n- Personalized or custom items\n- Items marked as Final Sale\n- Items damaged through misuse\n- Items without original packaging\n\nHow to Return:\n1. Log into account, go to Order History\n2. Select order and click Request Return\n3. AI Returns Assistant guides you through process\n4. Receive prepaid return label via email\n5. Pack item securely with all accessories\n6. Drop off at USPS, UPS, or FedEx location\n\nReturn Shipping Costs:\n- Defective/Wrong Items: Free return shipping\n- Change of Mind: $5.99 deducted from refund\n\nRefund Timeline:\n- Processing: 1-3 business days after receipt\n- Refund to payment method: 5-7 business days\n- Store credit: Available immediately upon approval\n\nExchanges:\n- Process return for original item\n- Place new order for desired item\n- Contact support for help coordinating\n\nDamaged Items:\n- Report within 48 hours\n- Take photos of damage\n- Free return label and full refund or replacement provided",
+      "updatedAt": "2024-12-22"
+    },
+    {
+      "slug": "faq",
+      "title": "Frequently Asked Questions",
+      "url": "/faq",
+      "type": "faq",
+      "summary": "Common questions about GetPawsy orders, shipping, returns, and products",
+      "content": "GetPawsy FAQ - Frequently Asked Questions\n\nOrders & Shipping:\nQ: How long does shipping take?\nA: Standard shipping takes 5-7 business days within the US. Express (2-3 days) and Priority (1-2 days) options available.\n\nQ: Do you offer free shipping?\nA: Yes! Free standard shipping on orders over $50. Alaska/Hawaii free shipping on orders over $75.\n\nQ: How can I track my order?\nA: Use the tracking link in your shipping confirmation email, check your account order history, or ask Pawsy AI.\n\nQ: Can I change or cancel my order?\nA: Request changes within 1 hour of placing order. Once processing begins, changes may not be possible.\n\nQ: Do you ship internationally?\nA: Currently US only, including Alaska, Hawaii, and US territories.\n\nReturns & Refunds:\nQ: What is your return policy?\nA: 30-day returns for unused items in original condition and packaging.\n\nQ: How do I return an item?\nA: Log in, go to Order History, click Request Return. Our AI Returns Assistant guides you through.\n\nQ: How long do refunds take?\nA: 1-3 days processing after receipt, 5-7 days to payment method. Store credit available immediately.\n\nQ: What if I received a damaged item?\nA: Report within 48 hours with photos. We provide free return label and full refund or replacement.\n\nProducts & Pet Care:\nQ: Are products safe for pets?\nA: We select from trusted suppliers. Always supervise pets with new products. Consult vet for health concerns.\n\nQ: How do I choose the right size?\nA: Check size charts on product pages. Measure your pet and compare. For beds, allow room to stretch.\n\nPayments & Account:\nQ: What payment methods accepted?\nA: Visa, Mastercard, Amex, Discover, debit cards via Stripe. All payments in USD.\n\nQ: Is my payment secure?\nA: Yes, we use Stripe (PCI-DSS compliant). Payment info encrypted, never stored on our servers.\n\nQ: Do I need an account?\nA: Guest checkout available. Accounts enable order tracking, favorites, and personalized recommendations.\n\nPawsy AI:\nQ: What can Pawsy help with?\nA: Product recommendations, shipping/returns questions, pet care tips, order tracking, personalized suggestions.\n\nQ: Is Pawsy available 24/7?\nA: Yes! Pawsy is always available. Human support available during business hours for complex issues.",
+      "updatedAt": "2024-12-22"
+    },
+    {
+      "slug": "contact",
+      "title": "Contact Us",
+      "url": "/contact",
+      "type": "contact",
+      "summary": "How to contact GetPawsy support",
+      "content": "GetPawsy Contact Information\n\nEmail Support:\n- General: support@getpawsy.com\n- Response time: Within 24 hours\n\nAI Assistant:\n- Pawsy AI available 24/7 in bottom-right corner\n- Instant help with products, orders, and pet care tips\n\nSupport Hours:\n- Monday - Friday: 9am - 6pm EST\n- Saturday: 10am - 4pm EST\n- Sunday: Closed (Pawsy AI available)\n\nFor Order Inquiries:\n- Include your order number\n- Include email used for order\n\nLocation:\n- United States\n- Serving pet parents nationwide",
+      "updatedAt": "2024-12-22"
+    },
+    {
+      "slug": "privacy",
+      "title": "Privacy Policy",
+      "url": "/legal/privacy",
+      "type": "policy",
+      "summary": "GetPawsy privacy practices and data protection",
+      "content": "GetPawsy Privacy Policy Summary\n\nData We Collect:\n- Account info: Name, email, password, phone\n- Payment info: Processed securely via Stripe\n- Shipping info: Delivery address\n- Order history: Products purchased, dates, amounts\n- Usage data: Pages visited, device info, cookies\n\nHow We Use Data:\n- Process orders and payments\n- Send order confirmations and updates\n- Provide customer support\n- Personalize product recommendations (AI)\n- Prevent fraud\n- Marketing (with consent)\n\nAI Processing:\n- Product recommendations based on browsing/purchase history\n- Pawsy chatbot for customer support\n- Returns assessment\n- Fraud detection\n\nThird-Party Sharing:\n- Payment Processors: Stripe\n- Shipping Partners: USPS, UPS, FedEx\n- AI Services: OpenAI for chatbot\n- We do NOT sell personal information\n\nYour Rights (CCPA/GDPR):\n- Right to know what data is collected\n- Right to delete personal information\n- Right to opt-out of marketing\n- Right to access and correct data\n\nData Security:\n- SSL/TLS encryption\n- PCI-DSS compliant payment processing\n- Regular security audits\n\nContact: privacy@getpawsy.com",
+      "updatedAt": "2024-12-22"
+    },
+    {
+      "slug": "terms",
+      "title": "Terms & Conditions",
+      "url": "/legal/terms",
+      "type": "policy",
+      "summary": "GetPawsy terms of service",
+      "content": "GetPawsy Terms & Conditions Summary\n\nGoverning Law: Delaware, United States\n\nEligibility: Must be 18+ or have parental consent\n\nAccount Responsibilities:\n- Provide accurate information\n- Maintain account security\n- Responsible for all account activities\n\nProducts & Pricing:\n- All prices in US Dollars\n- Prices subject to change\n- We may limit quantities or refuse orders\n\nPayment:\n- Major credit/debit cards accepted\n- All payments in USD via Stripe\n\nAI Services:\n- Product recommendations\n- Pawsy chatbot support\n- Pricing optimization\n- Returns processing\n- AI may occasionally make errors\n\nAcceptable Use:\n- No unlawful purposes\n- No interference with services\n- No fraud or scraping\n- No impersonation\n\nLimitation of Liability:\n- Not liable for indirect damages\n- Total liability limited to purchase amount\n\nContact: legal@getpawsy.com",
+      "updatedAt": "2024-12-22"
+    },
+    {
+      "slug": "about",
+      "title": "About GetPawsy",
+      "url": "/legal/about",
+      "type": "about",
+      "summary": "About GetPawsy pet shop",
+      "content": "About GetPawsy\n\nGetPawsy is your trusted online destination for premium pet products. We specialize in high-quality toys, beds, feeding supplies, grooming tools, and accessories for dogs and cats.\n\nOur Mission:\nTo help pet parents provide the best care for their furry family members with quality products, helpful guidance, and an AI-powered shopping experience.\n\nWhat We Offer:\n- Dogs: Toys, beds, food bowls, leashes, grooming, training supplies\n- Cats: Toys, scratchers, beds, litter accessories, grooming, treats\n- Fast US shipping from domestic warehouses\n- 30-day easy returns\n- Secure checkout with all major cards\n\nPawsy AI Assistant:\nOur AI-powered shopping assistant is available 24/7 to help you find the perfect products for your pet, answer questions, and provide pet care tips.\n\nQuality Commitment:\nWe carefully select products from trusted suppliers. While we focus on quality, always supervise your pet with new products and consult your veterinarian for health-related questions.\n\nContact: support@getpawsy.com",
+      "updatedAt": "2024-12-22"
+    }
+  ],
+  "lastUpdated": "2024-12-22"
+}

@@ -1,0 +1,2617 @@
+[
+  {
+    "action": "preview_success",
+    "input": "1981282634526121985",
+    "pid": "1981282634526121985",
+    "petType": "BOTH",
+    "subcatKey": "DOG_FETCH",
+    "eligibilityOk": false,
+    "hasImage": true,
+    "timestamp": "2025-12-14T19:32:01.991Z"
+  },
+  {
+    "action": "preview_success",
+    "input": "1981282634526121985",
+    "pid": "1981282634526121985",
+    "petType": "BOTH",
+    "subcatKey": "DOG_FETCH",
+    "eligibilityOk": false,
+    "hasImage": true,
+    "timestamp": "2025-12-14T19:33:27.619Z"
+  },
+  {
+    "action": "import_failed",
+    "input": "1981282634526121985",
+    "error": "Cannot read properties of undefined (reading 'getProduct')",
+    "timestamp": "2025-12-14T19:33:53.976Z"
+  },
+  {
+    "action": "preview_success",
+    "input": "https://cjdropshipping.com/product/handmade-wicker-elevated-cat-bed-with-cushion-dark-brown-for-kittens-p-1948263304065544194.html",
+    "pid": "1948263304065544194",
+    "petType": "CAT",
+    "subcatKey": "DOG_BEDS",
+    "eligibilityOk": true,
+    "hasImage": true,
+    "timestamp": "2025-12-14T20:17:36.656Z"
+  },
+  {
+    "action": "preview_success",
+    "input": "1948263304065544194",
+    "pid": "1948263304065544194",
+    "petType": "CAT",
+    "subcatKey": "DOG_BEDS",
+    "eligibilityOk": true,
+    "hasImage": true,
+    "timestamp": "2025-12-14T20:17:57.369Z"
+  },
+  {
+    "action": "import_rejected",
+    "input": "2000447441961123841",
+    "reason": "deny:category_not_allowed",
+    "score": 0,
+    "timestamp": "2025-12-16T00:05:42.995Z"
+  },
+  {
+    "action": "import_rejected",
+    "input": "2000447441961123841",
+    "reason": "deny:category_not_allowed",
+    "score": 0,
+    "timestamp": "2025-12-16T00:05:44.159Z"
+  },
+  {
+    "action": "preview_success",
+    "input": "2000447441961123841",
+    "pid": "2000447441961123841",
+    "petType": "BOTH",
+    "subcatKey": null,
+    "eligibilityOk": false,
+    "hasImage": true,
+    "timestamp": "2025-12-16T00:05:45.525Z"
+  },
+  {
+    "action": "import_rejected",
+    "input": "2000447441961123841",
+    "reason": "deny:category_not_allowed",
+    "score": 0,
+    "timestamp": "2025-12-16T00:05:58.756Z"
+  },
+  {
+    "action": "import_rejected",
+    "input": "2000447441961123841",
+    "reason": "deny:category_not_allowed",
+    "score": 0,
+    "timestamp": "2025-12-16T00:06:02.549Z"
+  },
+  {
+    "action": "preview_success",
+    "input": "2000447441961123841",
+    "pid": "2000447441961123841",
+    "petType": "BOTH",
+    "subcatKey": null,
+    "eligibilityOk": false,
+    "hasImage": true,
+    "timestamp": "2025-12-16T00:06:19.206Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512200603081614900",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:50:42.182Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512200243431608700",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:50:44.471Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512191202461610700",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:50:45.837Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512191016261601300",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:tool"
+    ],
+    "timestamp": "2025-12-20T12:50:47.200Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512191013251616601",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:50:49.505Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190831101633100",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:50:51.586Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190809221624100",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:50:52.901Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190714131638400",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:50:54.672Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190632151613800",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:cable"
+    ],
+    "timestamp": "2025-12-20T12:51:00.548Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190309361637800",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:51:02.941Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190301571620300",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:51:05.114Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190142381620100",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:51:07.104Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001843992365674498",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:women"
+    ],
+    "timestamp": "2025-12-20T12:51:08.980Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001892329022332929",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:51:11.235Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001944203549257729",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:51:14.249Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001948044764160002",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:51:18.578Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001950148072501249",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:51:24.672Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001981223980404738",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:51:28.432Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001865963739734018",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:51:30.740Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001978547178274818",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:51:32.363Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001960348394237953",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:51:35.414Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001952343413157889",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:51:38.987Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001961361314459650",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:51:40.860Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001840424811421697",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:women"
+    ],
+    "timestamp": "2025-12-20T12:51:42.212Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512180645051601900",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:glass"
+    ],
+    "timestamp": "2025-12-20T12:51:42.924Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512180308141606100",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:51:46.812Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001537430862610433",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:51:48.074Z"
+  },
+  {
+    "action": "import_success",
+    "input": "2001622280918327298",
+    "productId": "2001622280918327298",
+    "title": "Pet Training Treat Pouch With Food-Grade Silicone – Soft, Skin-Friendly Dog Treat Bag With Hanging Buckle For Easy Carrying – Ideal For Puppy Training And Outdoor Activities",
+    "petType": "BOTH",
+    "subcatKey": "DOG_CHEW",
+    "variantCount": 3,
+    "featured": false,
+    "timestamp": "2025-12-20T12:51:50.028Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001542246112346113",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:51:53.211Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001496203346812930",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:baby"
+    ],
+    "timestamp": "2025-12-20T12:51:56.152Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001518137668190209",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:51:58.455Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001551724480217089",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:52:00.485Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001495154072416257",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:adult"
+    ],
+    "timestamp": "2025-12-20T12:52:02.435Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001519628721254401",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:52:05.334Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001519766197956610",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:52:07.887Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001502546625490946",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:52:10.747Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001510580988911617",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:adult"
+    ],
+    "timestamp": "2025-12-20T12:52:12.188Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001561654942691330",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:52:14.034Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001550445720813570",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:52:18.169Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001622106826522625",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:cleaning"
+    ],
+    "timestamp": "2025-12-20T12:52:20.017Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001496588181487617",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:52:21.675Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001561864650539009",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:52:23.662Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001519543434276865",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:52:27.030Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001494304487817217",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:boy"
+    ],
+    "timestamp": "2025-12-20T12:52:29.568Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001497204366688258",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:52:32.733Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001504033109942274",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:adult"
+    ],
+    "timestamp": "2025-12-20T12:52:35.905Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001542302009835522",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:52:39.495Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001549063366295554",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:52:42.015Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001469824999858178",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:52:43.916Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001471257831718914",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:52:45.505Z"
+  },
+  {
+    "action": "import_success",
+    "input": "2512200628051604600",
+    "productId": "2512200628051604600",
+    "title": "Warm Winter Pet Carrier With Long Plush LiningDurable And Pressure-Resistant For Outdoor Use",
+    "petType": "CAT",
+    "subcatKey": "DOG_BEDS",
+    "variantCount": 1,
+    "featured": false,
+    "timestamp": "2025-12-20T12:52:47.243Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001546186261458946",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:52:48.944Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001546893929660417",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:52:50.957Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001481951184601090",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:52:54.085Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001460026468179969",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:tea"
+    ],
+    "timestamp": "2025-12-20T12:52:56.899Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001460826613411841",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:tea"
+    ],
+    "timestamp": "2025-12-20T12:52:59.494Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001459875799285762",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:53:02.037Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001515712358039553",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:53:05.026Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001557519434444802",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:53:07.772Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001519227755216898",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:53:11.063Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001497869860126721",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:53:12.874Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001540809072492545",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:53:14.509Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001522094129987586",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:53:16.159Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001482694397456385",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:53:18.122Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001490900536455170",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:53:20.163Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001540661954191362",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:53:21.619Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001464885667885058",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:53:23.260Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512200804341632400",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:53:25.675Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001480077651918849",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:53:27.465Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001457784570748930",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:53:30.118Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001513420891287554",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:53:32.019Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001493857317396481",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:53:35.054Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001513721385951234",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:53:37.431Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001510018882924545",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:53:40.877Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001513603739918338",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:53:43.820Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001510129676500994",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:53:45.997Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001553915808030721",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:53:49.731Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001494187216183298",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:53:52.423Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001486664262197250",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:53:54.042Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001510232591101953",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:53:55.724Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001564624371376130",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:53:58.786Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001457640813031426",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:54:02.060Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001458021950472194",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:54:05.499Z"
+  },
+  {
+    "action": "import_success",
+    "input": "2001622178954797057",
+    "productId": "2001622178954797057",
+    "title": "Pet Interactive Sound Ball,The Mellow Dog Cat Pet Voice Ball,Interactive Pet Squeaky Toys",
+    "petType": "BOTH",
+    "subcatKey": "DOG_FETCH",
+    "variantCount": 3,
+    "featured": false,
+    "timestamp": "2025-12-20T12:54:07.356Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001519308140158977",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:54:09.716Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001519355432988674",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:54:12.380Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001505352856084481",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:54:15.037Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001504583322935297",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:54:18.171Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001519499813515266",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:54:21.473Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001567158079119361",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:54:25.192Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001621559419518978",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:cup"
+    ],
+    "timestamp": "2025-12-20T12:54:27.447Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001502317253730305",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:54:28.811Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001533890682396673",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:54:30.965Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001621819821711361",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:54:32.324Z"
+  },
+  {
+    "action": "import_success",
+    "input": "2001621967034564609",
+    "productId": "2001621967034564609",
+    "title": "Lick Mat For Dogs And Cats Dog Slow Feeder Mat With Strong Suction",
+    "petType": "BOTH",
+    "subcatKey": "DOG_BEDS",
+    "variantCount": 4,
+    "featured": false,
+    "timestamp": "2025-12-20T12:54:34.387Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001474434894327810",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:54:35.644Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001485397628526593",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:baby"
+    ],
+    "timestamp": "2025-12-20T12:54:38.315Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001498802898792450",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:54:41.359Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001501267434074113",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:54:44.532Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001498691574611970",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:54:47.196Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001523804579741698",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:54:50.667Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001500543241351169",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:54:54.107Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001496301324648449",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:baby"
+    ],
+    "timestamp": "2025-12-20T12:54:57.483Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001502364128165889",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:55:00.714Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001502456018083842",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:55:04.503Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001546990511898625",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:55:06.615Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001462533619642370",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:55:08.284Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001515873319755777",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:55:10.158Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001510838169944066",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:55:13.184Z"
+  },
+  {
+    "action": "import_success",
+    "input": "2001621767564877825",
+    "productId": "2001621767564877825",
+    "title": "Dog Bath Brush,Pet Bath Comb Brush Soothing Massage Rubber Comb,Pet Bathing Brush",
+    "petType": "BOTH",
+    "subcatKey": "CAT_GROOM",
+    "variantCount": 4,
+    "featured": false,
+    "timestamp": "2025-12-20T12:55:15.241Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001559915713765378",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:55:18.204Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001621628734586882",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "pet_core:pet",
+      "no_functional_keyword"
+    ],
+    "timestamp": "2025-12-20T12:55:20.942Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001621689229033473",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "apparel:tee",
+      "pet_core:pet",
+      "no_pet_apparel_functional"
+    ],
+    "timestamp": "2025-12-20T12:55:22.353Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001504090274111490",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:adult"
+    ],
+    "timestamp": "2025-12-20T12:55:25.328Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001516091082719233",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:55:28.352Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001526910270021634",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:baby"
+    ],
+    "timestamp": "2025-12-20T12:55:29.840Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512200818391632600",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:women"
+    ],
+    "timestamp": "2025-12-20T12:55:33.931Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512200816401602800",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:women"
+    ],
+    "timestamp": "2025-12-20T12:55:37.848Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512200216051638700",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:55:39.503Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512200215271612600",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:55:45.329Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512191324271637100",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:55:47.249Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190928451619500",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:women"
+    ],
+    "timestamp": "2025-12-20T12:55:49.486Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190750101637600",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:55:52.990Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190518571619500",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:55:55.944Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190514571620100",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:women"
+    ],
+    "timestamp": "2025-12-20T12:55:57.837Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190345591630700",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:women"
+    ],
+    "timestamp": "2025-12-20T12:56:02.482Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512181002531639000",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:diamond"
+    ],
+    "timestamp": "2025-12-20T12:56:10.187Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512180932431616400",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:women"
+    ],
+    "timestamp": "2025-12-20T12:56:12.421Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512200114331612900",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:tool"
+    ],
+    "timestamp": "2025-12-20T12:56:14.318Z"
+  },
+  {
+    "action": "import_success",
+    "input": "2512200152021615600",
+    "productId": "2512200152021615600",
+    "title": "Pet Water Fountain Filter Box With Automatic Water-pumping And Purification",
+    "petType": "CAT",
+    "subcatKey": "DOG_BEDS",
+    "variantCount": 1,
+    "featured": false,
+    "timestamp": "2025-12-20T12:56:14.991Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512200628151625500",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "apparel:tee",
+      "pet_core:cat",
+      "no_pet_apparel_functional"
+    ],
+    "timestamp": "2025-12-20T12:56:15.755Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512200603081614900",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:56:16.743Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512200243431608700",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:56:17.763Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512191202461610700",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:56:18.471Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512191016261601300",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:tool"
+    ],
+    "timestamp": "2025-12-20T12:56:19.284Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512191013251616601",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:56:20.321Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190855391611900",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:56:21.813Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190831101633100",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:56:22.559Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190714131638400",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:56:23.658Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190632151613800",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:cable"
+    ],
+    "timestamp": "2025-12-20T12:56:25.087Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190418561628300",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:jewelry"
+    ],
+    "timestamp": "2025-12-20T12:56:27.646Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190309361637800",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:56:28.852Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190301571620300",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:56:29.797Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001944203549257729",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:56:31.127Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001865963739734018",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:56:32.217Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001958940467044353",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:56:34.723Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001954518278119425",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:56:37.678Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001947104564785153",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:56:40.578Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512180308141606100",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:56:42.104Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001537430862610433",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:56:42.727Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001518137668190209",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:56:43.491Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001485506285060098",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:56:45.724Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001519628721254401",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:56:46.415Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001519766197956610",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:56:47.212Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001532877518905345",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:women"
+    ],
+    "timestamp": "2025-12-20T12:56:48.885Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001489591777337346",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:56:51.510Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001548676521443329",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:56:54.455Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001485562157383681",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:56:57.374Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001561654942691330",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:56:58.128Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001553249314205698",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:56:59.718Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001496588181487617",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:00.433Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001561864650539009",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:57:01.182Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001519543434276865",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:02.118Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001485282132029442",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:57:04.526Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001494304487817217",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:boy"
+    ],
+    "timestamp": "2025-12-20T12:57:05.242Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001497204366688258",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:06.002Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001485151697563649",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:57:07.585Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001503159333613570",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:57:11.209Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001469824999858178",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:57:11.941Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001471257831718914",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:57:12.711Z"
+  },
+  {
+    "action": "import_success",
+    "input": "2001622178954797057",
+    "productId": "2001622178954797057",
+    "title": "Pet Interactive Sound Ball,The Mellow Dog Cat Pet Voice Ball,Interactive Pet Squeaky Toys",
+    "petType": "BOTH",
+    "subcatKey": "DOG_FETCH",
+    "variantCount": 3,
+    "featured": false,
+    "timestamp": "2025-12-20T12:57:13.501Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001567158079119361",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:57:14.687Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001485449750036482",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:57:17.122Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001621819821711361",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:17.864Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001485041242710017",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:57:19.381Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001551585737940994",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:22.801Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001499558386253826",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:57:24.232Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001537334171320322",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:26.313Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001546256580001794",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:28.816Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001515712358039553",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:57:29.538Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001557519434444802",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:30.304Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001519227755216898",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:31.075Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001497869860126721",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:57:31.871Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001540809072492545",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:32.648Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001522094129987586",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:33.446Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001482694397456385",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:34.196Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001490900536455170",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:57:34.986Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001540661954191362",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:35.799Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001464885667885058",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:36.612Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001458863599448066",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:39.682Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001519104559083522",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:42.694Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001961361314459650",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:57:43.555Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512180752421639100",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:46.653Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512200804341632400",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:47.661Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001480077651918849",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:48.421Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001457784570748930",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:57:49.211Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001513420891287554",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:57:49.958Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001493857317396481",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:57:50.726Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001513721385951234",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:57:51.505Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001510018882924545",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:52.285Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001513603739918338",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:57:53.029Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001510129676500994",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:53.891Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001553915808030721",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:54.637Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001494187216183298",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:57:55.452Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001486664262197250",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:56.285Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001510232591101953",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:57:57.060Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001564624371376130",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:57:57.803Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001457640813031426",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:57:58.545Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001458021950472194",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:57:59.282Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001480745981812738",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:58:02.343Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001504399132127233",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:58:05.179Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001553545692114946",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:58:09.008Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001457976681349122",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:58:12.592Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001493649547247618",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:58:14.028Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001473470948941826",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:58:15.236Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512171024321633000",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:dispenser"
+    ],
+    "timestamp": "2025-12-20T12:58:18.108Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512170715581625600",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:58:23.234Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001231912171401218",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:58:26.278Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001198013919719426",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:58:28.089Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001216178003308545",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:58:32.684Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001239465214783489",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:58:34.016Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001232060947558401",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:man"
+    ],
+    "timestamp": "2025-12-20T12:58:36.930Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001239160506986498",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:58:39.625Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001951115685851137",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:58:43.366Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001892329022332929",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:58:44.429Z"
+  },
+  {
+    "action": "import_success",
+    "input": "2512181006061603200",
+    "productId": "2512181006061603200",
+    "title": "Hanging Hammock For Trimming Cats And Dogs Nails",
+    "petType": "BOTH",
+    "subcatKey": "DOG_BEDS",
+    "variantCount": 32,
+    "featured": false,
+    "timestamp": "2025-12-20T12:58:47.982Z"
+  },
+  {
+    "action": "import_success",
+    "input": "2512200152021615600",
+    "productId": "2512200152021615600",
+    "title": "Pet Water Fountain Filter Box With Automatic Water-pumping And Purification",
+    "petType": "CAT",
+    "subcatKey": "DOG_BEDS",
+    "variantCount": 1,
+    "featured": false,
+    "timestamp": "2025-12-20T12:58:48.501Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190832101622800",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:kids"
+    ],
+    "timestamp": "2025-12-20T12:58:50.963Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001926947159191553",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "apparel:top",
+      "no_pet_core"
+    ],
+    "timestamp": "2025-12-20T12:58:54.020Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512200114331612900",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:tool"
+    ],
+    "timestamp": "2025-12-20T12:58:54.838Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512200851171631800",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:women"
+    ],
+    "timestamp": "2025-12-20T12:58:57.126Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512200804341632400",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:58:58.138Z"
+  },
+  {
+    "action": "import_success",
+    "input": "2512200628051604600",
+    "productId": "2512200628051604600",
+    "title": "Warm Winter Pet Carrier With Long Plush LiningDurable And Pressure-Resistant For Outdoor Use",
+    "petType": "CAT",
+    "subcatKey": "DOG_BEDS",
+    "variantCount": 1,
+    "featured": false,
+    "timestamp": "2025-12-20T12:58:58.858Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512200243431608700",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:58:59.855Z"
+  },
+  {
+    "action": "import_success",
+    "input": "2512200152021615600",
+    "productId": "2512200152021615600",
+    "title": "Pet Water Fountain Filter Box With Automatic Water-pumping And Purification",
+    "petType": "CAT",
+    "subcatKey": "DOG_BEDS",
+    "variantCount": 1,
+    "featured": false,
+    "timestamp": "2025-12-20T12:59:00.349Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512200114331612900",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:tool"
+    ],
+    "timestamp": "2025-12-20T12:59:01.205Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512191252021617700",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:59:01.950Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512190632151613800",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:cable"
+    ],
+    "timestamp": "2025-12-20T12:59:03.266Z"
+  },
+  {
+    "action": "import_success",
+    "input": "2512190511181636400",
+    "productId": "2512190511181636400",
+    "title": "Constant Temperature Anti-biting Tube Pet Pad",
+    "petType": "UNKNOWN",
+    "subcatKey": "DOG_BEDS",
+    "variantCount": 1,
+    "featured": false,
+    "timestamp": "2025-12-20T12:59:04.378Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001892329022332929",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:59:05.620Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001944203549257729",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:ring"
+    ],
+    "timestamp": "2025-12-20T12:59:07.116Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001950148072501249",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:59:08.567Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001952343413157889",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:59:09.887Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001958940467044353",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:59:11.069Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2001961361314459650",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:bra"
+    ],
+    "timestamp": "2025-12-20T12:59:12.020Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512181002531639000",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:diamond"
+    ],
+    "timestamp": "2025-12-20T12:59:13.857Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512180653441630100",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "hard_deny:men"
+    ],
+    "timestamp": "2025-12-20T12:59:16.652Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512180601331626100",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "pet_core:pet",
+      "no_functional_keyword"
+    ],
+    "timestamp": "2025-12-20T12:59:19.055Z"
+  },
+  {
+    "action": "import_success",
+    "input": "2512180335041635100",
+    "productId": "2512180335041635100",
+    "title": "Portable Pet Spray One-Button Hair Removal Comb",
+    "petType": "BOTH",
+    "subcatKey": "DOG_BEDS",
+    "variantCount": 1,
+    "featured": false,
+    "timestamp": "2025-12-20T12:59:20.979Z"
+  },
+  {
+    "action": "import_rejected_strict",
+    "input": "2512180112311626000",
+    "petUsageType": "REJECTED_NON_PET",
+    "confidence": 0,
+    "reasons": [
+      "pet_core:pet",
+      "no_functional_keyword"
+    ],
+    "timestamp": "2025-12-20T12:59:22.697Z"
+  }
+]

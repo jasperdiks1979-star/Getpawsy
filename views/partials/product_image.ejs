@@ -1,0 +1,58 @@
+<%#
+  Reusable ProductImage component with performance optimizations
+  
+  Parameters:
+  - src: Image source URL (required)
+  - alt: Alt text (required)
+  - size: "grid" (400px) | "hero" (900px) | "thumb" (72px) - default: "grid"
+  - eager: boolean - If true, use eager loading (default: false)
+  - badge: Optional badge text
+  - class: Additional CSS classes
+  
+  Features:
+  - Native lazy loading with loading="lazy"
+  - decoding="async" for non-blocking decode
+  - Placeholder fallback on error
+  - aspect-ratio: 1/1 to prevent CLS
+  - Smooth fade-in animation on load
+  - Uses /api/img proxy for resize optimization
+%>
+<%
+  const imgSrc = typeof src !== 'undefined' ? src : '/images/placeholder-pawsy.webp';
+  const imgAlt = typeof alt !== 'undefined' ? alt : 'Product';
+  const imgSize = typeof size !== 'undefined' ? size : 'grid';
+  const isEager = typeof eager !== 'undefined' && eager === true;
+  const imgBadge = typeof badge !== 'undefined' ? badge : null;
+  const extraClass = typeof className !== 'undefined' ? className : '';
+  
+  // Determine max-width based on size
+  const sizeWidths = { grid: 400, hero: 900, thumb: 72 };
+  const maxWidth = sizeWidths[imgSize] || 400;
+  
+  // Build optimized image URL using /api/img proxy
+  let optimizedSrc = imgSrc;
+  if (imgSrc && !imgSrc.startsWith('/images/') && !imgSrc.startsWith('/media/') && !imgSrc.startsWith('data:')) {
+    // External URL - use image proxy with resize
+    optimizedSrc = '/api/img?u=' + encodeURIComponent(imgSrc) + '&w=' + maxWidth + '&fm=webp';
+  } else if (imgSrc && (imgSrc.startsWith('/media/') || imgSrc.startsWith('/images/'))) {
+    // Local image - use as-is (already optimized)
+    optimizedSrc = imgSrc;
+  }
+  
+  const placeholder = '/images/placeholder-pawsy.webp';
+  const sizeClass = 'product-img--' + imgSize;
+%>
+<div class="product-img-wrap <%= sizeClass %> <%= extraClass %>">
+  <img 
+    src="<%= optimizedSrc %>"
+    alt="<%= imgAlt %>"
+    loading="<%= isEager ? 'eager' : 'lazy' %>"
+    decoding="async"
+    class="product-img"
+    onerror="this.onerror=null;this.src='<%= placeholder %>';this.classList.add('product-img--fallback');"
+    onload="this.classList.add('product-img--loaded')"
+  >
+  <% if (imgBadge) { %>
+    <span class="product-img-badge"><%= imgBadge %></span>
+  <% } %>
+</div>

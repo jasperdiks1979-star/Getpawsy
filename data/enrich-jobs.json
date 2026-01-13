@@ -1,0 +1,43 @@
+{
+  "jobs": [
+    {
+      "jobId": "enrich_1765843124858",
+      "dbJobId": null,
+      "status": "completed",
+      "startedAt": "2025-12-15T23:58:45.750Z",
+      "total": 430,
+      "processed": 430,
+      "successCount": 0,
+      "failCount": 430,
+      "options": {
+        "force": false,
+        "requireImages": true,
+        "updateFields": true,
+        "overwriteFields": false,
+        "overwriteImage": false,
+        "bypassDenyScore": false
+      },
+      "finishedAt": "2025-12-16T00:01:25.480Z"
+    },
+    {
+      "jobId": "enrich_1765843294439",
+      "dbJobId": null,
+      "status": "stopped",
+      "startedAt": "2025-12-16T00:01:34.444Z",
+      "total": 430,
+      "processed": 141,
+      "successCount": 0,
+      "failCount": 141,
+      "options": {
+        "force": true,
+        "requireImages": true,
+        "updateFields": true,
+        "overwriteFields": true,
+        "overwriteImage": false,
+        "bypassDenyScore": false
+      },
+      "finishedAt": "2025-12-16T00:02:26.744Z"
+    }
+  ],
+  "currentJobId": null
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "email": "admin@getpawsy.com",
+    "password": "$2b$10$bVj6/bwqjN7RIKEYo262TOZgeewxIdAghCyA.2Ka6HPTr7JOjcxGS",
+    "name": "Admin User",
+    "role": "admin",
+    "createdAt": "2025-12-10T06:34:53.846Z"
+  },
+  {
+    "email": "test@getpawsy.com",
+    "password": "$2b$10$fm2Ny5wRlZacPkgqqevv9uKrYD4u44C/8A./mCq2Wm2Isay1H2u0a",
+    "name": "Test User",
+    "role": "user",
+    "createdAt": "2025-12-10T06:34:53.847Z"
+  }
+]

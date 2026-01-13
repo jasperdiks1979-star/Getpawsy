@@ -1,0 +1,18 @@
+[01:38:15] === CJ API Product Import ===
+[01:38:15] Requesting new access token...
+[01:38:16] Access token obtained and cached
+[01:38:16] Authenticated successfully
+[01:38:16] Fetching product list from CJ API...
+[01:38:16] Fetching page 1...
+[01:38:17]   Got undefined products
+[01:38:17]   Error fetching page 1: Spread syntax requires ...iterable[Symbol.iterator] to be a function
+[01:38:17] Total products fetched: 0
+[01:38:17] 
+Successfully processed: 0 products
+[01:38:17] 
+=== Import Complete ===
+[01:38:17] Total products in DB: 229
+[01:38:17] CJ API products: 0
+[01:38:17] Other products: 229
+[01:38:17] 
+Restart the server to see the new products.

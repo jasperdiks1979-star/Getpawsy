@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GetPawsy Admin - CJ Resync</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a2e; color: #eee; padding: 20px; min-height: 100vh;
+    }
+    .container { max-width: 600px; margin: 0 auto; }
+    h1 { font-size: 1.5rem; margin-bottom: 20px; color: #00d4ff; }
+    .card { background: #16213e; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+    .card h2 { font-size: 1rem; color: #888; margin-bottom: 12px; text-transform: uppercase; }
+    .status-badge {
+      display: inline-block; padding: 6px 16px; border-radius: 20px;
+      font-weight: 600; font-size: 0.9rem; text-transform: uppercase;
+    }
+    .status-idle { background: #333; color: #aaa; }
+    .status-running { background: #0066cc; color: #fff; animation: pulse 1.5s infinite; }
+    .status-success { background: #00875a; color: #fff; }
+    .status-error { background: #de350b; color: #fff; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+    .meta { color: #888; font-size: 0.85rem; margin-top: 12px; }
+    .meta span { display: block; margin-top: 4px; }
+    label { display: block; color: #888; font-size: 0.85rem; margin-bottom: 6px; }
+    input[type="text"], input[type="number"] {
+      width: 100%; padding: 12px; border: 1px solid #333; border-radius: 8px;
+      background: #0f0f23; color: #fff; font-size: 1rem; margin-bottom: 16px;
+    }
+    button {
+      width: 100%; padding: 16px; border: none; border-radius: 8px;
+      font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+    }
+    .btn-primary { background: #00d4ff; color: #000; }
+    .btn-primary:hover { background: #00b8e6; }
+    .btn-primary:disabled { background: #444; color: #888; cursor: not-allowed; }
+    .log-panel {
+      background: #0f0f23; border-radius: 8px; padding: 12px;
+      font-family: 'Monaco', 'Menlo', monospace; font-size: 0.75rem;
+      max-height: 300px; overflow-y: auto; white-space: pre-wrap; word-break: break-all;
+      color: #0f0; line-height: 1.4;
+    }
+    .error-log { color: #ff6b6b; }
+    .auth-form { margin-bottom: 20px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CJ Price Resync</h1>
+    
+    <div id="auth-section" class="card auth-form">
+      <h2>Authentication</h2>
+      <label for="token-input">Admin Token</label>
+      <input type="text" id="token-input" placeholder="Enter admin token">
+      <button class="btn-primary" onclick="saveToken()">Save & Connect</button>
+    </div>
+
+    <div id="main-section" class="hidden">
+      <div class="card">
+        <h2>Status</h2>
+        <span id="status-badge" class="status-badge status-idle">Idle</span>
+        <div class="meta">
+          <span id="meta-started"></span>
+          <span id="meta-duration"></span>
+          <span id="meta-last"></span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Run Resync</h2>
+        <label for="limit-input">Product Limit (optional)</label>
+        <input type="number" id="limit-input" placeholder="e.g. 50 (leave empty for all)">
+        <button id="resync-btn" class="btn-primary" onclick="startResync()">Start CJ Resync</button>
+      </div>
+
+      <div class="card">
+        <h2>Logs</h2>
+        <div id="log-panel" class="log-panel">Waiting for job...</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let token = localStorage.getItem("gp_admin_token") || "";
+    let pollInterval = null;
+
+    function init() {
+      const urlToken = new URLSearchParams(window.location.search).get("token");
+      if (urlToken) {
+        token = urlToken;
+        localStorage.setItem("gp_admin_token", token);
+      }
+      if (token) {
+        document.getElementById("token-input").value = token;
+        showMain();
+        fetchStatus();
+      }
+    }
+
+    function saveToken() {
+      token = document.getElementById("token-input").value.trim();
+      if (token) {
+        localStorage.setItem("gp_admin_token", token);
+        showMain();
+        fetchStatus();
+      }
+    }
+
+    function showMain() {
+      document.getElementById("auth-section").classList.add("hidden");
+      document.getElementById("main-section").classList.remove("hidden");
+    }
+
+    async function fetchStatus() {
+      try {
+        const res = await fetch("/api/admin/cj/resync/status?token=" + encodeURIComponent(token));
+        if (res.status === 401) {
+          alert("Invalid token");
+          localStorage.removeItem("gp_admin_token");
+          location.reload();
+          return;
+        }
+        const data = await res.json();
+        updateUI(data);
+        
+        if (data.status === "running" && !pollInterval) {
+          pollInterval = setInterval(fetchStatus, 2000);
+        } else if (data.status !== "running" && pollInterval) {
+          clearInterval(pollInterval);
+          pollInterval = null;
+        }
+      } catch (e) {
+        console.error("Status fetch error:", e);
+      }
+    }
+
+    function updateUI(data) {
+      const badge = document.getElementById("status-badge");
+      badge.textContent = data.status.charAt(0).toUpperCase() + data.status.slice(1);
+      badge.className = "status-badge status-" + data.status;
+
+      const btn = document.getElementById("resync-btn");
+      btn.disabled = data.status === "running";
+      btn.textContent = data.status === "running" ? "Running..." : "Start CJ Resync";
+
+      let metaHtml = "";
+      if (data.startedAt) metaHtml += "<span>Started: " + data.startedAt + "</span>";
+      if (data.runningFor) metaHtml += "<span>Running: " + data.runningFor + "</span>";
+      if (data.lastSummary) {
+        metaHtml += "<span>Last run: " + (data.lastSummary.success ? "Success" : "Failed") + " in " + data.lastSummary.duration + "</span>";
+      }
+      document.getElementById("meta-started").parentElement.innerHTML = metaHtml || "<span>No runs yet</span>";
+
+      const logPanel = document.getElementById("log-panel");
+      if (data.logLines && data.logLines.length > 0) {
+        logPanel.innerHTML = data.logLines.map(line => {
+          const cls = line.includes("[ERR]") ? "error-log" : "";
+          return "<div class=\"" + cls + "\">" + escapeHtml(line) + "</div>";
+        }).join("");
+        logPanel.scrollTop = logPanel.scrollHeight;
+      } else {
+        logPanel.textContent = "No logs yet";
+      }
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    async function startResync() {
+      const limit = document.getElementById("limit-input").value;
+      const body = limit ? { limit: parseInt(limit, 10) } : {};
+      
+      try {
+        const res = await fetch("/api/admin/cj/resync?token=" + encodeURIComponent(token), {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body)
+        });
+        const data = await res.json();
+        if (!data.ok) {
+          alert("Error: " + (data.error || "Unknown error"));
+        }
+        fetchStatus();
+      } catch (e) {
+        alert("Request failed: " + e.message);
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

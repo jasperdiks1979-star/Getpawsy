@@ -1,0 +1,1148 @@
+{
+  "events": [
+    {
+      "productId": "test123",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766134861297
+    },
+    {
+      "productId": "test123",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766134869021
+    },
+    {
+      "productId": "2507010558291608100",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766226136894
+    },
+    {
+      "productId": "2507010558291608100",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766226294946
+    },
+    {
+      "productId": "2512130418541633400",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766228144137
+    },
+    {
+      "productId": "2512130418541633400",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766228248838
+    },
+    {
+      "productId": "2512130418541633400",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766228299092
+    },
+    {
+      "productId": "2512130418541633400",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766228370173
+    },
+    {
+      "productId": "2512130418541633400",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766228552170
+    },
+    {
+      "productId": "2512130418541633400",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766228718054
+    },
+    {
+      "productId": "2512130418541633400",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766228766849
+    },
+    {
+      "productId": "2512130418541633400",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766228899912
+    },
+    {
+      "productId": "2512130418541633400",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766229034340
+    },
+    {
+      "productId": "2512130418541633400",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766229119981
+    },
+    {
+      "productId": "2506280313311613800",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766236841079
+    },
+    {
+      "productId": "2507010558291608100",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766268299544
+    },
+    {
+      "productId": "2507010558291608100",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766268372864
+    },
+    {
+      "productId": "2507010558291608100",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766268409845
+    },
+    {
+      "productId": "2512190632151613800",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766306328049
+    },
+    {
+      "productId": "2512190632151613800",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766306435434
+    },
+    {
+      "productId": "2512190632151613800",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766310224672
+    },
+    {
+      "productId": "2512190632151613800",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766310401346
+    },
+    {
+      "productId": "2512190632151613800",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766312068394
+    },
+    {
+      "productId": "2512190632151613800",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766312512548
+    },
+    {
+      "productId": "2512190632151613800",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766321237714
+    },
+    {
+      "productId": "2512191016261601300",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766342723734
+    },
+    {
+      "productId": "2512191016261601300",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766345491870
+    },
+    {
+      "productId": "2512191016261601300",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766348198386
+    },
+    {
+      "productId": "2512191016261601300",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766354118226
+    },
+    {
+      "productId": "2512191016261601300",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766356206186
+    },
+    {
+      "productId": "2512191016261601300",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766358709372
+    },
+    {
+      "productId": "2512191016261601300",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766360842671
+    },
+    {
+      "productId": "1990612747720253442",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766410389617
+    },
+    {
+      "productId": "2512190632151613800",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766410399797
+    },
+    {
+      "productId": "waterproof-adjustable-silicone-pet-traction-rope",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766413900628
+    },
+    {
+      "productId": "2512110930471600500",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766419396753
+    },
+    {
+      "productId": "inflatable-dog-boat-ramp-up-to-286-lbs-cj-200",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766443740999
+    },
+    {
+      "productId": "inflatable-dog-boat-ramp-up-to-286-lbs-cj-200",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766444051228
+    },
+    {
+      "productId": "inflatable-dog-boat-ramp-up-to-286-lbs-cj-200",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766444276737
+    },
+    {
+      "productId": "inflatable-dog-boat-ramp-up-to-286-lbs-cj-200",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766515704185
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766532669974
+    },
+    {
+      "productId": "dog-automatic-gravity-flow-pet-waterer-cj-197",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766619936237
+    },
+    {
+      "productId": "1991247152274202625",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766659347958
+    },
+    {
+      "productId": "1991247152274202625",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766659348155
+    },
+    {
+      "productId": "2000923975869902849",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766659414114
+    },
+    {
+      "productId": "cj_2003467052895547394",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766957831007
+    },
+    {
+      "productId": "cj_2003467052895547394",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1766957832301
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767561074635
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767561153648
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767561430637
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767561433987
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767564021606
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767564023416
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767565780296
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767565782149
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767565950536
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767565966389
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767565970985
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767566124515
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767566126262
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767567813118
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767567871611
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767567884163
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767567887037
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767567888377
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767567901660
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767567903579
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767567980187
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767568078266
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767568171709
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767568210327
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767568221765
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767568223978
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767568239567
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767601103178
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767601119170
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767601205996
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767601222180
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767601273353
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767601283207
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767601285084
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767601299976
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767601316427
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767601334527
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767601360061
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767601362049
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767601377598
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767601653763
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767601679234
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767601704546
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767601765695
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767601767894
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767601783905
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767601786866
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767601790906
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767603556340
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767603562902
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767603712553
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767603725535
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767603729905
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767603961477
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767603964911
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767603981829
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767603984555
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767603987613
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767621110491
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767621112775
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767621147332
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767621166428
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767621169604
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767621341138
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767621358389
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767621360960
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767621387486
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767621393776
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767633820765
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767633840185
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767633843151
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767633867404
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767636758427
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767636760890
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767636827924
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767636841868
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767636843554
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767636858289
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767636874574
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767636875098
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767636894241
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767636896291
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767636905484
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767636907632
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767636909922
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767636951796
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767636953943
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767637230525
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767637240998
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767637242872
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767637258084
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767637301107
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767637304111
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767637306951
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767637369273
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767637371990
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767637374920
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767637606044
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767637608403
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767637611131
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767637662665
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767637664557
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767637706164
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767637715544
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767637717702
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767637733042
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767637749672
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767637751994
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767637766281
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767637768497
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767637770849
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767637845990
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767638971580
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767638985953
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767638990814
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767639011555
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767639032200
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767639034028
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767639056259
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767639058760
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767639063157
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767639079965
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767639097097
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767639100645
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767639157181
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767639159287
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767639548242
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767639558602
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767639560927
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767639625160
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767639629642
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767639654511
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767639676219
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767639679044
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767639694685
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767639698866
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767639701349
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767643332031
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767643343922
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767643345530
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767643590261
+    },
+    {
+      "productId": "1996064726721794050",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767643626102
+    },
+    {
+      "productId": "2-in-1-pet-grooming-gloves-brushes-for-cats-and-dogs-high-efficiency-hair-remova",
+      "eventType": "PRODUCT_VIEW",
+      "timestamp": 1767737718098
+    },
+    {
+      "productId": "1993155042347737090",
+      "eventType": "ADD_TO_CART",
+      "timestamp": 1767737726606
+    }
+  ],
+  "productStats": {
+    "test123": {
+      "views": 2,
+      "atc": 0,
+      "checkout": 0,
+      "purchases": 0,
+      "lastView": 1766134869021,
+      "lastAtc": null,
+      "lastCheckout": null,
+      "lastPurchase": null,
+      "firstView": 1766134861297
+    },
+    "2507010558291608100": {
+      "views": 5,
+      "atc": 0,
+      "checkout": 0,
+      "purchases": 0,
+      "lastView": 1766268409845,
+      "lastAtc": null,
+      "lastCheckout": null,
+      "lastPurchase": null,
+      "firstView": 1766226136894
+    },
+    "2512130418541633400": {
+      "views": 10,
+      "atc": 0,
+      "checkout": 0,
+      "purchases": 0,
+      "lastView": 1766229119981,
+      "lastAtc": null,
+      "lastCheckout": null,
+      "lastPurchase": null,
+      "firstView": 1766228144137
+    },
+    "2506280313311613800": {
+      "views": 1,
+      "atc": 0,
+      "checkout": 0,
+      "purchases": 0,
+      "lastView": 1766236841079,
+      "lastAtc": null,
+      "lastCheckout": null,
+      "lastPurchase": null,
+      "firstView": 1766236841079
+    },
+    "2512190632151613800": {
+      "views": 8,
+      "atc": 0,
+      "checkout": 0,
+      "purchases": 0,
+      "lastView": 1766410399797,
+      "lastAtc": null,
+      "lastCheckout": null,
+      "lastPurchase": null,
+      "firstView": 1766306328049
+    },
+    "2512191016261601300": {
+      "views": 7,
+      "atc": 0,
+      "checkout": 0,
+      "purchases": 0,
+      "lastView": 1766360842671,
+      "lastAtc": null,
+      "lastCheckout": null,
+      "lastPurchase": null,
+      "firstView": 1766342723734
+    },
+    "1990612747720253442": {
+      "views": 1,
+      "atc": 0,
+      "checkout": 0,
+      "purchases": 0,
+      "lastView": 1766410389617,
+      "lastAtc": null,
+      "lastCheckout": null,
+      "lastPurchase": null,
+      "firstView": 1766410389617
+    },
+    "waterproof-adjustable-silicone-pet-traction-rope": {
+      "views": 1,
+      "atc": 0,
+      "checkout": 0,
+      "purchases": 0,
+      "lastView": 1766413900628,
+      "lastAtc": null,
+      "lastCheckout": null,
+      "lastPurchase": null,
+      "firstView": 1766413900628
+    },
+    "2512110930471600500": {
+      "views": 1,
+      "atc": 0,
+      "checkout": 0,
+      "purchases": 0,
+      "lastView": 1766419396753,
+      "lastAtc": null,
+      "lastCheckout": null,
+      "lastPurchase": null,
+      "firstView": 1766419396753
+    },
+    "inflatable-dog-boat-ramp-up-to-286-lbs-cj-200": {
+      "views": 4,
+      "atc": 0,
+      "checkout": 0,
+      "purchases": 0,
+      "lastView": 1766515704185,
+      "lastAtc": null,
+      "lastCheckout": null,
+      "lastPurchase": null,
+      "firstView": 1766443740999
+    },
+    "1996064726721794050": {
+      "views": 99,
+      "atc": 44,
+      "checkout": 0,
+      "purchases": 0,
+      "lastView": 1767643626102,
+      "lastAtc": 1767643345530,
+      "lastCheckout": null,
+      "lastPurchase": null,
+      "firstView": 1766532669974
+    },
+    "dog-automatic-gravity-flow-pet-waterer-cj-197": {
+      "views": 1,
+      "atc": 0,
+      "checkout": 0,
+      "purchases": 0,
+      "lastView": 1766619936237,
+      "lastAtc": null,
+      "lastCheckout": null,
+      "lastPurchase": null,
+      "firstView": 1766619936237
+    },
+    "1991247152274202625": {
+      "views": 2,
+      "atc": 0,
+      "checkout": 0,
+      "purchases": 0,
+      "lastView": 1766659348155,
+      "lastAtc": null,
+      "lastCheckout": null,
+      "lastPurchase": null,
+      "firstView": 1766659347958
+    },
+    "2000923975869902849": {
+      "views": 1,
+      "atc": 0,
+      "checkout": 0,
+      "purchases": 0,
+      "lastView": 1766659414114,
+      "lastAtc": null,
+      "lastCheckout": null,
+      "lastPurchase": null,
+      "firstView": 1766659414114
+    },
+    "cj_2003467052895547394": {
+      "views": 2,
+      "atc": 0,
+      "checkout": 0,
+      "purchases": 0,
+      "lastView": 1766957832301,
+      "lastAtc": null,
+      "lastCheckout": null,
+      "lastPurchase": null,
+      "firstView": 1766957831007
+    },
+    "2-in-1-pet-grooming-gloves-brushes-for-cats-and-dogs-high-efficiency-hair-remova": {
+      "views": 1,
+      "atc": 0,
+      "checkout": 0,
+      "purchases": 0,
+      "lastView": 1767737718098,
+      "lastAtc": null,
+      "lastCheckout": null,
+      "lastPurchase": null,
+      "firstView": 1767737718098
+    },
+    "1993155042347737090": {
+      "views": 0,
+      "atc": 1,
+      "checkout": 0,
+      "purchases": 0,
+      "lastView": null,
+      "lastAtc": 1767737726606,
+      "lastCheckout": null,
+      "lastPurchase": null,
+      "firstView": null
+    }
+  }
+}

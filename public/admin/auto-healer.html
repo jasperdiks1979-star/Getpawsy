@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Auto-Healer | GetPawsy Admin</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    
+    :root {
+      --bg: #0d0d12;
+      --card: #14141a;
+      --border: rgba(255,255,255,.10);
+      --text: #f5f5f7;
+      --text-muted: rgba(255,255,255,.65);
+      --accent: #1db954;
+      --danger: #ff4444;
+      --warn: #ff9800;
+      --info: #4fc3f7;
+    }
+    
+    html, body {
+      margin: 0; padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      overscroll-behavior: none;
+    }
+    
+    .ah-page { 
+      min-height: 100vh; 
+      padding-bottom: 100px;
+    }
+    
+    .ah-topbar {
+      position: sticky; 
+      top: 0; 
+      z-index: 50;
+      padding: 14px 14px 10px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(13,13,18,.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    
+    .ah-title { display: flex; align-items: center; justify-content: space-between; }
+    .ah-title h1 { margin: 0; font-size: 20px; font-weight: 700; }
+    .ah-back { 
+      color: var(--accent); 
+      text-decoration: none; 
+      font-size: 14px; 
+      font-weight: 500;
+    }
+    
+    .ah-badges { 
+      display: flex; 
+      gap: 8px; 
+      flex-wrap: wrap; 
+      margin-top: 10px; 
+    }
+    
+    .badge {
+      font-size: 11px; 
+      font-weight: 600;
+      padding: 5px 10px; 
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .badge[data-tone="ok"] { background: rgba(29,185,84,.15); color: #1db954; border-color: rgba(29,185,84,.3); }
+    .badge[data-tone="warn"] { background: rgba(255,152,0,.12); color: #ff9800; border-color: rgba(255,152,0,.25); }
+    .badge[data-tone="danger"] { background: rgba(255,68,68,.12); color: #ff4444; border-color: rgba(255,68,68,.3); }
+    .badge[data-tone="info"] { background: rgba(79,195,247,.12); color: #4fc3f7; border-color: rgba(79,195,247,.25); }
+    
+    .ah-controls { 
+      display: grid; 
+      gap: 12px; 
+      margin-top: 14px; 
+    }
+    
+    .ah-field span { 
+      display: block; 
+      font-size: 12px; 
+      color: var(--text-muted);
+      margin-bottom: 6px; 
+    }
+    .ah-field input, .ah-field select {
+      width: 100%; 
+      height: 48px; 
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,.35); 
+      color: inherit; 
+      padding: 0 14px;
+      font-size: 15px;
+      -webkit-appearance: none;
+    }
+    .ah-field select { padding-right: 36px; }
+    
+    .ah-toggle { 
+      display: flex; 
+      align-items: center; 
+      gap: 12px; 
+      font-size: 14px;
+      padding: 8px 0;
+    }
+    .ah-toggle input[type="checkbox"] {
+      width: 48px;
+      height: 28px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.12);
+      -webkit-appearance: none;
+      position: relative;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .ah-toggle input[type="checkbox"]::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #fff;
+      transition: transform .2s;
+    }
+    .ah-toggle input[type="checkbox"]:checked {
+      background: var(--accent);
+    }
+    .ah-toggle input[type="checkbox"]:checked::after {
+      transform: translateX(20px);
+    }
+    
+    .ah-hint { 
+      margin: 4px 0 0; 
+      padding: 10px 12px;
+      font-size: 12px; 
+      color: var(--warn);
+      background: rgba(255,152,0,.08);
+      border-radius: 10px;
+      border: 1px solid rgba(255,152,0,.15);
+    }
+    .ah-hint:empty { display: none; }
+    
+    .ah-content { 
+      padding: 14px; 
+      display: grid; 
+      gap: 14px; 
+    }
+    
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 16px; 
+      padding: 16px;
+      background: var(--card);
+    }
+    .card h2 { 
+      margin: 0 0 12px; 
+      font-size: 15px; 
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .grid { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 10px; 
+    }
+    
+    .stat { 
+      padding: 14px; 
+      border-radius: 14px; 
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--border);
+    }
+    .stat span { 
+      display: block; 
+      font-size: 11px; 
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .stat b { 
+      font-size: 22px; 
+      font-weight: 700;
+      display: block;
+      margin-top: 4px;
+    }
+    .stat.good b { color: var(--accent); }
+    .stat.warn b { color: var(--warn); }
+    .stat.danger b { color: var(--danger); }
+    
+    .log { 
+      min-height: 140px; 
+      max-height: 260px; 
+      overflow: auto; 
+      padding: 12px; 
+      border-radius: 12px; 
+      background: rgba(0,0,0,.25);
+      font-family: 'SF Mono', Monaco, Consolas, monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--text-muted);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    
+    .ah-bottombar {
+      position: fixed; 
+      left: 0; 
+      right: 0; 
+      bottom: 0; 
+      z-index: 60;
+      display: grid; 
+      grid-template-columns: 1fr; 
+      gap: 8px;
+      padding: 12px 14px calc(18px + env(safe-area-inset-bottom, 0px));
+      border-top: 1px solid var(--border);
+      background: rgba(13,13,18,.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .ah-bottombar .btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    
+    .btn {
+      height: 52px; 
+      min-height: 48px;
+      border-radius: 14px; 
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06); 
+      color: inherit; 
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all .15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn.primary { 
+      background: linear-gradient(135deg, rgba(29,185,84,.25), rgba(29,185,84,.15)); 
+      border-color: rgba(29,185,84,.4);
+      color: #1db954;
+    }
+    .btn.ghost { background: transparent; }
+    .btn.danger { 
+      background: linear-gradient(135deg, rgba(255,68,68,.2), rgba(255,68,68,.1)); 
+      border-color: rgba(255,68,68,.4);
+      color: #ff4444;
+    }
+    .btn.danger.active {
+      background: linear-gradient(135deg, #ff4444, #cc3333);
+      color: #fff;
+    }
+    .btn:disabled { 
+      opacity: .4; 
+      filter: grayscale(0.8);
+      cursor: not-allowed;
+    }
+    .btn.full { grid-column: 1 / -1; }
+    
+    .modal { 
+      position: fixed; 
+      inset: 0; 
+      background: rgba(0,0,0,.7); 
+      display: grid; 
+      place-items: center; 
+      z-index: 80; 
+      padding: 16px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .2s;
+    }
+    .modal.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-card { 
+      width: 100%; 
+      max-width: 380px; 
+      border-radius: 20px; 
+      padding: 20px; 
+      background: var(--card); 
+      border: 1px solid var(--border);
+      transform: scale(0.95);
+      transition: transform .2s;
+    }
+    .modal.show .modal-card {
+      transform: scale(1);
+    }
+    .modal-card h3 { margin: 0 0 8px; font-size: 18px; }
+    .modal-card p { margin: 0 0 16px; color: var(--text-muted); font-size: 14px; line-height: 1.5; }
+    .modal-actions { display: flex; gap: 10px; margin-top: 16px; }
+    .modal-actions .btn { flex: 1; height: 48px; }
+    
+    .login-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .login-card {
+      width: 100%;
+      max-width: 340px;
+      padding: 24px;
+      background: var(--card);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+    .login-card h2 {
+      margin: 0 0 20px;
+      font-size: 22px;
+      color: var(--accent);
+    }
+    .login-card .ah-field { margin-bottom: 16px; }
+    .login-card .btn { width: 100%; }
+    .login-error {
+      color: var(--danger);
+      font-size: 13px;
+      margin-top: 12px;
+      text-align: center;
+    }
+    
+    @media (min-width: 600px) {
+      .ah-topbar { padding: 16px 20px 14px; }
+      .ah-content { padding: 20px; gap: 16px; }
+      .ah-bottombar { 
+        padding: 14px 20px calc(20px + env(safe-area-inset-bottom, 0px));
+        grid-template-columns: 1fr 1fr;
+      }
+      .ah-bottombar .btn-row {
+        display: contents;
+      }
+      .grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-overlay" id="login-overlay">
+    <div class="login-card">
+      <h2>Admin Login</h2>
+      <div class="ah-field">
+        <span>Admin Token</span>
+        <input type="password" id="login-token" placeholder="Enter admin token" autocomplete="off">
+      </div>
+      <button class="btn primary" id="login-btn">Login</button>
+      <p class="login-error" id="login-error"></p>
+    </div>
+  </div>
+  
+  <div class="ah-page">
+    <header class="ah-topbar">
+      <div class="ah-title">
+        <h1>Auto-Healer</h1>
+        <a href="/admin" class="ah-back">Back to Dashboard</a>
+      </div>
+      
+      <div class="ah-badges">
+        <span class="badge" data-tone="warn" id="badge-status">STOPPED</span>
+        <span class="badge" data-tone="warn" id="badge-kill">KILL SWITCH: OFF</span>
+        <span class="badge" data-tone="info" id="badge-deploy">DEV MODE</span>
+      </div>
+      
+      <div class="ah-controls">
+        <label class="ah-field">
+          <span>Mode</span>
+          <select id="autoheal-level">
+            <option value="0">0 — Observe only</option>
+            <option value="1">1 — Safe fixes only</option>
+            <option value="2">2 — Aggressive (dev only)</option>
+          </select>
+        </label>
+        
+        <label class="ah-toggle">
+          <input type="checkbox" id="autoheal-enabled">
+          <span>Enable Auto-Healer</span>
+        </label>
+        
+        <label class="ah-toggle">
+          <input type="checkbox" id="autoheal-probe-browser">
+          <span>Browser probes (Playwright)</span>
+        </label>
+        
+        <button class="btn danger full" id="btn-kill">EMERGENCY STOP</button>
+        
+        <p class="ah-hint" id="ah-hint"></p>
+      </div>
+    </header>
+    
+    <main class="ah-content">
+      <section class="card" id="card-health">
+        <h2>Health Score</h2>
+        <div class="grid">
+          <div class="stat good" id="stat-score">
+            <span>Score</span>
+            <b>—</b>
+          </div>
+          <div class="stat" id="stat-grade">
+            <span>Grade</span>
+            <b>—</b>
+          </div>
+          <div class="stat" id="stat-cart">
+            <span>Cart Rate</span>
+            <b>—</b>
+          </div>
+        </div>
+      </section>
+      
+      <section class="card" id="card-status">
+        <h2>System Status</h2>
+        <div class="grid">
+          <div class="stat">
+            <span>Products</span>
+            <b id="st-products">—</b>
+          </div>
+          <div class="stat good">
+            <span>Approved</span>
+            <b id="st-approved">—</b>
+          </div>
+          <div class="stat warn">
+            <span>Blocked</span>
+            <b id="st-blocked">—</b>
+          </div>
+          <div class="stat warn">
+            <span>Missing Images</span>
+            <b id="st-images">—</b>
+          </div>
+          <div class="stat">
+            <span>Page Loads (1h)</span>
+            <b id="st-pageloads">—</b>
+          </div>
+          <div class="stat">
+            <span>Uptime</span>
+            <b id="st-uptime">—</b>
+          </div>
+        </div>
+      </section>
+      
+      <section class="card" id="card-telemetry">
+        <h2>Real-Time Issues (1h)</h2>
+        <div class="grid">
+          <div class="stat" id="st-cart-clicks-wrap">
+            <span>Cart Clicks</span>
+            <b id="st-cart-clicks">—</b>
+          </div>
+          <div class="stat" id="st-cart-fails-wrap">
+            <span>Cart Fails</span>
+            <b id="st-cart-fails">—</b>
+          </div>
+          <div class="stat" id="st-image-fails-wrap">
+            <span>Image Errors</span>
+            <b id="st-image-fails">—</b>
+          </div>
+        </div>
+      </section>
+      
+      <section class="card" id="card-last-action">
+        <h2>Last Apply Action</h2>
+        <div id="last-action-content">
+          <p style="color: var(--text-muted); font-size: 13px;">No actions applied yet</p>
+        </div>
+        <div id="last-action-controls" style="display: none; margin-top: 12px;">
+          <div class="btn-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <button class="btn ghost" id="btn-view-diff">View Diff</button>
+            <button class="btn danger" id="btn-rollback" disabled>Rollback</button>
+          </div>
+        </div>
+      </section>
+      
+      <section class="card" id="card-level2">
+        <h2>Level 2 Status</h2>
+        <div id="level2-content">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <span class="badge" data-tone="warn" id="badge-level2">NOT APPROVED</span>
+            <span class="badge" data-tone="info" id="badge-env-level">LEVEL 1</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 13px; margin: 0 0 12px;" id="level2-hint">
+            Level 2 allows applying fixes. Requires AUTOHEAL_LEVEL=2 and AUTOHEAL_APPLY_ENABLED=true.
+          </p>
+          <button class="btn" id="btn-enable-level2" style="width: 100%;">Enable Level 2 (Requires Confirmation)</button>
+        </div>
+      </section>
+      
+      <section class="card" id="card-alerts">
+        <h2>Recent Alerts</h2>
+        <div id="alerts-content">
+          <p style="color: var(--text-muted); font-size: 13px;">No alerts</p>
+        </div>
+      </section>
+      
+      <section class="card">
+        <h2>Activity Log</h2>
+        <pre class="log" id="ah-log">Waiting for actions...</pre>
+      </section>
+    </main>
+    
+    <footer class="ah-bottombar">
+      <div class="btn-row">
+        <button class="btn" id="btn-tests">Run Tests</button>
+        <button class="btn" id="btn-triage">AI Triage</button>
+      </div>
+      <div class="btn-row">
+        <button class="btn ghost" id="btn-dryrun">Dry Run</button>
+        <button class="btn primary" id="btn-apply" disabled>Apply Fixes</button>
+      </div>
+    </footer>
+  </div>
+  
+  <div class="modal" id="confirm-modal">
+    <div class="modal-card">
+      <h3 id="confirm-title">Confirm Action</h3>
+      <p id="confirm-text">Are you sure you want to proceed?</p>
+      <label class="ah-field">
+        <span>Type ENABLE to confirm</span>
+        <input id="confirm-input" autocomplete="off" placeholder="ENABLE">
+      </label>
+      <div class="modal-actions">
+        <button class="btn ghost" id="confirm-cancel">Cancel</button>
+        <button class="btn primary" id="confirm-ok" disabled>Confirm</button>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    let STATE = null;
+    let authenticated = false;
+    
+    async function checkAuth() {
+      try {
+        const res = await fetch('/api/admin/ping', { credentials: 'include' });
+        if (res.ok) {
+          authenticated = true;
+          document.getElementById('login-overlay').style.display = 'none';
+          await loadState();
+        }
+      } catch (e) {
+        console.log('Not authenticated');
+      }
+    }
+    
+    document.getElementById('login-btn').addEventListener('click', async () => {
+      const token = document.getElementById('login-token').value.trim();
+      const errorEl = document.getElementById('login-error');
+      errorEl.textContent = '';
+      
+      if (!token) {
+        errorEl.textContent = 'Please enter your admin token';
+        return;
+      }
+      
+      try {
+        const res = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify({ token })
+        });
+        
+        if (res.ok) {
+          authenticated = true;
+          document.getElementById('login-overlay').style.display = 'none';
+          await loadState();
+        } else {
+          const data = await res.json();
+          errorEl.textContent = data.error || 'Login failed';
+        }
+      } catch (e) {
+        errorEl.textContent = 'Connection error';
+      }
+    });
+    
+    document.getElementById('login-token').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') document.getElementById('login-btn').click();
+    });
+    
+    async function loadState() {
+      try {
+        const res = await fetch('/api/admin/autoheal/state', { credentials: 'include' });
+        if (!res.ok) throw new Error('Failed to load state');
+        STATE = await res.json();
+        renderState();
+        renderMetrics();
+      } catch (e) {
+        log('Error loading state: ' + e.message);
+      }
+    }
+    
+    function renderMetrics() {
+      if (!STATE || !STATE.metrics) return;
+      const m = STATE.metrics;
+      
+      document.getElementById('st-products').textContent = m.productsTotal || '—';
+      document.getElementById('st-approved').textContent = m.approved || '—';
+      document.getElementById('st-blocked').textContent = m.blocked || '—';
+      document.getElementById('st-images').textContent = m.missingImages || '0';
+      document.getElementById('st-pageloads').textContent = m.pageLoads || '0';
+      
+      const mins = Math.floor((m.uptimeSeconds || 0) / 60);
+      document.getElementById('st-uptime').textContent = mins + 'm';
+      
+      document.getElementById('st-cart-clicks').textContent = m.cartClicks || '0';
+      document.getElementById('st-cart-fails').textContent = m.cartAddFails || '0';
+      document.getElementById('st-image-fails').textContent = m.imageFailures || '0';
+      
+      const cfWrap = document.getElementById('st-cart-fails-wrap');
+      const ifWrap = document.getElementById('st-image-fails-wrap');
+      cfWrap.className = 'stat' + (m.cartAddFails > 0 ? ' danger' : '');
+      ifWrap.className = 'stat' + (m.imageFailures > 5 ? ' warn' : '');
+    }
+    
+    function renderState() {
+      if (!STATE) return;
+      
+      const { settings, derived, healthScore } = STATE;
+      const enabled = !!settings.autoheal_enabled;
+      const level = Number(settings.autoheal_level || 0);
+      const kill = !!settings.autoheal_kill_switch;
+      
+      setBadge('badge-status', enabled ? 'RUNNING' : 'STOPPED', enabled ? 'ok' : 'warn');
+      setBadge('badge-kill', kill ? 'KILL SWITCH: ON' : 'KILL SWITCH: OFF', kill ? 'danger' : 'ok');
+      setBadge('badge-deploy', derived.isDeploy ? 'DEPLOYMENT MODE' : 'DEV MODE', derived.isDeploy ? 'info' : 'ok');
+      
+      document.getElementById('autoheal-enabled').checked = enabled;
+      document.getElementById('autoheal-level').value = String(level);
+      document.getElementById('autoheal-probe-browser').checked = !!settings.autoheal_probe_browser;
+      
+      const killBtn = document.getElementById('btn-kill');
+      if (kill) {
+        killBtn.classList.add('active');
+        killBtn.textContent = 'KILL SWITCH ON — Click to Disable';
+      } else {
+        killBtn.classList.remove('active');
+        killBtn.textContent = 'EMERGENCY STOP';
+      }
+      
+      const opt2 = document.querySelector('#autoheal-level option[value="2"]');
+      if (opt2) opt2.disabled = derived.isDeploy;
+      
+      const applyBtn = document.getElementById('btn-apply');
+      const canApply = derived.applyEnabled && level >= 2 && !kill;
+      applyBtn.disabled = !canApply;
+      
+      const hint = document.getElementById('ah-hint');
+      if (kill) {
+        hint.textContent = 'Kill switch is ON: all fix actions are blocked.';
+      } else if (level < 2) {
+        hint.textContent = 'Level ' + level + ' (Suggest Only): fixes are proposed but NOT applied. Set Level 2 + AUTOHEAL_APPLY_ENABLED=true to enable fix application.';
+      } else if (!derived.applyEnabled) {
+        hint.textContent = 'Level 2 active but AUTOHEAL_APPLY_ENABLED is not set. Add this secret to enable fix application.';
+      } else if (derived.lockdownActive) {
+        hint.textContent = 'Deployment mode: automatic fixes are limited to SAFE actions.';
+      } else {
+        hint.textContent = '';
+      }
+      
+      if (!derived.playwrightAvailable) {
+        const logEl = document.getElementById('ah-log');
+        if (!logEl.textContent.includes('synthetic E2E')) {
+          logEl.textContent = '[Info] Playwright unavailable — synthetic E2E will be used for probes\n' + logEl.textContent;
+        }
+      }
+      
+      if (healthScore) {
+        const scoreEl = document.getElementById('stat-score').querySelector('b');
+        const gradeEl = document.getElementById('stat-grade').querySelector('b');
+        const cartEl = document.getElementById('stat-cart').querySelector('b');
+        
+        scoreEl.textContent = healthScore.score || '—';
+        gradeEl.textContent = healthScore.grade || '—';
+        
+        const cartRate = healthScore.metrics?.cartSuccessRate;
+        cartEl.textContent = cartRate !== null ? Math.round(cartRate * 100) + '%' : '—';
+        
+        const statScore = document.getElementById('stat-score');
+        statScore.className = 'stat';
+        if (healthScore.score >= 80) statScore.classList.add('good');
+        else if (healthScore.score >= 50) statScore.classList.add('warn');
+        else if (healthScore.score < 50) statScore.classList.add('danger');
+      }
+    }
+    
+    function setBadge(id, text, tone) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.textContent = text;
+      el.dataset.tone = tone;
+    }
+    
+    function log(msg) {
+      const logEl = document.getElementById('ah-log');
+      const time = new Date().toLocaleTimeString();
+      logEl.textContent = `[${time}] ${msg}\n` + logEl.textContent;
+    }
+    
+    async function updateSettings(patch) {
+      try {
+        log('Updating settings...');
+        const res = await fetch('/api/admin/autoheal/state', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify(patch)
+        });
+        const data = await res.json();
+        if (data.ok) {
+          STATE.settings = { ...STATE.settings, ...data.state };
+          await loadState();
+          log('Settings updated');
+        } else {
+          log('Error: ' + (data.error || 'Unknown error'));
+        }
+      } catch (e) {
+        log('Error: ' + e.message);
+      }
+    }
+    
+    function openConfirm({ title, text, onConfirm }) {
+      const modal = document.getElementById('confirm-modal');
+      const input = document.getElementById('confirm-input');
+      const ok = document.getElementById('confirm-ok');
+      
+      document.getElementById('confirm-title').textContent = title;
+      document.getElementById('confirm-text').textContent = text;
+      
+      input.value = '';
+      ok.disabled = true;
+      
+      input.oninput = () => { ok.disabled = input.value.trim().toUpperCase() !== 'ENABLE'; };
+      ok.onclick = async () => {
+        modal.classList.remove('show');
+        await onConfirm();
+      };
+      document.getElementById('confirm-cancel').onclick = () => { modal.classList.remove('show'); };
+      
+      modal.classList.add('show');
+      setTimeout(() => input.focus(), 100);
+    }
+    
+    document.getElementById('btn-apply').addEventListener('click', () => {
+      if (STATE?.derived?.applyBlocked) {
+        log('Apply blocked: check kill switch and level');
+        return;
+      }
+      
+      openConfirm({
+        title: 'Apply Safe Fixes',
+        text: 'This will apply SAFE fixes to your store. Review the dry run first if unsure.',
+        onConfirm: async () => {
+          log('Applying safe fixes...');
+          try {
+            const res = await fetch('/api/admin/autoheal/fix', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              credentials: 'include',
+              body: JSON.stringify({ applyRecommendedSafeFixes: true })
+            });
+            const data = await res.json();
+            if (data.ok) {
+              log('Fixes applied: ' + (data.changesApplied || 0) + ' changes');
+            } else {
+              log('Error: ' + (data.error || 'Unknown'));
+            }
+            await loadState();
+          } catch (e) {
+            log('Error: ' + e.message);
+          }
+        }
+      });
+    });
+    
+    document.getElementById('btn-kill').addEventListener('click', async () => {
+      const currentKill = STATE?.settings?.autoheal_kill_switch;
+      const newKill = !currentKill;
+      
+      log(newKill ? 'Activating EMERGENCY STOP...' : 'Deactivating kill switch...');
+      
+      try {
+        await fetch('/api/admin/autoheal/kill', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify({ killSwitch: newKill })
+        });
+        log(newKill ? 'EMERGENCY STOP activated!' : 'Kill switch deactivated');
+        await loadState();
+      } catch (e) {
+        log('Error: ' + e.message);
+      }
+    });
+    
+    document.getElementById('btn-tests').addEventListener('click', async () => {
+      log('Running tests...');
+      try {
+        const res = await fetch('/api/admin/autoheal/run-tests', {
+          method: 'POST',
+          credentials: 'include'
+        });
+        const data = await res.json();
+        if (data.ok) {
+          log('Tests completed: ' + (data.passed || 0) + ' passed, ' + (data.failed || 0) + ' failed');
+        } else {
+          log('Tests error: ' + (data.error || 'Unknown'));
+        }
+      } catch (e) {
+        log('Error: ' + e.message);
+      }
+    });
+    
+    document.getElementById('btn-triage').addEventListener('click', async () => {
+      log('Running AI triage...');
+      try {
+        const res = await fetch('/api/admin/autoheal/triage', {
+          method: 'POST',
+          credentials: 'include'
+        });
+        const data = await res.json();
+        if (data.ok) {
+          log('Triage complete: ' + (data.issues?.length || 0) + ' issues found');
+          if (data.issues?.length) {
+            data.issues.forEach(i => log('  - ' + i.action + ': ' + i.reason));
+          }
+        } else {
+          log('Triage error: ' + (data.error || 'Unknown'));
+        }
+      } catch (e) {
+        log('Error: ' + e.message);
+      }
+    });
+    
+    document.getElementById('btn-dryrun').addEventListener('click', async () => {
+      log('Running dry run...');
+      try {
+        const res = await fetch('/api/admin/autoheal/fix?dryRun=1', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify({ applyRecommendedSafeFixes: true })
+        });
+        const data = await res.json();
+        if (data.ok) {
+          log('Dry run: ' + (data.wouldApply || 0) + ' fixes would be applied');
+          if (data.actions?.length) {
+            data.actions.slice(0, 5).forEach(a => log('  - ' + a.action));
+          }
+        } else {
+          log('Dry run error: ' + (data.error || 'Unknown'));
+        }
+      } catch (e) {
+        log('Error: ' + e.message);
+      }
+    });
+    
+    document.getElementById('autoheal-enabled').addEventListener('change', e => {
+      updateSettings({ enabled: e.target.checked });
+    });
+    
+    document.getElementById('autoheal-level').addEventListener('change', e => {
+      updateSettings({ level: Number(e.target.value) });
+    });
+    
+    document.getElementById('autoheal-probe-browser').addEventListener('change', e => {
+      updateSettings({ probeBrowser: e.target.checked });
+    });
+    
+    let lastAction = null;
+    
+    async function loadLastAction() {
+      try {
+        const res = await fetch('/api/admin/autoheal/actions?limit=5', { credentials: 'include' });
+        const data = await res.json();
+        if (data.ok && data.lastApply) {
+          lastAction = data.lastApply;
+          renderLastAction();
+        }
+        if (data.ok && data.stats) {
+          renderActionStats(data.stats);
+        }
+      } catch (e) {
+        console.log('Failed to load actions:', e.message);
+      }
+    }
+    
+    function renderLastAction() {
+      const contentEl = document.getElementById('last-action-content');
+      const controlsEl = document.getElementById('last-action-controls');
+      const rollbackBtn = document.getElementById('btn-rollback');
+      
+      if (!lastAction) {
+        contentEl.innerHTML = '<p style="color: var(--text-muted); font-size: 13px;">No actions applied yet</p>';
+        controlsEl.style.display = 'none';
+        return;
+      }
+      
+      const date = new Date(lastAction.ts).toLocaleString();
+      const diffPreview = lastAction.diff_json ? JSON.stringify(lastAction.diff_json).substring(0, 100) + '...' : 'No diff available';
+      
+      contentEl.innerHTML = `
+        <div style="font-size: 13px; line-height: 1.6;">
+          <div><strong>Action:</strong> ${lastAction.action}</div>
+          <div><strong>Status:</strong> <span style="color: ${lastAction.status === 'applied' ? 'var(--accent)' : lastAction.status === 'rolled_back' ? 'var(--warn)' : 'var(--danger)'};">${lastAction.status}</span></div>
+          <div><strong>Targets:</strong> ${lastAction.target_count || 0}</div>
+          <div><strong>Time:</strong> ${date}</div>
+        </div>
+      `;
+      
+      controlsEl.style.display = 'block';
+      rollbackBtn.disabled = lastAction.status !== 'applied' || !(STATE?.derived?.applyEnabled && STATE?.settings?.autoheal_level >= 2);
+    }
+    
+    function renderActionStats(stats) {
+      if (!stats) return;
+    }
+    
+    document.getElementById('btn-view-diff').addEventListener('click', () => {
+      if (!lastAction || !lastAction.diff_json) {
+        log('No diff available');
+        return;
+      }
+      
+      const diffStr = JSON.stringify(lastAction.diff_json, null, 2);
+      log('=== DIFF PREVIEW ===\n' + diffStr);
+    });
+    
+    document.getElementById('btn-rollback').addEventListener('click', () => {
+      if (!lastAction) return;
+      
+      openConfirm({
+        title: 'Rollback Action',
+        text: `This will restore ${lastAction.target_count || 0} items to their previous state. This action cannot be undone.`,
+        onConfirm: async () => {
+          log('Rolling back action ' + lastAction.id + '...');
+          try {
+            const res = await fetch(`/api/admin/autoheal/rollback/${lastAction.id}`, {
+              method: 'POST',
+              credentials: 'include'
+            });
+            const data = await res.json();
+            if (data.ok) {
+              log('Rollback complete: ' + data.restoredCount + ' items restored');
+              await loadLastAction();
+            } else {
+              log('Rollback error: ' + (data.error || 'Unknown'));
+            }
+          } catch (e) {
+            log('Error: ' + e.message);
+          }
+        }
+      });
+    });
+    
+    async function loadLevel2Status() {
+      try {
+        const res = await fetch('/api/admin/autoheal/level2-status', { credentials: 'include' });
+        const data = await res.json();
+        if (data.ok) {
+          renderLevel2Status(data);
+        }
+      } catch (e) {
+        console.log('Failed to load level 2 status:', e.message);
+      }
+    }
+    
+    function renderLevel2Status(data) {
+      const badge = document.getElementById('badge-level2');
+      const envBadge = document.getElementById('badge-env-level');
+      const hint = document.getElementById('level2-hint');
+      const btn = document.getElementById('btn-enable-level2');
+      
+      badge.textContent = data.approved ? 'APPROVED' : 'NOT APPROVED';
+      badge.dataset.tone = data.approved ? 'ok' : 'warn';
+      
+      envBadge.textContent = 'LEVEL ' + data.runtimeLevel;
+      envBadge.dataset.tone = data.runtimeLevel >= 2 ? 'ok' : 'info';
+      
+      if (data.canApplyNow) {
+        hint.textContent = 'Level 2 is fully enabled. You can apply fixes.';
+        btn.disabled = true;
+        btn.textContent = 'Level 2 Active';
+      } else if (data.approved && !data.applyEnabled) {
+        hint.textContent = 'Approved but AUTOHEAL_APPLY_ENABLED is not set. Add this secret to enable.';
+      } else if (data.approved && data.runtimeLevel < 2) {
+        hint.textContent = 'Approved but AUTOHEAL_LEVEL is below 2. Set AUTOHEAL_LEVEL=2 in secrets.';
+      }
+    }
+    
+    document.getElementById('btn-enable-level2').addEventListener('click', () => {
+      openConfirm({
+        title: 'Enable Level 2',
+        text: 'This will approve Level 2 auto-healing. You still need to set AUTOHEAL_LEVEL=2 and AUTOHEAL_APPLY_ENABLED=true in your secrets.',
+        onConfirm: async () => {
+          log('Enabling Level 2...');
+          try {
+            const res = await fetch('/api/admin/autoheal/enable-level2', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              credentials: 'include',
+              body: JSON.stringify({ confirmation: 'I_UNDERSTAND_THE_RISKS' })
+            });
+            const data = await res.json();
+            if (data.ok) {
+              log('Level 2 approved! ' + (data.runtimeStatus?.hint || ''));
+              await loadLevel2Status();
+            } else {
+              log('Error: ' + (data.error || 'Unknown'));
+            }
+          } catch (e) {
+            log('Error: ' + e.message);
+          }
+        }
+      });
+    });
+    
+    async function loadAlerts() {
+      try {
+        const res = await fetch('/api/admin/autoheal/alerts?limit=10', { credentials: 'include' });
+        const data = await res.json();
+        if (data.ok) {
+          renderAlerts(data);
+        }
+      } catch (e) {
+        console.log('Failed to load alerts:', e.message);
+      }
+    }
+    
+    function renderAlerts(data) {
+      const contentEl = document.getElementById('alerts-content');
+      
+      if (!data.alerts || data.alerts.length === 0) {
+        contentEl.innerHTML = `
+          <p style="color: var(--text-muted); font-size: 13px;">No alerts</p>
+          <div style="font-size: 11px; color: var(--text-muted); margin-top: 8px;">
+            Alerts: ${data.alertsEnabled ? 'Enabled' : 'Disabled'} | 
+            Slack: ${data.slackConfigured ? 'Yes' : 'No'} | 
+            Email: ${data.emailConfigured ? 'Yes' : 'No'}
+          </div>
+        `;
+        return;
+      }
+      
+      let html = '<div style="font-size: 12px;">';
+      data.alerts.slice(0, 5).forEach(alert => {
+        const date = new Date(alert.ts).toLocaleString();
+        const severityColor = alert.severity === 'critical' ? 'var(--danger)' : alert.severity === 'warn' ? 'var(--warn)' : 'var(--info)';
+        html += `
+          <div style="padding: 8px 0; border-bottom: 1px solid var(--border);">
+            <span style="color: ${severityColor}; font-weight: 600;">${alert.type}</span>
+            <span style="color: var(--text-muted); margin-left: 8px;">${date}</span>
+          </div>
+        `;
+      });
+      html += '</div>';
+      contentEl.innerHTML = html;
+    }
+    
+    async function loadAll() {
+      await loadState();
+      await loadLastAction();
+      await loadLevel2Status();
+      await loadAlerts();
+    }
+    
+    checkAuth().then(() => {
+      loadLastAction();
+      loadLevel2Status();
+      loadAlerts();
+    });
+    setInterval(loadAll, 30000);
+  </script>
+</body>
+</html>

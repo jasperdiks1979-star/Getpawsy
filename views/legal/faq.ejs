@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Frequently Asked Questions | GetPawsy</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .faq-page { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    .faq-page h1 { color: var(--pawsy-primary, #6366f1); margin-bottom: 10px; }
+    .faq-page .tagline { color: #666; font-size: 16px; margin-bottom: 30px; }
+    .faq-section { margin: 30px 0; }
+    .faq-section h2 { color: #333; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; }
+    .faq-item { background: #f8f9ff; border-radius: 12px; margin-bottom: 15px; overflow: hidden; }
+    .faq-question { padding: 18px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: #333; }
+    .faq-question:hover { background: #f0f1ff; }
+    .faq-question::after { content: '+'; font-size: 24px; color: var(--pawsy-primary, #6366f1); transition: transform 0.3s; }
+    .faq-item.open .faq-question::after { content: '-'; }
+    .faq-answer { padding: 0 20px 18px; color: #555; line-height: 1.7; display: none; }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-cta { background: linear-gradient(135deg, #f8f9ff 0%, #e8e0ff 100%); padding: 30px; border-radius: 16px; text-align: center; margin-top: 40px; }
+    .faq-cta h3 { color: var(--pawsy-primary, #6366f1); margin-bottom: 10px; }
+    .faq-cta p { color: #666; margin-bottom: 20px; }
+    .faq-cta a { display: inline-block; padding: 12px 24px; background: var(--pawsy-primary, #6366f1); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
+    .faq-cta a:hover { background: #5558e3; }
+  </style>
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+  <main class="faq-page">
+    <h1>Frequently Asked Questions</h1>
+    <p class="tagline">Find quick answers to common questions. Can't find what you're looking for? Ask Pawsy or contact us!</p>
+
+    <div class="faq-section">
+      <h2>Orders & Shipping</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">How long does shipping take?</div>
+        <div class="faq-answer">Standard shipping takes 5-7 business days within the US. Express shipping (2-3 days) and Priority shipping (1-2 days) are also available. Orders to Alaska and Hawaii may take 7-10 business days.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Do you offer free shipping?</div>
+        <div class="faq-answer">Yes! We offer free standard shipping on orders over $50. For Alaska and Hawaii, free shipping is available on orders over $75.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">How can I track my order?</div>
+        <div class="faq-answer">Once your order ships, you'll receive a confirmation email with a tracking link. You can also log into your account and view your order history, or ask our Pawsy AI assistant for tracking updates.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Can I change or cancel my order?</div>
+        <div class="faq-answer">You can request changes or cancellation within 1 hour of placing your order by contacting us immediately. Once an order enters processing, we may not be able to modify it.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Do you ship internationally?</div>
+        <div class="faq-answer">Currently, we only ship within the United States, including Alaska, Hawaii, and US territories. We're working on expanding our shipping coverage.</div>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <h2>Returns & Refunds</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">What is your return policy?</div>
+        <div class="faq-answer">We offer a 30-day return window for most items in unused, original condition with packaging. Some items like opened pet food or personalized products cannot be returned.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">How do I return an item?</div>
+        <div class="faq-answer">Log into your account, go to Order History, select the order, and click "Request Return." Our AI Returns Assistant will guide you through the process and provide a prepaid return label.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">How long do refunds take?</div>
+        <div class="faq-answer">After we receive your return, processing takes 1-3 business days. Refunds appear in your original payment method within 5-7 business days. Store credit is available immediately upon approval.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">What if I received a damaged item?</div>
+        <div class="faq-answer">Please report damaged items within 48 hours of delivery. Take photos of the damage and contact us. We'll provide a free return label and send a replacement or full refund.</div>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <h2>Products & Pet Care</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">Are your products safe for pets?</div>
+        <div class="faq-answer">We carefully select products from trusted suppliers. However, always supervise your pet with new toys and accessories. Consult your veterinarian for health-related concerns or dietary questions.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">How do I choose the right size?</div>
+        <div class="faq-answer">Each product page includes sizing information when applicable. When in doubt, measure your pet and compare to the size chart. For beds and crates, choose a size that allows your pet to stretch out comfortably.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Do you have products for both dogs and cats?</div>
+        <div class="faq-answer">Yes! We carry a wide selection for both dogs and cats, including toys, beds, feeding supplies, grooming tools, and more. Use our category filters to find products for your furry friend.</div>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <h2>Account & Payments</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">What payment methods do you accept?</div>
+        <div class="faq-answer">We accept all major credit cards (Visa, Mastercard, American Express, Discover), debit cards, and secure payment through Stripe. All payments are processed in US Dollars.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Is my payment information secure?</div>
+        <div class="faq-answer">Yes! We use Stripe for payment processing, which is PCI-DSS compliant. Your payment information is encrypted and never stored on our servers.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Do I need an account to order?</div>
+        <div class="faq-answer">You can checkout as a guest, but creating an account lets you track orders, save favorites, access order history, and get personalized recommendations from Pawsy.</div>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <h2>Pawsy AI Assistant</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">What can Pawsy help me with?</div>
+        <div class="faq-answer">Pawsy can help you find products, answer questions about shipping and returns, provide pet care tips, track orders, and give personalized recommendations based on your pet's needs.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Is Pawsy available 24/7?</div>
+        <div class="faq-answer">Yes! Pawsy is available anytime in the bottom-right corner of our website. For complex issues, Pawsy can connect you with our human support team during business hours.</div>
+      </div>
+    </div>
+
+    <div class="faq-cta">
+      <h3>Still have questions?</h3>
+      <p>Our team is here to help! Chat with Pawsy or reach out directly.</p>
+      <a href="/contact">Contact Us</a>
+    </div>
+  </main>
+
+  <%- include('../partials/footer') %>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>

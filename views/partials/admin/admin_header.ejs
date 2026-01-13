@@ -1,0 +1,40 @@
+<header class="admin-header">
+    <h1><%= typeof pageTitle !== 'undefined' ? pageTitle : 'Admin' %></h1>
+
+    <div class="admin-header-actions">
+        <span>👋 Welcome, Admin</span>
+        <a href="/" target="_blank">View Store</a>
+        <a href="/logout">Logout</a>
+    </div>
+</header>
+
+<style>
+.admin-header {
+    width: calc(100% - 260px);
+    margin-left: 260px;
+    padding: 18px 25px;
+    background: #141414;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+.admin-header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+.admin-header-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.admin-header a {
+    color: #00c4a7;
+    font-weight: 600;
+    text-decoration: none;
+}
+.admin-header a:hover {
+    text-decoration: underline;
+}
+</style>

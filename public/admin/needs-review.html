@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Needs Review — Admin — GetPawsy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f0f1e;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    header {
+      background: #1a1a2e;
+      border-bottom: 2px solid #ff6b6b;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 { font-size: 24px; color: #ff6b6b; }
+    header a { color: #00C4A7; text-decoration: none; }
+    header a:hover { text-decoration: underline; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+    .summary {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .stat-card {
+      background: #1a1a2e;
+      border: 1px solid #262643;
+      border-radius: 8px;
+      padding: 20px;
+      min-width: 180px;
+      flex: 1;
+    }
+    .stat-card h3 {
+      color: #888;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    .stat-card .value {
+      font-size: 32px;
+      font-weight: 700;
+      color: #ff6b6b;
+    }
+    .stat-card.ok .value { color: #00C4A7; }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background: #1a1a2e;
+      border: 1px solid #262643;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .product-card:hover { border-color: #ff6b6b; }
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: #262643;
+    }
+    .product-card .info {
+      padding: 15px;
+    }
+    .product-card h4 {
+      font-size: 14px;
+      margin-bottom: 8px;
+      color: #fff;
+      line-height: 1.4;
+    }
+    .product-card .reason {
+      background: #ff6b6b22;
+      color: #ff6b6b;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .product-card .meta {
+      font-size: 11px;
+      color: #888;
+      margin-bottom: 12px;
+    }
+    .product-card .actions {
+      display: flex;
+      gap: 10px;
+    }
+    .btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 12px;
+      flex: 1;
+      transition: background 0.2s;
+    }
+    .btn-approve {
+      background: #00C4A7;
+      color: #1a1a2e;
+    }
+    .btn-approve:hover { background: #00d4b8; }
+    .btn-hide {
+      background: #444;
+      color: #fff;
+    }
+    .btn-hide:hover { background: #555; }
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: #888;
+    }
+    .empty-state h2 {
+      color: #00C4A7;
+      margin-bottom: 10px;
+    }
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: #888;
+    }
+    .approved {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .approved::after {
+      content: "✓ Approved";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #00C4A7;
+      color: #1a1a2e;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+    .product-card { position: relative; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>⚠️ Needs Review</h1>
+    <a href="/admin/">← Back to Dashboard</a>
+  </header>
+  
+  <div class="container">
+    <div class="summary" id="summary">
+      <div class="stat-card">
+        <h3>Pending Review</h3>
+        <div class="value" id="pendingCount">-</div>
+      </div>
+      <div class="stat-card ok">
+        <h3>Approved Today</h3>
+        <div class="value" id="approvedCount">0</div>
+      </div>
+    </div>
+    
+    <div id="loading" class="loading">Loading products...</div>
+    <div id="empty" class="empty-state" style="display:none;">
+      <h2>All Clear!</h2>
+      <p>No products need review. The Pet Safety Net is working properly.</p>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+  
+  <script>
+    let approvedCount = 0;
+    
+    async function loadProducts() {
+      try {
+        const res = await fetch('/api/admin/review/needs-review');
+        const data = await res.json();
+        
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('pendingCount').textContent = data.products?.length || 0;
+        
+        if (!data.products || data.products.length === 0) {
+          document.getElementById('empty').style.display = 'block';
+          return;
+        }
+        
+        const grid = document.getElementById('productGrid');
+        grid.innerHTML = data.products.map(p => `
+          <div class="product-card" id="card-${p.id}">
+            <img src="${p.image || p.images?.[0] || '/images/placeholder-product.svg'}" 
+                 alt="${escapeHtml(p.title)}" 
+                 onerror="this.src='/images/placeholder-product.svg'" />
+            <div class="info">
+              <h4>${escapeHtml(p.title)}</h4>
+              <div class="reason">${escapeHtml(p.pet_classification_reason || p.review_reason || 'Unknown reason')}</div>
+              <div class="meta">
+                ID: ${p.id}<br>
+                Category: ${p.categorySlug || 'N/A'}<br>
+                Price: $${(p.price || 0).toFixed(2)}
+              </div>
+              <div class="actions">
+                <button class="btn btn-approve" onclick="approveProduct('${p.id}')">
+                  ✓ Mark as Pet
+                </button>
+                <button class="btn btn-hide" onclick="keepHidden('${p.id}')">
+                  Keep Hidden
+                </button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      } catch (err) {
+        document.getElementById('loading').textContent = 'Error loading products: ' + err.message;
+      }
+    }
+    
+    async function approveProduct(id) {
+      const card = document.getElementById('card-' + id);
+      const btn = card.querySelector('.btn-approve');
+      btn.disabled = true;
+      btn.textContent = 'Approving...';
+      
+      try {
+        const res = await fetch('/api/admin/review/approve/' + id, { method: 'POST' });
+        const data = await res.json();
+        
+        if (data.success) {
+          card.classList.add('approved');
+          approvedCount++;
+          document.getElementById('approvedCount').textContent = approvedCount;
+          
+          const pending = parseInt(document.getElementById('pendingCount').textContent);
+          document.getElementById('pendingCount').textContent = pending - 1;
+          
+          setTimeout(() => card.remove(), 1000);
+        } else {
+          btn.textContent = 'Error';
+        }
+      } catch (err) {
+        btn.textContent = 'Error';
+        console.error('Approve error:', err);
+      }
+    }
+    
+    async function keepHidden(id) {
+      const card = document.getElementById('card-' + id);
+      const btn = card.querySelector('.btn-hide');
+      btn.disabled = true;
+      btn.textContent = 'Hiding...';
+      
+      try {
+        const res = await fetch('/api/admin/review/keep-hidden/' + id, { method: 'POST' });
+        const data = await res.json();
+        
+        if (data.success) {
+          card.style.opacity = '0.3';
+          
+          const pending = parseInt(document.getElementById('pendingCount').textContent);
+          document.getElementById('pendingCount').textContent = pending - 1;
+          
+          setTimeout(() => card.remove(), 500);
+        } else {
+          btn.textContent = 'Error';
+        }
+      } catch (err) {
+        btn.textContent = 'Error';
+        console.error('Hide error:', err);
+      }
+    }
+    
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/[&<>"']/g, m => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[m]));
+    }
+    
+    loadProducts();
+  </script>
+</body>
+</html>

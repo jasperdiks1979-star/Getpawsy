@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="alternate" hreflang="en" href="https://getpawsy.com/" />
+  <link rel="alternate" hreflang="nl" href="https://getpawsy.com/?lang=nl" />
+  <link rel="alternate" hreflang="de" href="https://getpawsy.com/?lang=de" />
+  <link rel="alternate" hreflang="fr" href="https://getpawsy.com/?lang=fr" />
+  <link rel="alternate" hreflang="es" href="https://getpawsy.com/?lang=es" />
+  <link rel="alternate" hreflang="x-default" href="https://getpawsy.com/" />
+  <!-- SEO_META -->
+  <link rel="preconnect" href="https://api.stripe.com" crossorigin>
+  <link rel="preconnect" href="https://api.openai.com" crossorigin>
+  <link rel="dns-prefetch" href="https://api.stripe.com">
+  <link rel="dns-prefetch" href="https://api.openai.com">
+  <link rel="stylesheet" href="/styles.css?v=2.8.0-20260107003641" />
+  <!-- STRUCTURED_DATA -->
+  <!-- GA4_SCRIPT -->
+</head>
+<body>
+  <!-- Debug banner: STRICTLY hidden by default, show ONLY with ?debug=1 -->
+    <div class="wrap topbar-inner">
+      <a class="brand" href="/">GetPawsy</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="/dogs" class="nav-link" data-i18n="navDogs">Dogs</a>
+        <a href="/cats" class="nav-link" data-i18n="navCats">Cats</a>
+        <a href="/small-pets" class="nav-link" data-i18n="navSmallPets">Small Pets</a>
+        <a href="/toys" class="nav-link">Toys</a>
+        <a href="/feeding" class="nav-link">Feeding</a>
+        <a href="/accessories" class="nav-link">Accessories</a>
+      </nav>
+      <form id="searchForm" class="search" role="search" action="/products" method="get">
+        <input 
+          id="search" 
+          name="q"
+          type="search"
+          placeholder="Search products…"
+          data-i18n-placeholder="searchPlaceholder"
+          enterKeyHint="search"
+          inputMode="search"
+          autoCapitalize="none"
+          autoCorrect="off"
+          spellCheck="false"
+        />
+        <button type="submit" id="searchBtn" class="search-btn" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+      </form>
+      <div id="langSwitcher" class="lang-switcher">
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+        <span class="lang-sep">|</span>
+        <button type="button" class="lang-btn" data-lang="nl">NL</button>
+      </div>
+      <button id="cartBtn" class="cartbtn">Cart <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="hero-wrapper hero-4k">
+      <div class="hero-background">
+        <picture>
+          <source media="(min-width: 1920px)" srcset="/images/hero/hero-desktop.png">
+          <source media="(min-width: 768px)" srcset="/images/hero/hero-desktop.png">
+          <img src="/images/hero/hero-desktop.png" alt="Happy golden retriever and orange tabby cat" class="hero-bg-image" loading="eager" fetchpriority="high">
+        </picture>
+        <div class="hero-overlay"></div>
+      </div>
+      <section class="hero hero-premium page-animate">
+        <div class="hero-content">
+          <div class="hero-badge-top">
+            <span class="hero-ai-badge">AI Powered Picks</span>
+          </div>
+          <h1 class="hero-headline" data-i18n="heroHeadline">Premium Pet Essentials</h1>
+          <p class="hero-subheadline" data-i18n="heroSubheadline">Hand-picked products for happy dogs and cats. Fast US shipping, curated by Pawsy AI.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-lg btn-hero-primary" href="/c/dogs">
+              <span class="btn-icon">🐕</span> <span data-i18n="shopDogs">Shop Dogs</span>
+            </a>
+            <a class="btn btn-lg btn-hero-secondary" href="/c/cats">
+              <span class="btn-icon">🐱</span> <span data-i18n="shopCats">Shop Cats</span>
+            </a>
+            <a class="btn btn-lg btn-hero-outline" href="/c/all" data-i18n="browseAll">Browse All</a>
+          </div>
+          <div class="hero-trust-chips">
+            <span class="hero-trust-chip" data-i18n="usShipping">US Shipping</span>
+            <span class="hero-trust-chip" data-i18n="curatedPicks">Curated Picks</span>
+            <span class="hero-trust-chip" data-i18n="easyReturns">Easy Returns</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="trust-bar-section">
+      <div class="trust-bar-items">
+        <div class="trust-bar-item">
+          <span class="trust-check">✓</span>
+          <span>Fast US Shipping (3-7 days)</span>
+        </div>
+        <div class="trust-bar-item">
+          <span class="trust-check">✓</span>
+          <span>30-Day Returns</span>
+        </div>
+        <div class="trust-bar-item">
+          <span class="trust-check">✓</span>
+          <span>Secure Checkout</span>
+        </div>
+        <div class="trust-bar-item">
+          <span class="trust-check">✓</span>
+          <span>Pawsy AI Help 24/7</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pet Preference Banner (shown only if no preference set) -->
+    <section id="petPrefBanner" class="pet-pref-banner hidden">
+      <div class="pet-pref-inner">
+        <p class="pet-pref-text">Shopping for a dog or a cat?</p>
+        <div class="pet-pref-buttons">
+          <button class="pet-pref-btn" data-pref="dog">🐕 Dogs</button>
+          <button class="pet-pref-btn" data-pref="cat">🐱 Cats</button>
+          <button class="pet-pref-btn pet-pref-btn--secondary" data-pref="both">Both</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="pet-needs" class="pet-needs-section">
+      <h2>What does your pet need today?</h2>
+      <p class="section-subtitle">Quick links to popular needs</p>
+      <div class="needs-tiles">
+        <a href="/need/sleep-comfort" class="need-tile">
+          <span class="need-icon">🛏️</span>
+          <span class="need-title">Sleep & Comfort</span>
+        </a>
+        <a href="/need/play-energy" class="need-tile">
+          <span class="need-icon">🎾</span>
+          <span class="need-title">Play & Energy</span>
+        </a>
+        <a href="/need/feeding" class="need-tile">
+          <span class="need-icon">🍽️</span>
+          <span class="need-title">Feeding</span>
+        </a>
+        <a href="/need/grooming" class="need-tile">
+          <span class="need-icon">✨</span>
+          <span class="need-title">Grooming</span>
+        </a>
+        <a href="/need/health-wellness" class="need-tile">
+          <span class="need-icon">💊</span>
+          <span class="need-title">Health & Wellness</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="featured-collections" class="section-premium">
+      <div class="wrap">
+        <div class="section-header">
+          <h2>Featured Collections</h2>
+          <p>Explore our curated picks for every pet</p>
+        </div>
+        <div class="featured-collections">
+          <a href="/c/dogs" class="hero-tile hero-tile--dogs">
+            <img src="/images/home/dogs-hero.jpg" alt="Happy dog with toys" class="hero-tile-bg" loading="lazy" decoding="async">
+            <div class="hero-tile-overlay"></div>
+            <div class="hero-tile-content">
+              <span class="hero-tile-icon">🐕</span>
+              <h3 class="hero-tile-title">Dogs</h3>
+              <p class="hero-tile-subtitle">Explore dog essentials</p>
+              <span class="hero-tile-cta">Shop Dogs</span>
+            </div>
+          </a>
+          <a href="/c/cats" class="hero-tile hero-tile--cats">
+            <img src="/images/home/cats-hero.jpg" alt="Cute cat relaxing" class="hero-tile-bg" loading="lazy" decoding="async">
+            <div class="hero-tile-overlay"></div>
+            <div class="hero-tile-content">
+              <span class="hero-tile-icon">🐈</span>
+              <h3 class="hero-tile-title">Cats</h3>
+              <p class="hero-tile-subtitle">Discover cat favorites</p>
+              <span class="hero-tile-cta">Shop Cats</span>
+            </div>
+          </a>
+          <a href="/c/best-sellers" class="hero-tile hero-tile--bestsellers">
+            <img src="/images/home/best-hero.jpg" alt="Best selling pet products" class="hero-tile-bg" loading="lazy" decoding="async">
+            <div class="hero-tile-overlay"></div>
+            <div class="hero-tile-content">
+              <span class="hero-tile-icon">⭐</span>
+              <h3 class="hero-tile-title">Best Sellers</h3>
+              <p class="hero-tile-subtitle">Top-rated by pet parents</p>
+              <span class="hero-tile-cta">Shop Best Sellers</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop-by-category" class="category-carousel" data-testid="shop-by-category-carousel">
+      <h2>Shop by Category</h2>
+      <p class="category-carousel-subtitle">Explore our curated collections</p>
+      <div class="carousel-container">
+        <button type="button" class="carousel-arrow carousel-arrow-left" data-testid="carousel-prev" aria-label="Previous category" tabindex="0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="carousel-track" id="categoryCarousel">
+          <a class="carousel-slide" href="/c/dogs/sleep">
+            <div class="carousel-slide-inner">
+              <img src="/images/categories/sleeping.jpg" alt="Pet beds and comfort" loading="lazy" onerror="this.src='/images/categories/fallback.jpg'">
+              <span class="carousel-label">Sleep & Comfort</span>
+            </div>
+          </a>
+          <a class="carousel-slide" href="/c/dogs/toys">
+            <div class="carousel-slide-inner">
+              <img src="/images/categories/dog-toys.jpg" alt="Pet toys and play" loading="lazy" onerror="this.src='/images/categories/fallback.jpg'">
+              <span class="carousel-label">Toys & Play</span>
+            </div>
+          </a>
+          <a class="carousel-slide" href="/c/dogs/feeding">
+            <div class="carousel-slide-inner">
+              <img src="/images/categories/feeding.jpg" alt="Pet feeding supplies" loading="lazy" onerror="this.src='/images/categories/fallback.jpg'">
+              <span class="carousel-label">Feeding</span>
+            </div>
+          </a>
+          <a class="carousel-slide" href="/c/dogs/grooming">
+            <div class="carousel-slide-inner">
+              <img src="/images/categories/dog-grooming.jpg" alt="Pet grooming supplies" loading="lazy" onerror="this.src='/images/categories/fallback.jpg'">
+              <span class="carousel-label">Grooming</span>
+            </div>
+          </a>
+          <a class="carousel-slide" href="/c/dogs/health">
+            <div class="carousel-slide-inner">
+              <img src="/images/categories/health.jpg" alt="Pet health and wellness" loading="lazy" onerror="this.src='/images/categories/fallback.jpg'">
+              <span class="carousel-label">Health & Wellness</span>
+            </div>
+          </a>
+          <a class="carousel-slide" href="/c/dogs/walking">
+            <div class="carousel-slide-inner">
+              <img src="/images/categories/dog-walking.jpg" alt="Dog walking gear" loading="lazy" onerror="this.src='/images/categories/fallback.jpg'">
+              <span class="carousel-label">Walking</span>
+            </div>
+          </a>
+          <a class="carousel-slide" href="/c/dogs/training">
+            <div class="carousel-slide-inner">
+              <img src="/images/categories/dog-training.jpg" alt="Pet training tools" loading="lazy" onerror="this.src='/images/categories/fallback.jpg'">
+              <span class="carousel-label">Training</span>
+            </div>
+          </a>
+          <a class="carousel-slide" href="/c/dogs/travel">
+            <div class="carousel-slide-inner">
+              <img src="/images/categories/dog-travel.jpg" alt="Pet travel gear" loading="lazy" onerror="this.src='/images/categories/fallback.jpg'">
+              <span class="carousel-label">Travel</span>
+            </div>
+          </a>
+        </div>
+        <button type="button" class="carousel-arrow carousel-arrow-right" data-testid="carousel-next" aria-label="Next category" tabindex="0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <section id="new-arrivals" class="grid-head">
+      <h2>New Arrivals</h2>
+      <p class="section-subtitle">Fresh additions to our collection</p>
+      <div id="newArrivalsGrid" class="grid"></div>
+    </section>
+
+    <section id="top-picks" class="grid-head top-picks-section">
+      <h2>Top Picks for You</h2>
+      <p class="section-subtitle">Hand-selected favorites, curated by Pawsy AI</p>
+      <div id="topPicksGrid" class="grid"></div>
+    </section>
+
+    <section id="shop" class="grid-head hidden">
+      <h2>All Products</h2>
+      <div id="products" class="grid"></div>
+    </section>
+
+    <section id="dog-products" class="product-carousel-section">
+      <h2>🐕 Top Picks for Dogs</h2>
+      <p class="section-subtitle">Hand-picked favorites for happy pups</p>
+      <div class="product-carousel-wrap">
+        <button class="product-carousel-nav prev" aria-label="Previous">‹</button>
+        <div id="dogGrid" class="product-carousel-track" data-context="TopPicksDogs"></div>
+        <button class="product-carousel-nav next" aria-label="Next">›</button>
+      </div>
+    </section>
+
+    <section id="cat-products" class="product-carousel-section">
+      <h2>🐱 Top Picks for Cats</h2>
+      <p class="section-subtitle">Curated essentials for curious kitties</p>
+      <div class="product-carousel-wrap">
+        <button class="product-carousel-nav prev" aria-label="Previous">‹</button>
+        <div id="catGrid" class="product-carousel-track" data-context="TopPicksCats"></div>
+        <button class="product-carousel-nav next" aria-label="Next">›</button>
+      </div>
+    </section>
+
+    <section id="small-pet-products" class="product-carousel-section">
+      <h2>🐹 Small Pets Picks</h2>
+      <p class="section-subtitle">Curated favorites for rabbits, hamsters, birds & more</p>
+      <div class="product-carousel-wrap">
+        <button class="product-carousel-nav prev" aria-label="Previous">‹</button>
+        <div id="smallPetGrid" class="product-carousel-track" data-context="TopPicksSmallPets"></div>
+        <button class="product-carousel-nav next" aria-label="Next">›</button>
+      </div>
+    </section>
+
+    <section id="best-sellers" class="product-carousel-section">
+      <h2>🏆 Best Sellers</h2>
+      <p class="section-subtitle">Our top 10 most loved products</p>
+      <div class="product-carousel-wrap">
+        <button class="product-carousel-nav prev" aria-label="Previous">‹</button>
+        <div id="bestSellersGrid" class="product-carousel-track" data-context="BestSellers"></div>
+        <button class="product-carousel-nav next" aria-label="Next">›</button>
+      </div>
+    </section>
+
+    <section id="trending-now" class="product-carousel-section">
+      <h2>🔥 Trending Now</h2>
+      <p class="section-subtitle">Popular this week</p>
+      <div class="product-carousel-wrap">
+        <button class="product-carousel-nav prev" aria-label="Previous">‹</button>
+        <div id="trendingGrid" class="product-carousel-track" data-context="TrendingNow"></div>
+        <button class="product-carousel-nav next" aria-label="Next">›</button>
+      </div>
+    </section>
+
+    <section id="productDetail" class="product-detail hidden">
+      <!-- Mobile Sticky Top Area -->
+      <div id="pdpStickyTop" class="pdp-sticky-top">
+        <div class="pdp-sticky-inner">
+          <div class="pdp-sticky-info">
+            <h2 id="stickyProductTitle" class="pdp-sticky-title"></h2>
+            <div class="pdp-sticky-meta">
+              <span id="stickyProductPrice" class="pdp-sticky-price"></span>
+              <span id="stickyProductRating" class="pdp-sticky-rating"></span>
+            </div>
+          </div>
+          <button id="stickyAddBtn" type="button" class="btn pdp-sticky-cta">Add to Cart</button>
+        </div>
+        <p class="pdp-sticky-shipping">Fast US shipping when available · 30-day returns</p>
+      </div>
+
+      <nav id="productBreadcrumbs" class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <a href="#" id="breadcrumbCategory">Category</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <a href="#" id="breadcrumbSubcategory">Subcategory</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <span id="breadcrumbProduct">Product</span>
+      </nav>
+
+      <div class="detail-grid">
+        <!-- Gallery -->
+        <div class="detail-image-wrap">
+          <button id="galleryPrev" class="gallery-nav gallery-prev" aria-label="Previous image">&#8249;</button>
+          <img id="detailImage" class="detail-image" src="" alt="">
+          <button id="galleryNext" class="gallery-nav gallery-next" aria-label="Next image">&#8250;</button>
+          <div id="detailThumbnails" class="detail-thumbnails"></div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="detail-info">
+          <h1 id="detailTitle"></h1>
+          <div id="detailRatingSummary" class="detail-rating-summary">
+            <span id="detailStars" class="detail-stars"></span>
+            <span id="detailReviewCount" class="detail-review-count"></span>
+          </div>
+          <div id="detailBadges" class="bestfor-badges"></div>
+          
+          <div class="pdp-trust-row">
+            <span class="pdp-trust-badge"><span class="trust-icon">🚚</span> Fast US Shipping</span>
+            <span class="pdp-trust-badge"><span class="trust-icon">↩️</span> 30-Day Returns</span>
+            <span class="pdp-trust-badge"><span class="trust-icon">🐾</span> Pet-Safe Materials</span>
+          </div>
+          <div class="detail-price-row">
+            <span id="detailPrice" class="detail-price"></span>
+            <button id="detailAddBtn" type="button" class="btn detail-add">Add to Cart</button>
+          </div>
+          <div id="detailStockStatus" class="pdp-stock-status"></div>
+          <p class="detail-shipping-micro">Free US shipping on orders over $35 · 30-day happiness guarantee</p>
+
+          <!-- Why You'll Love It -->
+          <div id="whyYoullLoveIt" class="pdp-benefits">
+            <h3 class="pdp-benefits-title">Why you'll love it</h3>
+            <ul id="benefitsList" class="pdp-benefits-list"></ul>
+          </div>
+
+          <!-- Variants -->
+          <div id="detailVariantSelectors" class="detail-variant-selectors"></div>
+
+          <!-- Pawsy AI Helper -->
+          <div id="pawsyHelper" class="pdp-pawsy-helper">
+            <div class="pdp-pawsy-icon">🐾</div>
+            <div class="pdp-pawsy-content">
+              <p class="pdp-pawsy-text">Not sure if this fits your pet?</p>
+              <div class="pdp-pawsy-buttons">
+                <button class="pdp-pawsy-btn" data-ask="sizing">Ask about sizing</button>
+                <button class="pdp-pawsy-btn" data-ask="safety">Is this safe for puppies/kittens?</button>
+                <button class="pdp-pawsy-btn" data-ask="alternatives">Recommend alternatives</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="detailBoughtTogether" class="detail-bundle hidden">
+            <h3>Frequently bought together</h3>
+            <div id="detailBundleGrid" class="detail-bundle-grid"></div>
+            <button id="detailBundleBtn" class="btn detail-bundle-btn">Add all to cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="detailTabs" class="detail-tabs">
+        <div class="detail-tabs-nav">
+          <button class="detail-tab-btn active" data-tab="description" data-i18n="tabDescription">Description</button>
+          <button class="detail-tab-btn" data-tab="highlights" data-i18n="tabHighlights">Highlights</button>
+          <button class="detail-tab-btn" data-tab="shipping" data-i18n="tabShipping">Shipping & Returns</button>
+          <button class="detail-tab-btn" data-tab="specs" data-i18n="tabSpecs">Specs</button>
+        </div>
+        <div class="detail-tabs-content">
+          <div id="tabDescription" class="detail-tab-panel active">
+            <p id="tabDescriptionText"></p>
+          </div>
+          <div id="tabHighlights" class="detail-tab-panel hidden">
+            <ul id="tabHighlightsList"></ul>
+          </div>
+          <div id="tabShipping" class="detail-tab-panel hidden">
+            <div class="shipping-info-block">
+              <span class="shipping-icon">🚚</span>
+              <div>
+                <h4 data-i18n="shippingTitle">Shipping</h4>
+                <p id="shippingCopy" data-i18n="shippingText">Ships from US warehouse in 1-3 days. Estimated delivery: 5-10 business days.</p>
+              </div>
+            </div>
+            <div class="shipping-info-block">
+              <span class="shipping-icon">↩️</span>
+              <div>
+                <h4 data-i18n="returnsTitle">Returns</h4>
+                <p id="returnsCopy" data-i18n="returnsText">30-Day Happiness Guarantee: Return hassle-free for a full refund.</p>
+              </div>
+            </div>
+            <div class="trust-badges-row">
+              <span class="trust-badge">✅ Secure Checkout</span>
+              <span class="trust-badge">🛡️ Quality Guaranteed</span>
+              <span class="trust-badge">📦 US Warehouse</span>
+            </div>
+          </div>
+          <div id="tabSpecs" class="detail-tab-panel hidden">
+            <div id="tabSpecsList"></div>
+          </div>
+          <div id="tabReviews" class="detail-tab-panel hidden">
+            <div id="tabReviewsList" class="reviews-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Accordion -->
+      <div id="productFAQ" class="pdp-faq">
+        <h3>Frequently Asked Questions</h3>
+        <div id="tabFaqList" class="faq-accordion"></div>
+      </div>
+
+      <!-- Related Products -->
+      <div id="detailRelated" class="detail-related hidden">
+        <h3>You may also like</h3>
+        <div id="detailRelatedGrid" class="detail-related-grid"></div>
+      </div>
+
+      <div id="detailReviews" class="detail-reviews">
+        <div class="reviews-header">
+          <h3>Customer Reviews</h3>
+          <div class="reviews-summary">
+            <span id="reviewsAverage" class="reviews-avg">0.0</span>
+            <span id="reviewsStars" class="reviews-stars"></span>
+            <span id="reviewsCount" class="reviews-count">(0 reviews)</span>
+          </div>
+        </div>
+        <div id="reviewsList" class="reviews-list"></div>
+        <div id="reviewFormWrap" class="review-form-wrap">
+          <h4>Write a Review</h4>
+          <form id="reviewForm" class="review-form">
+            <div class="review-rating-input">
+              <label>Your Rating:</label>
+              <div id="reviewRatingStars" class="rating-stars-input">
+                <span data-rating="1">&#9733;</span>
+                <span data-rating="2">&#9733;</span>
+                <span data-rating="3">&#9733;</span>
+                <span data-rating="4">&#9733;</span>
+                <span data-rating="5">&#9733;</span>
+              </div>
+              <input type="hidden" id="reviewRating" name="rating" value="0" required>
+            </div>
+            <input type="text" id="reviewName" name="name" placeholder="Your name" required maxlength="100">
+            <input type="email" id="reviewEmail" name="email" placeholder="Your email (not shown publicly)" required maxlength="200">
+            <input type="text" id="reviewTitle" name="title" placeholder="Review title" required maxlength="150">
+            <textarea id="reviewText" name="text" placeholder="Tell us about your experience..." required maxlength="2000" rows="4"></textarea>
+            <button type="submit" class="btn">Submit Review</button>
+          </form>
+          <p id="reviewFormMsg" class="review-form-msg"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cart" class="drawer">
+    <div class="drawer-head">
+      <h3>Your cart</h3>
+      <button id="closeCart" class="x">✕</button>
+    </div>
+    <div id="cartItems" class="drawer-body"></div>
+    <div class="drawer-foot">
+      <div class="total">Total: <span id="cartTotal">$0.00</span></div>
+      <button id="checkout" class="btn full">Checkout</button>
+    </div>
+  </aside>
+
+  <div id="quickViewOverlay" class="qv-overlay hidden">
+    <div id="quickViewModal" class="qv-modal" role="dialog" aria-modal="true" aria-labelledby="qvTitle">
+      <button id="qvClose" class="qv-close" aria-label="Close">&times;</button>
+      <div id="qvLoading" class="qv-loading">
+        <div class="qv-spinner"></div>
+        <p>Loading product details...</p>
+      </div>
+      <div id="qvContent" class="qv-content hidden">
+        <div class="qv-grid">
+          <div class="qv-image-wrap">
+            <img id="qvImage" class="qv-image" src="" alt="">
+          </div>
+          <div class="qv-info">
+            <p class="qv-badge">Hand-picked by Pawsy AI</p>
+            <h2 id="qvTitle" class="qv-title"></h2>
+            <div id="qvBadges" class="bestfor-badges"></div>
+            <p class="qv-shipping">Fast US shipping when available</p>
+            <p id="qvPrice" class="qv-price"></p>
+            <p id="qvDesc" class="qv-desc"></p>
+            <div id="qvVariants" class="qv-variants"></div>
+            <button id="qvAddBtn" class="btn qv-add">Add to cart</button>
+            <p class="qv-trust">Secure checkout &bull; 30-day satisfaction guarantee</p>
+            <a id="qvDetailsLink" href="#" class="qv-details-link">View full details &rarr;</a>
+            <div id="qvRelated" class="qv-related hidden">
+              <h4>You may also like</h4>
+              <div id="qvRelatedGrid" class="qv-related-grid"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="pawsyContainer" class="pawsy pawsy-pos-br">
+    <div id="pawsyScaleWrapper" class="pawsy-scale-wrapper">
+      <div id="pawsySpeechBubble" class="pawsy-bubble hidden">
+        <div id="pawsyBubbleText" class="pawsy-bubble-text"></div>
+        <div class="pawsy-bubble-tail"></div>
+      </div>
+      <div id="pawsyMascotte" class="pawsy-mascotte" role="button" tabindex="0" aria-label="Chat with Pawsy AI">
+        <video id="pawsyVideo" class="pawsy-video" muted playsinline autoplay loop preload="auto">
+          <source src="/pawsy/videos/pawsy_1.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <div id="pawsyPanel" class="pawsy-panel hidden">
+      <div class="pawsy-head">Pawsy AI <button id="pawsyClose" class="x">✕</button></div>
+      <div id="pawsyMsgs" class="pawsy-msgs"></div>
+      <div class="pawsy-input">
+        <input id="pawsyText" placeholder="Ask about shipping, sizing, pet advice…" />
+        <button id="pawsySend" class="btn">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="editorial">
+    <div class="wrap editorial-inner">
+      <h2>Why pet parents love GetPawsy</h2>
+      <p>We're on a mission to make pet parenting easier. Every product is hand-picked for quality, safety, and your pet's happiness.</p>
+      <div class="editorial-features">
+        <div class="editorial-feature">
+          <div class="editorial-feature-icon">🐾</div>
+          <h3>Pet-First Quality</h3>
+          <p>Only non-toxic, durable products make the cut</p>
+        </div>
+        <div class="editorial-feature">
+          <div class="editorial-feature-icon">💚</div>
+          <h3>Happiness Guaranteed</h3>
+          <p>30-day returns, no questions asked</p>
+        </div>
+        <div class="editorial-feature">
+          <div class="editorial-feature-icon">🎁</div>
+          <h3>Surprise & Delight</h3>
+          <p>New curated picks added weekly</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="wrap">
+      <h2>What Pet Parents Say</h2>
+      <p class="section-subtitle">Real reviews from happy customers</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"My golden retriever absolutely loves his new bed! The quality is amazing and it arrived super fast. Will definitely order again!"</p>
+          <div class="testimonial-author">
+            <span class="author-name">Sarah M.</span>
+            <span class="author-pet">Golden Retriever Mom</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Finally found toys that my cats can't destroy in 5 minutes! Great selection and the AI assistant helped me find exactly what I needed."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Mike R.</span>
+            <span class="author-pet">2 Cats Dad</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Love the premium quality of the grooming supplies. My pup looks like he just came from the salon! Fast shipping too."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Emma T.</span>
+            <span class="author-pet">Poodle Owner</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pawfect-moments" class="pawfect-moments">
+    <div class="wrap">
+      <h2>Pawfect Moments</h2>
+      <p class="section-subtitle">See happy pets enjoying their GetPawsy finds</p>
+      <div class="pawfect-grid">
+        <div class="pawfect-card" style="background: linear-gradient(135deg, #fff4f0, #ffe4d4); aspect-ratio: 1; border-radius: var(--radius-lg); overflow: hidden;">
+          <img src="/images/pawfect/1.jpg" alt="Happy golden retriever" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.background='var(--surface-2)'">
+        </div>
+        <div class="pawfect-card" style="background: linear-gradient(135deg, #fff4f0, #ffe4d4); aspect-ratio: 1; border-radius: var(--radius-lg); overflow: hidden;">
+          <img src="/images/pawfect/2.jpg" alt="Playful cat" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.background='var(--surface-2)'">
+        </div>
+        <div class="pawfect-card" style="background: linear-gradient(135deg, #fff4f0, #ffe4d4); aspect-ratio: 1; border-radius: var(--radius-lg); overflow: hidden;">
+          <img src="/images/pawfect/3.jpg" alt="Relaxing pup" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.background='var(--surface-2)'">
+        </div>
+        <div class="pawfect-card" style="background: linear-gradient(135deg, #fff4f0, #ffe4d4); aspect-ratio: 1; border-radius: var(--radius-lg); overflow: hidden;">
+          <img src="/images/pawfect/4.jpg" alt="Pet playtime" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.background='var(--surface-2)'">
+        </div>
+        <div class="pawfect-card" style="background: linear-gradient(135deg, #fff4f0, #ffe4d4); aspect-ratio: 1; border-radius: var(--radius-lg); overflow: hidden;">
+          <img src="/images/pawfect/5.jpg" alt="Cozy pet" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.background='var(--surface-2)'">
+        </div>
+        <div class="pawfect-card" style="background: linear-gradient(135deg, #fff4f0, #ffe4d4); aspect-ratio: 1; border-radius: var(--radius-lg); overflow: hidden;">
+          <img src="/images/pawfect/6.jpg" alt="Happy pets" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.background='var(--surface-2)'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookieConsent" class="cookie-consent hidden">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <strong>We value your privacy</strong>
+        <p>We use cookies to enhance your browsing experience, serve personalized ads, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+      </div>
+      <div class="cookie-buttons">
+        <button id="cookieReject" class="btn btn-outline-sm">Reject All</button>
+        <button id="cookieSettings" class="btn btn-outline-sm">Customize</button>
+        <button id="cookieAccept" class="btn btn-sm">Accept All</button>
+      </div>
+    </div>
+    <div id="cookieSettingsPanel" class="cookie-settings-panel hidden">
+      <h4>Cookie Preferences</h4>
+      <div class="cookie-option">
+        <label>
+          <input type="checkbox" checked disabled> Essential (Always active)
+          <span class="cookie-desc">Required for the website to function properly.</span>
+        </label>
+      </div>
+      <div class="cookie-option">
+        <label>
+          <input type="checkbox" id="analyticsConsent"> Analytics
+          <span class="cookie-desc">Help us understand how visitors interact with our website.</span>
+        </label>
+      </div>
+      <div class="cookie-option">
+        <label>
+          <input type="checkbox" id="marketingConsent"> Marketing
+          <span class="cookie-desc">Used to show relevant ads on other platforms.</span>
+        </label>
+      </div>
+      <button id="cookieSavePrefs" class="btn btn-sm">Save Preferences</button>
+    </div>
+  </div>
+
+  <!-- Pet Preference Modal -->
+  <div id="petPrefModal" class="pet-pref-modal hidden">
+    <div class="pet-pref-modal-content">
+      <button id="closePetPrefModal" class="pet-pref-modal-close">✕</button>
+      <h3>Pet Preferences</h3>
+      <p class="pet-pref-modal-text">Your current preference: <strong id="currentPetPref">All pets</strong></p>
+      <div class="pet-pref-modal-buttons">
+        <button class="pet-pref-modal-btn" data-pref="dog">🐕 Dogs</button>
+        <button class="pet-pref-modal-btn" data-pref="cat">🐱 Cats</button>
+        <button class="pet-pref-modal-btn" data-pref="both">Both</button>
+      </div>
+      <button id="resetPetPref" class="pet-pref-reset-btn">Reset to default</button>
+    </div>
+  </div>
+
+  <!-- Image Zoom Modal -->
+  <div id="imageZoomModal" class="image-zoom-modal hidden">
+    <button id="zoomClose" class="zoom-close" aria-label="Close zoom">&times;</button>
+    <button id="zoomPrev" class="zoom-nav zoom-prev" aria-label="Previous">&#8249;</button>
+    <img id="zoomImage" class="zoom-image" src="" alt="Product zoom">
+    <button id="zoomNext" class="zoom-nav zoom-next" aria-label="Next">&#8250;</button>
+    <div id="zoomThumbnails" class="zoom-thumbnails"></div>
+  </div>
+
+  <!-- Email Signup Section -->
+  <section class="email-signup-section">
+    <div class="email-signup-inner">
+      <div class="email-signup-content">
+        <h3>Join the Pawsy Pack</h3>
+        <p>Get exclusive deals, new arrivals & pet care tips delivered to your inbox.</p>
+      </div>
+      <form id="emailSignupForm" class="email-signup-form">
+        <input type="email" id="signupEmail" placeholder="Enter your email" required>
+        <button type="submit" class="btn btn-brand">Subscribe</button>
+      </form>
+      <p class="email-signup-note">No spam, unsubscribe anytime. We respect your inbox.</p>
+    </div>
+  </section>
+
+  <footer class="footer-premium">
+    <div class="footer-taglines">
+      <span>Designed with love for pets</span>
+      <span class="footer-dot">·</span>
+      <span>Curated by Pawsy AI</span>
+    </div>
+    <nav class="footer-links">
+      <a href="/legal/privacy">Privacy</a>
+      <a href="/legal/terms">Terms</a>
+      <a href="/legal/returns">Returns</a>
+      <a href="/contact">Contact</a>
+      <a href="#" id="petPrefsLink">Preferences</a>
+      <a href="#" id="cookiePrefsLink">Cookies</a>
+    </nav>
+    <p class="footer-copy">&copy; 2025 GetPawsy</p>
+    <span id="buildIndicator" class="footer-build">v2.6</span>
+    <span id="productCount" class="footer-product-count"></span>
+  </footer>
+  <div id="toastContainer" class="toast-container"></div>
+  
+  <div id="stickyAddToCart" class="sticky-add-to-cart">
+    <div class="sticky-product-info">
+      <img id="stickyProductImg" class="sticky-thumb" src="" alt="">
+      <div class="sticky-text">
+        <span id="stickyProductName" class="sticky-name"></span>
+        <span id="stickyPrice" class="sticky-price">$0.00</span>
+      </div>
+    </div>
+    <button id="stickyAddBtn" type="button" class="btn sticky-add-btn">Add to Cart</button>
+  </div>
+  <script>
+    // GetPawsy v2.5 - Clear old service workers and caches (runs once)
+    (function() {
+      window.GP_VERSION = "2.6.1";
+      var swPurgedKey = 'gp_sw_purged_v25';
+      var alreadyPurged = localStorage.getItem(swPurgedKey);
+      
+      if (!alreadyPurged) {
+        // Unregister all service workers
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function(rs) {
+            rs.forEach(function(r) { 
+              console.log('[SW] Unregistering:', r.scope);
+              r.unregister(); 
+            });
+          }).catch(function(e) { console.warn('[SW] Cleanup error:', e); });
+        }
+        // Clear all caches
+        if ('caches' in window) {
+          caches.keys().then(function(keys) {
+            keys.forEach(function(k) { 
+              console.log('[Cache] Deleting:', k);
+              caches.delete(k); 
+            });
+          }).catch(function(e) { console.warn('[Cache] Cleanup error:', e); });
+        }
+        localStorage.setItem(swPurgedKey, Date.now().toString());
+        console.log('[SW] Service worker purge complete');
+      }
+      
+      // Fetch and display build ID from /api/ui-build
+      fetch('/api/ui-build')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          var el = document.getElementById('buildIndicator');
+          var topBadge = document.getElementById('deployBadge');
+          var buildInfo = 'Build: ' + (data.buildId || 'dev') + ' | ' + (data.builtAt || new Date().toISOString()).substring(0, 16);
+          if (el) el.textContent = buildInfo;
+          if (topBadge) topBadge.textContent = buildInfo;
+          console.log('[Build]', buildInfo);
+        }).catch(function(e) { console.warn('[Build] Could not fetch build info:', e); });
+      
+      // Fetch product count for footer verification (use non-debug endpoint)
+      fetch('/api/catalog/source')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          var countEl = document.getElementById('productCount');
+          if (countEl && data.productCount) {
+            countEl.textContent = data.productCount + ' products';
+            countEl.style.opacity = '0.6';
+            countEl.style.marginLeft = '10px';
+          }
+          console.log('[Catalog Source]', data);
+        }).catch(function(e) { console.warn('[Catalog Source] Could not fetch:', e); });
+    })();
+  </script>
+  <script src="/i18n.js?v=2.8.0-20260107003641"></script>
+  <script src="/pawsy/pawsyVideos.js?v=2.8.0-20260107003641"></script>
+  <script src="/js/petProfile.js?v=2.8.0-20260107003641"></script>
+  <script src="/js/cart-store.js?v=2.8.0-20260107003641"></script>
+  <script src="/js/cart-delegate.js?v=2.8.0-20260107003641"></script>
+  <script src="/app.js?v=2.8.0-20260107003641"></script>
+  <script src="/js/debug-overlay.js?v=2.8.0-20260107003641" defer></script>

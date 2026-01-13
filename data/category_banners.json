@@ -1,0 +1,26 @@
+{
+  "dogs": {
+    "slug": "dogs",
+    "title": "Dog Essentials",
+    "subtitle": "Toys, beds, grooming & more for happy pups.",
+    "image": "/images/banners/dogs-hero.jpg",
+    "ctaText": "Shop Dog Products",
+    "ctaLink": "/collections/dogs"
+  },
+  "cats": {
+    "slug": "cats",
+    "title": "Cat Essentials",
+    "subtitle": "Scratchers, toys and cozy beds for your feline boss.",
+    "image": "/images/banners/cats-hero.jpg",
+    "ctaText": "Shop Cat Products",
+    "ctaLink": "/collections/cats"
+  },
+  "all": {
+    "slug": "all",
+    "title": "All Products",
+    "subtitle": "Discover our full AI-curated catalog for pets.",
+    "image": "/images/banners/all-hero.jpg",
+    "ctaText": "Browse All Products",
+    "ctaLink": "/products"
+  }
+}

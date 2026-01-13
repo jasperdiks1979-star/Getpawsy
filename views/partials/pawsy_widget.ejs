@@ -1,0 +1,189 @@
+<div id="pawsy-ai-widget" class="pawsy-ai-widget">
+  <button class="pawsy-ai-toggle" id="pawsyAiToggle" aria-label="Chat with Pawsy">
+    <span class="pawsy-ai-toggle-icon">🐾</span>
+    <span class="pawsy-ai-toggle-pulse"></span>
+  </button>
+  
+  <div class="pawsy-ai-chat" id="pawsyAiChat">
+    <div class="pawsy-ai-header">
+      <div class="pawsy-ai-avatar">🐾</div>
+      <div class="pawsy-ai-info">
+        <h4>Pawsy AI</h4>
+        <span class="pawsy-ai-status">Online • Ready to help</span>
+      </div>
+      <button class="pawsy-ai-close" id="pawsyAiClose">&times;</button>
+    </div>
+    
+    <div class="pawsy-ai-messages" id="pawsyAiMessages">
+      <div class="pawsy-ai-message pawsy-ai-message-bot">
+        <div class="pawsy-ai-message-avatar">🐾</div>
+        <div class="pawsy-ai-message-content">
+          <p>Hey there! I'm Pawsy, your pet shopping assistant! 🐶🐱 How can I help you find the perfect products for your furry friend today?</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="pawsy-ai-suggestions" id="pawsyAiSuggestions">
+      <button class="pawsy-ai-suggestion" data-prompt="Show me popular dog toys">🎾 Popular dog toys</button>
+      <button class="pawsy-ai-suggestion" data-prompt="What's best for anxious cats?">😸 Calming products</button>
+      <button class="pawsy-ai-suggestion" data-prompt="Help me find a bed">🛏️ Find a bed</button>
+    </div>
+    
+    <form class="pawsy-ai-input" id="pawsyAiForm">
+      <input type="text" id="pawsyAiInput" placeholder="Ask Pawsy anything..." autocomplete="off">
+      <button type="button" class="pawsy-ai-voice" id="pawsyAiVoice" title="Voice input">🎤</button>
+      <button type="submit" class="pawsy-ai-send" title="Send">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+(function() {
+  try {
+  const toggle = document.getElementById('pawsyAiToggle');
+  const chat = document.getElementById('pawsyAiChat');
+  const close = document.getElementById('pawsyAiClose');
+  const form = document.getElementById('pawsyAiForm');
+  const input = document.getElementById('pawsyAiInput');
+  const messages = document.getElementById('pawsyAiMessages');
+  const suggestions = document.querySelectorAll('.pawsy-ai-suggestion');
+  const voiceBtn = document.getElementById('pawsyAiVoice');
+  
+  if (!toggle || !chat || !close || !form || !input) {
+    console.log('[Pawsy] Widget elements not found, skipping init');
+    return;
+  }
+  
+  let isOpen = false;
+  
+  toggle.addEventListener('click', () => {
+    isOpen = !isOpen;
+    chat.classList.toggle('pawsy-ai-chat-open', isOpen);
+    toggle.classList.toggle('pawsy-ai-toggle-active', isOpen);
+    if (isOpen) input.focus();
+  });
+  
+  close.addEventListener('click', () => {
+    isOpen = false;
+    chat.classList.remove('pawsy-ai-chat-open');
+    toggle.classList.remove('pawsy-ai-toggle-active');
+  });
+  
+  function addMessage(content, isBot = false) {
+    const div = document.createElement('div');
+    div.className = `pawsy-ai-message ${isBot ? 'pawsy-ai-message-bot' : 'pawsy-ai-message-user'}`;
+    div.innerHTML = `
+      <div class="pawsy-ai-message-avatar">${isBot ? '🐾' : '👤'}</div>
+      <div class="pawsy-ai-message-content"><p>${content}</p></div>
+    `;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+  
+  function showTyping() {
+    const div = document.createElement('div');
+    div.className = 'pawsy-ai-message pawsy-ai-message-bot pawsy-ai-typing';
+    div.id = 'pawsyTyping';
+    div.innerHTML = `
+      <div class="pawsy-ai-message-avatar">🐾</div>
+      <div class="pawsy-ai-message-content">
+        <div class="pawsy-ai-dots"><span></span><span></span><span></span></div>
+      </div>
+    `;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+  
+  function hideTyping() {
+    const typing = document.getElementById('pawsyTyping');
+    if (typing) typing.remove();
+  }
+  
+  async function sendMessage(prompt) {
+    if (!prompt.trim()) return;
+    
+    addMessage(prompt, false);
+    input.value = '';
+    showTyping();
+    
+    try {
+      const res = await fetch('/api/pawsy-ultra-v3', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          prompt: prompt,
+          context: { type: 'general' },
+          history: []
+        })
+      });
+      
+      const data = await res.json();
+      hideTyping();
+      addMessage(data.answer || "I'm having trouble thinking right now. Try again! 🐾", true);
+      
+      if (data.addToCart) {
+        setTimeout(() => {
+          if (confirm('Add this item to your cart?')) {
+            fetch('/cart/add', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ productId: data.addToCart, quantity: 1 })
+            }).then(() => {
+              if (typeof updateCartCount === 'function') updateCartCount();
+            });
+          }
+        }, 500);
+      }
+    } catch (err) {
+      hideTyping();
+      addMessage("Oops! Something went wrong. Try again in a moment! 🐾", true);
+    }
+  }
+  
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    sendMessage(input.value);
+  });
+  
+  suggestions.forEach(btn => {
+    btn.addEventListener('click', () => {
+      sendMessage(btn.dataset.prompt);
+    });
+  });
+  
+  if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    
+    voiceBtn.addEventListener('click', () => {
+      voiceBtn.classList.add('pawsy-ai-voice-active');
+      recognition.start();
+    });
+    
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      input.value = transcript;
+      voiceBtn.classList.remove('pawsy-ai-voice-active');
+    };
+    
+    recognition.onerror = () => {
+      voiceBtn.classList.remove('pawsy-ai-voice-active');
+    };
+    
+    recognition.onend = () => {
+      voiceBtn.classList.remove('pawsy-ai-voice-active');
+    };
+  } else {
+    if (voiceBtn) voiceBtn.style.display = 'none';
+  }
+  } catch (err) {
+    console.log('[Pawsy] Widget init error (non-blocking):', err.message || err);
+  }
+})();
+</script>

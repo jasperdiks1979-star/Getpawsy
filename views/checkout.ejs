@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>Checkout | GetPawsy</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="pawsy-body">
+  <%- include("partials/header") %>
+  
+  <main class="pawsy-main">
+    <div class="pawsy-container">
+      <div class="pawsy-checkout-page">
+        <div class="pawsy-checkout-progress">
+          <div class="pawsy-progress-step active" data-step="1">
+            <span class="pawsy-step-number">1</span>
+            <span class="pawsy-step-label">Contact</span>
+          </div>
+          <div class="pawsy-progress-line"></div>
+          <div class="pawsy-progress-step" data-step="2">
+            <span class="pawsy-step-number">2</span>
+            <span class="pawsy-step-label">Shipping</span>
+          </div>
+          <div class="pawsy-progress-line"></div>
+          <div class="pawsy-progress-step" data-step="3">
+            <span class="pawsy-step-number">3</span>
+            <span class="pawsy-step-label">Payment</span>
+          </div>
+          <div class="pawsy-progress-line"></div>
+          <div class="pawsy-progress-step" data-step="4">
+            <span class="pawsy-step-number">4</span>
+            <span class="pawsy-step-label">Review</span>
+          </div>
+        </div>
+
+        <div class="pawsy-checkout-layout">
+          <form class="pawsy-checkout-form" action="/checkout/submit" method="POST">
+            <div class="pawsy-checkout-section active" data-step="1">
+              <h2>📧 Contact Information</h2>
+              <div class="pawsy-form-group">
+                <label>Email *</label>
+                <input type="email" name="email" required placeholder="your@email.com">
+              </div>
+              <div class="pawsy-form-group">
+                <label>Phone</label>
+                <input type="tel" name="phone" placeholder="(555) 123-4567">
+              </div>
+              <button type="button" class="pawsy-btn pawsy-btn-primary pawsy-btn-lg" onclick="nextStep()">Continue to Shipping</button>
+            </div>
+
+            <div class="pawsy-checkout-section" data-step="2">
+              <h2>📦 Shipping Address</h2>
+              <div class="pawsy-form-row">
+                <div class="pawsy-form-group">
+                  <label>First Name *</label>
+                  <input type="text" name="firstName" required>
+                </div>
+                <div class="pawsy-form-group">
+                  <label>Last Name *</label>
+                  <input type="text" name="lastName" required>
+                </div>
+              </div>
+              <div class="pawsy-form-group">
+                <label>Address *</label>
+                <input type="text" name="address" required placeholder="Street address">
+              </div>
+              <div class="pawsy-form-row">
+                <div class="pawsy-form-group">
+                  <label>City *</label>
+                  <input type="text" name="city" required>
+                </div>
+                <div class="pawsy-form-group">
+                  <label>State *</label>
+                  <input type="text" name="state" required>
+                </div>
+                <div class="pawsy-form-group">
+                  <label>ZIP *</label>
+                  <input type="text" name="zip" required>
+                </div>
+              </div>
+              <div class="pawsy-checkout-buttons">
+                <button type="button" class="pawsy-btn pawsy-btn-outline" onclick="prevStep()">Back</button>
+                <button type="button" class="pawsy-btn pawsy-btn-primary pawsy-btn-lg" onclick="nextStep()">Continue to Payment</button>
+              </div>
+            </div>
+
+            <div class="pawsy-checkout-section" data-step="3">
+              <h2>💳 Payment</h2>
+              <div class="pawsy-form-group">
+                <label>Card Number *</label>
+                <input type="text" name="cardNumber" required placeholder="1234 5678 9012 3456">
+              </div>
+              <div class="pawsy-form-row">
+                <div class="pawsy-form-group">
+                  <label>Expiry *</label>
+                  <input type="text" name="expiry" required placeholder="MM/YY">
+                </div>
+                <div class="pawsy-form-group">
+                  <label>CVV *</label>
+                  <input type="text" name="cvv" required placeholder="123">
+                </div>
+              </div>
+              <div class="pawsy-checkout-buttons">
+                <button type="button" class="pawsy-btn pawsy-btn-outline" onclick="prevStep()">Back</button>
+                <button type="button" class="pawsy-btn pawsy-btn-primary pawsy-btn-lg" onclick="nextStep()">Review Order</button>
+              </div>
+            </div>
+
+            <div class="pawsy-checkout-section" data-step="4">
+              <h2>✅ Review Order</h2>
+              <p>Please review your order details before placing.</p>
+              <div class="pawsy-checkout-buttons">
+                <button type="button" class="pawsy-btn pawsy-btn-outline" onclick="prevStep()">Back</button>
+                <button type="submit" class="pawsy-btn pawsy-btn-primary pawsy-btn-lg">Place Order</button>
+              </div>
+            </div>
+          </form>
+
+          <aside class="pawsy-checkout-summary">
+            <h3>Order Summary</h3>
+            <div class="pawsy-summary-items" id="summaryItems">
+              <% if (typeof cart !== 'undefined' && cart.length > 0) { %>
+                <% cart.forEach(item => { %>
+                  <div class="pawsy-summary-item">
+                    <span><%= item.name %> × <%= item.qty %></span>
+                    <span>$<%= (item.price * item.qty).toFixed(2) %></span>
+                  </div>
+                <% }) %>
+              <% } %>
+            </div>
+            <div class="pawsy-summary-divider"></div>
+            <div class="pawsy-summary-row">
+              <span>Subtotal</span>
+              <span>$<%= typeof subtotal !== 'undefined' ? subtotal.toFixed(2) : '0.00' %></span>
+            </div>
+            <div class="pawsy-summary-row">
+              <span>Shipping</span>
+              <span><%= typeof subtotal !== 'undefined' && subtotal >= 50 ? 'FREE' : '$5.99' %></span>
+            </div>
+            <div class="pawsy-summary-divider"></div>
+            <div class="pawsy-summary-row pawsy-summary-total">
+              <span>Total</span>
+              <span>$<%= typeof total !== 'undefined' ? total : '0.00' %></span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include("partials/footer") %>
+
+  <script>
+    let currentStep = 1;
+    const totalSteps = 4;
+
+    function showStep(step) {
+      document.querySelectorAll('.pawsy-checkout-section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.pawsy-progress-step').forEach(s => s.classList.remove('active', 'completed'));
+      
+      document.querySelector(`.pawsy-checkout-section[data-step="${step}"]`).classList.add('active');
+      
+      for (let i = 1; i <= totalSteps; i++) {
+        const el = document.querySelector(`.pawsy-progress-step[data-step="${i}"]`);
+        if (i < step) el.classList.add('completed');
+        if (i <= step) el.classList.add('active');
+      }
+    }
+
+    function nextStep() {
+      if (currentStep < totalSteps) {
+        currentStep++;
+        showStep(currentStep);
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    }
+  </script>
+
+  <style>
+    .pawsy-checkout-page { padding: 2rem 0 4rem; }
+    
+    .pawsy-checkout-progress {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+    }
+    .pawsy-progress-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .pawsy-step-number {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--pawsy-gray-100);
+      font-weight: 700;
+      transition: var(--pawsy-transition);
+    }
+    .pawsy-progress-step.active .pawsy-step-number {
+      background: var(--pawsy-primary);
+      color: white;
+    }
+    .pawsy-progress-step.completed .pawsy-step-number {
+      background: var(--pawsy-success);
+      color: white;
+    }
+    .pawsy-step-label { font-size: 0.85rem; color: var(--pawsy-gray-500); }
+    .pawsy-progress-line {
+      width: 60px;
+      height: 2px;
+      background: var(--pawsy-gray-100);
+      margin-bottom: 1.5rem;
+    }
+
+    .pawsy-checkout-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .pawsy-checkout-form { background: var(--pawsy-white); border-radius: var(--pawsy-radius-lg); padding: 2rem; }
+    .pawsy-checkout-section { display: none; }
+    .pawsy-checkout-section.active { display: block; }
+    .pawsy-checkout-section h2 { font-size: 1.25rem; margin-bottom: 1.5rem; }
+
+    .pawsy-form-group { margin-bottom: 1.25rem; }
+    .pawsy-form-group label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--pawsy-gray-700); }
+    .pawsy-form-group input {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border: 2px solid var(--pawsy-gray-100);
+      border-radius: var(--pawsy-radius);
+      font-size: 1rem;
+    }
+    .pawsy-form-group input:focus { outline: none; border-color: var(--pawsy-primary); }
+
+    .pawsy-form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; }
+
+    .pawsy-checkout-buttons { display: flex; gap: 1rem; margin-top: 2rem; }
+
+    .pawsy-checkout-summary {
+      background: var(--pawsy-white);
+      border-radius: var(--pawsy-radius-lg);
+      padding: 2rem;
+      position: sticky;
+      top: 100px;
+    }
+    .pawsy-checkout-summary h3 { font-size: 1.25rem; margin-bottom: 1.5rem; }
+    .pawsy-summary-item { display: flex; justify-content: space-between; padding: 0.5rem 0; font-size: 0.9rem; }
+    .pawsy-summary-row { display: flex; justify-content: space-between; padding: 0.5rem 0; }
+    .pawsy-summary-total { font-size: 1.25rem; font-weight: 700; }
+    .pawsy-summary-divider { height: 1px; background: var(--pawsy-gray-100); margin: 1rem 0; }
+
+    @media (max-width: 900px) {
+      .pawsy-checkout-layout { grid-template-columns: 1fr; }
+      .pawsy-checkout-summary { position: static; }
+    }
+  </style>
+  <!-- Fingerprint Badge (debug mode only) -->
+  <% if (typeof debug !== 'undefined' && debug) { %>
+  <div id="fpBadge" style="position:fixed;bottom:8px;left:8px;z-index:99999;background:rgba(0,0,0,0.9);color:#0f0;font-family:monospace;font-size:10px;padding:4px 8px;border-radius:4px;pointer-events:none;">LIVE: <%= typeof BUILD_FINGERPRINT !== 'undefined' ? BUILD_FINGERPRINT : 'unknown' %></div>
+  <% } %>
+</body>
+</html>

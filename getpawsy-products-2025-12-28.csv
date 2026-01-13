@@ -1,0 +1,8 @@
+SPU,SKU,Product Name,Color,Size,Sell Price,Warehouse,Product Image,Variant Image
+CJ001,CJ001-RED-S,Premium Pet Collar,Red,Small,8.50,USA,https://example.com/collar.jpg,https://example.com/collar-red-s.jpg
+CJ001,CJ001-RED-M,Premium Pet Collar,Red,Medium,9.50,USA,https://example.com/collar.jpg,https://example.com/collar-red-m.jpg
+CJ001,CJ001-BLUE-S,Premium Pet Collar,Blue,Small,8.50,USA,https://example.com/collar.jpg,https://example.com/collar-blue-s.jpg
+CJ001,CJ001-BLUE-M,Premium Pet Collar,Blue,Medium,9.50,USA,https://example.com/collar.jpg,https://example.com/collar-blue-m.jpg
+CJ002,CJ002-STANDARD,Durable Dog Toy Rope,Standard,One Size,6.75,USA,https://example.com/rope.jpg,
+CJ003,CJ003-S,Interactive Cat Wand,Standard,Small,12.99,USA,https://example.com/wand.jpg,
+CJ004,CJ004-XL,Premium Dog Bed,Grey,Extra Large,35.00,USA,https://example.com/bed.jpg,

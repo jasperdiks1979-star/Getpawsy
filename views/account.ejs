@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>My Account | GetPawsy</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/js/pawsy.js" defer></script>
+</head>
+<body class="pawsy-body">
+  <%- include("partials/header") %>
+  
+  <main class="pawsy-main">
+    <div class="pawsy-container">
+      <div class="pawsy-account-page">
+        <h1 class="pawsy-page-title">My Account</h1>
+
+        <div class="pawsy-account-layout">
+          <aside class="pawsy-account-sidebar">
+            <nav class="pawsy-account-nav">
+              <a href="#dashboard" class="pawsy-account-link active">
+                <span class="pawsy-account-icon">📊</span>
+                Dashboard
+              </a>
+              <a href="#orders" class="pawsy-account-link">
+                <span class="pawsy-account-icon">📦</span>
+                Orders
+              </a>
+              <a href="#addresses" class="pawsy-account-link">
+                <span class="pawsy-account-icon">🏠</span>
+                Addresses
+              </a>
+              <a href="#wishlist" class="pawsy-account-link">
+                <span class="pawsy-account-icon">❤️</span>
+                Wishlist
+              </a>
+              <a href="#loyalty" class="pawsy-account-link">
+                <span class="pawsy-account-icon">🏆</span>
+                Loyalty Rewards
+              </a>
+              <a href="#settings" class="pawsy-account-link">
+                <span class="pawsy-account-icon">⚙️</span>
+                Settings
+              </a>
+              <a href="/logout" class="pawsy-account-link pawsy-logout">
+                <span class="pawsy-account-icon">🚪</span>
+                Logout
+              </a>
+            </nav>
+          </aside>
+
+          <div class="pawsy-account-content">
+            <div class="pawsy-loyalty-banner" id="loyalty-banner">
+              <div class="pawsy-loyalty-icon">🏆</div>
+              <div class="pawsy-loyalty-info">
+                <div class="pawsy-loyalty-level">
+                  <span class="pawsy-level-badge" id="loyalty-level">Bronze</span>
+                  <span class="pawsy-points" id="loyalty-points">0 Points</span>
+                </div>
+                <div class="pawsy-loyalty-progress">
+                  <div class="pawsy-progress-bar">
+                    <div class="pawsy-progress-fill" id="loyalty-progress" style="width: 0%"></div>
+                  </div>
+                  <span class="pawsy-next-level" id="next-level-text">0 more to Silver</span>
+                </div>
+              </div>
+              <a href="#loyalty" class="pawsy-loyalty-cta">View Rewards</a>
+            </div>
+
+            <section class="pawsy-account-section" id="dashboard">
+              <h2>Welcome back<%= user && user.firstName ? ', ' + user.firstName : '' %>! 🐾</h2>
+              
+              <div class="pawsy-account-cards">
+                <div class="pawsy-account-card">
+                  <span class="pawsy-card-icon">📦</span>
+                  <div class="pawsy-card-info">
+                    <h3>Orders</h3>
+                    <p><%= typeof orders !== 'undefined' ? orders.length : 0 %> total</p>
+                  </div>
+                </div>
+                <div class="pawsy-account-card">
+                  <span class="pawsy-card-icon">❤️</span>
+                  <div class="pawsy-card-info">
+                    <h3>Wishlist</h3>
+                    <p><%= typeof wishlist !== 'undefined' ? wishlist.length : 0 %> items</p>
+                  </div>
+                </div>
+                <div class="pawsy-account-card">
+                  <span class="pawsy-card-icon">🏠</span>
+                  <div class="pawsy-card-info">
+                    <h3>Addresses</h3>
+                    <p><%= typeof addresses !== 'undefined' ? addresses.length : 0 %> saved</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="pawsy-account-section" id="orders">
+              <h2>Recent Orders</h2>
+              <% if (typeof orders !== 'undefined' && orders.length > 0) { %>
+                <div class="pawsy-orders-list">
+                  <% orders.slice(0, 5).forEach(order => { %>
+                    <div class="pawsy-order-item">
+                      <div class="pawsy-order-info">
+                        <span class="pawsy-order-id">#<%= order.id %></span>
+                        <span class="pawsy-order-date"><%= order.date %></span>
+                      </div>
+                      <div class="pawsy-order-status pawsy-status-<%= order.status %>">
+                        <%= order.status %>
+                      </div>
+                      <div class="pawsy-order-total">$<%= order.total %></div>
+                      <a href="/order/<%= order.id %>" class="pawsy-btn pawsy-btn-outline">View</a>
+                    </div>
+                  <% }) %>
+                </div>
+              <% } else { %>
+                <div class="pawsy-empty-state">
+                  <p>No orders yet. Start shopping to see your orders here!</p>
+                  <a href="/collections" class="pawsy-btn pawsy-btn-primary">Start Shopping</a>
+                </div>
+              <% } %>
+            </section>
+
+            <section class="pawsy-account-section" id="addresses">
+              <h2>Saved Addresses</h2>
+              <% if (typeof addresses !== 'undefined' && addresses.length > 0) { %>
+                <div class="pawsy-addresses-grid">
+                  <% addresses.forEach(addr => { %>
+                    <div class="pawsy-address-card">
+                      <% if (addr.isDefault) { %>
+                        <span class="pawsy-default-badge">Default</span>
+                      <% } %>
+                      <p class="pawsy-address-name"><%= addr.name %></p>
+                      <p><%= addr.street %></p>
+                      <p><%= addr.city %>, <%= addr.state %> <%= addr.zip %></p>
+                      <div class="pawsy-address-actions">
+                        <button class="pawsy-btn pawsy-btn-outline">Edit</button>
+                        <button class="pawsy-btn-text">Delete</button>
+                      </div>
+                    </div>
+                  <% }) %>
+                </div>
+              <% } else { %>
+                <div class="pawsy-empty-state">
+                  <p>No addresses saved yet.</p>
+                  <button class="pawsy-btn pawsy-btn-primary">Add Address</button>
+                </div>
+              <% } %>
+            </section>
+
+            <section class="pawsy-account-section" id="loyalty">
+              <h2>Loyalty Rewards 🏆</h2>
+              <div class="pawsy-loyalty-details">
+                <div class="pawsy-loyalty-stats">
+                  <div class="pawsy-loyalty-stat">
+                    <span class="pawsy-stat-value" id="total-points">0</span>
+                    <span class="pawsy-stat-label">Total Points</span>
+                  </div>
+                  <div class="pawsy-loyalty-stat">
+                    <span class="pawsy-stat-value" id="current-level">Bronze</span>
+                    <span class="pawsy-stat-label">Current Level</span>
+                  </div>
+                  <div class="pawsy-loyalty-stat">
+                    <span class="pawsy-stat-value" id="total-spent">$0</span>
+                    <span class="pawsy-stat-label">Total Spent</span>
+                  </div>
+                </div>
+                <div class="pawsy-rewards-available">
+                  <h3>Available Rewards</h3>
+                  <div class="pawsy-rewards-grid" id="rewards-grid">
+                    <div class="pawsy-reward-card">
+                      <span class="pawsy-reward-icon">🎁</span>
+                      <span class="pawsy-reward-name">$5 Off Coupon</span>
+                      <span class="pawsy-reward-cost">500 pts</span>
+                      <button class="pawsy-btn pawsy-btn-outline pawsy-reward-btn" data-reward="coupon_5">Redeem</button>
+                    </div>
+                    <div class="pawsy-reward-card">
+                      <span class="pawsy-reward-icon">🚚</span>
+                      <span class="pawsy-reward-name">Free Shipping</span>
+                      <span class="pawsy-reward-cost">300 pts</span>
+                      <button class="pawsy-btn pawsy-btn-outline pawsy-reward-btn" data-reward="free_shipping">Redeem</button>
+                    </div>
+                    <div class="pawsy-reward-card">
+                      <span class="pawsy-reward-icon">🏷️</span>
+                      <span class="pawsy-reward-name">10% Off Order</span>
+                      <span class="pawsy-reward-cost">800 pts</span>
+                      <button class="pawsy-btn pawsy-btn-outline pawsy-reward-btn" data-reward="discount_10">Redeem</button>
+                    </div>
+                    <div class="pawsy-reward-card">
+                      <span class="pawsy-reward-icon">🎉</span>
+                      <span class="pawsy-reward-name">$20 Off Coupon</span>
+                      <span class="pawsy-reward-cost">1500 pts</span>
+                      <button class="pawsy-btn pawsy-btn-outline pawsy-reward-btn" data-reward="coupon_20">Redeem</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="pawsy-earning-guide">
+                  <h3>How to Earn Points</h3>
+                  <ul class="pawsy-earn-list">
+                    <li><strong>1 point</strong> per $1 spent</li>
+                    <li><strong>50 points</strong> for writing a review</li>
+                    <li><strong>25 points</strong> for referring a friend</li>
+                    <li><strong>100 points</strong> birthday bonus</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include("partials/footer") %>
+  <%- include("partials/pawsy_widget") %>
+
+  <style>
+    .pawsy-account-page {
+      padding: 2rem 0 4rem;
+    }
+
+    .pawsy-page-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 2rem;
+    }
+
+    .pawsy-account-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+    }
+
+    .pawsy-account-sidebar {
+      background: var(--pawsy-white);
+      border-radius: var(--pawsy-radius-lg);
+      padding: 1.5rem;
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+
+    .pawsy-account-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .pawsy-account-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      border-radius: var(--pawsy-radius);
+      color: var(--pawsy-gray-700);
+      font-weight: 500;
+      transition: var(--pawsy-transition);
+    }
+    .pawsy-account-link:hover,
+    .pawsy-account-link.active {
+      background: var(--pawsy-light);
+      color: var(--pawsy-primary);
+    }
+    .pawsy-account-icon {
+      font-size: 1.1rem;
+    }
+    .pawsy-logout {
+      color: var(--pawsy-error);
+      margin-top: 1rem;
+      border-top: 1px solid var(--pawsy-gray-100);
+      padding-top: 1rem;
+    }
+
+    .pawsy-account-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .pawsy-account-section {
+      background: var(--pawsy-white);
+      border-radius: var(--pawsy-radius-lg);
+      padding: 2rem;
+    }
+    .pawsy-account-section h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .pawsy-account-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .pawsy-account-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: var(--pawsy-light);
+      border-radius: var(--pawsy-radius);
+    }
+    .pawsy-card-icon {
+      font-size: 2rem;
+    }
+    .pawsy-card-info h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    .pawsy-card-info p {
+      font-size: 0.85rem;
+      color: var(--pawsy-gray-500);
+    }
+
+    .pawsy-orders-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .pawsy-order-item {
+      display: grid;
+      grid-template-columns: 1fr auto auto auto;
+      gap: 1.5rem;
+      align-items: center;
+      padding: 1rem;
+      background: var(--pawsy-light);
+      border-radius: var(--pawsy-radius);
+    }
+    .pawsy-order-id {
+      font-weight: 600;
+    }
+    .pawsy-order-date {
+      font-size: 0.85rem;
+      color: var(--pawsy-gray-500);
+    }
+    .pawsy-order-status {
+      padding: 0.3rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .pawsy-status-pending { background: rgba(245, 158, 11, 0.2); color: #D97706; }
+    .pawsy-status-shipped { background: rgba(59, 130, 246, 0.2); color: #2563EB; }
+    .pawsy-status-delivered { background: rgba(34, 197, 94, 0.2); color: #16A34A; }
+    .pawsy-order-total {
+      font-weight: 700;
+    }
+
+    .pawsy-addresses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .pawsy-address-card {
+      position: relative;
+      padding: 1.5rem;
+      background: var(--pawsy-light);
+      border-radius: var(--pawsy-radius);
+    }
+    .pawsy-default-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--pawsy-primary);
+      color: white;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+    .pawsy-address-name {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .pawsy-address-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .pawsy-btn-text {
+      color: var(--pawsy-error);
+      font-size: 0.9rem;
+    }
+
+    .pawsy-empty-state {
+      text-align: center;
+      padding: 2rem;
+      color: var(--pawsy-gray-500);
+    }
+    .pawsy-empty-state .pawsy-btn {
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .pawsy-account-layout {
+        grid-template-columns: 1fr;
+      }
+      .pawsy-account-sidebar {
+        position: static;
+      }
+      .pawsy-account-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    .pawsy-loyalty-banner {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem 2rem;
+      background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
+      border-radius: var(--pawsy-radius-lg);
+      color: #1a1a1a;
+      margin-bottom: 0;
+    }
+    .pawsy-loyalty-icon {
+      font-size: 2.5rem;
+    }
+    .pawsy-loyalty-info {
+      flex: 1;
+    }
+    .pawsy-loyalty-level {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .pawsy-level-badge {
+      background: rgba(255,255,255,0.9);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .pawsy-points {
+      font-weight: 600;
+    }
+    .pawsy-loyalty-progress {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .pawsy-progress-bar {
+      flex: 1;
+      height: 8px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .pawsy-progress-fill {
+      height: 100%;
+      background: rgba(255,255,255,0.9);
+      border-radius: 10px;
+      transition: width 0.5s ease;
+    }
+    .pawsy-next-level {
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+    .pawsy-loyalty-cta {
+      background: rgba(255,255,255,0.95);
+      color: #1a1a1a;
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--pawsy-radius);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--pawsy-transition);
+    }
+    .pawsy-loyalty-cta:hover {
+      background: white;
+      transform: scale(1.05);
+    }
+
+    .pawsy-loyalty-details {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .pawsy-loyalty-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .pawsy-loyalty-stat {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--pawsy-light);
+      border-radius: var(--pawsy-radius);
+    }
+    .pawsy-stat-value {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--pawsy-primary);
+      margin-bottom: 0.25rem;
+    }
+    .pawsy-stat-label {
+      font-size: 0.85rem;
+      color: var(--pawsy-gray-500);
+    }
+    .pawsy-rewards-available h3,
+    .pawsy-earning-guide h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .pawsy-rewards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .pawsy-reward-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--pawsy-light);
+      border-radius: var(--pawsy-radius);
+      gap: 0.5rem;
+    }
+    .pawsy-reward-icon {
+      font-size: 2rem;
+    }
+    .pawsy-reward-name {
+      font-weight: 600;
+    }
+    .pawsy-reward-cost {
+      font-size: 0.85rem;
+      color: var(--pawsy-gray-500);
+    }
+    .pawsy-reward-btn {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      padding: 0.4rem 1rem;
+    }
+    .pawsy-earn-list {
+      list-style: none;
+      padding: 0;
+    }
+    .pawsy-earn-list li {
+      padding: 0.75rem 1rem;
+      background: var(--pawsy-light);
+      border-radius: var(--pawsy-radius);
+      margin-bottom: 0.5rem;
+    }
+    @media (max-width: 600px) {
+      .pawsy-loyalty-banner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .pawsy-loyalty-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      loadLoyaltyData();
+    });
+
+    async function loadLoyaltyData() {
+      try {
+        const response = await fetch('/api/loyalty/my-account');
+        const data = await response.json();
+        
+        if (data.success && data.account) {
+          const account = data.account;
+          const tiers = {
+            'Bronze': { min: 0, next: 'Silver', nextPoints: 500 },
+            'Silver': { min: 500, next: 'Gold', nextPoints: 1500 },
+            'Gold': { min: 1500, next: 'Pawsy Elite', nextPoints: 5000 },
+            'Pawsy Elite': { min: 5000, next: null, nextPoints: null }
+          };
+          
+          const tier = tiers[account.level] || tiers['Bronze'];
+          const currentPoints = account.points || 0;
+          const progress = tier.nextPoints 
+            ? Math.min(100, ((currentPoints - tier.min) / (tier.nextPoints - tier.min)) * 100)
+            : 100;
+          const pointsToNext = tier.nextPoints ? tier.nextPoints - currentPoints : 0;
+          
+          document.getElementById('loyalty-level').textContent = account.level;
+          document.getElementById('loyalty-points').textContent = currentPoints + ' Points';
+          document.getElementById('loyalty-progress').style.width = progress + '%';
+          document.getElementById('next-level-text').textContent = tier.next 
+            ? pointsToNext + ' more to ' + tier.next
+            : 'Max Level Reached!';
+          
+          document.getElementById('total-points').textContent = currentPoints;
+          document.getElementById('current-level').textContent = account.level;
+          document.getElementById('total-spent').textContent = '$' + (account.lifetime_spend || 0).toFixed(0);
+          
+          const colors = {
+            'Bronze': '#CD7F32',
+            'Silver': '#C0C0C0',
+            'Gold': '#FFD700',
+            'Pawsy Elite': '#E5E4E2'
+          };
+          document.getElementById('loyalty-level').style.background = colors[account.level] || '#CD7F32';
+        }
+      } catch (error) {
+        console.log('Loyalty data not available');
+      }
+    }
+  </script>
+</body>
+</html>

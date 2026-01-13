@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Margin Dashboard - GetPawsy Admin</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a1a2e; color: #eee; padding: 20px; }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
+    h1 { color: #00d4aa; }
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
+    .card { background: #16213e; padding: 20px; border-radius: 10px; text-align: center; }
+    .card-value { font-size: 2em; font-weight: bold; color: #00d4aa; }
+    .card-label { color: #888; margin-top: 5px; }
+    .filters { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+    input, select, button { padding: 10px 15px; border: none; border-radius: 5px; font-size: 14px; }
+    input, select { background: #16213e; color: #eee; }
+    button { background: #00d4aa; color: #000; cursor: pointer; font-weight: bold; }
+    button:hover { background: #00b894; }
+    .table-container { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; background: #16213e; border-radius: 10px; overflow: hidden; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #2a2a4a; }
+    th { background: #0f3460; color: #00d4aa; font-weight: 600; }
+    tr:hover { background: #1f4068; }
+    .positive { color: #00d4aa; }
+    .negative { color: #ff6b6b; }
+    .flag { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; margin: 2px; background: #ff6b6b; }
+    .flag.needs_review { background: #ffd93d; color: #000; }
+    .inactive { opacity: 0.5; }
+    .loading { text-align: center; padding: 50px; color: #888; }
+    .error { background: #ff6b6b; color: #fff; padding: 20px; border-radius: 10px; text-align: center; }
+    @media (max-width: 768px) {
+      .card-value { font-size: 1.5em; }
+      th, td { padding: 8px; font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Margin Dashboard</h1>
+    <button onclick="exportCsv()">Export CSV</button>
+  </div>
+
+  <div id="summary" class="summary">
+    <div class="card"><div class="card-value" id="total-products">-</div><div class="card-label">Active Products</div></div>
+    <div class="card"><div class="card-value" id="avg-margin">-</div><div class="card-label">Avg Margin %</div></div>
+    <div class="card"><div class="card-value" id="lowest-margin">-</div><div class="card-label">Lowest Margin</div></div>
+    <div class="card"><div class="card-value" id="highest-margin">-</div><div class="card-label">Highest Margin</div></div>
+  </div>
+
+  <div class="filters">
+    <input type="text" id="search" placeholder="Search by title..." oninput="applyFilters()">
+    <select id="category" onchange="applyFilters()"><option value="">All Categories</option></select>
+    <select id="active-filter" onchange="applyFilters()">
+      <option value="">All</option>
+      <option value="true">Active Only</option>
+      <option value="false">Inactive Only</option>
+    </select>
+    <input type="number" id="min-margin" placeholder="Min Margin %" oninput="applyFilters()">
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>SKU/Slug</th>
+          <th>Title</th>
+          <th>Cost</th>
+          <th>Price</th>
+          <th>Margin $</th>
+          <th>Margin %</th>
+          <th>Category</th>
+          <th>Status</th>
+          <th>Flags</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <tr><td colspan="9" class="loading">Loading...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    let allProducts = [];
+    let filteredProducts = [];
+
+    const token = new URLSearchParams(window.location.search).get('token') || '';
+
+    async function loadData() {
+      try {
+        const res = await fetch('/api/admin/margins', {
+          headers: { 'x-admin-token': token }
+        });
+        if (!res.ok) {
+          if (res.status === 401) throw new Error('Unauthorized - Invalid token');
+          throw new Error('Failed to load data');
+        }
+        const data = await res.json();
+        allProducts = data.products || [];
+        populateCategories();
+        applyFilters();
+        updateSummary(data.summary);
+      } catch (e) {
+        document.getElementById('table-body').innerHTML = `<tr><td colspan="9" class="error">${e.message}</td></tr>`;
+      }
+    }
+
+    function populateCategories() {
+      const cats = [...new Set(allProducts.map(p => p.category).filter(Boolean))].sort();
+      const select = document.getElementById('category');
+      cats.forEach(cat => {
+        const opt = document.createElement('option');
+        opt.value = cat;
+        opt.textContent = cat;
+        select.appendChild(opt);
+      });
+    }
+
+    function applyFilters() {
+      const search = document.getElementById('search').value.toLowerCase();
+      const category = document.getElementById('category').value;
+      const activeFilter = document.getElementById('active-filter').value;
+      const minMargin = parseFloat(document.getElementById('min-margin').value) || 0;
+
+      filteredProducts = allProducts.filter(p => {
+        if (search && !p.title?.toLowerCase().includes(search) && !p.slug?.toLowerCase().includes(search)) return false;
+        if (category && p.category !== category) return false;
+        if (activeFilter === 'true' && !p.active) return false;
+        if (activeFilter === 'false' && p.active) return false;
+        if (p.margin_pct < minMargin) return false;
+        return true;
+      });
+
+      renderTable();
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('table-body');
+      if (filteredProducts.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="9" class="loading">No products found</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = filteredProducts.map(p => `
+        <tr class="${p.active ? '' : 'inactive'}">
+          <td>${p.slug || p.id || '-'}</td>
+          <td>${(p.title || 'Untitled').substring(0, 40)}${p.title?.length > 40 ? '...' : ''}</td>
+          <td>$${p.cost?.toFixed(2) || '0.00'}</td>
+          <td>$${p.price?.toFixed(2) || '0.00'}</td>
+          <td class="${p.margin_usd >= 0 ? 'positive' : 'negative'}">$${p.margin_usd?.toFixed(2) || '0.00'}</td>
+          <td class="${p.margin_pct >= 0 ? 'positive' : 'negative'}">${p.margin_pct?.toFixed(1) || '0'}%</td>
+          <td>${p.category || '-'}</td>
+          <td>${p.active ? '✓ Active' : '✗ Inactive'}</td>
+          <td>${(p.flags || []).map(f => `<span class="flag ${f}">${f}</span>`).join('')}</td>
+        </tr>
+      `).join('');
+    }
+
+    function updateSummary(summary) {
+      document.getElementById('total-products').textContent = summary.activeCount || 0;
+      document.getElementById('avg-margin').textContent = (summary.avgMarginPct || 0).toFixed(1) + '%';
+      document.getElementById('lowest-margin').textContent = summary.lowestMarginProduct?.substring(0, 20) + '...' || '-';
+      document.getElementById('highest-margin').textContent = summary.highestMarginProduct?.substring(0, 20) + '...' || '-';
+    }
+
+    function exportCsv() {
+      const headers = ['slug', 'title', 'cost', 'price', 'margin_usd', 'margin_pct', 'category', 'active', 'flags'];
+      const rows = filteredProducts.map(p => [
+        p.slug || p.id,
+        `"${(p.title || '').replace(/"/g, '""')}"`,
+        p.cost?.toFixed(2) || 0,
+        p.price?.toFixed(2) || 0,
+        p.margin_usd?.toFixed(2) || 0,
+        p.margin_pct?.toFixed(1) || 0,
+        p.category || '',
+        p.active ? 'true' : 'false',
+        (p.flags || []).join(';')
+      ]);
+      
+      const csv = [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'margins-export.csv';
+      a.click();
+    }
+
+    loadData();
+  </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect fill="#f0e4d8" width="200" height="200"/>
+  <circle cx="60" cy="70" r="15" fill="#ff7a50" opacity="0.6"/>
+  <circle cx="140" cy="70" r="15" fill="#ff7a50" opacity="0.6"/>
+  <path d="M80 110 Q100 130 120 110" stroke="#ff7a50" stroke-width="8" fill="none" opacity="0.6"/>
+  <text x="100" y="160" font-family="system-ui" font-size="14" text-anchor="middle" fill="#8b7355">No image</text>
+</svg>

@@ -1,0 +1,1567 @@
+{
+  "products": [
+    {
+      "id": "dog-toy-001",
+      "name": "Squeaky Plush Dog Bone",
+      "title": "Premium Squeaky Plush Dog Bone - Durable Chew Toy",
+      "description": "Extra-durable squeaky plush bone perfect for fetch and chewing. Made with double-stitched seams for long-lasting play.",
+      "price": 12.99,
+      "old_price": 16.99,
+      "images": [
+        "/images/0400a361-4e86-4ece-b7cc-43b6327bf2a7.png"
+      ],
+      "rating": 4.8,
+      "reviews_count": 245,
+      "stock": 150,
+      "category": "Dog Toys",
+      "tags": [
+        "dog",
+        "toys",
+        "squeaky",
+        "plush",
+        "chew"
+      ],
+      "badge": "Bestseller",
+      "image": "/images/0400a361-4e86-4ece-b7cc-43b6327bf2a7.png",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 3,
+      "pet_bucket": "toys",
+      "classified_at": "2025-12-23T18:43:43.554Z"
+    },
+    {
+      "id": "dog-toy-002",
+      "name": "Indestructible Rubber Ball",
+      "title": "Heavy-Duty Rubber Ball for Aggressive Chewers",
+      "description": "Virtually indestructible rubber ball designed for the toughest chewers. Bouncy and great for outdoor play.",
+      "price": 14.99,
+      "old_price": 19.99,
+      "images": [
+        "/images/10384912-98BC-43E8-B094-A4845F70F89E.jpeg"
+      ],
+      "rating": 4.9,
+      "reviews_count": 512,
+      "stock": 200,
+      "category": "Dog Toys",
+      "tags": [
+        "dog",
+        "toys",
+        "ball",
+        "rubber",
+        "durable",
+        "aggressive chewer"
+      ],
+      "image": "/images/10384912-98BC-43E8-B094-A4845F70F89E.jpeg",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 2,
+      "pet_bucket": "toys",
+      "classified_at": "2025-12-23T18:43:43.555Z"
+    },
+    {
+      "id": "dog-toy-003",
+      "name": "Interactive Puzzle Feeder",
+      "title": "Dog Puzzle Feeder - Mental Stimulation Toy",
+      "description": "Challenge your dog's mind with this interactive puzzle feeder. Slows down eating and provides mental stimulation.",
+      "price": 24.99,
+      "old_price": 32.99,
+      "images": [
+        "/images/180B3C80-1CDD-4A6D-9517-AC88A725D546.jpeg"
+      ],
+      "rating": 4.7,
+      "reviews_count": 189,
+      "stock": 80,
+      "category": "Dog Toys",
+      "tags": [
+        "dog",
+        "toys",
+        "puzzle",
+        "feeder",
+        "interactive",
+        "mental stimulation"
+      ],
+      "badge": "Staff Pick",
+      "image": "/images/180B3C80-1CDD-4A6D-9517-AC88A725D546.jpeg",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 2,
+      "pet_bucket": "toys",
+      "classified_at": "2025-12-23T18:43:43.555Z"
+    },
+    {
+      "id": "dog-toy-004",
+      "name": "Rope Tug Toy Set",
+      "title": "3-Pack Cotton Rope Tug Toys for Dogs",
+      "description": "Set of 3 durable cotton rope toys perfect for tug-of-war. Also helps clean teeth during play.",
+      "price": 18.99,
+      "old_price": 24.99,
+      "images": [
+        "/images/18b987db-9e90-4f05-8160-77eab92f7009.png"
+      ],
+      "rating": 4.6,
+      "reviews_count": 328,
+      "stock": 175,
+      "category": "Dog Toys",
+      "tags": [
+        "dog",
+        "toys",
+        "rope",
+        "tug",
+        "dental",
+        "set"
+      ],
+      "image": "/images/18b987db-9e90-4f05-8160-77eab92f7009.png",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 3,
+      "pet_bucket": "toys",
+      "classified_at": "2025-12-23T18:43:43.555Z"
+    },
+    {
+      "id": "dog-toy-005",
+      "name": "Floating Fetch Toy",
+      "title": "Waterproof Floating Fetch Toy for Swimming Dogs",
+      "description": "Bright orange floating toy perfect for water play. High-visibility design for easy retrieval.",
+      "price": 11.99,
+      "old_price": 15.99,
+      "images": [
+        "/images/1feb67b3-8dc5-4376-a15d-b95685c6c6b1.png"
+      ],
+      "rating": 4.5,
+      "reviews_count": 156,
+      "stock": 90,
+      "category": "Dog Toys",
+      "tags": [
+        "dog",
+        "toys",
+        "fetch",
+        "floating",
+        "water",
+        "swimming"
+      ],
+      "image": "/images/1feb67b3-8dc5-4376-a15d-b95685c6c6b1.png",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 3,
+      "pet_bucket": "toys",
+      "classified_at": "2025-12-23T18:43:43.557Z"
+    },
+    {
+      "id": "dog-toy-006",
+      "name": "Treat Dispensing Ball",
+      "title": "Treat Dispensing Ball - Keeps Dogs Busy for Hours",
+      "description": "Fill with treats and watch your dog work to get them out. Adjustable difficulty levels.",
+      "price": 16.99,
+      "old_price": 21.99,
+      "images": [
+        "/images/22C432D4-DB6B-42D7-9DFB-3B7038338B5F_1765239852627.png"
+      ],
+      "rating": 4.8,
+      "reviews_count": 412,
+      "stock": 120,
+      "category": "Dog Toys",
+      "tags": [
+        "dog",
+        "toys",
+        "treat",
+        "dispenser",
+        "interactive"
+      ],
+      "image": "/images/22C432D4-DB6B-42D7-9DFB-3B7038338B5F_1765239852627.png",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 3,
+      "pet_bucket": "toys",
+      "classified_at": "2025-12-23T18:43:43.557Z"
+    },
+    {
+      "id": "dog-toy-007",
+      "name": "Crinkle Stuffed Animal",
+      "title": "Crinkle Plush Stuffed Animal for Dogs",
+      "description": "Soft plush toy with crinkle paper inside for extra fun sounds. Multiple animal designs available.",
+      "price": 9.99,
+      "old_price": 13.99,
+      "images": [
+        "/images/23056703-4749-4d17-a9d3-a4a0373a9138.png"
+      ],
+      "rating": 4.4,
+      "reviews_count": 267,
+      "stock": 200,
+      "category": "Dog Toys",
+      "tags": [
+        "dog",
+        "toys",
+        "plush",
+        "crinkle",
+        "stuffed animal"
+      ],
+      "image": "/images/23056703-4749-4d17-a9d3-a4a0373a9138.png",
+      "is_pet_product": false,
+      "pet_type": null,
+      "homepage_eligible": false,
+      "blocked_reason": "Absolute deny: \"plush toy\"",
+      "pet_score": 0,
+      "pet_bucket": "toys",
+      "classified_at": "2025-12-23T18:43:43.558Z"
+    },
+    {
+      "id": "dog-toy-008",
+      "name": "Tennis Ball Launcher",
+      "title": "Automatic Tennis Ball Launcher for Dogs",
+      "description": "Automatic ball launcher with adjustable distance. Perfect for energetic dogs who love fetch.",
+      "price": 49.99,
+      "old_price": 69.99,
+      "images": [
+        "/images/26D0F2B7-D260-470E-AD36-5C2F2F0A642A.jpeg"
+      ],
+      "rating": 4.6,
+      "reviews_count": 189,
+      "stock": 45,
+      "category": "Dog Toys",
+      "tags": [
+        "dog",
+        "toys",
+        "ball launcher",
+        "automatic",
+        "fetch",
+        "tennis ball"
+      ],
+      "badge": "Popular",
+      "image": "/images/26D0F2B7-D260-470E-AD36-5C2F2F0A642A.jpeg",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 3,
+      "pet_bucket": "toys",
+      "classified_at": "2025-12-23T18:43:43.558Z"
+    },
+    {
+      "id": "dog-bed-001",
+      "name": "Orthopedic Memory Foam Bed",
+      "title": "Orthopedic Memory Foam Dog Bed - Large",
+      "description": "Premium memory foam bed with removable washable cover. Provides joint support for senior dogs.",
+      "price": 79.99,
+      "old_price": 99.99,
+      "images": [
+        "/images/27535a70-c4a0-4bc0-9c8b-0e45bcdd07b8.png"
+      ],
+      "rating": 4.9,
+      "reviews_count": 723,
+      "stock": 60,
+      "category": "Dog Beds",
+      "tags": [
+        "dog",
+        "bed",
+        "orthopedic",
+        "memory foam",
+        "large",
+        "senior"
+      ],
+      "badge": "Top Rated",
+      "image": "/images/27535a70-c4a0-4bc0-9c8b-0e45bcdd07b8.png",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 3,
+      "pet_bucket": "beds",
+      "classified_at": "2025-12-23T18:43:43.558Z"
+    },
+    {
+      "id": "dog-bed-002",
+      "name": "Cozy Donut Cuddler Bed",
+      "title": "Donut Cuddler Dog Bed - Medium",
+      "description": "Ultra-soft donut-shaped bed with raised edges for head support. Perfect for dogs who love to curl up.",
+      "price": 44.99,
+      "old_price": 59.99,
+      "images": [
+        "/images/2D4B74EB-AB0D-494C-8EE4-7D917BF34C3E.jpeg"
+      ],
+      "rating": 4.7,
+      "reviews_count": 534,
+      "stock": 85,
+      "category": "Dog Beds",
+      "tags": [
+        "dog",
+        "bed",
+        "donut",
+        "cuddler",
+        "soft",
+        "medium"
+      ],
+      "image": "/images/2D4B74EB-AB0D-494C-8EE4-7D917BF34C3E.jpeg",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 3,
+      "pet_bucket": "beds",
+      "classified_at": "2025-12-23T18:43:43.558Z"
+    },
+    {
+      "id": "dog-bed-003",
+      "name": "Elevated Cooling Cot",
+      "title": "Elevated Cooling Dog Cot - All Sizes",
+      "description": "Breathable mesh fabric keeps dogs cool. Elevated design for air circulation. Great for summer.",
+      "price": 34.99,
+      "old_price": 44.99,
+      "images": [
+        "/images/31c86813-466e-427e-b018-02716ab0c6e3.png"
+      ],
+      "rating": 4.6,
+      "reviews_count": 298,
+      "stock": 110,
+      "category": "Dog Beds",
+      "tags": [
+        "dog",
+        "bed",
+        "elevated",
+        "cooling",
+        "cot",
+        "summer"
+      ],
+      "image": "/images/31c86813-466e-427e-b018-02716ab0c6e3.png",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 3,
+      "pet_bucket": "beds",
+      "classified_at": "2025-12-23T18:43:43.558Z"
+    },
+    {
+      "id": "dog-bed-004",
+      "name": "Waterproof Outdoor Bed",
+      "title": "Waterproof Outdoor Dog Bed with Cover",
+      "description": "Durable waterproof bed for outdoor use. Includes removable canopy for shade.",
+      "price": 64.99,
+      "old_price": 84.99,
+      "images": [
+        "/images/378fac0d-b9dc-4419-9046-8076d908da54.png"
+      ],
+      "rating": 4.5,
+      "reviews_count": 187,
+      "stock": 55,
+      "category": "Dog Beds",
+      "tags": [
+        "dog",
+        "bed",
+        "outdoor",
+        "waterproof",
+        "canopy"
+      ],
+      "image": "/images/378fac0d-b9dc-4419-9046-8076d908da54.png",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 2,
+      "pet_bucket": "beds",
+      "classified_at": "2025-12-23T18:43:43.558Z"
+    },
+    {
+      "id": "dog-groom-001",
+      "name": "Self-Cleaning Slicker Brush",
+      "title": "Self-Cleaning Dog Slicker Brush - Removes Loose Fur",
+      "description": "One-click self-cleaning brush that removes loose fur and tangles. Gentle on skin.",
+      "price": 19.99,
+      "old_price": 26.99,
+      "images": [
+        "/images/4D5786B8-5154-47CB-92B5-E722ADE8918D.jpeg"
+      ],
+      "rating": 4.8,
+      "reviews_count": 892,
+      "stock": 300,
+      "category": "Dog Grooming",
+      "tags": [
+        "dog",
+        "grooming",
+        "brush",
+        "slicker",
+        "self-cleaning"
+      ],
+      "badge": "Bestseller",
+      "image": "/images/4D5786B8-5154-47CB-92B5-E722ADE8918D.jpeg",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 2,
+      "pet_bucket": "grooming",
+      "classified_at": "2025-12-23T18:43:43.559Z"
+    },
+    {
+      "id": "dog-groom-002",
+      "name": "Professional Nail Clipper Set",
+      "title": "Professional Dog Nail Clipper with Safety Guard",
+      "description": "Sharp stainless steel clippers with safety guard to prevent over-cutting. Includes nail file.",
+      "price": 14.99,
+      "old_price": 19.99,
+      "images": [
+        "/images/4FA3A458-99C0-4059-BC9C-00B63D96EC42.jpeg"
+      ],
+      "rating": 4.6,
+      "reviews_count": 445,
+      "stock": 180,
+      "category": "Dog Grooming",
+      "tags": [
+        "dog",
+        "grooming",
+        "nail clipper",
+        "professional",
+        "safety"
+      ],
+      "image": "/images/4FA3A458-99C0-4059-BC9C-00B63D96EC42.jpeg",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 1,
+      "pet_bucket": "grooming",
+      "classified_at": "2025-12-23T18:43:43.559Z"
+    },
+    {
+      "id": "dog-groom-003",
+      "name": "Deshedding Tool Pro",
+      "title": "Professional Deshedding Tool for Dogs",
+      "description": "Reduces shedding by up to 90%. Stainless steel edge reaches undercoat without damaging topcoat.",
+      "price": 29.99,
+      "old_price": 39.99,
+      "images": [
+        "/images/655e882e-d2d7-4354-bb22-2b9d90e57a95.png"
+      ],
+      "rating": 4.9,
+      "reviews_count": 1245,
+      "stock": 150,
+      "category": "Dog Grooming",
+      "tags": [
+        "dog",
+        "grooming",
+        "deshedding",
+        "professional",
+        "undercoat"
+      ],
+      "badge": "Top Rated",
+      "image": "/images/655e882e-d2d7-4354-bb22-2b9d90e57a95.png",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 2,
+      "pet_bucket": "grooming",
+      "classified_at": "2025-12-23T18:43:43.559Z"
+    },
+    {
+      "id": "dog-groom-004",
+      "name": "Natural Oatmeal Shampoo",
+      "title": "Natural Oatmeal Dog Shampoo - 16oz",
+      "description": "Gentle oatmeal formula soothes itchy skin. Made with natural ingredients, paraben-free.",
+      "price": 16.99,
+      "old_price": 21.99,
+      "images": [
+        "/images/7902f211-4a89-40c7-a4b6-c8ee167a2a70.png"
+      ],
+      "rating": 4.7,
+      "reviews_count": 678,
+      "stock": 220,
+      "category": "Dog Grooming",
+      "tags": [
+        "dog",
+        "grooming",
+        "shampoo",
+        "oatmeal",
+        "natural",
+        "itchy skin"
+      ],
+      "image": "/images/7902f211-4a89-40c7-a4b6-c8ee167a2a70.png",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 1,
+      "pet_bucket": "grooming",
+      "classified_at": "2025-12-23T18:43:43.559Z"
+    },
+    {
+      "id": "dog-acc-001",
+      "name": "Reflective Safety Collar",
+      "title": "Adjustable Reflective Dog Collar - All Sizes",
+      "description": "High-visibility reflective collar for nighttime safety. Durable nylon with quick-release buckle.",
+      "price": 12.99,
+      "old_price": 17.99,
+      "images": [
+        "/images/7919f3e3-fd33-4669-a29e-82c7a4437ce2.png"
+      ],
+      "rating": 4.6,
+      "reviews_count": 534,
+      "stock": 250,
+      "category": "Dog Accessories",
+      "tags": [
+        "dog",
+        "collar",
+        "reflective",
+        "safety",
+        "adjustable"
+      ],
+      "image": "/images/7919f3e3-fd33-4669-a29e-82c7a4437ce2.png",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 2,
+      "pet_bucket": "walking",
+      "classified_at": "2025-12-23T18:43:43.559Z"
+    },
+    {
+      "id": "dog-acc-002",
+      "name": "No-Pull Harness",
+      "title": "No-Pull Dog Harness with Front Clip",
+      "description": "Reduces pulling by redirecting attention. Padded straps for comfort. Front and back clip options.",
+      "price": 27.99,
+      "old_price": 36.99,
+      "images": [
+        "/images/7F8D4303-A6D9-42F3-B0F8-BE5E3E77B30A.jpeg"
+      ],
+      "rating": 4.8,
+      "reviews_count": 891,
+      "stock": 145,
+      "category": "Dog Accessories",
+      "tags": [
+        "dog",
+        "harness",
+        "no-pull",
+        "training",
+        "padded"
+      ],
+      "badge": "Popular",
+      "image": "/images/7F8D4303-A6D9-42F3-B0F8-BE5E3E77B30A.jpeg",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 2,
+      "pet_bucket": "training",
+      "classified_at": "2025-12-23T18:43:43.560Z"
+    },
+    {
+      "id": "dog-acc-003",
+      "name": "Retractable Leash 16ft",
+      "title": "Retractable Dog Leash - 16 Feet",
+      "description": "Smooth retraction with one-button lock. Ergonomic handle with anti-slip grip.",
+      "price": 22.99,
+      "old_price": 29.99,
+      "images": [
+        "/images/8BA0F52B-496A-4CCF-AA38-9135D01E704D_1765239852627.png"
+      ],
+      "rating": 4.5,
+      "reviews_count": 423,
+      "stock": 180,
+      "category": "Dog Accessories",
+      "tags": [
+        "dog",
+        "leash",
+        "retractable",
+        "16ft",
+        "ergonomic"
+      ],
+      "image": "/images/8BA0F52B-496A-4CCF-AA38-9135D01E704D_1765239852627.png",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 2,
+      "pet_bucket": "walking",
+      "classified_at": "2025-12-23T18:43:43.560Z"
+    },
+    {
+      "id": "dog-acc-004",
+      "name": "Travel Water Bottle",
+      "title": "Portable Dog Water Bottle with Bowl",
+      "description": "Leak-proof water bottle with built-in drinking bowl. Perfect for walks, hikes, and travel.",
+      "price": 15.99,
+      "old_price": 21.99,
+      "images": [
+        "/images/8D828D26-7A04-46FB-9B03-2D108642A72D.jpeg"
+      ],
+      "rating": 4.7,
+      "reviews_count": 567,
+      "stock": 200,
+      "category": "Dog Accessories",
+      "tags": [
+        "dog",
+        "water bottle",
+        "travel",
+        "portable",
+        "bowl"
+      ],
+      "image": "/images/8D828D26-7A04-46FB-9B03-2D108642A72D.jpeg",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 1,
+      "pet_bucket": "feeding",
+      "classified_at": "2025-12-23T18:43:43.560Z"
+    },
+    {
+      "id": "dog-acc-005",
+      "name": "Car Seat Cover",
+      "title": "Waterproof Dog Car Seat Cover",
+      "description": "Protects your car seats from fur, dirt, and scratches. Easy to install and machine washable.",
+      "price": 39.99,
+      "old_price": 54.99,
+      "images": [
+        "/images/94680687-498B-4CB7-A677-F301919961D3.jpeg"
+      ],
+      "rating": 4.8,
+      "reviews_count": 712,
+      "stock": 90,
+      "category": "Dog Accessories",
+      "tags": [
+        "dog",
+        "car",
+        "seat cover",
+        "waterproof",
+        "travel"
+      ],
+      "image": "/images/94680687-498B-4CB7-A677-F301919961D3.jpeg",
+      "is_pet_product": true,
+      "pet_type": "dog",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 2,
+      "pet_bucket": "travel",
+      "classified_at": "2025-12-23T18:43:43.561Z"
+    },
+    {
+      "id": "cat-toy-001",
+      "name": "Interactive Feather Wand",
+      "title": "Interactive Feather Wand Cat Toy",
+      "description": "Colorful feathers on flexible wand stimulate natural hunting instincts. Replaceable feather attachments.",
+      "price": 8.99,
+      "old_price": 12.99,
+      "images": [
+        "/images/95F95B1E-D1D1-4439-A7BC-71828FD2EC67.jpeg"
+      ],
+      "rating": 4.7,
+      "reviews_count": 634,
+      "stock": 300,
+      "category": "Cat Toys",
+      "tags": [
+        "cat",
+        "toys",
+        "feather",
+        "wand",
+        "interactive"
+      ],
+      "badge": "Bestseller",
+      "image": "/images/95F95B1E-D1D1-4439-A7BC-71828FD2EC67.jpeg",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 3,
+      "pet_bucket": "toys",
+      "classified_at": "2025-12-23T18:43:43.561Z"
+    },
+    {
+      "id": "cat-toy-002",
+      "name": "Laser Pointer Chase Toy",
+      "title": "Automatic Laser Pointer Cat Toy",
+      "description": "Automatic rotating laser keeps cats entertained for hours. Timer function and multiple speed settings.",
+      "price": 19.99,
+      "old_price": 26.99,
+      "images": [
+        "/images/9899CD41-B531-4CB1-9177-B95CB9FE1AF5.jpeg"
+      ],
+      "rating": 4.6,
+      "reviews_count": 478,
+      "stock": 120,
+      "category": "Cat Toys",
+      "tags": [
+        "cat",
+        "toys",
+        "laser",
+        "automatic",
+        "interactive"
+      ],
+      "image": "/images/9899CD41-B531-4CB1-9177-B95CB9FE1AF5.jpeg",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 4,
+      "pet_bucket": "toys",
+      "classified_at": "2025-12-23T18:43:43.561Z"
+    },
+    {
+      "id": "cat-toy-003",
+      "name": "Catnip Mouse Set",
+      "title": "Organic Catnip Mouse Toys - 6 Pack",
+      "description": "Set of 6 plush mice filled with premium organic catnip. Irresistible to cats!",
+      "price": 11.99,
+      "old_price": 15.99,
+      "images": [
+        "/images/9DE27C16-47C1-44F3-98B8-8A0EADB219EF.png"
+      ],
+      "rating": 4.8,
+      "reviews_count": 892,
+      "stock": 250,
+      "category": "Cat Toys",
+      "tags": [
+        "cat",
+        "toys",
+        "catnip",
+        "mouse",
+        "organic",
+        "set"
+      ],
+      "image": "/images/9DE27C16-47C1-44F3-98B8-8A0EADB219EF.png",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 4,
+      "pet_bucket": "toys",
+      "classified_at": "2025-12-23T18:43:43.562Z"
+    },
+    {
+      "id": "cat-toy-004",
+      "name": "Interactive Ball Track",
+      "title": "3-Level Interactive Ball Track for Cats",
+      "description": "Multi-level track with spinning balls. Engages cats mentally and physically.",
+      "price": 24.99,
+      "old_price": 32.99,
+      "images": [
+        "/images/9cc549bb-375c-4def-9a6b-4d243d7d2d84.png"
+      ],
+      "rating": 4.5,
+      "reviews_count": 356,
+      "stock": 85,
+      "category": "Cat Toys",
+      "tags": [
+        "cat",
+        "toys",
+        "ball",
+        "track",
+        "interactive",
+        "mental stimulation"
+      ],
+      "image": "/images/9cc549bb-375c-4def-9a6b-4d243d7d2d84.png",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 3,
+      "pet_bucket": "toys",
+      "classified_at": "2025-12-23T18:43:43.562Z"
+    },
+    {
+      "id": "cat-toy-005",
+      "name": "Crinkle Tunnel",
+      "title": "Collapsible Crinkle Cat Tunnel - 3 Way",
+      "description": "3-way tunnel with crinkle paper sounds. Peephole for stalking. Folds flat for storage.",
+      "price": 21.99,
+      "old_price": 28.99,
+      "images": [
+        "/images/A2957E4D-94B3-45C3-9D91-28A9E15B1F2D_1765239852627.png"
+      ],
+      "rating": 4.7,
+      "reviews_count": 512,
+      "stock": 95,
+      "category": "Cat Toys",
+      "tags": [
+        "cat",
+        "toys",
+        "tunnel",
+        "crinkle",
+        "collapsible"
+      ],
+      "image": "/images/A2957E4D-94B3-45C3-9D91-28A9E15B1F2D_1765239852627.png",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 2,
+      "pet_bucket": "toys",
+      "classified_at": "2025-12-23T18:43:43.562Z"
+    },
+    {
+      "id": "cat-toy-006",
+      "name": "Electric Fish Kicker",
+      "title": "Realistic Electric Fish Kicker Toy",
+      "description": "USB rechargeable fish that flops realistically. Filled with catnip for extra excitement.",
+      "price": 14.99,
+      "old_price": 19.99,
+      "images": [
+        "/images/A6414C35-6538-4216-AFA3-4FC0CB7659AE.jpeg"
+      ],
+      "rating": 4.6,
+      "reviews_count": 678,
+      "stock": 160,
+      "category": "Cat Toys",
+      "tags": [
+        "cat",
+        "toys",
+        "fish",
+        "electric",
+        "kicker",
+        "catnip"
+      ],
+      "badge": "Popular",
+      "image": "/images/A6414C35-6538-4216-AFA3-4FC0CB7659AE.jpeg",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 3,
+      "pet_bucket": "toys",
+      "classified_at": "2025-12-23T18:43:43.562Z"
+    },
+    {
+      "id": "cat-scratch-001",
+      "name": "Sisal Scratching Post",
+      "title": "Tall Sisal Cat Scratching Post - 32 inch",
+      "description": "Sturdy sisal-wrapped post satisfies scratching instincts. Heavy base prevents tipping.",
+      "price": 34.99,
+      "old_price": 44.99,
+      "images": [
+        "/images/A_banner_on_the_homepage_of_the_GetPawsy_website_f.png"
+      ],
+      "rating": 4.7,
+      "reviews_count": 567,
+      "stock": 75,
+      "category": "Cat Scratchers",
+      "tags": [
+        "cat",
+        "scratcher",
+        "sisal",
+        "post",
+        "tall"
+      ],
+      "image": "/images/A_banner_on_the_homepage_of_the_GetPawsy_website_f.png",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 4,
+      "pet_bucket": "scratchers",
+      "classified_at": "2025-12-23T18:43:43.562Z"
+    },
+    {
+      "id": "cat-scratch-002",
+      "name": "Cardboard Scratch Lounge",
+      "title": "Reversible Cardboard Cat Scratcher Lounge",
+      "description": "Reversible corrugated cardboard scratcher doubles as a lounge. Includes organic catnip.",
+      "price": 18.99,
+      "old_price": 24.99,
+      "images": [
+        "/images/A_grid_of_nine_high-resolution_digital_photographs.png"
+      ],
+      "rating": 4.8,
+      "reviews_count": 934,
+      "stock": 180,
+      "category": "Cat Scratchers",
+      "tags": [
+        "cat",
+        "scratcher",
+        "cardboard",
+        "lounge",
+        "reversible"
+      ],
+      "badge": "Bestseller",
+      "image": "/images/A_grid_of_nine_high-resolution_digital_photographs.png",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 3,
+      "pet_bucket": "scratchers",
+      "classified_at": "2025-12-23T18:43:43.563Z"
+    },
+    {
+      "id": "cat-scratch-003",
+      "name": "Cat Tree Tower",
+      "title": "Multi-Level Cat Tree Tower with Scratching Posts",
+      "description": "5-level cat tree with sisal posts, platforms, and cozy hideaway. Perfect for multiple cats.",
+      "price": 89.99,
+      "old_price": 119.99,
+      "images": [
+        "/images/A_high-resolution_digital_photograph_captures_a_go.png"
+      ],
+      "rating": 4.9,
+      "reviews_count": 423,
+      "stock": 40,
+      "category": "Cat Scratchers",
+      "tags": [
+        "cat",
+        "tree",
+        "tower",
+        "scratcher",
+        "multi-level",
+        "hideaway"
+      ],
+      "badge": "Top Rated",
+      "image": "/images/A_high-resolution_digital_photograph_captures_a_go.png",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 6,
+      "pet_bucket": "scratchers",
+      "classified_at": "2025-12-23T18:43:43.563Z"
+    },
+    {
+      "id": "cat-bed-001",
+      "name": "Self-Warming Cat Bed",
+      "title": "Self-Warming Cat Bed - No Electricity Needed",
+      "description": "Thermal lining reflects body heat to keep cats warm. Super soft faux fur cover.",
+      "price": 29.99,
+      "old_price": 39.99,
+      "images": [
+        "/images/A_high-resolution_digital_photograph_features_a_do.png"
+      ],
+      "rating": 4.7,
+      "reviews_count": 567,
+      "stock": 110,
+      "category": "Cat Beds",
+      "tags": [
+        "cat",
+        "bed",
+        "self-warming",
+        "thermal",
+        "soft"
+      ],
+      "image": "/images/A_high-resolution_digital_photograph_features_a_do.png",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 4,
+      "pet_bucket": "grooming",
+      "classified_at": "2025-12-23T18:43:43.563Z"
+    },
+    {
+      "id": "cat-bed-002",
+      "name": "Cozy Cave Bed",
+      "title": "Hooded Cat Cave Bed - Privacy & Warmth",
+      "description": "Enclosed cave design provides privacy and security. Plush interior with anti-slip bottom.",
+      "price": 36.99,
+      "old_price": 47.99,
+      "images": [
+        "/images/A_high-resolution_digital_photograph_features_a_go.png"
+      ],
+      "rating": 4.8,
+      "reviews_count": 712,
+      "stock": 85,
+      "category": "Cat Beds",
+      "tags": [
+        "cat",
+        "bed",
+        "cave",
+        "hooded",
+        "privacy"
+      ],
+      "badge": "Popular",
+      "image": "/images/A_high-resolution_digital_photograph_features_a_go.png",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 3,
+      "pet_bucket": "beds",
+      "classified_at": "2025-12-23T18:43:43.564Z"
+    },
+    {
+      "id": "cat-bed-003",
+      "name": "Window Perch Hammock",
+      "title": "Cat Window Perch Hammock with Suction Cups",
+      "description": "Strong suction cups hold up to 40 lbs. Perfect sunny spot for bird watching.",
+      "price": 24.99,
+      "old_price": 32.99,
+      "images": [
+        "/images/A_high-resolution_digital_photograph_showcases_a_g.png"
+      ],
+      "rating": 4.6,
+      "reviews_count": 489,
+      "stock": 130,
+      "category": "Cat Beds",
+      "tags": [
+        "cat",
+        "bed",
+        "window",
+        "perch",
+        "hammock",
+        "suction cups"
+      ],
+      "image": "/images/A_high-resolution_digital_photograph_showcases_a_g.png",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 2,
+      "pet_bucket": "beds",
+      "classified_at": "2025-12-23T18:43:43.564Z"
+    },
+    {
+      "id": "cat-bed-004",
+      "name": "Elevated Cat Hammock",
+      "title": "Freestanding Elevated Cat Hammock",
+      "description": "Sturdy wooden frame with removable canvas hammock. Stylish modern design.",
+      "price": 54.99,
+      "old_price": 69.99,
+      "images": [
+        "/images/A_high-resolution_digital_photograph_showcases_a_p.png"
+      ],
+      "rating": 4.7,
+      "reviews_count": 298,
+      "stock": 55,
+      "category": "Cat Beds",
+      "tags": [
+        "cat",
+        "bed",
+        "hammock",
+        "elevated",
+        "wooden",
+        "modern"
+      ],
+      "image": "/images/A_high-resolution_digital_photograph_showcases_a_p.png",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 2,
+      "pet_bucket": "beds",
+      "classified_at": "2025-12-23T18:43:43.564Z"
+    },
+    {
+      "id": "cat-groom-001",
+      "name": "Self-Grooming Corner Brush",
+      "title": "Wall-Mounted Self-Grooming Cat Brush",
+      "description": "Mounts on corners for cats to groom themselves. Soft bristles with built-in catnip pouch.",
+      "price": 9.99,
+      "old_price": 14.99,
+      "images": [
+        "/images/A_high-resolution_photograph_showcases_a_ginger_ta.png"
+      ],
+      "rating": 4.5,
+      "reviews_count": 423,
+      "stock": 200,
+      "category": "Cat Grooming",
+      "tags": [
+        "cat",
+        "grooming",
+        "self-grooming",
+        "brush",
+        "corner",
+        "wall-mounted"
+      ],
+      "image": "/images/A_high-resolution_photograph_showcases_a_ginger_ta.png",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 3,
+      "pet_bucket": "grooming",
+      "classified_at": "2025-12-23T18:43:43.565Z"
+    },
+    {
+      "id": "cat-groom-002",
+      "name": "Gentle Deshedding Comb",
+      "title": "Gentle Cat Deshedding Comb - Reduces Hairballs",
+      "description": "Removes loose undercoat while massaging. Reduces hairballs and shedding up to 90%.",
+      "price": 14.99,
+      "old_price": 19.99,
+      "images": [
+        "/images/A_high-resolution_product_photograph_features_a_do.png"
+      ],
+      "rating": 4.7,
+      "reviews_count": 567,
+      "stock": 175,
+      "category": "Cat Grooming",
+      "tags": [
+        "cat",
+        "grooming",
+        "deshedding",
+        "comb",
+        "hairball",
+        "gentle"
+      ],
+      "badge": "Staff Pick",
+      "image": "/images/A_high-resolution_product_photograph_features_a_do.png",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 1,
+      "pet_bucket": "grooming",
+      "classified_at": "2025-12-23T18:43:43.565Z"
+    },
+    {
+      "id": "cat-groom-003",
+      "name": "Nail Caps Kit",
+      "title": "Soft Cat Nail Caps - 100 Pack with Glue",
+      "description": "Painless alternative to declawing. Includes 100 caps in assorted colors plus adhesive.",
+      "price": 12.99,
+      "old_price": 17.99,
+      "images": [
+        "/images/A_photograph_features_an_orange_tabby_cat_and_an_A.png"
+      ],
+      "rating": 4.4,
+      "reviews_count": 345,
+      "stock": 150,
+      "category": "Cat Grooming",
+      "tags": [
+        "cat",
+        "grooming",
+        "nail caps",
+        "soft",
+        "colorful"
+      ],
+      "image": "/images/A_photograph_features_an_orange_tabby_cat_and_an_A.png",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 1,
+      "pet_bucket": "grooming",
+      "classified_at": "2025-12-23T18:43:43.566Z"
+    },
+    {
+      "id": "cat-acc-001",
+      "name": "Breakaway Safety Collar",
+      "title": "Breakaway Cat Collar with Bell",
+      "description": "Quick-release safety buckle prevents choking. Reflective strip and bell included.",
+      "price": 7.99,
+      "old_price": 11.99,
+      "images": [
+        "/images/A_promotional_banner_for_\"GetPawsy,\"_a_pet_product.png"
+      ],
+      "rating": 4.6,
+      "reviews_count": 678,
+      "stock": 300,
+      "category": "Cat Accessories",
+      "tags": [
+        "cat",
+        "collar",
+        "breakaway",
+        "safety",
+        "bell",
+        "reflective"
+      ],
+      "image": "/images/A_promotional_banner_for_\"GetPawsy,\"_a_pet_product.png",
+      "is_pet_product": true,
+      "pet_type": "both",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 2,
+      "pet_bucket": "walking",
+      "classified_at": "2025-12-23T18:43:43.567Z"
+    },
+    {
+      "id": "cat-acc-002",
+      "name": "Cat Carrier Backpack",
+      "title": "Ventilated Cat Carrier Backpack - Airline Approved",
+      "description": "Airline approved carrier with mesh windows for ventilation. Padded straps for comfort.",
+      "price": 44.99,
+      "old_price": 59.99,
+      "images": [
+        "/images/A_promotional_digital_photograph_banner_for_\"GetPa.png"
+      ],
+      "rating": 4.8,
+      "reviews_count": 534,
+      "stock": 70,
+      "category": "Cat Accessories",
+      "tags": [
+        "cat",
+        "carrier",
+        "backpack",
+        "airline",
+        "travel",
+        "ventilated"
+      ],
+      "badge": "Popular",
+      "image": "/images/A_promotional_digital_photograph_banner_for_\"GetPa.png",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 1,
+      "pet_bucket": "travel",
+      "classified_at": "2025-12-23T18:43:43.567Z"
+    },
+    {
+      "id": "cat-acc-003",
+      "name": "Automatic Water Fountain",
+      "title": "Cat Water Fountain - 2L Stainless Steel",
+      "description": "Encourages hydration with flowing water. Quiet pump and 3-stage filtration system.",
+      "price": 32.99,
+      "old_price": 42.99,
+      "images": [
+        "/images/A_promotional_digital_photograph_banner_for_GetPaw.png"
+      ],
+      "rating": 4.7,
+      "reviews_count": 823,
+      "stock": 95,
+      "category": "Cat Accessories",
+      "tags": [
+        "cat",
+        "water fountain",
+        "automatic",
+        "stainless steel",
+        "filtration"
+      ],
+      "image": "/images/A_promotional_digital_photograph_banner_for_GetPaw.png",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 1,
+      "pet_bucket": "feeding",
+      "classified_at": "2025-12-23T18:43:43.567Z"
+    },
+    {
+      "id": "cat-acc-004",
+      "name": "Slow Feeder Bowl",
+      "title": "Cat Slow Feeder Bowl - Prevents Vomiting",
+      "description": "Puzzle design slows down eating. Reduces vomiting, bloating, and improves digestion.",
+      "price": 13.99,
+      "old_price": 18.99,
+      "images": [
+        "/images/A_promotional_digital_photograph_banner_for_an_onl.png"
+      ],
+      "rating": 4.5,
+      "reviews_count": 412,
+      "stock": 160,
+      "category": "Cat Accessories",
+      "tags": [
+        "cat",
+        "bowl",
+        "slow feeder",
+        "puzzle",
+        "digestion"
+      ],
+      "image": "/images/A_promotional_digital_photograph_banner_for_an_onl.png",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 2,
+      "pet_bucket": "feeding",
+      "classified_at": "2025-12-23T18:43:43.567Z"
+    },
+    {
+      "id": "cat-acc-005",
+      "name": "Litter Mat XL",
+      "title": "Double-Layer Cat Litter Mat - XL Size",
+      "description": "Traps litter with honeycomb design. Waterproof bottom layer. Easy to clean.",
+      "price": 22.99,
+      "old_price": 29.99,
+      "images": [
+        "/images/A_promotional_digital_photograph_with_overlaid_tex.png"
+      ],
+      "rating": 4.6,
+      "reviews_count": 567,
+      "stock": 140,
+      "category": "Cat Accessories",
+      "tags": [
+        "cat",
+        "litter mat",
+        "waterproof",
+        "honeycomb",
+        "easy clean"
+      ],
+      "image": "/images/A_promotional_digital_photograph_with_overlaid_tex.png",
+      "is_pet_product": true,
+      "pet_type": "cat",
+      "homepage_eligible": true,
+      "blocked_reason": null,
+      "pet_score": 2,
+      "pet_bucket": "litter",
+      "classified_at": "2025-12-23T18:43:43.568Z"
+    }
+  ],
+  "bundles": [
+    {
+      "id": "bundle-dog-starter",
+      "name": "New Puppy Starter Kit",
+      "description": "Everything you need for a new puppy: toy set, bed, grooming brush, and collar.",
+      "price": 89.99,
+      "old_price": 124.96,
+      "savings": "28%",
+      "images": [
+        "/images/placeholder.png",
+        "/images/placeholder.png",
+        "/images/placeholder.png"
+      ],
+      "products": [
+        "dog-toy-001",
+        "dog-bed-002",
+        "dog-groom-001",
+        "dog-acc-001"
+      ],
+      "category": "Dog Bundle",
+      "tags": [
+        "dog",
+        "bundle",
+        "starter",
+        "puppy",
+        "value"
+      ]
+    },
+    {
+      "id": "bundle-dog-playtime",
+      "name": "Ultimate Dog Playtime Bundle",
+      "description": "5 exciting toys for endless fun: balls, rope toys, and treat dispenser.",
+      "price": 54.99,
+      "old_price": 74.95,
+      "savings": "27%",
+      "images": [
+        "/images/placeholder.png",
+        "/images/placeholder.png",
+        "/images/placeholder.png"
+      ],
+      "products": [
+        "dog-toy-001",
+        "dog-toy-002",
+        "dog-toy-004",
+        "dog-toy-006",
+        "dog-toy-007"
+      ],
+      "category": "Dog Bundle",
+      "tags": [
+        "dog",
+        "bundle",
+        "toys",
+        "playtime",
+        "value"
+      ]
+    },
+    {
+      "id": "bundle-dog-grooming",
+      "name": "Complete Dog Grooming Set",
+      "description": "Professional grooming tools: deshedding brush, nail clippers, and shampoo.",
+      "price": 49.99,
+      "old_price": 66.97,
+      "savings": "25%",
+      "images": [
+        "/images/placeholder.png",
+        "/images/placeholder.png",
+        "/images/placeholder.png"
+      ],
+      "products": [
+        "dog-groom-001",
+        "dog-groom-002",
+        "dog-groom-003",
+        "dog-groom-004"
+      ],
+      "category": "Dog Bundle",
+      "tags": [
+        "dog",
+        "bundle",
+        "grooming",
+        "professional",
+        "value"
+      ]
+    },
+    {
+      "id": "bundle-dog-travel",
+      "name": "Dog Travel Essentials",
+      "description": "Hit the road: water bottle, car seat cover, retractable leash, and harness.",
+      "price": 79.99,
+      "old_price": 106.96,
+      "savings": "25%",
+      "images": [
+        "/images/placeholder.png",
+        "/images/placeholder.png",
+        "/images/placeholder.png"
+      ],
+      "products": [
+        "dog-acc-002",
+        "dog-acc-003",
+        "dog-acc-004",
+        "dog-acc-005"
+      ],
+      "category": "Dog Bundle",
+      "tags": [
+        "dog",
+        "bundle",
+        "travel",
+        "car",
+        "outdoor"
+      ]
+    },
+    {
+      "id": "bundle-dog-senior",
+      "name": "Senior Dog Comfort Bundle",
+      "description": "Comfort for older dogs: orthopedic bed, gentle brush, and puzzle feeder.",
+      "price": 109.99,
+      "old_price": 134.97,
+      "savings": "19%",
+      "images": [
+        "/images/placeholder.png",
+        "/images/placeholder.png",
+        "/images/placeholder.png"
+      ],
+      "products": [
+        "dog-bed-001",
+        "dog-groom-001",
+        "dog-toy-003"
+      ],
+      "category": "Dog Bundle",
+      "tags": [
+        "dog",
+        "bundle",
+        "senior",
+        "comfort",
+        "orthopedic"
+      ]
+    },
+    {
+      "id": "bundle-cat-starter",
+      "name": "New Cat Welcome Kit",
+      "description": "Everything for your new cat: toys, scratcher, bed, and grooming brush.",
+      "price": 69.99,
+      "old_price": 93.96,
+      "savings": "26%",
+      "images": [
+        "/images/placeholder.png",
+        "/images/placeholder.png",
+        "/images/placeholder.png"
+      ],
+      "products": [
+        "cat-toy-001",
+        "cat-scratch-002",
+        "cat-bed-001",
+        "cat-groom-001"
+      ],
+      "category": "Cat Bundle",
+      "tags": [
+        "cat",
+        "bundle",
+        "starter",
+        "new cat",
+        "value"
+      ]
+    },
+    {
+      "id": "bundle-cat-playtime",
+      "name": "Cat Entertainment Pack",
+      "description": "Hours of fun: feather wand, laser toy, catnip mice, tunnel, and fish kicker.",
+      "price": 59.99,
+      "old_price": 81.95,
+      "savings": "27%",
+      "images": [
+        "/images/placeholder.png",
+        "/images/placeholder.png",
+        "/images/placeholder.png"
+      ],
+      "products": [
+        "cat-toy-001",
+        "cat-toy-002",
+        "cat-toy-003",
+        "cat-toy-005",
+        "cat-toy-006"
+      ],
+      "category": "Cat Bundle",
+      "tags": [
+        "cat",
+        "bundle",
+        "toys",
+        "entertainment",
+        "value"
+      ]
+    },
+    {
+      "id": "bundle-cat-comfort",
+      "name": "Cat Comfort & Relaxation",
+      "description": "Ultimate comfort: cave bed, window perch, and self-grooming brush.",
+      "price": 59.99,
+      "old_price": 71.97,
+      "savings": "17%",
+      "images": [
+        "/images/placeholder.png",
+        "/images/placeholder.png",
+        "/images/placeholder.png"
+      ],
+      "products": [
+        "cat-bed-002",
+        "cat-bed-003",
+        "cat-groom-001"
+      ],
+      "category": "Cat Bundle",
+      "tags": [
+        "cat",
+        "bundle",
+        "comfort",
+        "bed",
+        "relaxation"
+      ]
+    },
+    {
+      "id": "bundle-cat-hydration",
+      "name": "Cat Hydration & Feeding Set",
+      "description": "Healthy eating: water fountain, slow feeder bowl, and litter mat.",
+      "price": 54.99,
+      "old_price": 69.97,
+      "savings": "21%",
+      "images": [
+        "/images/placeholder.png",
+        "/images/placeholder.png",
+        "/images/placeholder.png"
+      ],
+      "products": [
+        "cat-acc-003",
+        "cat-acc-004",
+        "cat-acc-005"
+      ],
+      "category": "Cat Bundle",
+      "tags": [
+        "cat",
+        "bundle",
+        "feeding",
+        "hydration",
+        "health"
+      ]
+    },
+    {
+      "id": "bundle-cat-travel",
+      "name": "Cat Travel Adventure Kit",
+      "description": "Travel ready: carrier backpack, breakaway collar, and portable water bottle.",
+      "price": 49.99,
+      "old_price": 67.97,
+      "savings": "26%",
+      "images": [
+        "/images/placeholder.png",
+        "/images/placeholder.png",
+        "/images/placeholder.png"
+      ],
+      "products": [
+        "cat-acc-002",
+        "cat-acc-001",
+        "dog-acc-004"
+      ],
+      "category": "Cat Bundle",
+      "tags": [
+        "cat",
+        "bundle",
+        "travel",
+        "carrier",
+        "adventure"
+      ]
+    }
+  ]
+}

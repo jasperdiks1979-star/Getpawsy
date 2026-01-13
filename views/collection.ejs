@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% const safeCategory = typeof category !== 'undefined' ? category : 'all'; %>
+  <% const safeProducts = typeof products !== 'undefined' ? products : []; %>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta name="description" content="Shop premium <%= safeCategory %> products at GetPawsy. Quality toys, beds & accessories for your pets.">
+  <title><%= safeCategory.charAt(0).toUpperCase() + safeCategory.slice(1) %> Products | GetPawsy</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/styles.css?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : 'dev' %>">
+  <script src="/js/pawsy.js?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : 'dev' %>" defer></script>
+</head>
+<body class="pawsy-body">
+  <%- include("partials/header") %>
+  
+  <main class="pawsy-main">
+    <div class="pawsy-collection-hero">
+      <div class="pawsy-container">
+        <h1 class="pawsy-collection-title">
+          <% if (safeCategory === 'dog') { %>
+            🐶 Dog Products
+          <% } else if (safeCategory === 'cat') { %>
+            🐱 Cat Products
+          <% } else { %>
+            🛍️ <%= safeCategory.charAt(0).toUpperCase() + safeCategory.slice(1) %> Products
+          <% } %>
+        </h1>
+        <p class="pawsy-collection-subtitle">
+          Premium toys, beds & accessories for your furry friend
+        </p>
+      </div>
+    </div>
+
+    <div class="pawsy-container">
+      <div class="pawsy-collection-layout">
+        <aside class="pawsy-collection-sidebar">
+          <div class="pawsy-filter-section">
+            <h3>Categories</h3>
+            <a href="/collection/dog" class="pawsy-filter-link <%= safeCategory === 'dog' ? 'active' : '' %>">Dog Products</a>
+            <a href="/collection/cat" class="pawsy-filter-link <%= safeCategory === 'cat' ? 'active' : '' %>">Cat Products</a>
+            <a href="/collections" class="pawsy-filter-link">All Products</a>
+          </div>
+
+          <div class="pawsy-filter-section">
+            <h3>Sort By</h3>
+            <select class="pawsy-filter-select" onchange="location.href=this.value">
+              <option value="?sort=featured">Featured</option>
+              <option value="?sort=price-low">Price: Low to High</option>
+              <option value="?sort=price-high">Price: High to Low</option>
+              <option value="?sort=newest">Newest</option>
+              <option value="?sort=bestselling">Best Selling</option>
+            </select>
+          </div>
+        </aside>
+
+        <div class="pawsy-collection-content">
+          <div class="pawsy-collection-header">
+            <span class="pawsy-product-count"><%= safeProducts.length %> products</span>
+          </div>
+
+          <% if (safeProducts.length === 0) { %>
+            <div class="pawsy-empty-state">
+              <p>No products found in this category.</p>
+              <a href="/collections" class="pawsy-btn pawsy-btn-primary">View All Products</a>
+            </div>
+          <% } else { %>
+            <div class="pawsy-product-grid">
+              <% safeProducts.forEach((p, index) => { %>
+                <article class="pawsy-product-card" data-product-id="<%= p.id %>">
+                  <a href="/product/<%= p.slug || p.id %>" class="pawsy-product-link">
+                  <div class="pawsy-product-image">
+                    <img 
+                      src="<%= p.displayImageProxy %>" 
+                      alt="<%= p.title || p.name || 'Product' %>"
+                      loading="<%= index < 8 ? 'eager' : 'lazy' %>"
+                      decoding="async"
+                      onerror="this.onerror=null;this.src='/images/placeholder-pawsy.webp'"
+                      onload="this.style.opacity=1"
+                      style="opacity:0;transition:opacity .3s"
+                    >
+                    <% if (p.badge) { %>
+                      <span class="pawsy-product-badge"><%= p.badge %></span>
+                    <% } %>
+                    <div class="pawsy-product-actions">
+                      <button class="pawsy-quick-add add-to-cart-btn" 
+                        data-product-id="<%= p.id %>" 
+                        data-product-title="<%= (p.title || p.name || 'Product').replace(/"/g, '&quot;') %>"
+                        data-product-price="<%= p.price || 0 %>"
+                        data-product-image="<%= p.displayImage || '/images/placeholder-pawsy.webp' %>"
+                        title="Quick Add">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                      </button>
+                      <button class="pawsy-wishlist" data-id="<%= p.id %>" title="Add to Wishlist">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="pawsy-product-info">
+                    <span class="pawsy-product-category"><%= p.category || safeCategory %></span>
+                    <h3 class="pawsy-product-name"><%= p.title || p.name || 'Product' %></h3>
+                    <div class="pawsy-product-rating">
+                      <span class="pawsy-stars">★★★★★</span>
+                      <span class="pawsy-rating-count">(<%= p.reviews || Math.floor(Math.random() * 50) + 10 %>)</span>
+                    </div>
+                    <div class="pawsy-product-price">
+                      <span class="pawsy-price">$<%= parseFloat(p.price).toFixed(2) %></span>
+                      <% if (p.comparePrice) { %>
+                        <span class="pawsy-compare-price">$<%= parseFloat(p.comparePrice).toFixed(2) %></span>
+                      <% } %>
+                    </div>
+                  </div>
+                  </a>
+                </article>
+              <% }) %>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include("partials/footer") %>
+  <%- include("partials/pawsy_widget") %>
+
+  <style>
+    .pawsy-collection-hero {
+      background: linear-gradient(135deg, var(--pawsy-primary) 0%, var(--pawsy-primary-light) 100%);
+      padding: 3rem 0;
+      text-align: center;
+    }
+    .pawsy-collection-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--pawsy-dark);
+      margin-bottom: 0.5rem;
+    }
+    .pawsy-collection-subtitle {
+      font-size: 1.1rem;
+      color: var(--pawsy-gray-700);
+    }
+
+    .pawsy-collection-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      padding: 2rem 0 4rem;
+    }
+
+    .pawsy-collection-sidebar {
+      background: var(--pawsy-white);
+      border-radius: var(--pawsy-radius-lg);
+      padding: 1.5rem;
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+
+    .pawsy-filter-section {
+      margin-bottom: 1.5rem;
+    }
+    .pawsy-filter-section:last-child {
+      margin-bottom: 0;
+    }
+    .pawsy-filter-section h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--pawsy-gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.75rem;
+    }
+
+    .pawsy-filter-link {
+      display: block;
+      padding: 0.5rem 0;
+      color: var(--pawsy-gray-700);
+      font-size: 0.95rem;
+      transition: var(--pawsy-transition);
+    }
+    .pawsy-filter-link:hover,
+    .pawsy-filter-link.active {
+      color: var(--pawsy-primary);
+      padding-left: 0.5rem;
+    }
+
+    .pawsy-filter-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--pawsy-gray-100);
+      border-radius: var(--pawsy-radius);
+      font-size: 0.9rem;
+      background: var(--pawsy-white);
+    }
+
+    .pawsy-collection-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .pawsy-product-count {
+      color: var(--pawsy-gray-500);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .pawsy-collection-layout {
+        grid-template-columns: 1fr;
+      }
+      .pawsy-collection-sidebar {
+        position: static;
+      }
+    }
+    
+    .pawsy-product-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    .pawsy-product-link:hover {
+      text-decoration: none;
+    }
+  </style>
+  <!-- Fingerprint Badge (debug mode only) -->
+  <% if (typeof debug !== 'undefined' && debug) { %>
+  <div id="fpBadge" style="position:fixed;bottom:8px;left:8px;z-index:99999;background:rgba(0,0,0,0.9);color:#0f0;font-family:monospace;font-size:10px;padding:4px 8px;border-radius:4px;pointer-events:none;">LIVE: <%= typeof BUILD_FINGERPRINT !== 'undefined' ? BUILD_FINGERPRINT : 'unknown' %></div>
+  <% } %>
+</body>
+</html>

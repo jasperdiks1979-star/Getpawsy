@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page Not Found | GetPawsy</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .error-page {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .error-code {
+      font-size: 6rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 0;
+      line-height: 1;
+    }
+    .error-title {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+    .error-desc {
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 400px;
+    }
+    .error-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .error-actions a {
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .error-actions .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .error-actions .btn-secondary {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="/">GetPawsy</a>
+    </div>
+  </header>
+  <main class="wrap error-page">
+    <p class="error-code">404</p>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-desc">The page you're looking for doesn't exist or has been moved. Let's get you back on track!</p>
+    <div class="error-actions">
+      <a href="/" class="btn-primary">Back to Shop</a>
+      <a href="/#shop" class="btn-secondary">Browse Products</a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Contact Us | GetPawsy</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .contact-page { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    .contact-hero { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #f8f9ff 0%, #e8e0ff 100%); border-radius: 16px; margin-bottom: 30px; }
+    .contact-hero h1 { color: var(--pawsy-primary, #6366f1); font-size: 36px; margin-bottom: 10px; }
+    .contact-hero .tagline { color: #666; font-size: 18px; }
+    .contact-emoji { font-size: 64px; margin-bottom: 20px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px; }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-info { background: #f8f9ff; padding: 30px; border-radius: 12px; }
+    .contact-info h2 { color: #333; margin-bottom: 20px; }
+    .contact-method { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; padding: 15px; background: white; border-radius: 10px; }
+    .contact-icon { font-size: 28px; flex-shrink: 0; }
+    .contact-details h3 { margin: 0 0 5px; color: #333; font-size: 16px; }
+    .contact-details p { margin: 0; color: #666; font-size: 14px; line-height: 1.6; }
+    .contact-details a { color: var(--pawsy-primary, #6366f1); text-decoration: none; }
+    .contact-details a:hover { text-decoration: underline; }
+    .contact-form-section { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .contact-form-section h2 { color: #333; margin-bottom: 20px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: #333; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px; transition: border-color 0.2s; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--pawsy-primary, #6366f1); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .submit-btn { width: 100%; padding: 14px 25px; background: var(--pawsy-primary, #6366f1); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    .submit-btn:hover { background: #5558e3; }
+    .submit-btn:disabled { background: #ccc; cursor: not-allowed; }
+    .form-success { background: #d4edda; color: #155724; padding: 15px; border-radius: 8px; margin-bottom: 20px; display: none; }
+    .form-error { background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom: 20px; display: none; }
+    .hours-section { margin-top: 30px; padding: 20px; background: #fff3cd; border-radius: 10px; }
+    .hours-section h3 { margin: 0 0 10px; color: #856404; }
+    .hours-section p { margin: 0; color: #856404; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main class="contact-page">
+    <div class="contact-hero">
+      <div class="contact-emoji">📬</div>
+      <h1>Contact Us</h1>
+      <p class="tagline">We'd love to hear from you! Our team is here to help.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Get in Touch</h2>
+        
+        <div class="contact-method">
+          <div class="contact-icon">📧</div>
+          <div class="contact-details">
+            <h3>Email</h3>
+            <p><a href="mailto:support@getpawsy.com">support@getpawsy.com</a></p>
+            <p>We typically respond within 24 hours</p>
+          </div>
+        </div>
+
+        <div class="contact-method">
+          <div class="contact-icon">🤖</div>
+          <div class="contact-details">
+            <h3>AI Assistant</h3>
+            <p>Chat with Pawsy in the bottom-right corner for instant help with products, orders, and more!</p>
+          </div>
+        </div>
+
+        <div class="contact-method">
+          <div class="contact-icon">📍</div>
+          <div class="contact-details">
+            <h3>Location</h3>
+            <p>United States</p>
+            <p>Serving pet parents nationwide</p>
+          </div>
+        </div>
+
+        <div class="hours-section">
+          <h3>⏰ Support Hours</h3>
+          <p>Monday - Friday: 9am - 6pm EST</p>
+          <p>Saturday: 10am - 4pm EST</p>
+          <p>Sunday: Closed (Pawsy AI available 24/7)</p>
+        </div>
+      </div>
+
+      <div class="contact-form-section">
+        <h2>Send Us a Message</h2>
+        
+        <div class="form-success" id="formSuccess">
+          ✅ Thank you for your message! We'll get back to you soon.
+        </div>
+        <div class="form-error" id="formError">
+          ❌ Something went wrong. Please try again or email us directly.
+        </div>
+
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" required placeholder="John Doe">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="john@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <select id="subject" name="subject" required>
+              <option value="">Select a topic...</option>
+              <option value="order">Order Question</option>
+              <option value="product">Product Inquiry</option>
+              <option value="return">Return / Refund</option>
+              <option value="shipping">Shipping Issue</option>
+              <option value="feedback">Feedback / Suggestion</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="orderNumber">Order Number (if applicable)</label>
+            <input type="text" id="orderNumber" name="orderNumber" placeholder="e.g., ORD-12345">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message *</label>
+            <textarea id="message" name="message" required placeholder="How can we help you today?"></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const btn = document.getElementById('submitBtn');
+      const successDiv = document.getElementById('formSuccess');
+      const errorDiv = document.getElementById('formError');
+      
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      successDiv.style.display = 'none';
+      errorDiv.style.display = 'none';
+      
+      const formData = {
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        subject: document.getElementById('subject').value,
+        orderNumber: document.getElementById('orderNumber').value.trim(),
+        message: document.getElementById('message').value.trim()
+      };
+      
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+        
+        if (res.ok) {
+          successDiv.style.display = 'block';
+          this.reset();
+        } else {
+          const data = await res.json();
+          errorDiv.textContent = '❌ ' + (data.error || 'Something went wrong');
+          errorDiv.style.display = 'block';
+        }
+      } catch (err) {
+        errorDiv.style.display = 'block';
+      }
+      
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+    });
+  </script>
+</body>
+</html>

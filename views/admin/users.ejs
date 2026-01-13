@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title><%= typeof title !== 'undefined' ? title : 'Users' %> | GetPawsy Admin</title>
+  <link rel="stylesheet" href="/css/admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #0f0f0f; color: #eaeaea; }
+    .admin-container { display: flex; min-height: 100vh; }
+    .admin-main { margin-left: 260px; padding: 0; flex: 1; background: #1a1a1a; min-height: 100vh; }
+    .admin-content { padding: 25px; }
+    .table { width: 100%; border-collapse: collapse; background: #222; border-radius: 8px; overflow: hidden; }
+    .table th, .table td { padding: 15px; text-align: left; border-bottom: 1px solid #333; }
+    .table th { background: #1a1a1a; color: #00c4a7; font-weight: 600; }
+    h1 { margin-bottom: 25px; color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <%- include("../partials/admin/admin_sidebar", { active: typeof active !== 'undefined' ? active : 'users' }) %>
+    
+    <main class="admin-main">
+      <%- include("../partials/admin/admin_header", { pageTitle: typeof pageTitle !== 'undefined' ? pageTitle : 'Users' }) %>
+      
+      <div class="admin-content">
+        <h1>👥 Users</h1>
+        
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Loyalty Points</th>
+              <th>Joined</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (typeof users !== 'undefined' && users.length > 0) { %>
+              <% users.forEach(user => { %>
+              <tr>
+                <td><%= user.email %></td>
+                <td><%= user.name || 'N/A' %></td>
+                <td><%= user.role || 'customer' %></td>
+                <td><%= user.points || 0 %></td>
+                <td><%= user.createdAt || 'N/A' %></td>
+              </tr>
+              <% }); %>
+            <% } else { %>
+              <tr>
+                <td colspan="5" style="text-align: center; color: #666;">No users found</td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

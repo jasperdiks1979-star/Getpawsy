@@ -1,0 +1,42 @@
+{
+  "timestamp": "2025-12-21T09:47:08.862Z",
+  "summary": {
+    "totalProducts": 414,
+    "activeProducts": 281,
+    "rejectedProducts": 133,
+    "totalVariants": 1210,
+    "productsWithMultiVariants": 91,
+    "productsWithColor": 105,
+    "productsWithSize": 73,
+    "productsWithMultiImages": 0
+  },
+  "sampleProducts": [
+    {
+      "id": "2512190632151613800",
+      "title": "Warm Large Dog Bed Pet Mat Cat Bed Dog Bed Dog Mat",
+      "galleryCount": 1,
+      "variantCount": 20,
+      "colors": "Brown, Grey, Beige",
+      "sizes": "S, M, L, XL, 2XL",
+      "hasVariantImages": true
+    },
+    {
+      "id": "2512150533141616100",
+      "title": "Laser Cat-Eye Glowing Christmas Gift Box",
+      "galleryCount": 1,
+      "variantCount": 16,
+      "colors": "Blue, Green, Purple, Red",
+      "sizes": "S, M, L",
+      "hasVariantImages": true
+    },
+    {
+      "id": "2512120222041607600",
+      "title": "New Digital Single-sided Printed Air-conditioning ",
+      "galleryCount": 1,
+      "variantCount": 19,
+      "colors": "",
+      "sizes": "2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20",
+      "hasVariantImages": true
+    }
+  ]
+}

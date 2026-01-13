@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Jobs | GetPawsy Admin</title>
+  <link rel="stylesheet" href="/css/admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #0f0f0f; color: #eaeaea; }
+    .admin-container { display: flex; min-height: 100vh; }
+    .admin-main { margin-left: 260px; padding: 0; flex: 1; background: #1a1a1a; min-height: 100vh; }
+    .admin-content { padding: 25px; }
+    h1 { margin-bottom: 25px; color: #fff; }
+    .job-card { background: #252525; border-radius: 12px; padding: 20px; border: 1px solid #333; margin-bottom: 15px; }
+    .job-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+    .job-type { font-weight: 600; color: #00c4a7; }
+    .job-id { color: #666; font-size: 12px; font-family: monospace; }
+    .progress-bar { height: 8px; background: #333; border-radius: 4px; overflow: hidden; margin: 10px 0; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #00c4a7, #00a88f); transition: width 0.3s; }
+    .job-message { color: #999; font-size: 14px; }
+    .status-badge { padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+    .status-running { background: #1e40af; color: #93c5fd; }
+    .status-completed { background: #065f46; color: #6ee7b7; }
+    .status-failed { background: #991b1b; color: #fca5a5; }
+    .status-cancelled { background: #525252; color: #a3a3a3; }
+    .status-pending { background: #78350f; color: #fcd34d; }
+    .btn { background: #00c4a7; color: #000; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+    .btn:hover { background: #00a88f; }
+    .btn-danger { background: #dc2626; color: #fff; }
+    .btn-danger:hover { background: #b91c1c; }
+    .empty-state { text-align: center; padding: 60px; color: #666; }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <%- include("../partials/admin/admin_sidebar", { active: 'jobs' }) %>
+    
+    <main class="admin-main">
+      <%- include("../partials/admin/admin_header", { pageTitle: 'Jobs' }) %>
+      
+      <div class="admin-content">
+        <h1>⚡ Background Jobs</h1>
+        
+        <div style="margin-bottom: 20px;">
+          <button class="btn" onclick="loadJobs()">🔄 Refresh</button>
+        </div>
+        
+        <div id="jobs-container">
+          <div class="empty-state">Loading jobs...</div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script>
+    let pollInterval = null;
+    
+    async function loadJobs() {
+      try {
+        const res = await fetch('/api/admin/jobs');
+        const data = await res.json();
+        
+        if (data.ok && data.jobs) {
+          renderJobs(data.jobs);
+          
+          const hasRunning = data.jobs.some(j => j.status === 'running');
+          if (hasRunning && !pollInterval) {
+            pollInterval = setInterval(loadJobs, 3000);
+          } else if (!hasRunning && pollInterval) {
+            clearInterval(pollInterval);
+            pollInterval = null;
+          }
+        }
+      } catch (err) {
+        document.getElementById('jobs-container').innerHTML = '<div class="empty-state" style="color: #f66;">Error loading jobs</div>';
+      }
+    }
+    
+    function renderJobs(jobs) {
+      const container = document.getElementById('jobs-container');
+      
+      if (!jobs.length) {
+        container.innerHTML = '<div class="empty-state">No jobs yet. Jobs will appear here when you run bulk actions.</div>';
+        return;
+      }
+      
+      container.innerHTML = jobs.map(job => `
+        <div class="job-card">
+          <div class="job-header">
+            <div>
+              <span class="job-type">${job.type}</span>
+              <span class="job-id">${job.id}</span>
+            </div>
+            <span class="status-badge status-${job.status}">${job.status}</span>
+          </div>
+          
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: ${job.progress || 0}%"></div>
+          </div>
+          
+          <div class="job-message">${job.message || 'Waiting...'}</div>
+          
+          <div style="margin-top: 15px; display: flex; gap: 10px; align-items: center;">
+            <span style="color: #666; font-size: 12px;">Started: ${job.startedAt ? new Date(job.startedAt).toLocaleString() : 'Pending'}</span>
+            ${job.status === 'running' ? `<button class="btn btn-danger" onclick="cancelJob('${job.id}')">Cancel</button>` : ''}
+          </div>
+        </div>
+      `).join('');
+    }
+    
+    async function cancelJob(id) {
+      if (!confirm('Cancel this job?')) return;
+      
+      try {
+        await fetch(`/api/admin/jobs/${id}/cancel`, { method: 'POST' });
+        loadJobs();
+      } catch (err) {
+        alert('Error cancelling job: ' + err.message);
+      }
+    }
+    
+    loadJobs();
+  </script>
+</body>
+</html>

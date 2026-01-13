@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>Loyalty Rewards | GetPawsy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/js/pawsy.js" defer></script>
+  <style>
+    <%- include('../partials/account_styles') %>
+    .pawsy-history-list {
+      margin-top: 1.5rem;
+    }
+    .pawsy-history-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background: var(--pawsy-light);
+      border-radius: var(--pawsy-radius);
+      margin-bottom: 0.5rem;
+    }
+    .pawsy-history-reason {
+      font-weight: 500;
+    }
+    .pawsy-history-date {
+      font-size: 0.85rem;
+      color: var(--pawsy-gray-500);
+    }
+    .pawsy-history-points {
+      font-weight: 700;
+      color: var(--pawsy-primary);
+    }
+    .pawsy-history-points.redeem {
+      color: var(--pawsy-error);
+    }
+  </style>
+</head>
+<body class="pawsy-body">
+  <%- include("../partials/header") %>
+  
+  <main class="pawsy-main">
+    <div class="pawsy-container">
+      <div class="pawsy-account-page">
+        <h1 class="pawsy-page-title">Loyalty Rewards</h1>
+
+        <div class="pawsy-account-layout">
+          <%- include('../partials/account_sidebar', { activePage: 'rewards' }) %>
+
+          <div class="pawsy-account-content">
+            <% 
+              const rewardsData = typeof rewards !== 'undefined' ? rewards : { points: 0, tier: 'Bronze', lifetimeSpend: 0, history: [] };
+              const tierInfoData = typeof tierInfo !== 'undefined' ? tierInfo : { progress: 0, pointsNeeded: 500, nextTier: 'Silver' };
+              const tierColors = {
+                'Bronze': '#CD7F32',
+                'Silver': '#C0C0C0',
+                'Gold': '#FFD700',
+                'Platinum': '#E5E4E2'
+              };
+            %>
+            <div class="pawsy-loyalty-banner" style="background: linear-gradient(135deg, <%= tierColors[rewardsData.tier] || '#CD7F32' %> 0%, <%= tierColors[rewardsData.tier] === '#FFD700' ? '#FFA500' : tierColors[rewardsData.tier] || '#A0522D' %> 100%);">
+              <div class="pawsy-loyalty-icon">🏆</div>
+              <div class="pawsy-loyalty-info">
+                <div class="pawsy-loyalty-level">
+                  <span class="pawsy-level-badge"><%= rewardsData.tier %></span>
+                  <span class="pawsy-points"><%= rewardsData.points %> Points</span>
+                </div>
+                <div class="pawsy-loyalty-progress">
+                  <div class="pawsy-progress-bar">
+                    <div class="pawsy-progress-fill" style="width: <%= tierInfoData.progress %>%"></div>
+                  </div>
+                  <span class="pawsy-next-level">
+                    <% if (tierInfoData.nextTier) { %>
+                      <%= tierInfoData.pointsNeeded %> more to <%= tierInfoData.nextTier %>
+                    <% } else { %>
+                      Max Level Reached!
+                    <% } %>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <section class="pawsy-account-section">
+              <h2>Your Rewards 🏆</h2>
+              <div class="pawsy-loyalty-details">
+                <div class="pawsy-loyalty-stats">
+                  <div class="pawsy-loyalty-stat">
+                    <span class="pawsy-stat-value"><%= rewardsData.points %></span>
+                    <span class="pawsy-stat-label">Current Points</span>
+                  </div>
+                  <div class="pawsy-loyalty-stat">
+                    <span class="pawsy-stat-value"><%= rewardsData.tier %></span>
+                    <span class="pawsy-stat-label">Current Level</span>
+                  </div>
+                  <div class="pawsy-loyalty-stat">
+                    <span class="pawsy-stat-value">$<%= (rewardsData.lifetimeSpend || 0).toFixed(0) %></span>
+                    <span class="pawsy-stat-label">Lifetime Spend</span>
+                  </div>
+                </div>
+
+                <div class="pawsy-rewards-available">
+                  <h3>Available Rewards</h3>
+                  <div class="pawsy-rewards-grid">
+                    <div class="pawsy-reward-card">
+                      <span class="pawsy-reward-icon">🎁</span>
+                      <span class="pawsy-reward-name">$5 Off Coupon</span>
+                      <span class="pawsy-reward-cost">500 pts</span>
+                      <button class="pawsy-btn pawsy-btn-outline pawsy-reward-btn" <%= rewardsData.points < 500 ? 'disabled' : '' %>>Redeem</button>
+                    </div>
+                    <div class="pawsy-reward-card">
+                      <span class="pawsy-reward-icon">🚚</span>
+                      <span class="pawsy-reward-name">Free Shipping</span>
+                      <span class="pawsy-reward-cost">300 pts</span>
+                      <button class="pawsy-btn pawsy-btn-outline pawsy-reward-btn" <%= rewardsData.points < 300 ? 'disabled' : '' %>>Redeem</button>
+                    </div>
+                    <div class="pawsy-reward-card">
+                      <span class="pawsy-reward-icon">🏷️</span>
+                      <span class="pawsy-reward-name">10% Off Order</span>
+                      <span class="pawsy-reward-cost">800 pts</span>
+                      <button class="pawsy-btn pawsy-btn-outline pawsy-reward-btn" <%= rewardsData.points < 800 ? 'disabled' : '' %>>Redeem</button>
+                    </div>
+                    <div class="pawsy-reward-card">
+                      <span class="pawsy-reward-icon">🎉</span>
+                      <span class="pawsy-reward-name">$20 Off Coupon</span>
+                      <span class="pawsy-reward-cost">1500 pts</span>
+                      <button class="pawsy-btn pawsy-btn-outline pawsy-reward-btn" <%= rewardsData.points < 1500 ? 'disabled' : '' %>>Redeem</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pawsy-tier-guide">
+                  <h3>Reward Tiers</h3>
+                  <div class="pawsy-tiers-grid">
+                    <div class="pawsy-tier-card pawsy-tier-bronze <%= rewardsData.tier === 'Bronze' ? 'current' : '' %>">
+                      <span class="pawsy-tier-icon">🥉</span>
+                      <span class="pawsy-tier-name">Bronze</span>
+                      <span class="pawsy-tier-req">0 - 499 pts</span>
+                    </div>
+                    <div class="pawsy-tier-card pawsy-tier-silver <%= rewardsData.tier === 'Silver' ? 'current' : '' %>">
+                      <span class="pawsy-tier-icon">🥈</span>
+                      <span class="pawsy-tier-name">Silver</span>
+                      <span class="pawsy-tier-req">500 - 1499 pts</span>
+                    </div>
+                    <div class="pawsy-tier-card pawsy-tier-gold <%= rewardsData.tier === 'Gold' ? 'current' : '' %>">
+                      <span class="pawsy-tier-icon">🥇</span>
+                      <span class="pawsy-tier-name">Gold</span>
+                      <span class="pawsy-tier-req">1500 - 4999 pts</span>
+                    </div>
+                    <div class="pawsy-tier-card pawsy-tier-elite <%= rewardsData.tier === 'Platinum' ? 'current' : '' %>">
+                      <span class="pawsy-tier-icon">👑</span>
+                      <span class="pawsy-tier-name">Platinum</span>
+                      <span class="pawsy-tier-req">5000+ pts</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pawsy-earning-guide">
+                  <h3>How to Earn Points</h3>
+                  <ul class="pawsy-earn-list">
+                    <li><strong>1 point</strong> per $1 spent</li>
+                    <li><strong>50 points</strong> for writing a review</li>
+                    <li><strong>25 points</strong> for referring a friend</li>
+                    <li><strong>100 points</strong> birthday bonus</li>
+                  </ul>
+                </div>
+
+                <% if (rewardsData.history && rewardsData.history.length > 0) { %>
+                  <div class="pawsy-points-history">
+                    <h3>Points History</h3>
+                    <div class="pawsy-history-list">
+                      <% rewardsData.history.slice(0, 10).forEach(item => { %>
+                        <div class="pawsy-history-item">
+                          <div>
+                            <div class="pawsy-history-reason"><%= item.reason %></div>
+                            <div class="pawsy-history-date"><%= new Date(item.date).toLocaleDateString() %></div>
+                          </div>
+                          <div class="pawsy-history-points <%= item.type === 'redeem' ? 'redeem' : '' %>">
+                            <%= item.type === 'earn' ? '+' : '-' %><%= item.points %> pts
+                          </div>
+                        </div>
+                      <% }) %>
+                    </div>
+                  </div>
+                <% } %>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include("../partials/footer") %>
+  <%- include("../partials/pawsy_widget") %>
+</body>
+</html>

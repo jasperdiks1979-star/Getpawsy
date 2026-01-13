@@ -1,0 +1,123 @@
+{
+  "events": [
+    {
+      "productId": "1999376914350395393",
+      "eventType": "view_product",
+      "points": 1,
+      "timestamp": 1765638884348
+    },
+    {
+      "productId": "2512130257091607200",
+      "eventType": "add_to_cart",
+      "points": 5,
+      "timestamp": 1765674338717
+    },
+    {
+      "productId": "1996838940051812353",
+      "eventType": "view_product",
+      "points": 1,
+      "timestamp": 1765676740018
+    },
+    {
+      "productId": "1999657236416622594",
+      "eventType": "view_product",
+      "points": 1,
+      "timestamp": 1765811437023
+    },
+    {
+      "productId": "1999657236416622594",
+      "eventType": "view_product",
+      "points": 1,
+      "timestamp": 1765842649276
+    },
+    {
+      "productId": "2512101126361606900",
+      "eventType": "add_to_cart",
+      "points": 5,
+      "timestamp": 1765952094935
+    },
+    {
+      "productId": "2512101126361606900",
+      "eventType": "checkout_start",
+      "points": 15,
+      "timestamp": 1765952101445
+    },
+    {
+      "productId": "2505100936421609700",
+      "eventType": "view_product",
+      "points": 1,
+      "timestamp": 1765992856782
+    },
+    {
+      "productId": "2512060840001606300",
+      "eventType": "view_product",
+      "points": 1,
+      "timestamp": 1765992884044
+    },
+    {
+      "productId": "2512060840001606300",
+      "eventType": "view_product",
+      "points": 1,
+      "timestamp": 1765992887037
+    },
+    {
+      "productId": "2506280313311613800",
+      "eventType": "view_product",
+      "points": 1,
+      "timestamp": 1766005579505
+    },
+    {
+      "productId": "2506280313311613800",
+      "eventType": "add_to_cart",
+      "points": 5,
+      "timestamp": 1766005602944
+    },
+    {
+      "productId": "2506280313311613800",
+      "eventType": "checkout_start",
+      "points": 15,
+      "timestamp": 1766005609209
+    },
+    {
+      "productId": "2506280313311613800",
+      "eventType": "view_product",
+      "points": 1,
+      "timestamp": 1766005621087
+    },
+    {
+      "productId": "2506280313311613800",
+      "eventType": "view_product",
+      "points": 1,
+      "timestamp": 1766011062525
+    },
+    {
+      "productId": "2505100936421609700",
+      "eventType": "view_product",
+      "points": 1,
+      "timestamp": 1766016096484
+    },
+    {
+      "productId": "2505100936421609700",
+      "eventType": "view_product",
+      "points": 1,
+      "timestamp": 1766016111466
+    },
+    {
+      "productId": "1990612747720253442",
+      "eventType": "view_product",
+      "points": 1,
+      "timestamp": 1766058036431
+    }
+  ],
+  "scores": {
+    "1999376914350395393": 1,
+    "2512130257091607200": 5,
+    "1996838940051812353": 1,
+    "1999657236416622594": 2,
+    "2512101126361606900": 20,
+    "2505100936421609700": 3,
+    "2512060840001606300": 2,
+    "2506280313311613800": 23,
+    "1990612747720253442": 1
+  }
+}

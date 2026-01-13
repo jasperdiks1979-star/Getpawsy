@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Order Confirmed — GetPawsy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .success-container {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 40px 20px;
+      text-align: center;
+      background: #1a1a2e;
+      border: 2px solid #00C4A7;
+      border-radius: 12px;
+    }
+    .success-icon {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+    .success-container h1 {
+      color: #00C4A7;
+      margin-bottom: 10px;
+    }
+    .success-container p {
+      color: #aaa;
+      margin: 15px 0;
+      line-height: 1.6;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background: #00C4A7;
+      color: #1a1a2e;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 900;
+      transition: background 0.3s;
+    }
+    .back-link:hover {
+      background: #00d4b8;
+    }
+  </style>
+</head>
+<body style="background: #0f0f1e; color: #fff;">
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="/">GetPawsy</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="success-container">
+      <div class="success-icon">✅</div>
+      <h1>Order Confirmed!</h1>
+      <p>Thank you for your purchase! Your order has been received and is being prepared.</p>
+      <p>You'll receive a confirmation email shortly with tracking information.</p>
+      <p style="font-size: 14px; color: #666;">Your pets will love their new GetPawsy products!</p>
+      <a href="/" class="back-link">Continue Shopping</a>
+    </div>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const sessionId = params.get("session_id");
+    if (sessionId) {
+      console.log("Session ID:", sessionId);
+    }
+  </script>
+</body>
+</html>

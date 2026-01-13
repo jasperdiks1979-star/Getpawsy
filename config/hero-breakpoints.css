@@ -1,0 +1,70 @@
+
+/* Hero Responsive Breakpoints - Auto-generated */
+.hero-section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+/* desktop-5k - 3840x1600 */
+@media (max-width: 3840px) {
+  .hero-section {
+    aspect-ratio: 3840 / 1600;
+  }
+}
+
+/* desktop-4k-ultrawide - 3440x1440 */
+@media (max-width: 3440px) {
+  .hero-section {
+    aspect-ratio: 3440 / 1440;
+  }
+}
+
+/* desktop-ultrawide - 2560x1080 */
+@media (max-width: 2560px) {
+  .hero-section {
+    aspect-ratio: 2560 / 1080;
+  }
+}
+
+/* desktop-hd - 1920x1080 */
+@media (max-width: 1920px) {
+  .hero-section {
+    aspect-ratio: 1920 / 1080;
+  }
+}
+
+/* tablet-landscape - 1600x900 */
+@media (max-width: 1600px) {
+  .hero-section {
+    aspect-ratio: 1600 / 900;
+  }
+}
+
+/* mobile-portrait - 1080x1350 */
+@media (max-width: 1080px) {
+  .hero-section {
+    aspect-ratio: 1080 / 1350;
+  }
+}
+
+/* mobile-story - 1080x1920 */
+@media (max-width: 1080px) {
+  .hero-section {
+    aspect-ratio: 1080 / 1920;
+  }
+}
+
+/* mobile-square - 1080x1080 */
+@media (max-width: 1080px) {
+  .hero-section {
+    aspect-ratio: 1080 / 1080;
+  }
+}

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Product SEO Generator | GetPawsy Admin</title>
+  <link rel="stylesheet" href="/css/admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #0f0f0f; color: #eaeaea; }
+    .admin-container { display: flex; min-height: 100vh; }
+    .admin-main { margin-left: 260px; padding: 0; flex: 1; background: #1a1a1a; min-height: 100vh; }
+    .admin-content { padding: 25px; }
+    h1 { margin-bottom: 25px; color: #fff; }
+    .section { background: #252525; border-radius: 12px; padding: 25px; border: 1px solid #333; margin-bottom: 20px; }
+    .section h2 { color: #00c4a7; margin-bottom: 20px; font-size: 1.1rem; }
+    .btn { background: #00c4a7; color: #000; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.2s; }
+    .btn:hover { background: #00a88f; }
+    .btn:disabled { background: #444; cursor: not-allowed; color: #888; }
+    .btn-secondary { background: #333; color: #ccc; }
+    .btn-secondary:hover { background: #444; }
+    .btn-danger { background: #991b1b; color: #fca5a5; }
+    .btn-danger:hover { background: #7f1d1d; }
+    .btn-warning { background: #78350f; color: #fcd34d; }
+    .btn-warning:hover { background: #92400e; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin-bottom: 25px; }
+    .stat-card { background: #333; border-radius: 8px; padding: 20px; text-align: center; }
+    .stat-card .value { font-size: 2rem; font-weight: 700; color: #00c4a7; }
+    .stat-card .label { font-size: 0.85rem; color: #999; margin-top: 5px; }
+    .stat-card.warning .value { color: #fcd34d; }
+    .stat-card.danger .value { color: #fca5a5; }
+    .controls-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
+    .control-group { display: flex; flex-direction: column; gap: 8px; }
+    .control-group label { font-size: 0.85rem; color: #999; }
+    .control-group select, .control-group input { background: #333; border: 1px solid #444; color: #eaeaea; padding: 10px 12px; border-radius: 6px; font-size: 14px; }
+    .control-group select:focus, .control-group input:focus { border-color: #00c4a7; outline: none; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+    .progress-section { background: #1a1a1a; border-radius: 8px; padding: 20px; margin-top: 20px; display: none; }
+    .progress-section.active { display: block; }
+    .progress-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+    .progress-header h3 { color: #fff; font-size: 1rem; }
+    .progress-bar { height: 10px; background: #333; border-radius: 5px; overflow: hidden; margin: 15px 0; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #00c4a7, #00a88f); transition: width 0.3s; }
+    .progress-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; margin-top: 15px; }
+    .progress-stat { background: #252525; padding: 10px; border-radius: 6px; text-align: center; }
+    .progress-stat .value { font-size: 1.2rem; font-weight: 600; }
+    .progress-stat .label { font-size: 0.75rem; color: #888; }
+    .progress-stat.success .value { color: #6ee7b7; }
+    .progress-stat.failed .value { color: #fca5a5; }
+    .progress-stat.skipped .value { color: #fcd34d; }
+    .status-badge { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
+    .status-idle { background: #333; color: #888; }
+    .status-running { background: #065f46; color: #6ee7b7; animation: pulse 2s infinite; }
+    .status-completed { background: #065f46; color: #6ee7b7; }
+    .status-cancelled { background: #78350f; color: #fcd34d; }
+    .status-error { background: #991b1b; color: #fca5a5; }
+    .status-interrupted { background: #78350f; color: #fcd34d; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+    .current-product { background: #333; padding: 10px 15px; border-radius: 6px; margin-top: 10px; font-size: 0.9rem; color: #ccc; }
+    .errors-section { margin-top: 20px; max-height: 200px; overflow-y: auto; }
+    .error-item { background: #1a1a1a; border-left: 3px solid #991b1b; padding: 10px 15px; margin-bottom: 8px; border-radius: 0 6px 6px 0; }
+    .error-item .product { color: #fca5a5; font-weight: 500; }
+    .error-item .message { color: #888; font-size: 0.85rem; margin-top: 4px; }
+    .eta { color: #999; font-size: 0.85rem; }
+    .checkbox-group { display: flex; align-items: center; gap: 8px; }
+    .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; accent-color: #00c4a7; }
+    @media (max-width: 768px) {
+      .admin-main { margin-left: 0; }
+      .controls-grid { grid-template-columns: 1fr; }
+      .actions { flex-direction: column; }
+      .actions .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <%- include("../partials/admin/admin_sidebar", { active: 'seo-products' }) %>
+    
+    <main class="admin-main">
+      <%- include("../partials/admin/admin_header", { pageTitle: 'Product SEO Generator' }) %>
+      
+      <div class="admin-content">
+        <h1>Product SEO Generator</h1>
+        
+        <div class="section">
+          <h2>Product SEO Statistics</h2>
+          <div class="stats-grid" id="stats-grid">
+            <div class="stat-card">
+              <div class="value" id="stat-total">-</div>
+              <div class="label">Total Products</div>
+            </div>
+            <div class="stat-card">
+              <div class="value" id="stat-with-seo">-</div>
+              <div class="label">With SEO</div>
+            </div>
+            <div class="stat-card warning">
+              <div class="value" id="stat-missing">-</div>
+              <div class="label">Missing SEO</div>
+            </div>
+            <div class="stat-card danger">
+              <div class="value" id="stat-failed">-</div>
+              <div class="label">Failed</div>
+            </div>
+            <div class="stat-card">
+              <div class="value" id="stat-partial">-</div>
+              <div class="label">Partial</div>
+            </div>
+          </div>
+          <button class="btn btn-secondary" onclick="loadStats()">Refresh Stats</button>
+        </div>
+        
+        <div class="section">
+          <h2>Run SEO Generation</h2>
+          <p style="color: #999; margin-bottom: 20px;">Generate SEO titles, meta descriptions, FAQs, and structured data for products.</p>
+          
+          <div class="controls-grid">
+            <div class="control-group">
+              <label>Mode</label>
+              <select id="mode">
+                <option value="missing">Missing SEO Only</option>
+                <option value="failed">Failed Only (Retry)</option>
+                <option value="all">All Products</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label>Limit (0 = All)</label>
+              <input type="number" id="limit" value="0" min="0" max="10000" step="50">
+            </div>
+            <div class="control-group">
+              <label>Batch Size</label>
+              <select id="batchSize">
+                <option value="25">25 (Safe)</option>
+                <option value="50" selected>50 (Default)</option>
+                <option value="100">100 (Fast)</option>
+                <option value="200">200 (Max)</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label>Language</label>
+              <select id="locale">
+                <option value="en-US">English (US)</option>
+                <option value="nl-NL">Dutch (NL)</option>
+                <option value="de-DE">German (DE)</option>
+                <option value="fr-FR">French (FR)</option>
+                <option value="es-ES">Spanish (ES)</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label>Tone</label>
+              <select id="tonePreset">
+                <option value="friendly">Friendly</option>
+                <option value="premium">Premium</option>
+                <option value="playful">Playful</option>
+                <option value="minimal">Minimal</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label>&nbsp;</label>
+              <div class="checkbox-group">
+                <input type="checkbox" id="overwrite">
+                <label for="overwrite" style="color: #ccc;">Overwrite existing</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="actions">
+            <button class="btn" onclick="startJob('missing')" id="btn-missing">Run Missing SEO</button>
+            <button class="btn btn-warning" onclick="startJob('failed')" id="btn-failed">Retry Failed</button>
+            <button class="btn btn-secondary" onclick="startJob('all')" id="btn-all">Run All Products</button>
+            <button class="btn btn-secondary" onclick="resumeJob()" id="btn-resume" style="display:none;">Resume Interrupted</button>
+          </div>
+        </div>
+        
+        <div class="section progress-section" id="progress-section">
+          <div class="progress-header">
+            <h3>Job Progress</h3>
+            <div>
+              <span class="status-badge" id="status-badge">Idle</span>
+              <span class="eta" id="eta"></span>
+            </div>
+          </div>
+          
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+          </div>
+          
+          <div class="progress-stats">
+            <div class="progress-stat">
+              <div class="value" id="prog-processed">0</div>
+              <div class="label">Processed</div>
+            </div>
+            <div class="progress-stat success">
+              <div class="value" id="prog-generated">0</div>
+              <div class="label">Generated</div>
+            </div>
+            <div class="progress-stat failed">
+              <div class="value" id="prog-failed">0</div>
+              <div class="label">Failed</div>
+            </div>
+            <div class="progress-stat skipped">
+              <div class="value" id="prog-skipped">0</div>
+              <div class="label">Skipped</div>
+            </div>
+          </div>
+          
+          <div class="current-product" id="current-product" style="display: none;">
+            <strong>Current:</strong> <span id="current-title">-</span>
+          </div>
+          
+          <div class="actions" style="margin-top: 15px;">
+            <button class="btn btn-danger" onclick="cancelJob()" id="btn-cancel">Stop Job</button>
+            <button class="btn btn-secondary" onclick="resetJob()" id="btn-reset">Reset</button>
+          </div>
+          
+          <div class="errors-section" id="errors-section" style="display: none;">
+            <h4 style="color: #fca5a5; margin-bottom: 10px;">Recent Errors</h4>
+            <div id="errors-list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script>
+    let pollInterval = null;
+    let lastStatus = null;
+    
+    async function loadStats() {
+      try {
+        const res = await fetch('/api/admin/seo/products/stats');
+        const data = await res.json();
+        if (data.ok && data.stats) {
+          document.getElementById('stat-total').textContent = data.stats.total || 0;
+          document.getElementById('stat-with-seo').textContent = data.stats.withSeo || 0;
+          document.getElementById('stat-missing').textContent = data.stats.missingSeo || 0;
+          document.getElementById('stat-failed').textContent = data.stats.failedSeo || 0;
+          document.getElementById('stat-partial').textContent = data.stats.partialSeo || 0;
+        }
+      } catch (err) {
+        console.error('Failed to load stats:', err);
+      }
+    }
+    
+    async function loadStatus() {
+      try {
+        const res = await fetch('/api/admin/seo/bulk/status');
+        const data = await res.json();
+        if (data.ok) {
+          updateUI(data);
+          lastStatus = data;
+        }
+      } catch (err) {
+        console.error('Failed to load status:', err);
+      }
+    }
+    
+    function updateUI(data) {
+      const section = document.getElementById('progress-section');
+      const statusBadge = document.getElementById('status-badge');
+      const progressFill = document.getElementById('progress-fill');
+      const btnResume = document.getElementById('btn-resume');
+      
+      if (data.status === 'interrupted') {
+        btnResume.style.display = 'inline-block';
+      } else {
+        btnResume.style.display = 'none';
+      }
+      
+      if (data.status !== 'idle') {
+        section.classList.add('active');
+      }
+      
+      statusBadge.textContent = data.status.charAt(0).toUpperCase() + data.status.slice(1);
+      statusBadge.className = 'status-badge status-' + data.status;
+      
+      const percent = data.total > 0 ? Math.round((data.processed / data.total) * 100) : 0;
+      progressFill.style.width = percent + '%';
+      
+      document.getElementById('prog-processed').textContent = `${data.processed || 0}/${data.total || 0}`;
+      document.getElementById('prog-generated').textContent = data.generated || 0;
+      document.getElementById('prog-failed').textContent = data.failed || 0;
+      document.getElementById('prog-skipped').textContent = data.skipped || 0;
+      
+      const eta = document.getElementById('eta');
+      if (data.running && data.estimatedTimeRemaining) {
+        const mins = Math.floor(data.estimatedTimeRemaining / 60);
+        const secs = data.estimatedTimeRemaining % 60;
+        eta.textContent = `ETA: ${mins}m ${secs}s`;
+      } else {
+        eta.textContent = '';
+      }
+      
+      const currentProduct = document.getElementById('current-product');
+      const currentTitle = document.getElementById('current-title');
+      if (data.running && data.currentProduct) {
+        currentProduct.style.display = 'block';
+        currentTitle.textContent = data.currentProduct.title || data.currentProduct.id;
+      } else {
+        currentProduct.style.display = 'none';
+      }
+      
+      const errorsSection = document.getElementById('errors-section');
+      const errorsList = document.getElementById('errors-list');
+      if (data.errors && data.errors.length > 0) {
+        errorsSection.style.display = 'block';
+        errorsList.innerHTML = data.errors.slice(-10).reverse().map(e => `
+          <div class="error-item">
+            <div class="product">${e.title || e.productId || 'Unknown'}</div>
+            <div class="message">${e.error || 'Unknown error'}</div>
+          </div>
+        `).join('');
+      } else {
+        errorsSection.style.display = 'none';
+      }
+      
+      const isRunning = data.running || data.status === 'running';
+      document.getElementById('btn-missing').disabled = isRunning;
+      document.getElementById('btn-failed').disabled = isRunning;
+      document.getElementById('btn-all').disabled = isRunning;
+      document.getElementById('btn-cancel').disabled = !isRunning;
+      
+      if (data.stats) {
+        document.getElementById('stat-total').textContent = data.stats.total || 0;
+        document.getElementById('stat-with-seo').textContent = data.stats.withSeo || 0;
+        document.getElementById('stat-missing').textContent = data.stats.missingSeo || 0;
+        document.getElementById('stat-failed').textContent = data.stats.failedSeo || 0;
+        document.getElementById('stat-partial').textContent = data.stats.partialSeo || 0;
+      }
+    }
+    
+    async function startJob(mode) {
+      const limit = parseInt(document.getElementById('limit').value) || 0;
+      const batchSize = parseInt(document.getElementById('batchSize').value) || 50;
+      const locale = document.getElementById('locale').value;
+      const tonePreset = document.getElementById('tonePreset').value;
+      const overwrite = document.getElementById('overwrite').checked;
+      
+      document.getElementById('mode').value = mode;
+      
+      try {
+        const res = await fetch('/api/admin/seo/bulk/run', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ mode, limit: limit || null, batchSize, locale, tonePreset, overwrite })
+        });
+        const data = await res.json();
+        if (data.ok) {
+          startPolling();
+        } else {
+          alert('Error: ' + (data.error || 'Unknown error'));
+        }
+      } catch (err) {
+        alert('Error: ' + err.message);
+      }
+    }
+    
+    async function resumeJob() {
+      try {
+        const res = await fetch('/api/admin/seo/bulk/run', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ resume: true })
+        });
+        const data = await res.json();
+        if (data.ok) {
+          startPolling();
+        } else {
+          alert('Error: ' + (data.error || 'Unknown error'));
+        }
+      } catch (err) {
+        alert('Error: ' + err.message);
+      }
+    }
+    
+    async function cancelJob() {
+      if (!confirm('Are you sure you want to stop the SEO job?')) return;
+      
+      try {
+        const res = await fetch('/api/admin/seo/bulk/cancel', { method: 'POST' });
+        const data = await res.json();
+        if (!data.ok) {
+          alert('Error: ' + (data.error || 'Unknown error'));
+        }
+      } catch (err) {
+        alert('Error: ' + err.message);
+      }
+    }
+    
+    async function resetJob() {
+      if (!confirm('Reset job state? This clears all progress.')) return;
+      
+      try {
+        const res = await fetch('/api/admin/seo/bulk/reset', { method: 'POST' });
+        const data = await res.json();
+        if (data.ok) {
+          loadStatus();
+        } else {
+          alert('Error: ' + (data.error || 'Unknown error'));
+        }
+      } catch (err) {
+        alert('Error: ' + err.message);
+      }
+    }
+    
+    function startPolling() {
+      if (pollInterval) return;
+      pollInterval = setInterval(async () => {
+        await loadStatus();
+        if (lastStatus && !lastStatus.running && lastStatus.status !== 'running') {
+          stopPolling();
+          loadStats();
+        }
+      }, 5000);
+    }
+    
+    function stopPolling() {
+      if (pollInterval) {
+        clearInterval(pollInterval);
+        pollInterval = null;
+      }
+    }
+    
+    loadStats();
+    loadStatus().then(() => {
+      if (lastStatus && (lastStatus.running || lastStatus.status === 'running')) {
+        startPolling();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+===============================================================================
+GETPAWSY VERIFICATION REPORT - V2.9.2
+===============================================================================
+Date: 2025-12-28
+Fix: Homepage "Small Pets Picks" Carousel - Correct Product IDs
+
+ISSUES IDENTIFIED (BEFORE):
+- Homepage "Small Pets Picks" carousel showed DOG products (dog crates, dog dryers)
+- All 10 products had petType: "dog" or "dogs"
+
+ROOT CAUSE:
+- data/hero-products.json had incorrect product IDs in topPicksSmallPets array
+- These IDs referenced dog products instead of actual small pet products
+
+FIX APPLIED:
+- Updated data/hero-products.json topPicksSmallPets array with 15 verified small pet IDs
+- New products include: Rabbit hutches, guinea pig cages, small animal enclosures
+
+VERIFICATION (AFTER):
+- /api/homepage/carousels now returns 14 products with petType: "small_pet"
+- Products displayed:
+  1. small_pet | Rabbit Cage Outdoor, 62" Wooden Outdoor Rabbit Hutch
+  2. small_pet | 62" Rabbit Hutch, Wooden Bunny Hutch, Guinea Pig Cage
+  3. small_pet | PawHut Two-Tier Antiseptic Wood Rabbit Hutch
+  4. small_pet | PawHut Chinchillas Small Rabbit Guinea Pig Cage
+  5. small_pet | Large Wooden Rabbit Hutch Small Animal Habitat
+  6. small_pet | 64" Wooden Outdoor Rabbit Hutch Playpen Tortoise House
+  7. small_pet | Indoor Rabbit Enclosure, 48" Weatherproof
+  8. small_pet | 54" 2-Story Weatherproof Stackable Elevated Rabbit Hutch
+  9. small_pet | 54" 2-Story Large Rabbit Hutch Bunny Cage
+  10. small_pet | 89"L Outdoor Rabbit Hutch, Guinea Pig Cage
+  ... and more
+
+OTHER COMPONENTS VERIFIED (Already Working):
+- PDP Images: Uses productImages[0] fallback - correctly implemented in views/product.ejs
+- Cart Badge/Drawer: Single source of truth via CartStore.getCount() in public/js/cart-store.js
+
+FILES MODIFIED:
+- data/hero-products.json (topPicksSmallPets array)
+
+ARCHITECT REVIEW: PASS
+- Confirmed fix is correct and complete
+- Endpoint returns products with petType: "small_pet"
+
+STATUS: RESOLVED - PENDING PRODUCTION DEPLOYMENT
+===============================================================================

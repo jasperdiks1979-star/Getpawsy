@@ -1,0 +1,25 @@
+[
+  {
+    "id": "admin-001",
+    "email": "jasperdiks@hotmail.com",
+    "password": "$2b$10$fPwWwW/35Ijhkm5pGSuNReuVrD6FSgVKZdSvbh7g0e8mzB/szQgk6",
+    "role": "admin",
+    "name": "Jasper Diks",
+    "firstName": "Jasper",
+    "lastName": "Diks",
+    "createdAt": "2025-12-10T00:00:00.000Z",
+    "phone": "555-123-4567",
+    "updatedAt": "2025-12-10T08:03:15.260Z",
+    "petProfile": {
+      "name": "Max",
+      "type": "dog",
+      "breed": "",
+      "age": "",
+      "size": "medium",
+      "notes": "",
+      "updatedAt": "2025-12-10T10:10:41.041Z"
+    },
+    "aiHistory": [],
+    "aiPreferences": {}
+  }
+]

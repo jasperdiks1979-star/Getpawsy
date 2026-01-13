@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>Login | GetPawsy</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="pawsy-body">
+  <%- include("partials/header") %>
+  
+  <main class="pawsy-main">
+    <div class="pawsy-auth-container">
+      <div class="pawsy-auth-card">
+        <div class="pawsy-auth-header">
+          <span class="pawsy-auth-icon">🐾</span>
+          <h1>Welcome Back!</h1>
+          <p>Sign in to your GetPawsy account</p>
+        </div>
+
+        <% if (typeof error !== 'undefined' && error) { %>
+          <div class="pawsy-alert pawsy-alert-error">
+            <%= error %>
+          </div>
+        <% } %>
+
+        <form action="/login" method="POST" class="pawsy-auth-form">
+          <div class="pawsy-form-group">
+            <label for="email">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="your@email.com"
+              required
+              autocomplete="email"
+            >
+          </div>
+
+          <div class="pawsy-form-group">
+            <label for="password">Password</label>
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              placeholder="Your password"
+              required
+              autocomplete="current-password"
+            >
+          </div>
+
+          <div class="pawsy-form-options">
+            <label class="pawsy-checkbox">
+              <input type="checkbox" name="remember">
+              <span>Remember me</span>
+            </label>
+            <a href="/forgot-password" class="pawsy-forgot-link">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="pawsy-btn pawsy-btn-primary pawsy-btn-lg pawsy-btn-full">
+            Sign In
+          </button>
+        </form>
+
+        <div class="pawsy-auth-footer">
+          <p>Don't have an account? <a href="/register">Create one</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include("partials/footer") %>
+
+  <style>
+    .pawsy-auth-container {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1rem;
+    }
+
+    .pawsy-auth-card {
+      background: var(--pawsy-white);
+      border-radius: var(--pawsy-radius-lg);
+      box-shadow: var(--pawsy-shadow-lg);
+      width: 100%;
+      max-width: 420px;
+      padding: 2.5rem;
+    }
+
+    .pawsy-auth-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .pawsy-auth-icon {
+      font-size: 3rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .pawsy-auth-header h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    .pawsy-auth-header p {
+      color: var(--pawsy-gray-500);
+    }
+
+    .pawsy-alert {
+      padding: 1rem;
+      border-radius: var(--pawsy-radius);
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .pawsy-alert-error {
+      background: rgba(239, 68, 68, 0.1);
+      color: var(--pawsy-error);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    .pawsy-auth-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .pawsy-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .pawsy-form-group label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--pawsy-gray-700);
+    }
+    .pawsy-form-group input {
+      padding: 0.9rem 1rem;
+      border: 2px solid var(--pawsy-gray-100);
+      border-radius: var(--pawsy-radius);
+      font-size: 1rem;
+      transition: var(--pawsy-transition);
+    }
+    .pawsy-form-group input:focus {
+      outline: none;
+      border-color: var(--pawsy-primary);
+    }
+
+    .pawsy-form-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+    .pawsy-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+    .pawsy-forgot-link {
+      color: var(--pawsy-primary);
+    }
+
+    .pawsy-btn-full {
+      width: 100%;
+    }
+
+    .pawsy-auth-footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--pawsy-gray-100);
+      color: var(--pawsy-gray-500);
+    }
+    .pawsy-auth-footer a {
+      color: var(--pawsy-primary);
+      font-weight: 600;
+    }
+  </style>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "runId": "20251227_101227",
+  "mode": "full",
+  "baseUrl": "https://ad4651eb-04dc-4511-8d1e-8ab38af776d9-00-14rjwa0yfp52y.janeway.replit.dev",
+  "startedAt": "2025-12-27T10:12:27.726Z",
+  "durationMs": 16338,
+  "pass": false,
+  "dataChecks": {
+    "pass": true,
+    "errors": [],
+    "totalProducts": 480,
+    "missingImagesCount": 0,
+    "categoryCounts": {
+      "dogs": 190,
+      "cats": 136,
+      "smallPets": 72,
+      "other": 0
+    },
+    "smallPetsContaminationCount": 0
+  },
+  "uiChecks": {
+    "pass": false,
+    "errors": [
+      "desktop: Failed to load /dogs: page.goto: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - navigating to \"https://ad4651eb-04dc-4511-8d1e-8ab38af776d9-00-14rjwa0yfp52y.janeway.replit.dev/dogs\", waiting until \"domcontentloaded\"\u001b[22m\n",
+      "desktop: Failed to load /cats: page.goto: Target page, context or browser has been closed",
+      "desktop: Failed to load /small-pets: page.goto: Target page, context or browser has been closed",
+      "desktop: PDP test failed: page.goto: Target page, context or browser has been closed",
+      "Browser launch failed: browser.newContext: Target page, context or browser has been closed"
+    ],
+    "screenshots": [
+      "desktop_home.png"
+    ],
+    "consoleErrors": [
+      {
+        "viewport": "desktop",
+        "errors": [
+          {
+            "type": "console",
+            "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+          }
+        ],
+        "requestFailures": []
+      }
+    ]
+  }
+}

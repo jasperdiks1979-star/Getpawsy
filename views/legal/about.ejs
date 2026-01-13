@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>About Us | GetPawsy</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .legal-page { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    .legal-page h1 { color: var(--pawsy-primary, #6366f1); margin-bottom: 10px; }
+    .legal-page .tagline { color: #666; font-size: 18px; margin-bottom: 30px; }
+    .legal-page h2 { color: #333; margin: 30px 0 15px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
+    .legal-page p, .legal-page li { line-height: 1.8; color: #444; }
+    .legal-page ul { padding-left: 25px; margin: 15px 0; }
+    .legal-page .highlight { background: #f8f9ff; padding: 20px; border-radius: 12px; border-left: 4px solid var(--pawsy-primary, #6366f1); margin: 20px 0; }
+    .legal-page .hero-section { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #f8f9ff 0%, #e8e0ff 100%); border-radius: 16px; margin-bottom: 30px; }
+    .legal-page .hero-section h1 { font-size: 36px; margin-bottom: 10px; }
+    .legal-page .hero-emoji { font-size: 64px; margin-bottom: 20px; }
+    .legal-page .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; }
+    .legal-page .value-card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center; }
+    .legal-page .value-icon { font-size: 40px; margin-bottom: 15px; }
+  </style>
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+  <main class="legal-page">
+    <div class="hero-section">
+      <div class="hero-emoji">🐾</div>
+      <h1>About GetPawsy</h1>
+      <p class="tagline">Premium Pet Products for Happy Companions</p>
+    </div>
+
+    <h2>Our Story</h2>
+    <p>GetPawsy was born from a simple idea: every pet deserves the best. Founded by passionate pet parents, we understand the joy, love, and occasional chaos that our furry friends bring into our lives. We wanted to create a place where pet owners could find high-quality products they could trust.</p>
+    <p>What started as a small collection of carefully curated pet toys has grown into a comprehensive online store offering everything dogs and cats need to live their happiest lives.</p>
+
+    <h2>Our Mission</h2>
+    <div class="highlight">
+      <p><strong>"To make every tail wag and every whisker twitch with joy."</strong></p>
+      <p>We're on a mission to provide premium pet products that enhance the lives of pets and their humans. Every product we offer is selected with care, quality, and your pet's happiness in mind.</p>
+    </div>
+
+    <h2>What Makes Us Different</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🎯</div>
+        <h3>Quality First</h3>
+        <p>We personally test and vet every product. Only the best makes it to our store.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤖</div>
+        <h3>AI-Powered Shopping</h3>
+        <p>Our Pawsy AI helps you find the perfect products for your unique pet.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">💚</div>
+        <h3>Pet Parents First</h3>
+        <p>24/7 support, easy returns, and a loyalty program that rewards you.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🇺🇸</div>
+        <h3>US-Based</h3>
+        <p>Proudly serving pet families across all 50 states with fast shipping.</p>
+      </div>
+    </div>
+
+    <h2>AI-Powered Service</h2>
+    <p>At GetPawsy, we embrace technology to serve you better:</p>
+    <ul>
+      <li><strong>Pawsy AI Chatbot:</strong> Get instant help, product recommendations, and order support 24/7</li>
+      <li><strong>Smart Recommendations:</strong> Our AI learns your pet's preferences to suggest products they'll love</li>
+      <li><strong>Easy Returns:</strong> Our AI Returns Assistant makes returns hassle-free</li>
+      <li><strong>Accurate Delivery Estimates:</strong> AI-powered predictions so you know exactly when to expect your order</li>
+    </ul>
+    <p>We're committed to transparency about our use of AI. Learn more in our <a href="/legal/ai">AI Disclosure Notice</a>.</p>
+
+    <h2>Our Products</h2>
+    <p>We specialize in:</p>
+    <ul>
+      <li><strong>Dog Products:</strong> Beds, toys, treats, grooming supplies, harnesses, and accessories</li>
+      <li><strong>Cat Products:</strong> Scratchers, beds, toys, climbing trees, treats, and more</li>
+    </ul>
+    <p>All products are sourced from trusted manufacturers and undergo quality checks before reaching you.</p>
+
+    <h2>Our Commitment</h2>
+    <p>We promise to:</p>
+    <ul>
+      <li>Provide exceptional customer service</li>
+      <li>Offer fair prices and transparent policies</li>
+      <li>Ship orders quickly and reliably</li>
+      <li>Stand behind every product we sell</li>
+      <li>Continuously improve based on your feedback</li>
+      <li>Give back to pet shelters and rescue organizations</li>
+    </ul>
+
+    <h2>Join the Pawsy Family</h2>
+    <p>We're more than a store—we're a community of pet lovers. Join our Pawsy Rewards program to earn points, unlock exclusive deals, and be part of the family.</p>
+    <p>Have questions, suggestions, or just want to share a cute pet photo? We'd love to hear from you!</p>
+
+    <h2>Contact Us</h2>
+    <ul>
+      <li><strong>Email:</strong> hello@getpawsy.com</li>
+      <li><strong>Customer Support:</strong> support@getpawsy.com</li>
+      <li><strong>Website:</strong> <a href="/contact">Contact Page</a></li>
+    </ul>
+    <p style="margin-top: 30px; text-align: center; font-size: 24px;">🐕 🐈 Happy Pets, Happy Life! 🐈 🐕</p>
+  </main>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>

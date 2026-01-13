@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-12-27T22:43:25.664Z",
+  "baseUrl": "http://localhost:5000",
+  "tests": [
+    {
+      "name": "API - All Products",
+      "url": "/api/products?limit=1000",
+      "passed": true,
+      "details": {
+        "totalProducts": 572,
+        "smallPets": 129,
+        "rabbits": 128,
+        "guineaPigs": 1,
+        "cagesHabitats": 127
+      }
+    },
+    {
+      "name": "Collection - Small Pets All",
+      "url": "/collection/small-pets",
+      "passed": true,
+      "details": {
+        "productCards": 129,
+        "hasNoProducts": false,
+        "contentLength": 399605
+      }
+    },
+    {
+      "name": "Collection - Small Pets Rabbits",
+      "url": "/collection/small-pets/rabbits",
+      "passed": true,
+      "details": {
+        "productCards": 128,
+        "hasNoProducts": false,
+        "contentLength": 396753
+      }
+    },
+    {
+      "name": "Collection - Small Pets Guinea Pigs",
+      "url": "/collection/small-pets/guinea-pigs",
+      "passed": true,
+      "details": {
+        "productCards": 1,
+        "hasNoProducts": false,
+        "contentLength": 23065
+      }
+    },
+    {
+      "name": "Collection - Small Pets Cages",
+      "url": "/collection/small-pets/cages-habitats",
+      "passed": true,
+      "details": {
+        "productCards": 127,
+        "hasNoProducts": false,
+        "contentLength": 394093
+      }
+    },
+    {
+      "name": "Collection - Small Pets Hamsters",
+      "url": "/collection/small-pets/hamsters",
+      "passed": true,
+      "details": {
+        "productCards": 129,
+        "hasNoProducts": false,
+        "contentLength": 399605
+      }
+    },
+    {
+      "name": "Collection - Small Pets Reptiles",
+      "url": "/collection/small-pets/reptiles",
+      "passed": true,
+      "details": {
+        "productCards": 129,
+        "hasNoProducts": false,
+        "contentLength": 399605
+      }
+    },
+    {
+      "name": "Homepage HTML",
+      "url": "/home",
+      "passed": true,
+      "details": {
+        "hasCartStore": true,
+        "hasCartDelegate": true,
+        "contentLength": 40801
+      }
+    }
+  ],
+  "summary": {
+    "passed": 8,
+    "failed": 0
+  }
+}

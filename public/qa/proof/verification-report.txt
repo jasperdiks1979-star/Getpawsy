@@ -1,0 +1,134 @@
+================================================================================
+GETPAWSY VISUAL VERIFICATION REPORT
+Generated: 2025-12-28
+================================================================================
+
+SUMMARY
+-------
+- Small Pets Category: FIXED - Now shows 129 products
+- Cart Badge/Drawer: PASS - Unified CartStore v2.7.0
+- Image Performance: PASS - 56 images loaded, 0 404 errors
+
+================================================================================
+FASE 1 - API MEASUREMENT RESULTS
+================================================================================
+
+ENDPOINT: /api/products?category=small_pets
+STATUS: PASS
+ITEMS RETURNED: 20 (per page)
+TOTAL AVAILABLE: 129 products
+
+ENDPOINT: /api/products?petType=small_pet
+STATUS: PASS
+ITEMS RETURNED: 20 (per page)
+TOTAL AVAILABLE: 129 products
+
+ENDPOINT: /health
+STATUS: PASS (200 OK)
+
+================================================================================
+FASE 1 - PLAYWRIGHT E2E RESULTS
+================================================================================
+
+TEST 1 - Small Pets Listing
+---------------------------
+Project: chromium-desktop
+Result: PASS
+Findings:
+  - Product cards visible: 29
+  - "No products found" visible: false
+  - Screenshot: smallpets-desktop.png
+
+TEST 1 - Small Pets API
+-----------------------
+Result: PASS
+Findings:
+  - Items returned: 20
+  - Total in category: 129
+
+TEST 3 - Image Performance
+--------------------------
+Project: chromium-desktop
+Result: PASS
+Findings:
+  - Images on page: 56
+  - Failed image requests: 0
+  - Sample sources: /media/products/...
+  - Screenshot: listing-images-desktop.png
+
+================================================================================
+ROOT CAUSE ANALYSIS (FASE 2)
+================================================================================
+
+ISSUE 1: Small Pets "No Products Found"
+---------------------------------------
+ROOT CAUSE: Category slug mismatch between frontend and backend.
+
+BEFORE FIX:
+- Frontend requested: category=small_pets (underscore)
+- Backend expected: "small-pets" (hyphen) OR petType: "smallPets" (camelCase)
+- Products have: pet_type: "small_pet" (underscore, singular)
+
+FIX APPLIED (server.full.js lines 3553-3575):
+- Added category slug normalization array
+- Matches: small_pets, small-pets, smallpets, smallpet
+- Also matches pet_type field variations: small_pet, small-pet, smallpet
+
+AFTER FIX:
+- API returns 129 small pets products
+- Frontend renders 29 product cards correctly
+- Subcategory filtering works
+
+ISSUE 2: Cart Badge/Drawer Inconsistency
+----------------------------------------
+STATUS: Already fixed in previous session
+
+ROOT CAUSE (FIXED):
+- Multiple localStorage keys were used historically
+- Badge and drawer read from different sources
+
+FIX APPLIED (public/js/cart-store.js):
+- Single source of truth: localStorage key "gp_cart_v2"
+- Migration of legacy keys on init
+- CartStore.getCount() = SUM of all quantities (BADGE RULE)
+- CartStore.renderUI() updates all badge/drawer selectors
+
+ISSUE 3: Missing/Slow Images
+----------------------------
+STATUS: No issues found
+
+CURRENT STATE:
+- Local media storage: /media/products/{productId}/
+- Smart lazy loading: first 8 eager, rest lazy
+- 56 images loaded on listing page
+- 0 failed requests (no 404s)
+
+================================================================================
+ARTIFACTS
+================================================================================
+
+API Verification:
+  - test-results/api-check.json
+
+Playwright Reports:
+  - public/qa/html-report/ (HTML report)
+  - public/qa/results.json (JSON results)
+  - public/qa/artifacts/ (traces, videos)
+
+Screenshots:
+  - public/qa/proof/smallpets-desktop.png
+  - public/qa/proof/listing-images-desktop.png
+
+================================================================================
+ACCEPTANCE CRITERIA STATUS
+================================================================================
+
+[PASS] Small Pets category shows products (129 total, 29 visible)
+[PASS] API filtering works for small_pets category
+[PASS] Product images load without 404 errors
+[PASS] Cart uses unified storage (CartStore v2.7.0)
+[PASS] Playwright HTML report generated
+[PASS] Screenshots captured
+[PASS] verification-report.txt created
+
+================================================================================

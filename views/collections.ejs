@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta name="description" content="<%= seoMeta.description %>">
+  <title><%= seoMeta.title %></title>
+  <link rel="canonical" href="<%= seoMeta.canonical %>">
+  <link rel="stylesheet" href="/styles.css?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : 'dev' %>">
+  
+  <style>
+    .collections-page { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+    .collections-header { text-align: center; margin-bottom: 48px; }
+    .collections-header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 12px; color: var(--text); }
+    .collections-header p { font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+    
+    .pet-section { margin-bottom: 56px; }
+    .pet-section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
+    .pet-section-header h2 { font-size: 1.5rem; font-weight: 700; color: var(--text); margin: 0; }
+    .pet-section-header .pet-icon { font-size: 2rem; }
+    
+    .collections-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 20px; }
+    
+    .collection-card {
+      display: flex; flex-direction: column; align-items: center; padding: 24px 16px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      text-decoration: none; transition: all 0.2s ease; text-align: center;
+    }
+    .collection-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); border-color: var(--brand); }
+    .collection-card .card-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .collection-card .card-name { font-size: 1rem; font-weight: 600; color: var(--text); }
+    
+    .quick-nav { display: flex; gap: 12px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap; }
+    .quick-nav a { padding: 12px 24px; background: var(--surface); border: 2px solid var(--border); border-radius: 50px; text-decoration: none; font-weight: 600; color: var(--text); transition: all 0.2s; }
+    .quick-nav a:hover, .quick-nav a.active { background: var(--brand); color: white; border-color: var(--brand); }
+    
+    @media (max-width: 600px) {
+      .collections-header h1 { font-size: 1.75rem; }
+      .collections-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .collection-card { padding: 16px 12px; }
+      .collection-card .card-icon { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="trust-bar">
+    <span>Fast US shipping when available - Secure checkout - 30-day returns</span>
+  </div>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="/">GetPawsy</a>
+      <nav class="main-nav">
+        <a href="/dogs/toys" class="nav-link">Dogs</a>
+        <a href="/cats/toys" class="nav-link">Cats</a>
+        <a href="/collections" class="nav-link">Collections</a>
+      </nav>
+      <div id="langSwitcher" class="lang-switcher">
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+        <span class="lang-sep">|</span>
+        <button type="button" class="lang-btn" data-lang="nl">NL</button>
+      </div>
+      <button id="cartBtn" class="cartbtn">Cart <span id="cartCount">0</span></button>
+    </div>
+  </header>
+  
+  <main class="wrap">
+    <div class="collections-page">
+      <div class="collections-header">
+        <h1><%= categoryFilter === 'dogs' ? 'Dog Products' : categoryFilter === 'cats' ? 'Cat Products' : categoryFilter === 'small_pet' ? 'Small Pet Products' : 'All Collections' %></h1>
+        <p>Browse our curated selection of premium pet products. Quality essentials for happy, healthy pets.</p>
+      </div>
+      
+      <div class="quick-nav">
+        <a href="/collections" class="<%= !categoryFilter ? 'active' : '' %>">All</a>
+        <a href="/collections?category=dogs" class="<%= categoryFilter === 'dogs' ? 'active' : '' %>">Dogs</a>
+        <a href="/collections?category=cats" class="<%= categoryFilter === 'cats' ? 'active' : '' %>">Cats</a>
+        <a href="/collections?category=small_pet" class="<%= categoryFilter === 'small_pet' ? 'active' : '' %>">Small Pets</a>
+      </div>
+      
+      <% if (!categoryFilter || categoryFilter === 'dogs') { %>
+      <section class="pet-section">
+        <div class="pet-section-header">
+          <span class="pet-icon">🐕</span>
+          <h2>Dog Collections</h2>
+        </div>
+        <div class="collections-grid">
+          <% dogBuckets.forEach(bucket => { %>
+            <a href="/dogs/<%= bucket.slug %>" class="collection-card">
+              <span class="card-icon"><%= bucket.icon %></span>
+              <span class="card-name"><%= bucket.name %></span>
+            </a>
+          <% }) %>
+        </div>
+      </section>
+      <% } %>
+      
+      <% if (!categoryFilter || categoryFilter === 'cats') { %>
+      <section class="pet-section">
+        <div class="pet-section-header">
+          <span class="pet-icon">🐈</span>
+          <h2>Cat Collections</h2>
+        </div>
+        <div class="collections-grid">
+          <% catBuckets.forEach(bucket => { %>
+            <a href="/cats/<%= bucket.slug %>" class="collection-card">
+              <span class="card-icon"><%= bucket.icon %></span>
+              <span class="card-name"><%= bucket.name %></span>
+            </a>
+          <% }) %>
+        </div>
+      </section>
+      <% } %>
+      
+      <% if (typeof smallPetBuckets !== 'undefined' && (!categoryFilter || categoryFilter === 'small_pet')) { %>
+      <section class="pet-section">
+        <div class="pet-section-header">
+          <span class="pet-icon">🐰</span>
+          <h2>Small Pet Collections</h2>
+        </div>
+        <div class="collections-grid">
+          <% smallPetBuckets.forEach(bucket => { %>
+            <a href="/small-pets/<%= bucket.slug %>" class="collection-card">
+              <span class="card-icon"><%= bucket.icon %></span>
+              <span class="card-name"><%= bucket.name %></span>
+            </a>
+          <% }) %>
+        </div>
+      </section>
+      <% } %>
+    </div>
+  </main>
+  
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="brand">GetPawsy</a>
+        <p>Premium pet products for happy dogs and cats.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/policies/shipping">Shipping</a>
+        <a href="/policies/returns">Returns</a>
+        <a href="/policies/privacy">Privacy</a>
+        <a href="/policies/terms">Terms</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="/app.js?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : 'dev' %>"></script>
+  <!-- Fingerprint Badge (debug mode only) -->
+  <% if (typeof debug !== 'undefined' && debug) { %>
+  <div id="fpBadge" style="position:fixed;bottom:8px;left:8px;z-index:99999;background:rgba(0,0,0,0.9);color:#0f0;font-family:monospace;font-size:10px;padding:4px 8px;border-radius:4px;pointer-events:none;">LIVE: <%= typeof BUILD_FINGERPRINT !== 'undefined' ? BUILD_FINGERPRINT : 'unknown' %></div>
+  <% } %>
+</body>
+</html>

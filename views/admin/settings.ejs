@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title><%= typeof title !== 'undefined' ? title : 'Settings' %> | GetPawsy Admin</title>
+  <link rel="stylesheet" href="/css/admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #0f0f0f; color: #eaeaea; }
+    .admin-container { display: flex; min-height: 100vh; }
+    .admin-main { margin-left: 260px; padding: 0; flex: 1; background: #1a1a1a; min-height: 100vh; }
+    .admin-content { padding: 25px; }
+    h1 { margin-bottom: 25px; color: #fff; }
+    .settings-form { max-width: 600px; background: #222; padding: 30px; border-radius: 12px; }
+    .settings-form label { display: block; margin-bottom: 8px; color: #ccc; font-weight: 500; }
+    .settings-form input, .settings-form select { width: 100%; padding: 12px 15px; background: #1a1a1a; border: 1px solid #333; border-radius: 8px; color: #eaeaea; font-size: 1rem; margin-bottom: 20px; }
+    .settings-form input:focus, .settings-form select:focus { outline: none; border-color: #00c4a7; }
+    .btn { padding: 12px 25px; background: #00c4a7; color: #000; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .btn:hover { background: #00a88e; }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <%- include("../partials/admin/admin_sidebar", { active: typeof active !== 'undefined' ? active : 'settings' }) %>
+    
+    <main class="admin-main">
+      <%- include("../partials/admin/admin_header", { pageTitle: typeof pageTitle !== 'undefined' ? pageTitle : 'Settings' }) %>
+      
+      <div class="admin-content">
+        <h1>⚙️ Settings</h1>
+        
+        <form class="settings-form" method="POST" action="/admin/settings">
+          <label for="storeName">Store Name</label>
+          <input type="text" id="storeName" name="storeName" value="GetPawsy" required>
+
+          <label for="supportEmail">Support Email</label>
+          <input type="email" id="supportEmail" name="supportEmail" value="support@getpawsy.pet" required>
+
+          <label for="currency">Currency</label>
+          <select id="currency" name="currency">
+            <option value="USD" selected>USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+          </select>
+
+          <label for="taxRate">Tax Rate (%)</label>
+          <input type="number" id="taxRate" name="taxRate" step="0.01" value="0" min="0" max="100">
+
+          <button type="submit" class="btn">Save Settings</button>
+        </form>
+
+        <div class="settings-form" style="margin-top: 30px;">
+          <h2 style="margin-bottom: 20px; color: #fff;">🤖 AI Assistant (RAG)</h2>
+          <div id="ai-status" style="margin-bottom: 20px; padding: 15px; background: #1a1a1a; border-radius: 8px;">
+            <p style="color: #888;">Loading AI status...</p>
+          </div>
+          <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <button type="button" class="btn" id="btn-delta-reindex" onclick="triggerReindex('delta')">Run Delta Reindex</button>
+            <button type="button" class="btn" id="btn-full-reindex" onclick="triggerReindex('full')" style="background: #ff6b00;">Run Full Reindex</button>
+          </div>
+          <div style="margin-top: 20px;">
+            <label for="test-query">Test Query</label>
+            <input type="text" id="test-query" placeholder="e.g. dog toys under $25">
+            <button type="button" class="btn" onclick="testQuery()" style="margin-top: 10px;">Test RAG Retrieval</button>
+            <pre id="test-result" style="margin-top: 15px; padding: 15px; background: #1a1a1a; border-radius: 8px; overflow-x: auto; font-size: 12px; max-height: 300px; display: none;"></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script>
+    async function loadAIStatus() {
+      try {
+        const res = await fetch('/api/admin/ai/status');
+        const data = await res.json();
+        const statusEl = document.getElementById('ai-status');
+        
+        let statusHTML = `
+          <p><strong>Embeddings Enabled:</strong> ${data.enabled ? '✅ Yes' : '❌ No'}</p>
+          <p><strong>Documents Indexed:</strong> ${data.embeddingsCount || 0}</p>
+          <p><strong>Job Running:</strong> ${data.isRunning ? '🔄 Yes' : '⏸️ No'}</p>
+        `;
+        
+        if (data.lastJob) {
+          statusHTML += `
+            <p style="margin-top: 10px;"><strong>Last Job:</strong> ${data.lastJob.type} - ${data.lastJob.status}</p>
+            <p><strong>Finished:</strong> ${data.lastJob.finishedAt ? new Date(data.lastJob.finishedAt).toLocaleString() : 'N/A'}</p>
+          `;
+          if (data.lastJob.stats) {
+            statusHTML += `<p><strong>Stats:</strong> ${data.lastJob.stats.embedded || 0} embedded, ${data.lastJob.stats.deleted || 0} deleted, ${data.lastJob.stats.durationMs || 0}ms</p>`;
+          }
+          if (data.lastJob.error) {
+            statusHTML += `<p style="color: #ff4444;"><strong>Error:</strong> ${data.lastJob.error}</p>`;
+          }
+        }
+        
+        statusEl.innerHTML = statusHTML;
+      } catch (err) {
+        document.getElementById('ai-status').innerHTML = `<p style="color: #ff4444;">Error loading AI status: ${err.message}</p>`;
+      }
+    }
+    
+    async function triggerReindex(type) {
+      const btn = document.getElementById(`btn-${type}-reindex`);
+      btn.disabled = true;
+      btn.textContent = 'Starting...';
+      
+      try {
+        const res = await fetch(`/api/admin/ai/reindex/${type}`, { method: 'POST' });
+        const data = await res.json();
+        
+        if (data.ok) {
+          alert(`${type.charAt(0).toUpperCase() + type.slice(1)} reindex started! Job ID: ${data.jobId}`);
+          setTimeout(loadAIStatus, 2000);
+        } else {
+          alert(`Error: ${data.error}`);
+        }
+      } catch (err) {
+        alert(`Error: ${err.message}`);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = type === 'delta' ? 'Run Delta Reindex' : 'Run Full Reindex';
+      }
+    }
+    
+    async function testQuery() {
+      const query = document.getElementById('test-query').value.trim();
+      if (!query) {
+        alert('Please enter a test query');
+        return;
+      }
+      
+      const resultEl = document.getElementById('test-result');
+      resultEl.style.display = 'block';
+      resultEl.textContent = 'Searching...';
+      
+      try {
+        const res = await fetch('/api/admin/ai/test-query', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query })
+        });
+        const data = await res.json();
+        resultEl.textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        resultEl.textContent = `Error: ${err.message}`;
+      }
+    }
+    
+    loadAIStatus();
+    setInterval(loadAIStatus, 30000);
+  </script>
+</body>
+</html>

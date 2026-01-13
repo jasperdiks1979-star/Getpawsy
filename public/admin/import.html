@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>GetPawsy - Import CSV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #1a1a2e; color: #eee; }
+    .container { max-width: 600px; margin: 60px auto; padding: 40px; background: #16213e; border-radius: 8px; }
+    h1 { color: #00c4a7; margin-bottom: 20px; }
+    .form-group { margin: 20px 0; }
+    label { display: block; margin-bottom: 8px; font-weight: 500; }
+    input[type="file"] { display: block; padding: 10px; width: 100%; background: #0f3460; border: 1px solid #00c4a7; border-radius: 4px; color: #eee; }
+    button { padding: 12px 24px; background: #00c4a7; color: #000; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; margin-right: 10px; }
+    button:hover { background: #00d4b7; }
+    .secondary { background: #666; color: #fff; }
+    .secondary:hover { background: #777; }
+    .message { padding: 15px; border-radius: 4px; margin: 20px 0; }
+    .success { background: #004d3d; border: 1px solid #00c4a7; color: #00f0ca; }
+    .error { background: #3d0000; border: 1px solid #ff6b6b; color: #ff8888; }
+    .loading { opacity: 0.6; }
+    #result { font-size: 14px; color: #aaa; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🐾 Import Products</h1>
+    <p style="color: #aaa; margin-bottom: 20px;">Upload a CSV file to import products into GetPawsy.</p>
+    
+    <div style="margin-bottom: 20px;">
+      <label style="display: flex; align-items: center; color: #aaa; cursor: pointer;">
+        <input type="radio" name="importType" value="generic" checked style="margin-right: 10px;" />
+        Generic CSV (title, price, image, description)
+      </label>
+      <label style="display: flex; align-items: center; color: #aaa; cursor: pointer; margin-top: 8px;">
+        <input type="radio" name="importType" value="cj" style="margin-right: 10px;" />
+        CJ Dropshipping CSV (SPU, SKU, Sell Price, warehouse filtering)
+      </label>
+    </div>
+    
+    <form id="form">
+      <div class="form-group">
+        <label for="file">CSV File:</label>
+        <input type="file" id="file" accept=".csv" required />
+      </div>
+      <div>
+        <button type="submit">📥 Import CSV</button>
+        <button type="button" class="secondary" onclick="window.location.href='/'">← Back</button>
+      </div>
+    </form>
+    
+    <div id="message"></div>
+  </div>
+
+  <script>
+    document.getElementById("form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const file = document.getElementById("file").files[0];
+      if (!file) return alert("Please select a file");
+
+      const importType = document.querySelector("input[name='importType']:checked").value;
+      const endpoint = importType === "cj" ? "/api/import/cj-csv" : "/api/import/csv-raw";
+
+      const msgEl = document.getElementById("message");
+      msgEl.innerHTML = "";
+      
+      const reader = new FileReader();
+      reader.onload = async (evt) => {
+        try {
+          const csv = evt.target.result;
+          const res = await fetch(endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "text/csv" },
+            body: csv
+          });
+
+          const data = await res.json();
+          if (res.ok) {
+            msgEl.className = "message success";
+            let text = `✅ Import complete<br><strong>${data.imported} products</strong> imported/updated.`;
+            if (data.us_products !== undefined) {
+              text += `<br>US warehouse: ${data.us_products}, Other: ${data.non_us_products}`;
+            }
+            text += `<br><a href="/">← Back to shop</a>`;
+            msgEl.innerHTML = text;
+          } else {
+            msgEl.className = "message error";
+            msgEl.innerHTML = `❌ Error: ${data.error}`;
+          }
+        } catch (err) {
+          msgEl.className = "message error";
+          msgEl.innerHTML = `❌ Error: ${err.message}`;
+        }
+      };
+      reader.readAsText(file);
+    });
+  </script>
+</body>
+</html>

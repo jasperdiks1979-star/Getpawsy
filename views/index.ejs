@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta name="description" content="GetPawsy — Premium toys, beds & essentials for happy dogs and cats. Fast U.S. shipping on all pet products.">
+  <title><%= typeof title !== 'undefined' ? title : 'GetPawsy — Premium Pet Products' %></title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Preload hero images for LCP optimization -->
+  <link rel="preload" as="image" href="/images/hero/hero-desktop.jpg" fetchpriority="high" media="(min-width: 768px)">
+  <link rel="preload" as="image" href="/images/hero/hero-mobile.jpg" fetchpriority="high" media="(max-width: 767px)">
+  <link rel="preload" as="image" href="/images/categories/dogs-hero.jpg" fetchpriority="low">
+  <link rel="preload" as="image" href="/images/categories/cats-hero.jpg" fetchpriority="low">
+  
+  <link rel="stylesheet" href="/styles.css">
+  
+  <script>
+    // Disable browser scroll restoration on homepage only
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    
+    window.GP_COMMIT = "<%= typeof commit !== 'undefined' ? commit : 'dev' %>";
+    window.GP_BUILD_ID = "<%= typeof buildId !== 'undefined' ? buildId : 'local' %>";
+    window.GP_BUILD_TIME = "<%= typeof builtAt !== 'undefined' ? builtAt : new Date().toISOString() %>";
+    window.GP_LOCALE = "<%= typeof locale !== 'undefined' ? locale : 'en-US' %>";
+    window.GP_VERSION = "2.3.0";
+    console.log("[GetPawsy v2.2] Commit:", window.GP_COMMIT, "Build:", window.GP_BUILD_ID, "Locale:", window.GP_LOCALE);
+    
+    // Clear any old service workers and caches (PRIO 0 cache fix)
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        registrations.forEach(function(registration) {
+          registration.unregister();
+          console.log('[GetPawsy] Service worker unregistered');
+        });
+      }).catch(function(err) { console.log('[GetPawsy] SW cleanup error:', err); });
+    }
+    if ('caches' in window) {
+      caches.keys().then(function(names) {
+        names.forEach(function(name) {
+          caches.delete(name);
+          console.log('[GetPawsy] Cache deleted:', name);
+        });
+      }).catch(function(err) { console.log('[GetPawsy] Cache cleanup error:', err); });
+    }
+  </script>
+  
+  <style>
+    html, body {
+      overflow-x: hidden !important;
+      max-width: 100% !important;
+      margin: 0;
+      padding: 0;
+    }
+    * { box-sizing: border-box !important; }
+  </style>
+</head>
+<body class="pawsy-body">
+  <%- include("partials/header") %>
+  
+  <main class="pawsy-main gp-page">
+    <div class="gp-container">
+    <!-- HERO SECTION -->
+    <section class="hero-wrapper">
+      <%- include(hero) %>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section class="pawsy-trust-bar gp-section">
+      <div class="gp-section__body">
+        <div class="pawsy-trust-items">
+          <div class="pawsy-trust-item">
+            <span class="pawsy-trust-icon">🚚</span>
+            <span>Free Shipping $50+</span>
+          </div>
+          <div class="pawsy-trust-item">
+            <span class="pawsy-trust-icon">✅</span>
+            <span>Quality Guaranteed</span>
+          </div>
+          <div class="pawsy-trust-item">
+            <span class="pawsy-trust-icon">🔄</span>
+            <span>Easy Returns</span>
+          </div>
+          <div class="pawsy-trust-item">
+            <span class="pawsy-trust-icon">💬</span>
+            <span>24/7 AI Support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Shop by Category (SAFE VERSION) ===== -->
+    <section class="category-section gp-section">
+      <header class="gp-section__head">
+        <h2 class="gp-section__title">Shop by Category</h2>
+      </header>
+
+      <div class="category-grid gp-grid">
+        <!-- Dog Products -->
+        <a href="/c/dogs" class="category-card category-dogs">
+          <div class="category-image-wrap">
+            <img
+              src="/images/categories/dogs-hero.jpg"
+              alt="Dog Products"
+              loading="lazy"
+              onerror="this.src='/images/default-product.png'"
+            />
+          </div>
+          <div class="category-content">
+            <h3>Dog Products</h3>
+            <p>Everything for your playful pups.</p>
+          </div>
+        </a>
+
+        <!-- Cat Products -->
+        <a href="/c/cats" class="category-card category-cats">
+          <div class="category-image-wrap">
+            <img
+              src="/images/categories/cats-hero.jpg"
+              alt="Cat Products"
+              loading="lazy"
+              onerror="this.src='/images/default-product.png'"
+            />
+          </div>
+          <div class="category-content">
+            <h3>Cat Products</h3>
+            <p>Cozy beds, toys and scratchers.</p>
+          </div>
+        </a>
+
+        <!-- All Products -->
+        <a href="/collections" class="category-card category-all">
+          <div class="category-image-wrap">
+            <img
+              src="/images/categories/all-hero.jpg"
+              alt="All Products"
+              loading="lazy"
+              onerror="this.src='/images/default-product.png'"
+            />
+          </div>
+          <div class="category-content">
+            <h3>All Products</h3>
+            <p>Discover every GetPawsy favorite.</p>
+          </div>
+        </a>
+
+        <!-- Small Pets -->
+        <a href="/c/small-pets" class="category-card category-small-pets">
+          <div class="category-image-wrap">
+            <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#f0f0f0; font-size:80px;">🐰</div>
+          </div>
+          <div class="category-content">
+            <h3>Small Pets</h3>
+            <p>Beds, toys and treats for little friends.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+    <!-- ===== /Shop by Category ===== -->
+
+    <!-- AI RECOMMENDED -->
+    <section class="gp-section pawsy-ai-recommend-section">
+      <header class="gp-section__head">
+        <div>
+          <span class="pawsy-section-badge">AI POWERED</span>
+          <h2 class="gp-section__title">Recommended For You</h2>
+          <p class="gp-section__subtitle">Smart picks based on ratings and value</p>
+        </div>
+      </header>
+      <div class="gp-section__body">
+        <div class="gp-grid" id="aiRecommendations">
+          <% if (typeof recommended !== 'undefined' && recommended.length > 0) { %>
+            <% recommended.slice(0, 8).forEach((p, idx) => { %>
+              <a href="/product/<%= p.id %>" class="pawsy-product-card pawsy-product-card-v5 collection-item" data-name="<%= p.name %>" data-price="<%= p.price %>">
+                <div class="pawsy-product-image">
+                  <img src="<%= p.displayImageProxy %>" alt="<%= p.name %>" loading="<%= idx < 4 ? 'eager' : 'lazy' %>" decoding="async" onerror="this.onerror=null;this.src='/images/placeholder-pawsy.webp'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .3s">
+                  <% 
+                    const isNew = p.importedAt && (new Date() - new Date(p.importedAt) < 7 * 24 * 60 * 60 * 1000);
+                    if (isNew) { 
+                  %>
+                    <span class="pawsy-product-badge pawsy-badge-new">NEW</span>
+                  <% } else { %>
+                    <span class="pawsy-product-badge pawsy-badge-ai">AI Pick</span>
+                  <% } %>
+                </div>
+                <div class="pawsy-product-info">
+                  <h3 class="pawsy-product-name"><%= p.name %></h3>
+                  <% if (p.rating) { %>
+                    <div class="pawsy-product-rating">
+                      <span class="pawsy-stars">★★★★★</span>
+                      <span class="pawsy-rating-text"><%= p.rating %>/5</span>
+                    </div>
+                  <% } %>
+                  <div class="pawsy-product-price">
+                    <span class="pawsy-price">$<%= parseFloat(p.price).toFixed(2) %></span>
+                  </div>
+                  <span class="pawsy-btn pawsy-btn-outline">View</span>
+                </div>
+              </a>
+            <% }) %>
+          <% } %>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRENDING -->
+    <section class="gp-section pawsy-trending-section">
+      <header class="gp-section__head">
+        <div>
+          <span class="pawsy-section-badge pawsy-badge-trending">TRENDING NOW</span>
+          <h2 class="gp-section__title">Hot Products This Week</h2>
+        </div>
+      </header>
+      <div class="gp-section__body gp-carousel-wrap">
+        <div class="pawsy-carousel-wrapper">
+          <button class="pawsy-carousel-arrow pawsy-carousel-prev" aria-label="Previous">‹</button>
+          <div class="pawsy-carousel center-focus-carousel gp-carousel">
+            <% if (typeof trendingProducts !== 'undefined' && trendingProducts.length > 0) { %>
+              <% trendingProducts.slice(0, 12).forEach((p, idx) => { %>
+                <a href="/product/<%= p.id %>" class="pawsy-product-card pawsy-product-card-v5 carousel-card <%= idx === 0 ? 'center' : '' %>" data-name="<%= p.name %>" data-price="<%= p.price %>">
+                  <div class="pawsy-product-image">
+                    <img src="<%= p.displayImageProxy %>" alt="<%= p.name %>" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/images/placeholder-pawsy.webp'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .3s">
+                    <% 
+                      const isNew = p.importedAt && (new Date() - new Date(p.importedAt) < 7 * 24 * 60 * 60 * 1000);
+                      if (isNew) { 
+                    %>
+                      <span class="pawsy-product-badge pawsy-badge-new">NEW</span>
+                    <% } %>
+                  </div>
+                  <div class="pawsy-product-info">
+                    <h3 class="pawsy-product-name"><%= p.name %></h3>
+                    <div class="pawsy-product-price">
+                      <span class="pawsy-price">$<%= parseFloat(p.price).toFixed(2) %></span>
+                    </div>
+                    <span class="pawsy-btn pawsy-btn-outline">View</span>
+                  </div>
+                </a>
+              <% }) %>
+            <% } %>
+          </div>
+          <button class="pawsy-carousel-arrow pawsy-carousel-next" aria-label="Next">›</button>
+          <div class="pawsy-carousel-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SMALL PETS SECTION -->
+    <section class="gp-section pawsy-small-pets-section">
+      <header class="gp-section__head">
+        <div>
+          <span class="pawsy-section-badge" style="background: #e0f7fa; color: #00838f;">🐰 SMALL PETS</span>
+          <h2 class="gp-section__title">Little Friends Collection</h2>
+          <p class="gp-section__subtitle">Specially curated for rabbits, hamsters & more</p>
+        </div>
+      </header>
+      <div class="gp-section__body gp-carousel-wrap">
+        <div class="pawsy-carousel-wrapper">
+          <button class="pawsy-carousel-arrow pawsy-carousel-prev" aria-label="Previous">‹</button>
+          <div class="pawsy-carousel center-focus-carousel gp-carousel">
+            <% if (typeof smallPetProducts !== 'undefined' && smallPetProducts.length > 0) { %>
+              <% smallPetProducts.slice(0, 12).forEach((p, idx) => { %>
+                <a href="/product/<%= p.id %>" class="pawsy-product-card pawsy-product-card-v5 carousel-card <%= idx === 0 ? 'center' : '' %>" data-name="<%= p.name %>" data-price="<%= p.price %>">
+                  <div class="pawsy-product-image">
+                    <img src="<%= p.displayImageProxy %>" alt="<%= p.name %>" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/images/placeholder-pawsy.webp'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .3s">
+                    <% 
+                      const isNew = p.importedAt && (new Date() - new Date(p.importedAt) < 7 * 24 * 60 * 60 * 1000);
+                      if (isNew) { 
+                    %>
+                      <span class="pawsy-product-badge pawsy-badge-new">NEW</span>
+                    <% } %>
+                  </div>
+                  <div class="pawsy-product-info">
+                    <h3 class="pawsy-product-name"><%= p.name %></h3>
+                    <div class="pawsy-product-price">
+                      <span class="pawsy-price">$<%= parseFloat(p.price).toFixed(2) %></span>
+                    </div>
+                    <span class="pawsy-btn pawsy-btn-outline">View Details</span>
+                  </div>
+                </a>
+              <% }) %>
+            <% } else { %>
+               <div style="grid-column: 1/-1; text-align: center; padding: 40px; color: #999;">
+                 Discovering more small pet essentials...
+               </div>
+            <% } %>
+          </div>
+          <button class="pawsy-carousel-arrow pawsy-carousel-next" aria-label="Next">›</button>
+          <div class="pawsy-carousel-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOG ESSENTIALS WITH BANNER -->
+    <% if (banners && banners.dogs) { %>
+      <%- include('partials/category-banner', { banner: banners.dogs }) %>
+    <% } %>
+    
+    <!-- BEST SELLERS -->
+    <section class="gp-section pawsy-bestsellers-section">
+      <header class="gp-section__head">
+        <div>
+          <span class="pawsy-section-badge pawsy-badge-bestseller">🏆 DOG ESSENTIALS</span>
+          <h2 class="gp-section__title">Top Dog Products</h2>
+          <p class="gp-section__subtitle">Toys, beds, and grooming essentials</p>
+        </div>
+      </header>
+      <div class="gp-section__body gp-carousel-wrap">
+        <div class="pawsy-carousel-wrapper">
+          <button class="pawsy-carousel-arrow pawsy-carousel-prev" aria-label="Previous">‹</button>
+          <div class="pawsy-carousel center-focus-carousel gp-carousel">
+            <% if (typeof dogEssentials !== 'undefined' && dogEssentials.length > 0) { %>
+              <% dogEssentials.forEach((p, idx) => { %>
+                <a href="/product/<%= p.id %>" class="pawsy-product-card pawsy-product-card-v5 carousel-card <%= idx === 0 ? 'center' : '' %>" data-name="<%= p.name %>" data-price="<%= p.price %>">
+                  <div class="pawsy-product-image">
+                    <img src="<%= p.displayImageProxy %>" alt="<%= p.name %>" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/images/placeholder-pawsy.webp'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .3s">
+                    <% 
+                      const isNew = p.importedAt && (new Date() - new Date(p.importedAt) < 7 * 24 * 60 * 60 * 1000);
+                      if (isNew) { 
+                    %>
+                      <span class="pawsy-product-badge pawsy-badge-new">NEW</span>
+                    <% } %>
+                  </div>
+                  <div class="pawsy-product-info">
+                    <h3 class="pawsy-product-name"><%= p.name %></h3>
+                    <% if (p.rating) { %>
+                      <div class="pawsy-product-rating">
+                        <span class="pawsy-stars">★★★★★</span>
+                        <span class="pawsy-rating-text"><%= p.rating %>/5</span>
+                      </div>
+                    <% } %>
+                    <div class="pawsy-product-price">
+                      <span class="pawsy-price">$<%= parseFloat(p.price).toFixed(2) %></span>
+                    </div>
+                    <span class="pawsy-btn pawsy-btn-outline">View Details</span>
+                  </div>
+                </a>
+              <% }) %>
+            <% } %>
+          </div>
+          <button class="pawsy-carousel-arrow pawsy-carousel-next" aria-label="Next">›</button>
+          <div class="pawsy-carousel-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAT ESSENTIALS WITH BANNER -->
+    <% if (banners && banners.cats) { %>
+      <%- include('partials/category-banner', { banner: banners.cats }) %>
+    <% } %>
+
+    <!-- CAT PRODUCTS -->
+    <% if (typeof catEssentials !== 'undefined' && catEssentials.length > 0) { %>
+    <section class="gp-section pawsy-random-section">
+      <header class="gp-section__head">
+        <div>
+          <span class="pawsy-section-badge">❤️ CAT ESSENTIALS</span>
+          <h2 class="gp-section__title">Top Cat Products</h2>
+          <p class="gp-section__subtitle">Scratchers, toys, and cozy beds</p>
+        </div>
+      </header>
+      <div class="gp-section__body gp-carousel-wrap">
+        <div class="pawsy-carousel-wrapper">
+          <button class="pawsy-carousel-arrow pawsy-carousel-prev" aria-label="Previous">‹</button>
+          <div class="pawsy-carousel center-focus-carousel gp-carousel">
+            <% catEssentials.forEach((p, idx) => { %>
+              <a href="/product/<%= p.id %>" class="pawsy-product-card pawsy-product-card-v5 carousel-card <%= idx === 0 ? 'center' : '' %>" data-name="<%= p.name %>" data-price="<%= p.price %>">
+                <div class="pawsy-product-image">
+                  <img src="<%= p.displayImageProxy %>" alt="<%= p.name %>" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/images/placeholder-pawsy.webp'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .3s">
+                </div>
+                <div class="pawsy-product-info">
+                  <h3 class="pawsy-product-name"><%= p.name %></h3>
+                  <% if (p.rating) { %>
+                    <div class="pawsy-product-rating">
+                      <span class="pawsy-stars">★★★★★</span>
+                      <span class="pawsy-rating-text"><%= p.rating %>/5</span>
+                    </div>
+                  <% } %>
+                  <div class="pawsy-product-price">
+                    <span class="pawsy-price">$<%= parseFloat(p.price).toFixed(2) %></span>
+                  </div>
+                  <span class="pawsy-btn pawsy-btn-outline">View Details</span>
+                </div>
+              </a>
+            <% }) %>
+          </div>
+          <button class="pawsy-carousel-arrow pawsy-carousel-next" aria-label="Next">›</button>
+          <div class="pawsy-carousel-dots"></div>
+        </div>
+      </div>
+    </section>
+    <% } %>
+
+    <!-- ALL PRODUCTS WITH BANNER -->
+    <% if (banners && banners.all) { %>
+      <%- include('partials/category-banner', { banner: banners.all }) %>
+    <% } %>
+
+    <!-- TRENDING MIX - ALL PRODUCTS -->
+    <% if (typeof allEssentials !== 'undefined' && allEssentials.length > 0) { %>
+    <section class="gp-section pawsy-mix-section">
+      <header class="gp-section__head">
+        <div>
+          <span class="pawsy-section-badge">🔥 ALL PRODUCTS</span>
+          <h2 class="gp-section__title">Complete Collection</h2>
+          <p class="gp-section__subtitle">Everything for your pet in one place</p>
+        </div>
+      </header>
+      <div class="gp-section__body">
+        <div class="gp-grid">
+          <% allEssentials.forEach((p) => { %>
+            <a href="/product/<%= p.id %>" class="pawsy-product-card pawsy-product-card-v5 collection-item" data-name="<%= p.name %>" data-price="<%= p.price %>">
+              <div class="pawsy-product-image">
+                <img src="<%= p.displayImageProxy %>" alt="<%= p.name %>" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/images/placeholder-pawsy.webp'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .3s">
+              </div>
+              <div class="pawsy-product-info">
+                <h3 class="pawsy-product-name"><%= p.name %></h3>
+                <% if (p.rating) { %>
+                  <div class="pawsy-product-rating">
+                    <span class="pawsy-stars">★★★★★</span>
+                    <span class="pawsy-rating-text"><%= p.rating %>/5</span>
+                  </div>
+                <% } %>
+                <div class="pawsy-product-price">
+                  <span class="pawsy-price">$<%= parseFloat(p.price).toFixed(2) %></span>
+                </div>
+                <span class="pawsy-btn pawsy-btn-outline">View Details</span>
+              </div>
+            </a>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+    <% } %>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="gp-section pawsy-testimonials-section">
+      <header class="gp-section__head">
+        <div>
+          <span class="pawsy-section-badge">💬 HAPPY CUSTOMERS</span>
+          <h2 class="gp-section__title">What Pet Parents Say</h2>
+          <p class="gp-section__subtitle">Real reviews from our furry friends' families</p>
+        </div>
+      </header>
+      <div class="gp-section__body">
+        <div class="testimonials-grid gp-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"My golden retriever absolutely loves his new bed! The quality is amazing and it arrived super fast. Will definitely order again!"</p>
+            <div class="testimonial-author">
+              <span class="author-name">Sarah M.</span>
+              <span class="author-pet">Golden Retriever Mom</span>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Finally found toys that my cats can't destroy in 5 minutes! Great selection and the AI assistant helped me find exactly what I needed."</p>
+            <div class="testimonial-author">
+              <span class="author-name">Mike R.</span>
+              <span class="author-pet">2 Cats Dad</span>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Love the premium quality of the grooming supplies. My pup looks like he just came from the salon! Fast shipping too."</p>
+            <div class="testimonial-author">
+              <span class="author-name">Emma T.</span>
+              <span class="author-pet">Poodle Owner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUE PROPS - WHY GETPAWSY -->
+    <section class="gp-section pawsy-value-props-section">
+      <header class="gp-section__head">
+        <div>
+          <span class="pawsy-section-badge">✨ WHY GETPAWSY</span>
+          <h2 class="gp-section__title">Premium Pet Products, Happy Pets</h2>
+          <p class="gp-section__subtitle">We're dedicated to your pet's happiness</p>
+        </div>
+      </header>
+      <div class="gp-section__body">
+        <div class="value-props-grid gp-grid">
+          <div class="value-prop-card">
+            <div class="value-prop-icon">🎯</div>
+            <h3>Quality First</h3>
+            <p>Every product is carefully selected for durability, safety, and pet happiness. We only stock items we'd give our own fur babies.</p>
+          </div>
+          <div class="value-prop-card">
+            <div class="value-prop-icon">🛋️</div>
+            <h3>Ultimate Comfort</h3>
+            <p>From cozy beds to ergonomic feeders, we prioritize your pet's comfort. Because happy pets make happy homes.</p>
+          </div>
+          <div class="value-prop-card">
+            <div class="value-prop-icon">🎾</div>
+            <h3>Endless Fun</h3>
+            <p>Toys, puzzles, and enrichment products that keep tails wagging and cats purring. Entertainment for every personality.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- FAQ SNIPPET -->
+    <section class="gp-section pawsy-faq-section">
+      <div class="gp-section__body">
+        <div class="pawsy-section-header">
+          <span class="pawsy-section-badge">❓ QUICK ANSWERS</span>
+          <h2 class="pawsy-section-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h4>How fast is shipping?</h4>
+            <p>Standard US shipping takes 5-7 business days. Express options available for 2-3 day delivery.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Do you ship internationally?</h4>
+            <p>Currently we ship to all 50 US states, including Alaska and Hawaii. International shipping coming soon!</p>
+          </div>
+          <div class="faq-item">
+            <h4>What's your return policy?</h4>
+            <p>We offer hassle-free 30-day returns on all unused items. Your satisfaction is guaranteed.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Are products pet-safe?</h4>
+            <p>Absolutely! All products are tested for pet safety. We only stock non-toxic, pet-friendly items.</p>
+          </div>
+        </div>
+        <div class="faq-cta">
+          <a href="/faq" class="pawsy-btn pawsy-btn-outline">View All FAQs</a>
+        </div>
+      </div>
+    </section>
+    
+    <span class="gp-canary">layout-grid-v1</span>
+    </div>
+  </main>
+  
+  <%- include("partials/footer") %>
+  <%- include("partials/pawsy_widget") %>
+  
+  <script src="/js/main.js" defer></script>
+  <script src="/js/pawsy.js" defer></script>
+  <script src="/js/cart_v4.js" defer></script>
+  <script src="/js/store_v5.js" defer></script>
+  <script src="/js/ai.js" defer></script>
+  <script src="/js/product_gallery_v15.js" defer></script>
+  <script src="/js/variants_v15.js" defer></script>
+  <script src="/js/filters_v15.js" defer></script>
+  <script src="/js/loader_v15.js" defer></script>
+  <script src="/js/social_proof_widget.js" defer></script>
+  <script src="/js/analytics/tracker.js" defer></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Single properly-timed scroll reset for homepage
+      requestAnimationFrame(function() {
+        window.scrollTo(0, 0);
+      });
+      
+      document.querySelectorAll('.pawsy-carousel-wrapper').forEach(function(wrapper) {
+        const carousel = wrapper.querySelector('.pawsy-carousel');
+        const prevBtn = wrapper.querySelector('.pawsy-carousel-prev');
+        const nextBtn = wrapper.querySelector('.pawsy-carousel-next');
+        const dotsContainer = wrapper.querySelector('.pawsy-carousel-dots');
+        const cards = Array.from(carousel.querySelectorAll('.carousel-card'));
+        
+        if (!carousel || cards.length === 0) return;
+        
+        let currentIndex = 0;
+        
+        function getScrollTarget(idx) {
+          if (idx < 0 || idx >= cards.length) return 0;
+          const card = cards[idx];
+          const carouselRect = carousel.getBoundingClientRect();
+          return card.offsetLeft - (carouselRect.width / 2) + (card.offsetWidth / 2);
+        }
+        
+        function updateCenter() {
+          cards.forEach(function(card, idx) {
+            card.classList.toggle('center', idx === currentIndex);
+          });
+          if (dotsContainer) {
+            dotsContainer.querySelectorAll('.dot').forEach(function(dot, idx) {
+              dot.classList.toggle('active', idx === currentIndex);
+            });
+          }
+        }
+        
+        if (dotsContainer) {
+          cards.forEach(function(_, idx) {
+            const dot = document.createElement('div');
+            dot.className = 'dot' + (idx === 0 ? ' active' : '');
+            dot.addEventListener('click', function() {
+              currentIndex = idx;
+              carousel.scrollTo({ left: getScrollTarget(idx), behavior: 'smooth' });
+              updateCenter();
+            });
+            dotsContainer.appendChild(dot);
+          });
+        }
+        
+        prevBtn && prevBtn.addEventListener('click', function() {
+          currentIndex = Math.max(0, currentIndex - 1);
+          carousel.scrollTo({ left: getScrollTarget(currentIndex), behavior: 'smooth' });
+          updateCenter();
+        });
+        
+        nextBtn && nextBtn.addEventListener('click', function() {
+          currentIndex = Math.min(cards.length - 1, currentIndex + 1);
+          carousel.scrollTo({ left: getScrollTarget(currentIndex), behavior: 'smooth' });
+          updateCenter();
+        });
+        
+        let scrollTimeout;
+        carousel.addEventListener('scroll', function() {
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(function() {
+            const carouselCenter = carousel.scrollLeft + (carousel.offsetWidth / 2);
+            let closestIdx = 0;
+            let closestDist = Infinity;
+            cards.forEach(function(card, idx) {
+              const cardCenter = card.offsetLeft + (card.offsetWidth / 2);
+              const dist = Math.abs(cardCenter - carouselCenter);
+              if (dist < closestDist) {
+                closestDist = dist;
+                closestIdx = idx;
+              }
+            });
+            if (closestIdx !== currentIndex) {
+              currentIndex = closestIdx;
+              updateCenter();
+            }
+          }, 50);
+        });
+        
+        updateCenter();
+      });
+    });
+  </script>
+  <!-- Fingerprint Badge (debug mode only) -->
+  <% if (typeof debug !== 'undefined' && debug) { %>
+  <div id="fpBadge" style="position:fixed;bottom:8px;left:8px;z-index:99999;background:rgba(0,0,0,0.9);color:#0f0;font-family:monospace;font-size:10px;padding:4px 8px;border-radius:4px;pointer-events:none;">LIVE: <%= typeof BUILD_FINGERPRINT !== 'undefined' ? BUILD_FINGERPRINT : 'unknown' %></div>
+  <% } %>
+</body>
+</html>

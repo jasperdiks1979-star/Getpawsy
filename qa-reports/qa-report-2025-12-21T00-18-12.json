@@ -1,0 +1,150 @@
+{
+  "timestamp": "2025-12-21T00-18-12",
+  "baseUrl": "http://localhost:5000",
+  "tests": {
+    "vitest": {
+      "numPassedTests": 0,
+      "numFailedTests": 0,
+      "success": false,
+      "error": "Some tests failed"
+    },
+    "routeCrawler": {
+      "passed": 13,
+      "failed": 2,
+      "routes": [
+        {
+          "path": "/",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "path": "/dogs",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "path": "/cats",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "path": "/collections",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "path": "/categories",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "path": "/cart",
+          "status": 404,
+          "ok": false
+        },
+        {
+          "path": "/checkout",
+          "status": 404,
+          "ok": false
+        },
+        {
+          "path": "/admin",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "path": "/health",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "path": "/healthz",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "path": "/api/health",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "path": "/api/version",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "path": "/api/products",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "path": "/sitemap.xml",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "path": "/robots.txt",
+          "status": 200,
+          "ok": true
+        }
+      ]
+    }
+  },
+  "summary": {
+    "passed": 13,
+    "failed": 2,
+    "total": 15
+  },
+  "duration": 6074,
+  "health": {
+    "ok": true,
+    "app": "GetPawsy V2.2",
+    "version": "2.2.0",
+    "buildId": "ez9rrd",
+    "builtAt": "2025-12-21T00:17:23.401Z",
+    "commit": "7568837",
+    "env": "production",
+    "storage": "json",
+    "storageOk": true,
+    "productCount": 429,
+    "petCounts": {
+      "dog": 189,
+      "cat": 167,
+      "both": 73,
+      "nonpet": 0
+    },
+    "petEligibleCount": 429,
+    "safeMode": false,
+    "hardSafeMode": false,
+    "migrationsEnabled": false,
+    "jobsEnabled": true,
+    "deployment": false,
+    "envVarsSeen": {
+      "SAFE_MODE": "missing",
+      "HARD_SAFE_MODE": "missing",
+      "ENABLE_BACKGROUND_JOBS": "True",
+      "DISABLE_BACKGROUND_JOBS": "missing",
+      "ALLOW_JOBS_IN_SAFE_MODE": "missing",
+      "AUTO_RUN_ON_START": "True",
+      "AUTO_RUN_DAILY": "True",
+      "REPLIT_DEPLOYMENT": "missing",
+      "REPLIT_DEPLOYMENT_ID": "missing"
+    },
+    "mailConfigured": true,
+    "mailTransport": {
+      "host": "smtp.office365.com",
+      "port": 587,
+      "secure": false
+    },
+    "stripeConfigured": true,
+    "stripeTestMode": true,
+    "webhookConfigured": true
+  },
+  "integrations": {
+    "mail": true,
+    "stripe": true,
+    "webhook": true,
+    "products": 429,
+    "stripeTestMode": true
+  }
+}

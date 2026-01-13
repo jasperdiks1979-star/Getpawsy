@@ -1,0 +1,9 @@
+{
+  "version": "2.7.3",
+  "commit": "8564e23ca16d3c9fe125ee34519edf056569f914",
+  "commitShort": "8564e23c",
+  "buildTime": "2026-01-11T17:37:00.010Z",
+  "fingerprint": "GP-20260111173700-21AB5D",
+  "env": "production",
+  "node": "v20.19.3"
+}

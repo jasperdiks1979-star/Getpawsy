@@ -1,0 +1,41 @@
+[
+  {
+    "id": "addr-001",
+    "userId": "admin-001",
+    "label": "Home",
+    "name": "Jasper Diks",
+    "street": "123 Pet Street",
+    "city": "Amsterdam",
+    "state": "NH",
+    "zip": "1012AB",
+    "country": "Netherlands",
+    "isDefault": true,
+    "createdAt": "2025-10-01T00:00:00.000Z"
+  },
+  {
+    "id": "addr-002",
+    "userId": "admin-001",
+    "label": "Office",
+    "name": "Jasper Diks",
+    "street": "456 Paw Avenue",
+    "city": "Rotterdam",
+    "state": "ZH",
+    "zip": "3011AB",
+    "country": "Netherlands",
+    "isDefault": false,
+    "createdAt": "2025-11-15T00:00:00.000Z"
+  },
+  {
+    "id": "addr-1765353795157",
+    "userId": "admin-001",
+    "label": "Test",
+    "name": "Test User",
+    "street": "999 Test St",
+    "city": "TestCity",
+    "state": "TX",
+    "zip": "12345",
+    "country": "USA",
+    "isDefault": false,
+    "createdAt": "2025-12-10T08:03:15.157Z"
+  }
+]

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Pet Essentials | GetPawsy</title>
+  <meta name="description" content="Shop quality pet products. Fast US shipping, 30-day returns. Curated by Pawsy AI.">
+  <link rel="canonical" href="https://getpawsy.pet/landing">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .lp-hero {
+      background: linear-gradient(135deg, var(--bg) 0%, #fff7ed 100%);
+      padding: var(--space-16) var(--space-4);
+      text-align: center;
+    }
+    .lp-hero h1 {
+      font-size: var(--text-4xl);
+      font-weight: var(--font-weight-bold);
+      margin: 0 0 var(--space-4);
+      color: var(--text);
+    }
+    .lp-hero p {
+      font-size: var(--text-lg);
+      color: var(--muted);
+      margin: 0 0 var(--space-8);
+    }
+    .lp-hero-btns {
+      display: flex;
+      gap: var(--space-3);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .lp-trust-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: var(--space-4) 0;
+    }
+    .lp-trust-items {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+    }
+    .lp-trust-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-sm);
+      color: var(--text);
+    }
+    .lp-trust-icon {
+      font-size: var(--text-lg);
+    }
+    .lp-section {
+      padding: var(--space-16) var(--space-4);
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .lp-section h2 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-semibold);
+      text-align: center;
+      margin: 0 0 var(--space-8);
+      color: var(--text);
+    }
+    .lp-products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-4);
+    }
+    @media (max-width: 768px) {
+      .lp-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-3);
+      }
+    }
+    .lp-product-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .lp-product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover-lift);
+    }
+    .lp-product-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .lp-product-info {
+      padding: var(--space-3);
+    }
+    .lp-product-title {
+      font-size: var(--text-sm);
+      font-weight: var(--font-weight-medium);
+      margin: 0 0 var(--space-1);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .lp-product-price {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-bold);
+      color: var(--accent);
+    }
+    .lp-value-props {
+      background: var(--bg);
+    }
+    .lp-props-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+      .lp-props-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+    }
+    .lp-prop {
+      text-align: center;
+    }
+    .lp-prop-icon {
+      font-size: var(--text-3xl);
+      margin-bottom: var(--space-3);
+    }
+    .lp-prop h3 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-semibold);
+      margin: 0 0 var(--space-2);
+      color: var(--text);
+    }
+    .lp-prop p {
+      font-size: var(--text-sm);
+      color: var(--muted);
+      margin: 0;
+    }
+    .lp-testimonials {
+      background: var(--surface);
+    }
+    .lp-testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
+    @media (max-width: 768px) {
+      .lp-testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .lp-testimonial {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
+    }
+    .lp-testimonial-stars {
+      color: #f59e0b;
+      margin-bottom: var(--space-2);
+    }
+    .lp-testimonial-text {
+      font-size: var(--text-sm);
+      color: var(--text);
+      margin: 0 0 var(--space-3);
+      line-height: 1.5;
+    }
+    .lp-testimonial-author {
+      font-size: var(--text-xs);
+      color: var(--muted);
+    }
+    .lp-cta {
+      text-align: center;
+      padding: var(--space-16) var(--space-4);
+      background: linear-gradient(135deg, #fff7ed 0%, var(--bg) 100%);
+    }
+    .lp-cta h2 {
+      font-size: var(--text-2xl);
+      margin: 0 0 var(--space-4);
+    }
+    .lp-cta p {
+      font-size: var(--text-base);
+      color: var(--muted);
+      margin: 0 0 var(--space-6);
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <section class="lp-hero">
+    <h1>Premium Pet Essentials</h1>
+    <p>Fast US shipping when available · 30-day returns</p>
+    <div class="lp-hero-btns">
+      <a href="/dogs" class="btn btn-lg">🐕 Shop Dogs</a>
+      <a href="/cats" class="btn btn-lg btn-outline">🐱 Shop Cats</a>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="lp-trust-bar">
+    <div class="lp-trust-items">
+      <div class="lp-trust-item">
+        <span class="lp-trust-icon">📦</span>
+        <span>Fast US Shipping</span>
+      </div>
+      <div class="lp-trust-item">
+        <span class="lp-trust-icon">↩️</span>
+        <span>30-Day Returns</span>
+      </div>
+      <div class="lp-trust-item">
+        <span class="lp-trust-icon">🔒</span>
+        <span>Secure Checkout</span>
+      </div>
+      <div class="lp-trust-item">
+        <span class="lp-trust-icon">🤖</span>
+        <span>Pawsy AI Help</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Sellers -->
+  <section class="lp-section">
+    <h2>Best Sellers</h2>
+    <div id="lpProductsGrid" class="lp-products-grid">
+      <div class="lp-product-card skeleton" style="height: 260px;"></div>
+      <div class="lp-product-card skeleton" style="height: 260px;"></div>
+      <div class="lp-product-card skeleton" style="height: 260px;"></div>
+      <div class="lp-product-card skeleton" style="height: 260px;"></div>
+      <div class="lp-product-card skeleton" style="height: 260px;"></div>
+      <div class="lp-product-card skeleton" style="height: 260px;"></div>
+      <div class="lp-product-card skeleton" style="height: 260px;"></div>
+      <div class="lp-product-card skeleton" style="height: 260px;"></div>
+    </div>
+  </section>
+
+  <!-- Why GetPawsy -->
+  <section class="lp-section lp-value-props">
+    <h2>Why GetPawsy?</h2>
+    <div class="lp-props-grid">
+      <div class="lp-prop">
+        <div class="lp-prop-icon">✨</div>
+        <h3>Curated Quality</h3>
+        <p>Every product is hand-selected for quality and safety by our team.</p>
+      </div>
+      <div class="lp-prop">
+        <div class="lp-prop-icon">🚀</div>
+        <h3>Fast Shipping</h3>
+        <p>Ships from US warehouses with 3-7 day delivery when available.</p>
+      </div>
+      <div class="lp-prop">
+        <div class="lp-prop-icon">🐾</div>
+        <h3>AI-Powered Help</h3>
+        <p>Pawsy AI helps you find the perfect products for your pet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="lp-section lp-testimonials">
+    <h2>What Pet Parents Say</h2>
+    <div class="lp-testimonials-grid">
+      <div class="lp-testimonial">
+        <div class="lp-testimonial-stars">★★★★★</div>
+        <p class="lp-testimonial-text">"My dog absolutely loves the toys! Great quality and fast shipping. Will definitely order again."</p>
+        <span class="lp-testimonial-author">— Sarah M.</span>
+      </div>
+      <div class="lp-testimonial">
+        <div class="lp-testimonial-stars">★★★★★</div>
+        <p class="lp-testimonial-text">"The AI recommendations were spot on! Found the perfect bed for my senior cat."</p>
+        <span class="lp-testimonial-author">— Mike R.</span>
+      </div>
+      <div class="lp-testimonial">
+        <div class="lp-testimonial-stars">★★★★★</div>
+        <p class="lp-testimonial-text">"Easy returns policy gave me confidence to try new products. Great experience overall!"</p>
+        <span class="lp-testimonial-author">— Jessica L.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="lp-cta">
+    <h2>Ready to spoil your pet?</h2>
+    <p>Browse our curated collection of premium pet essentials.</p>
+    <a href="/" class="btn btn-lg">Shop Best Sellers</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-premium">
+    <div class="footer-taglines">
+      <span>Designed with love for pets</span>
+      <span class="footer-dot">·</span>
+      <span>Curated by Pawsy AI</span>
+    </div>
+    <nav class="footer-links">
+      <a href="/legal/privacy">Privacy</a>
+      <a href="/legal/terms">Terms</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <p class="footer-copy">&copy; 2025 GetPawsy</p>
+  </footer>
+
+  <script>
+    // Load best sellers
+    async function loadBestSellers() {
+      try {
+        const res = await fetch('/api/products/top?limit=8');
+        const data = await res.json();
+        const items = data.products || data.items || [];
+        
+        const grid = document.getElementById('lpProductsGrid');
+        if (!grid || items.length === 0) return;
+        
+        grid.innerHTML = items.map(p => {
+          const price = p.variants && p.variants[0] ? p.variants[0].price : p.price;
+          const img = p.variants && p.variants[0] && p.variants[0].image ? p.variants[0].image : p.image;
+          const slug = p.slug || p.id;
+          return `
+            <a href="/product/${slug}" class="lp-product-card">
+              <img src="${img}" alt="${escapeHtml(p.title)}" class="lp-product-img" loading="lazy" onerror="this.src='/images/placeholder-product.svg'">
+              <div class="lp-product-info">
+                <h3 class="lp-product-title">${escapeHtml(p.title)}</h3>
+                <span class="lp-product-price">$${parseFloat(price).toFixed(2)}</span>
+              </div>
+            </a>
+          `;
+        }).join('');
+      } catch (err) {
+        console.log('[Landing] Error loading products:', err.message);
+      }
+    }
+    
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+    
+    // Track CTA clicks for GA4 if available
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (typeof gtag === 'function') {
+          gtag('event', 'cta_click', {
+            'event_category': 'landing_page',
+            'event_label': btn.textContent.trim()
+          });
+        }
+      });
+    });
+    
+    loadBestSellers();
+  </script>
+</body>
+</html>

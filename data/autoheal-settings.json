@@ -1,0 +1,12 @@
+{
+  "enabled": false,
+  "level": 1,
+  "killSwitch": false,
+  "probeBrowser": false,
+  "intervalSeconds": 300,
+  "maxChangesPerRun": 25,
+  "maxProductsPerRun": 50,
+  "deploymentLockdown": true,
+  "lastUpdated": "2025-12-30T22:00:37.977Z",
+  "lastUpdatedBy": "admin-emergency"
+}

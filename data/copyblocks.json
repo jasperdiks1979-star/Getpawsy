@@ -1,0 +1,109 @@
+{
+  "copyblocks": [
+    {
+      "id": "copy_home_hero",
+      "scope": "HOME_HERO",
+      "collectionSlug": null,
+      "status": "approved",
+      "locale": "en-US",
+      "headline": "Premium Pet Essentials",
+      "subheadline": "Curated products for dogs and cats, picked with love by Pawsy",
+      "introParagraphs": [
+        "Discover quality pet supplies handpicked for your furry family members.",
+        "From durable toys to cozy beds, we have everything your pet needs."
+      ],
+      "bullets": [
+        "Quality picks for dogs & cats",
+        "Easy returns, secure checkout",
+        "Fast US shipping available",
+        "Curated by pet lovers",
+        "Trusted by pet owners"
+      ],
+      "ctaPrimary": "Shop Dogs",
+      "ctaSecondary": "Shop Cats",
+      "seoTitle": "GetPawsy | Premium Pet Supplies for Dogs & Cats",
+      "seoDescription": "Shop quality pet supplies for dogs and cats. Durable toys, cozy beds, and everyday essentials. Fast shipping, easy returns.",
+      "keywords": [
+        "pet supplies",
+        "dog toys",
+        "cat toys",
+        "pet beds",
+        "pet essentials"
+      ],
+      "tone": "warm_premium",
+      "pawsyTip": "Need help finding the perfect product? Ask me anything!",
+      "createdAt": "2025-12-13T22:12:58.986Z",
+      "updatedAt": "2025-12-13T22:12:58.986Z"
+    },
+    {
+      "id": "copy_dogs_landing",
+      "scope": "DOGS_LANDING",
+      "collectionSlug": null,
+      "status": "approved",
+      "locale": "en-US",
+      "headline": "Everything Your Dog Needs",
+      "subheadline": "Quality toys, gear, and comfort for your best friend",
+      "introParagraphs": [
+        "From playful pups to loyal companions, find products designed for every stage of your dog's life.",
+        "Shop durable toys, comfortable beds, and everyday essentials curated with care."
+      ],
+      "bullets": [
+        "Durable toys for chewers",
+        "Comfortable walking gear",
+        "Cozy beds & mats",
+        "Grooming essentials",
+        "Feeding & hydration"
+      ],
+      "ctaPrimary": "Shop Dog Picks",
+      "ctaSecondary": "Browse Collections",
+      "seoTitle": "Dog Supplies & Essentials | GetPawsy",
+      "seoDescription": "Shop quality dog supplies. Durable toys, comfortable harnesses, cozy beds, and more. Curated for dogs of all sizes.",
+      "keywords": [
+        "dog supplies",
+        "dog toys",
+        "dog beds",
+        "dog harness",
+        "dog essentials"
+      ],
+      "tone": "warm_premium",
+      "pawsyTip": "Looking for something for your pup? I can help you find it!",
+      "createdAt": "2025-12-13T22:12:58.986Z",
+      "updatedAt": "2025-12-13T22:12:58.986Z"
+    },
+    {
+      "id": "copy_cats_landing",
+      "scope": "CATS_LANDING",
+      "collectionSlug": null,
+      "status": "approved",
+      "locale": "en-US",
+      "headline": "Purrfect Picks for Cats",
+      "subheadline": "Interactive toys, scratchers, and comfort for your feline",
+      "introParagraphs": [
+        "From curious kittens to sophisticated loungers, discover products your cat will love.",
+        "Shop interactive toys, quality scratchers, and cozy essentials picked with care."
+      ],
+      "bullets": [
+        "Interactive toys & puzzles",
+        "Quality scratchers & trees",
+        "Litter & cleaning solutions",
+        "Grooming essentials",
+        "Feeding & hydration"
+      ],
+      "ctaPrimary": "Shop Cat Picks",
+      "ctaSecondary": "Browse Collections",
+      "seoTitle": "Cat Supplies & Essentials | GetPawsy",
+      "seoDescription": "Shop quality cat supplies. Interactive toys, scratchers, cozy beds, and litter solutions. Curated for cats of all ages.",
+      "keywords": [
+        "cat supplies",
+        "cat toys",
+        "cat scratchers",
+        "cat beds",
+        "cat essentials"
+      ],
+      "tone": "warm_premium",
+      "pawsyTip": "Need the purrfect product for your cat? Just ask!",
+      "createdAt": "2025-12-13T22:12:58.986Z",
+      "updatedAt": "2025-12-13T22:12:58.986Z"
+    }
+  ]
+}

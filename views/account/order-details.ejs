@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title><%= title %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/js/pawsy.js" defer></script>
+  <style>
+    <%- include('../partials/account_styles') %>
+    .pawsy-order-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .pawsy-order-id-large {
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+    .pawsy-order-date-large {
+      color: var(--pawsy-gray-500);
+      margin-top: 0.25rem;
+    }
+    .pawsy-order-timeline {
+      display: flex;
+      justify-content: space-between;
+      margin: 2rem 0;
+      position: relative;
+    }
+    .pawsy-order-timeline::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--pawsy-gray-200);
+      z-index: 0;
+    }
+    .pawsy-timeline-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+      flex: 1;
+    }
+    .pawsy-timeline-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--pawsy-gray-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .pawsy-timeline-step.active .pawsy-timeline-icon {
+      background: var(--pawsy-primary);
+      color: white;
+    }
+    .pawsy-timeline-step.completed .pawsy-timeline-icon {
+      background: #16a34a;
+      color: white;
+    }
+    .pawsy-timeline-label {
+      font-size: 0.8rem;
+      text-align: center;
+      color: var(--pawsy-gray-500);
+    }
+    .pawsy-timeline-step.active .pawsy-timeline-label,
+    .pawsy-timeline-step.completed .pawsy-timeline-label {
+      color: var(--pawsy-gray-700);
+      font-weight: 600;
+    }
+    .pawsy-order-items-list {
+      margin: 1.5rem 0;
+    }
+    .pawsy-order-item-row {
+      display: grid;
+      grid-template-columns: 80px 1fr auto auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem;
+      background: var(--pawsy-light);
+      border-radius: var(--pawsy-radius);
+      margin-bottom: 0.75rem;
+    }
+    .pawsy-order-item-image {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--pawsy-radius);
+      object-fit: cover;
+      background: white;
+    }
+    .pawsy-order-item-name {
+      font-weight: 600;
+    }
+    .pawsy-order-item-qty {
+      color: var(--pawsy-gray-500);
+      font-size: 0.9rem;
+    }
+    .pawsy-order-item-price {
+      font-weight: 700;
+      text-align: right;
+    }
+    .pawsy-order-summary {
+      background: var(--pawsy-light);
+      border-radius: var(--pawsy-radius);
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .pawsy-order-summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+    .pawsy-order-summary-row.total {
+      font-size: 1.2rem;
+      font-weight: 800;
+      border-top: 2px solid var(--pawsy-gray-200);
+      padding-top: 0.75rem;
+      margin-top: 0.75rem;
+    }
+    .pawsy-shipping-info {
+      background: var(--pawsy-light);
+      border-radius: var(--pawsy-radius);
+      padding: 1.5rem;
+    }
+    .pawsy-shipping-info h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .pawsy-tracking-box {
+      background: var(--pawsy-primary);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: var(--pawsy-radius);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    .pawsy-tracking-label {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+    .pawsy-tracking-number {
+      font-weight: 700;
+      font-family: monospace;
+      font-size: 1.1rem;
+    }
+    @media (max-width: 600px) {
+      .pawsy-order-item-row {
+        grid-template-columns: 60px 1fr;
+        gap: 0.75rem;
+      }
+      .pawsy-order-item-qty,
+      .pawsy-order-item-price {
+        grid-column: 2;
+      }
+    }
+  </style>
+</head>
+<body class="pawsy-body">
+  <%- include("../partials/header") %>
+  
+  <main class="pawsy-main">
+    <div class="pawsy-container">
+      <div class="pawsy-account-page">
+        <a href="/account/orders" class="pawsy-back-link">&larr; Back to Orders</a>
+        <h1 class="pawsy-page-title">Order Details</h1>
+
+        <div class="pawsy-account-layout">
+          <%- include('../partials/account_sidebar', { activePage: 'orders' }) %>
+
+          <div class="pawsy-account-content">
+            <section class="pawsy-account-section">
+              <div class="pawsy-order-header">
+                <div>
+                  <div class="pawsy-order-id-large">Order #<%= order.id %></div>
+                  <div class="pawsy-order-date-large">Placed on <%= new Date(order.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></div>
+                </div>
+                <div class="pawsy-order-status pawsy-status-<%= order.status.toLowerCase() %>">
+                  <%= order.status.charAt(0).toUpperCase() + order.status.slice(1) %>
+                </div>
+              </div>
+
+              <div class="pawsy-order-timeline">
+                <% 
+                  const statuses = ['processing', 'shipped', 'delivered'];
+                  const currentIndex = statuses.indexOf(order.status.toLowerCase());
+                %>
+                <div class="pawsy-timeline-step <%= currentIndex >= 0 ? 'completed' : '' %>">
+                  <div class="pawsy-timeline-icon">📦</div>
+                  <div class="pawsy-timeline-label">Processing</div>
+                </div>
+                <div class="pawsy-timeline-step <%= currentIndex >= 1 ? 'completed' : currentIndex === 0 ? '' : '' %>">
+                  <div class="pawsy-timeline-icon">🚚</div>
+                  <div class="pawsy-timeline-label">Shipped</div>
+                </div>
+                <div class="pawsy-timeline-step <%= currentIndex >= 2 ? 'completed' : '' %>">
+                  <div class="pawsy-timeline-icon">✅</div>
+                  <div class="pawsy-timeline-label">Delivered</div>
+                </div>
+              </div>
+
+              <% if (order.trackingNumber) { %>
+                <div class="pawsy-tracking-box">
+                  <div>
+                    <div class="pawsy-tracking-label">Tracking Number</div>
+                    <div class="pawsy-tracking-number"><%= order.trackingNumber %></div>
+                  </div>
+                  <a href="#" class="pawsy-btn pawsy-btn-outline" style="background: white; color: var(--pawsy-primary);">Track Package</a>
+                </div>
+              <% } %>
+
+              <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Items</h3>
+              <div class="pawsy-order-items-list">
+                <% order.items.forEach(item => { %>
+                  <div class="pawsy-order-item-row">
+                    <img src="<%= item.image || '/images/placeholder.png' %>" alt="<%= item.name %>" class="pawsy-order-item-image">
+                    <div>
+                      <div class="pawsy-order-item-name"><%= item.name %></div>
+                      <div class="pawsy-order-item-qty">Qty: <%= item.quantity %></div>
+                    </div>
+                    <div class="pawsy-order-item-price">$<%= (item.price * item.quantity).toFixed(2) %></div>
+                  </div>
+                <% }) %>
+              </div>
+
+              <div class="pawsy-order-summary">
+                <div class="pawsy-order-summary-row">
+                  <span>Subtotal</span>
+                  <span>$<%= order.subtotal.toFixed(2) %></span>
+                </div>
+                <div class="pawsy-order-summary-row">
+                  <span>Shipping</span>
+                  <span><%= order.shipping > 0 ? '$' + order.shipping.toFixed(2) : 'FREE' %></span>
+                </div>
+                <div class="pawsy-order-summary-row total">
+                  <span>Total</span>
+                  <span>$<%= order.total.toFixed(2) %></span>
+                </div>
+              </div>
+            </section>
+
+            <section class="pawsy-account-section">
+              <div class="pawsy-shipping-info">
+                <h3>Shipping Address</h3>
+                <p><strong><%= order.shippingAddress.name %></strong></p>
+                <p><%= order.shippingAddress.street %></p>
+                <p><%= order.shippingAddress.city %>, <%= order.shippingAddress.state %> <%= order.shippingAddress.zip %></p>
+                <p><%= order.shippingAddress.country %></p>
+              </div>
+            </section>
+
+            <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="/account/orders" class="pawsy-btn pawsy-btn-outline">Back to Orders</a>
+              <button class="pawsy-btn pawsy-btn-primary" onclick="window.print()">Print Receipt</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include("../partials/footer") %>
+  <%- include("../partials/pawsy_widget") %>
+</body>
+</html>

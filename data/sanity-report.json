@@ -1,0 +1,5364 @@
+{
+  "timestamp": "2026-01-08T23:46:53.547Z",
+  "stats": {
+    "total": 539,
+    "active": 213,
+    "inactive": 326,
+    "withCjData": 539,
+    "withImages": 539,
+    "withValidPrice": 539,
+    "withPetType": 539,
+    "withCategory": 539
+  },
+  "summary": {
+    "critical": 0,
+    "warning": 2,
+    "info": 1065
+  },
+  "health": {
+    "score": 100,
+    "grade": "A"
+  },
+  "issues": {
+    "critical": [],
+    "warning": [
+      {
+        "productId": "1990996021906956290",
+        "message": "Low margin: -17.2% (cost: $1171.56, price: $999.99)",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990986368192012289",
+        "message": "Low margin: -4.3% (cost: $1043.22, price: $999.99)",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      }
+    ],
+    "info": [
+      {
+        "productId": "1996064726721794050",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.542Z"
+      },
+      {
+        "productId": "1996064726721794050",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1996111912750710786",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1996111912750710786",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1996100265990180865",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1996100265990180865",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993916062320009218",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993916062320009218",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993885211980353537",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993885211980353537",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993882260050169858",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993882260050169858",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993155042347737090",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993155042347737090",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993006928471289857",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993006928471289857",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993039311227625473",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993039311227625473",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993007032305479682",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993007032305479682",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993006996016361474",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993006996016361474",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1992955820617003009",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1992955820617003009",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993007067604742145",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993007067604742145",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993006962566787073",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1993006962566787073",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1992488017443860482",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1992488017443860482",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1992473230051815426",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1992473230051815426",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1992483683275927554",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1992483683275927554",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991786961910530050",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991786961910530050",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991750114320744449",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991750114320744449",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991773771676569602",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991773771676569602",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991773771676569602",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991244926845751298",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991244926845751298",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991249014612287489",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991249014612287489",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991248814751649793",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991248814751649793",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991061266784509954",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991061266784509954",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991089054435762178",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991089054435762178",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991245205112655874",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991245205112655874",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991249103250513921",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991249103250513921",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.543Z"
+      },
+      {
+        "productId": "1991247435350597634",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991247435350597634",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991244853858525186",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991244853858525186",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991244853858525186",
+        "message": "High price: $810.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245633315397633",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245633315397633",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245633315397633",
+        "message": "High price: $554.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1998322673329934337",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1998322673329934337",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1998322616719413249",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1998322616719413249",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996839415274844162",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996839415274844162",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996839415274844162",
+        "message": "High price: $538.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996846464031129601",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996846464031129601",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996830523526524930",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996830523526524930",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996836586367791105",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996836586367791105",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996870075989405697",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996870075989405697",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996493861430915074",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996493861430915074",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996128475470004225",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996128475470004225",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1995425463360872450",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1995425463360872450",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1994702521858703361",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1994702521858703361",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1994702521858703361",
+        "message": "High price: $571.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993164615406215169",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993164615406215169",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992943318395023361",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992943318395023361",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992942895668576257",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992942895668576257",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992943707889639426",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992943707889639426",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993013779396075521",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993013779396075521",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993013779396075521",
+        "message": "High price: $539.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992943361081131009",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992943361081131009",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992955763424149505",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992955763424149505",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992943667305553921",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992943667305553921",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992943667305553921",
+        "message": "High price: $602.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992943746850529281",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992943746850529281",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992955595612528642",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992955595612528642",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992942857831084034",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992942857831084034",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991492625343873025",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991492625343873025",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991407459189784578",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991407459189784578",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991247020261302274",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991247020261302274",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990996021906956290",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990996021906956290",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990996021906956290",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991180368349270017",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991180368349270017",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991247361706332161",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991247361706332161",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245237379436545",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245237379436545",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245237379436545",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991248488560627714",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991248488560627714",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991248375670935554",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991248375670935554",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245594123821058",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245594123821058",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245594123821058",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245035423698945",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245035423698945",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991249060212760577",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991249060212760577",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991247777249288193",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991247777249288193",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245302634418177",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245302634418177",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245302634418177",
+        "message": "High price: $843.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991248004710588418",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991248004710588418",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245895694278658",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245895694278658",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245703133782017",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245703133782017",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245703133782017",
+        "message": "High price: $657.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245470326886401",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245470326886401",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991248973839458305",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991248973839458305",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991246085775941634",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991246085775941634",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990986368192012289",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990986368192012289",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990986368192012289",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991247477595627521",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991247477595627521",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991180407968665602",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991180407968665602",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991248909085741057",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991248909085741057",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245809144815618",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245809144815618",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991246649321250817",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991246649321250817",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991246649321250817",
+        "message": "High price: $583.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991246557196881922",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991246557196881922",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245737925533698",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245737925533698",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991246152146608129",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991246152146608129",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991246152146608129",
+        "message": "High price: $570.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251206486396930",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251206486396930",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991244999902138370",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991244999902138370",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245102712918018",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245102712918018",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991247975203659778",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991247975203659778",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991247398553968642",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991247398553968642",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245383584485378",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245383584485378",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991245383584485378",
+        "message": "High price: $869.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991246685539065857",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991246685539065857",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991246685539065857",
+        "message": "High price: $551.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1998279478282907650",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1998279478282907650",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996395851484209154",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996395851484209154",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996402356062965762",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996402356062965762",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996404100507553794",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996404100507553794",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996097390082297857",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996097390082297857",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996058560674942978",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996058560674942978",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996066115422294017",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996066115422294017",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996062625648119810",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996062625648119810",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996092785891045377",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996092785891045377",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996088933869965313",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1996088933869965313",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993889907646898178",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993889907646898178",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993528254033338369",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993528254033338369",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993575125405704193",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993575125405704193",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993525212538753026",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993525212538753026",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993526282130132993",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993526282130132993",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993555922728558593",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993555922728558593",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993529399758573569",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993529399758573569",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993527282507468801",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1993527282507468801",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992920358406504450",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992920358406504450",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992920109439295490",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992920109439295490",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992919985088282626",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992919985088282626",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992920159776849922",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1992920159776849922",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991779421485400065",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991779421485400065",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991795763679121410",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991795763679121410",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991249902657638402",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991249902657638402",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250489308602369",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250489308602369",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251941870198785",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251941870198785",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251941870198785",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991252077651726338",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991252077651726338",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991252077651726338",
+        "message": "High price: $822.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251352687251457",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251352687251457",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250380671934466",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250380671934466",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250761623789569",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250761623789569",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250136800464897",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250136800464897",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251103571435522",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251103571435522",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250058522169345",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250058522169345",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251034050846722",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251034050846722",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251169224200193",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251169224200193",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250453531189249",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250453531189249",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251742522642433",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251742522642433",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251742522642433",
+        "message": "High price: $530.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250839688175618",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250839688175618",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251314561028097",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251314561028097",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251490172342274",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251490172342274",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250346089897985",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250346089897985",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251862223884289",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251862223884289",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251862223884289",
+        "message": "High price: $819.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251536603287554",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251536603287554",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251133513895937",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251133513895937",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251439602294785",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251439602294785",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250879601172481",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250879601172481",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251901889417218",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251901889417218",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251901889417218",
+        "message": "High price: $941.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991252195956264961",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991252195956264961",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991252195956264961",
+        "message": "High price: $530.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251570090610689",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251570090610689",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250658972393474",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250658972393474",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250283638853633",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250283638853633",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250918279667713",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250918279667713",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251276577411074",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251276577411074",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251241798242306",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251241798242306",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991252313983979522",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991252313983979522",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251388897353730",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251388897353730",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251071602450434",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251071602450434",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250315872079874",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250315872079874",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250975926181890",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250975926181890",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991247702989135873",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991247702989135873",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251822818398210",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251822818398210",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250728891441153",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250728891441153",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991252031192096769",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991252031192096769",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991252031192096769",
+        "message": "High price: $604.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991252121159241730",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991252121159241730",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991252121159241730",
+        "message": "High price: $864.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250243151237121",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250243151237121",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991252164423487489",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991252164423487489",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991252164423487489",
+        "message": "High price: $843.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991249937998843906",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991249937998843906",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251642287165442",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991251642287165442",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250561748426754",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250561748426754",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991250561748426754",
+        "message": "High price: $514.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991247667564044289",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1991247667564044289",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990691629160779777",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990691629160779777",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990702967379513345",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990702967379513345",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990691674766823426",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990691674766823426",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990621631432286209",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990621631432286209",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990691662108413953",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990691662108413953",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990604523990343681",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990604523990343681",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990691561905115137",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990691561905115137",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990691590074060802",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990691590074060802",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990691621283876865",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990691621283876865",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990691641781440513",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990691641781440513",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990691685007937537",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990691685007937537",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990441216217755650",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1990441216217755650",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1988495891753312257",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1988495891753312257",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1982440547655647234",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1982440547655647234",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1979841815190630402",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1979841815190630402",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1978696056806240257",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1978696056806240257",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1971137381161009154",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1971137381161009154",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1965667532353343490",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1965667532353343490",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1961278668578516994",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1961278668578516994",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1961278668578516994",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1960994080710246402",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1960994080710246402",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1959791128691654658",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1959791128691654658",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1879346288407760898",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1879346288407760898",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1879013812738883586",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1879013812738883586",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1872179551709622274",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1872179551709622274",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1856263027474452480",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1856263027474452480",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1856263027474452480",
+        "message": "High price: $609.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1855894482974560256",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1855894482974560256",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "2410110334111614200",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "2410110334111614200",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1807710310313644032",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1807710310313644032",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1806928748680728576",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1806928748680728576",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1806943319785099264",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1806943319785099264",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1805551425163251712",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1805551425163251712",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1803614417658466304",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1803614417658466304",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1721808426021834752",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1721808426021834752",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1700376284947697664",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1700376284947697664",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1668120524876566528",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1668120524876566528",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1657574694545412096",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1657574694545412096",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1632028985222123520",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1632028985222123520",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1588826407327772672",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1588826407327772672",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1561725514673967104",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1561725514673967104",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1517341274318721024",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1517341274318721024",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "DEE56FA4-F797-43E3-9BD8-0BC8EE993892",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "DEE56FA4-F797-43E3-9BD8-0BC8EE993892",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "50434994-F7B3-4DAD-AE52-835EED9C3CC2",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "50434994-F7B3-4DAD-AE52-835EED9C3CC2",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1967849097931362306",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1967849097931362306",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1946473004012797954",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1946473004012797954",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1892139061461774338",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1892139061461774338",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1892139061461774338",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1855860959337140224",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1855860959337140224",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1855860959337140224",
+        "message": "High price: $624.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1851542684281229312",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1851542684281229312",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1851510171403964416",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1851510171403964416",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1851510171403964416",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1806253910924349440",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1806253910924349440",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1805807592162611200",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1805807592162611200",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.544Z"
+      },
+      {
+        "productId": "1805796399821770752",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "1805796399821770752",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "1786274371230126080",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "1786274371230126080",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "1784445710201933824",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "1784445710201933824",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "1750132340162449408",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "1750132340162449408",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "1573847847211520000",
+        "message": "Missing recommended field: description",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "1573847847211520000",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003459431347298305",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003459431347298305",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003459431347298305",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467052895547394",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467052895547394",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467052895547394",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003288444580573186",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003288444580573186",
+        "message": "High price: $899.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003288444580573186",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003403386902736898",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003403386902736898",
+        "message": "High price: $674.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003403386902736898",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467534565224450",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467534565224450",
+        "message": "High price: $871.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467534565224450",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003465259402768386",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003465259402768386",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003465259402768386",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003459502197481474",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003459502197481474",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003459502197481474",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003465515483721729",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003465515483721729",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003465515483721729",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003465547326877697",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003465547326877697",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003465547326877697",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003468170561363970",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003468170561363970",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003468170561363970",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003469945281114113",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003469945281114113",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003469945281114113",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003468005883359234",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003468005883359234",
+        "message": "High price: $921.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003468005883359234",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003469237618143234",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003469237618143234",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003469237618143234",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003288117479387137",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003288117479387137",
+        "message": "High price: $652.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003288117479387137",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467498319966209",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467498319966209",
+        "message": "High price: $727.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467498319966209",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003465051085512706",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003465051085512706",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003465051085512706",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467857917943809",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467857917943809",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467857917943809",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003466875195469826",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003466875195469826",
+        "message": "High price: $962.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003466875195469826",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003468103631613953",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003468103631613953",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003468103631613953",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467251564867586",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467251564867586",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467251564867586",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003466051133415426",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003466051133415426",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003466051133415426",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003261412366790658",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003261412366790658",
+        "message": "High price: $940.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003261412366790658",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003403144437735426",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003403144437735426",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003275670416699393",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003275670416699393",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003275670416699393",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003403007903510529",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003403007903510529",
+        "message": "High price: $703.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003403007903510529",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003371877191274498",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003371877191274498",
+        "message": "High price: $871.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003371877191274498",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003289669489307650",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003289669489307650",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003289669489307650",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467146237505538",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467146237505538",
+        "message": "High price: $945.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467146237505538",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467178699501569",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467178699501569",
+        "message": "High price: $921.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467178699501569",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003468271789649922",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003468271789649922",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003468271789649922",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467895153733634",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467895153733634",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003467895153733634",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003459607050887170",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003459607050887170",
+        "message": "High price: $892.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003459607050887170",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003468040301817857",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003468040301817857",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003468040301817857",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003465294228074497",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003465294228074497",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003465294228074497",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003466663458615298",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003466663458615298",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003466663458615298",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003302956241145858",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003302956241145858",
+        "message": "High price: $698.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003302956241145858",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2512260747421622600",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2512260742021614400",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2004401092005740545",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2004401092005740545",
+        "message": "High price: $686.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2004107664592904193",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2004107664592904193",
+        "message": "High price: $772.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2004107764848586753",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2004107764848586753",
+        "message": "High price: $813.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2004107860278157313",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2004107860278157313",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2004014488433315842",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2004028160057716737",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2004107712248586242",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2004107712248586242",
+        "message": "High price: $813.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2004107616959840258",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2004107616959840258",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2004107814891593729",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2004107814891593729",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003566162726203393",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003433672684269570",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003433672684269570",
+        "message": "High price: $674.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003433979157192705",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003433979157192705",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003369072047075329",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003369072047075329",
+        "message": "High price: $508.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003309111304695810",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003309111304695810",
+        "message": "High price: $727.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003414397461766145",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003414397461766145",
+        "message": "High price: $871.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003351918247563265",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003351918247563265",
+        "message": "High price: $547.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003349802342830082",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003416807583100929",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003416807583100929",
+        "message": "High price: $715.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003570416401817602",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003570416401817602",
+        "message": "High price: $674.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003374813946466305",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003374813946466305",
+        "message": "High price: $830.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003403528274030594",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003283862928404481",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003283862928404481",
+        "message": "High price: $875.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003561612583563266",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003561612583563266",
+        "message": "High price: $871.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003458445975941121",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003458445975941121",
+        "message": "High price: $674.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003452939948826626",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003452939948826626",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003451756969308162",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003451756969308162",
+        "message": "High price: $928.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003454430114410497",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003454430114410497",
+        "message": "High price: $628.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003451689256464386",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003451689256464386",
+        "message": "High price: $830.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003457251952144385",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003457251952144385",
+        "message": "High price: $554.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003454183944597505",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003454183944597505",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003452902330114049",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003452902330114049",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003452231333748738",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003452231333748738",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003455468199780353",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003455468199780353",
+        "message": "High price: $518.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003451517789122562",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003451517789122562",
+        "message": "High price: $813.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003454235937189889",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003454235937189889",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003458222394372097",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003458222394372097",
+        "message": "High price: $645.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003454345892786178",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003454345892786178",
+        "message": "High price: $628.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003454829791916033",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003454829791916033",
+        "message": "High price: $554.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003454799343185921",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003454799343185921",
+        "message": "High price: $554.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003455433953288193",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003455433953288193",
+        "message": "High price: $628.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003453128243716098",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003453128243716098",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003451943271903233",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003451943271903233",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003451448815710210",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003451448815710210",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003451482145927170",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003451482145927170",
+        "message": "High price: $871.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003452979183022082",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003452979183022082",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003455503943639041",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003455503943639041",
+        "message": "High price: $686.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003452192410607618",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003452192410607618",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003454395343630337",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003454395343630337",
+        "message": "High price: $674.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003451552668954626",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003451552668954626",
+        "message": "High price: $842.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003451360649523201",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003451360649523201",
+        "message": "High price: $921.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003398269477888002",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003398269477888002",
+        "message": "High price: $830.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003434888612323329",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003434888612323329",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003259963400409089",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003259963400409089",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003374569957535745",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003374569957535745",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003309396563505154",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003305177934614530",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003452502716559362",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003452502716559362",
+        "message": "High price: $628.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003457588117221377",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003451981750448130",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003451981750448130",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003260232729251842",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003260232729251842",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003452536401014785",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003452536401014785",
+        "message": "High price: $640.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003196528801239041",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003196528801239041",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003215420655292417",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003215420655292417",
+        "message": "High price: $518.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003106960347410433",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003106960347410433",
+        "message": "High price: $715.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003106141749293057",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003106141749293057",
+        "message": "High price: $674.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003222309149495298",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003222309149495298",
+        "message": "High price: $818.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003038627053096962",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003038627053096962",
+        "message": "High price: $767.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003108718213771265",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003108718213771265",
+        "message": "High price: $806.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2512261010371625500",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2512261010371625500",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2512250547511634300",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2004008862245228545",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2004008862245228545",
+        "message": "High price: $542.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2512231005261632600",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003461657586151426",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003461657586151426",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003507328277999618",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003382381425651714",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003382381425651714",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003509605423685634",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003509605423685634",
+        "message": "High price: $599.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003567816712237058",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003567816712237058",
+        "message": "High price: $662.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003505698878976002",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003505698878976002",
+        "message": "High price: $547.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003500277304848385",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003508678116356097",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003474277940703233",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003503444119891970",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003413875094757378",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003419939729944578",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003419939729944578",
+        "message": "High price: $875.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003364073965506562",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003364073965506562",
+        "message": "High price: $571.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003461097618448385",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003461097618448385",
+        "message": "High price: $571.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003461338115645442",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003461338115645442",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003464156562104322",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003464156562104322",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003463574263361537",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003463574263361537",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003460716280717314",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003460716280717314",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003460645266956289",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003460645266956289",
+        "message": "High price: $818.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003461621297033218",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003461621297033218",
+        "message": "High price: $945.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003461547389202434",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003461547389202434",
+        "message": "High price: $842.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003463366406238210",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003463366406238210",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003459966678900737",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003459966678900737",
+        "message": "High price: $583.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003312862061047809",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003312862061047809",
+        "message": "High price: $657.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003505904831885314",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003505904831885314",
+        "message": "High price: $739.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003422216349741057",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003422216349741057",
+        "message": "High price: $599.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003455905695047682",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003455905695047682",
+        "message": "High price: $571.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003461472215932930",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003461472215932930",
+        "message": "High price: $871.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003463328363900929",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003463328363900929",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003461585163104257",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003461585163104257",
+        "message": "High price: $933.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003444696523141121",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003444696523141121",
+        "message": "High price: $933.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003508779224248321",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003508779224248321",
+        "message": "High price: $611.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003561224102256642",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003561224102256642",
+        "message": "High price: $727.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003375437905833985",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003565260071280641",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003343911266701313",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003343911266701313",
+        "message": "High price: $547.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003500034746331137",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003500034746331137",
+        "message": "High price: $508.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003564473043689473",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003564473043689473",
+        "message": "High price: $547.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003506108991909889",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003506108991909889",
+        "message": "High price: $599.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003500157607800834",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003500157607800834",
+        "message": "High price: $530.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003564655716970497",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003564655716970497",
+        "message": "High price: $652.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003401515172929537",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003331581816492034",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003512145645858818",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003512145645858818",
+        "message": "High price: $883.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003507425900425218",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003372034165223426",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003372034165223426",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003428182696173569",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003428182696173569",
+        "message": "High price: $933.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003460849928019970",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003460849928019970",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003461028169162753",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003461028169162753",
+        "message": "High price: $863.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003463504424005634",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003463504424005634",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003401153728782338",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003401153728782338",
+        "message": "High price: $559.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003460328597680129",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003460328597680129",
+        "message": "High price: $871.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003460297048125442",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003460297048125442",
+        "message": "High price: $818.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003460032135208961",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003460032135208961",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003460062599114753",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003460062599114753",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003308925979373570",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003308925979373570",
+        "message": "High price: $854.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003460264064118785",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003460264064118785",
+        "message": "High price: $830.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003139265185075202",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003139265185075202",
+        "message": "High price: $652.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003139606498684929",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003139606498684929",
+        "message": "High price: $623.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003069804771954689",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003069804771954689",
+        "message": "High price: $674.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003086766824665089",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003086766824665089",
+        "message": "High price: $530.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003138975947993089",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003138975947993089",
+        "message": "High price: $530.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003195875605499906",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003195875605499906",
+        "message": "High price: $501.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003034437245661186",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003034437245661186",
+        "message": "High price: $518.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003054246447984641",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003072078378323969",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003086234571681794",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003086234571681794",
+        "message": "High price: $559.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003057342383280129",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003204556848017409",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003057446353809410",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003057446353809410",
+        "message": "High price: $518.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003098034797195265",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2003098034797195265",
+        "message": "High price: $623.99",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2001958940467044353",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.545Z"
+      },
+      {
+        "productId": "cj_2512011212441634800",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2004808751508721666",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2004808751508721666",
+        "message": "High price: $921.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2004808751508721666",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003467113956225025",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003467113956225025",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003467113956225025",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003468858729885697",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003468858729885697",
+        "message": "High price: $847.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003468858729885697",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003468070882488322",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003468070882488322",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003468070882488322",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003467551271137282",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003467551271137282",
+        "message": "High price: $871.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003467551271137282",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003468309462888449",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003468309462888449",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003468309462888449",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003459570455584770",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003459570455584770",
+        "message": "High price: $986.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003459570455584770",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003465350444331010",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003465350444331010",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003465350444331010",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003466775012241409",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003466775012241409",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003466775012241409",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003465087513042946",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003465087513042946",
+        "message": "High price: $945.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003465087513042946",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003466910150799361",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003466910150799361",
+        "message": "High price: $921.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003466910150799361",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003469269287415810",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003469269287415810",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003469269287415810",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003465880633716737",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003465880633716737",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003465880633716737",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003469981309509633",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003469981309509633",
+        "message": "High price: $986.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003469981309509633",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003383195078684673",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003383195078684673",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003383195078684673",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003387372420919298",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003387372420919298",
+        "message": "High price: $887.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003387372420919298",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003257975006711809",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003257975006711809",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003257975006711809",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003069907790376962",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003069907790376962",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003069907790376962",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003132879753621506",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003132879753621506",
+        "message": "High price: $583.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003132879753621506",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003052166037524481",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003052166037524481",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003052166037524481",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003231274858098689",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003231274858098689",
+        "message": "High price: $986.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003231274858098689",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003124226971578370",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003124226971578370",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003124226971578370",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2002993096393252866",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2002993096393252866",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2002993096393252866",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003303415465029633",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003303415465029633",
+        "message": "High price: $657.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003303415465029633",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2512220700421609300",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2512220700421609300",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003076256924323841",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003076256924323841",
+        "message": "High price: $911.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003076256924323841",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003189741161197570",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003189741161197570",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003189741161197570",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003070124560396290",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003070124560396290",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003070124560396290",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2002997457481809922",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2002997457481809922",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2002997457481809922",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003034128553005058",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003034128553005058",
+        "message": "High price: $842.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003034128553005058",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2512160315491634000",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2512160315491634000",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1998677125006135297",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1998677125006135297",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2512060223441603200",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2512060223441603200",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1991253589822005249",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1991253589822005249",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1991253589822005249",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1991253614086053890",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1991253614086053890",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1991253614086053890",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1988910090106454017",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1988910090106454017",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1988917992410071042",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1988917992410071042",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2509260959281601300",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2509260959281601300",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1969324198804180993",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1969324198804180993",
+        "message": "High price: $911.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1969324198804180993",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1960910216516890625",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1960910216516890625",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1960910216516890625",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1958361957832683522",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1958361957832683522",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1958361957832683522",
+        "message": "Non-standard pet type: small_pet",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003561315570397185",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003561315570397185",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003059948316938242",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003059948316938242",
+        "message": "High price: $830.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003061060184985601",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003061060184985601",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2002998448340127745",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003243682825678850",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003208342513561601",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003208342513561601",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2001961361314459650",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2000449378805084161",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2512071128501633200",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1996831744136097794",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1996831744136097794",
+        "message": "High price: $847.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2512030109311633300",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2512010911181626300",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1992943241282744321",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1992943241282744321",
+        "message": "High price: $547.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1992479126096486401",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1990611096451723265",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1990603554179178498",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2511090840071609200",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2511090835341619200",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1956533545016098817",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1935212154848645121",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1935231854106218498",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1935227243978919938",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1866674184559415296",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1769233879933657088",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_50487F85-3F15-463B-BADA-6BB15CA1E172",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1617714916251676672",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1553919926208049152",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1542454005941678080",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1473889796714795008",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1430437322624733184",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1393136052151128064",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1392463680498700288",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1366192252417871872",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_F70C029C-846B-4996-A3FA-35AAA059655F",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_4C343FD5-9CDD-4B01-BFE0-37EB973651EA",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_40C22753-2F3A-4860-80AB-EE621B563FDF",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_988B0F88-EA4A-4996-8AF0-71AF82E4625C",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_C01F594B-2F91-4A34-AFEF-08B8A3EA27CA",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1818466445643632640",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_F3318ABD-22AB-44DB-BAF1-248E0A06E8AF",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1980924814530207745",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1816409273908744192",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2407070356481603700",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1742495370569064448",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1547912101611065344",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1435933184293474304",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_8C1AFDC0-8C84-44CF-A3E0-13B348FA319F",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_7F1108E5-6138-47C3-93C8-D3F718D6D2F9",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1990619269430419457",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1990596147763388417",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2510310831111607700",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1977559995541729281",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2510070532101603400",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2510030839391653400",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1971091555935715329",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1965717013503266817",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1965715925435977730",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1961361525308440578",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1846079389982150656",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003463293114970113",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003463293114970113",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003459749103575041",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003459749103575041",
+        "message": "High price: $698.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003459906767462401",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003459906767462401",
+        "message": "High price: $727.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003463610057551873",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003463610057551873",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1993612439943430146",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2511231000531607800",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1991773082573393922",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1990625439377567745",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1988864879096344577",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1988549416871698434",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1987817896837177345",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1987803599501766658",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2511090356291638500",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1986360230200602626",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2508120418271617600",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_6DBD3FB1-B8AF-4F55-A164-6612EC458E0D",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_B660F8B7-F65D-4CF4-BF42-46078A59494F",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003459873586323457",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003459873586323457",
+        "message": "High price: $743.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003459841101438978",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003459841101438978",
+        "message": "High price: $583.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003460777727270913",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003460777727270913",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003460516975779842",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003460516975779842",
+        "message": "High price: $789.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003460744223170561",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2003460744223170561",
+        "message": "High price: $999.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1984892643457224705",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2510150829351618600",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1969301649798057985",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_1969301649798057985",
+        "message": "High price: $640.99",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2509150847021623900",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.546Z"
+      },
+      {
+        "productId": "cj_2509050641581602800",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.547Z"
+      },
+      {
+        "productId": "cj_2507151035151628000",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.547Z"
+      },
+      {
+        "productId": "cj_2503050218141619300",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.547Z"
+      },
+      {
+        "productId": "cj_2502130854561604000",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.547Z"
+      },
+      {
+        "productId": "cj_2412200801291624100",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.547Z"
+      },
+      {
+        "productId": "cj_1861382626113114112",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.547Z"
+      },
+      {
+        "productId": "cj_2410200928471628700",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.547Z"
+      },
+      {
+        "productId": "cj_1844299949342085120",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.547Z"
+      },
+      {
+        "productId": "cj_1842767974160551936",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.547Z"
+      },
+      {
+        "productId": "cj_1833034670645596160",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.547Z"
+      },
+      {
+        "productId": "cj_2409060122111605400",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.547Z"
+      },
+      {
+        "productId": "cj_1828735304539721728",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.547Z"
+      },
+      {
+        "productId": "cj_2509010324221610900",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.547Z"
+      },
+      {
+        "productId": "cj_2412181042471607700",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.547Z"
+      },
+      {
+        "productId": "cj_2411031410071615200",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.547Z"
+      },
+      {
+        "productId": "cj_2408120803591613400",
+        "message": "Missing recommended field: category",
+        "timestamp": "2026-01-08T23:46:53.547Z"
+      }
+    ]
+  }
+}

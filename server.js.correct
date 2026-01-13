@@ -1,0 +1,340 @@
+const express = require("express");
+const path = require("path");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const session = require("express-session");
+const db = require("./db/setup");
+const fs = require("fs");
+const { exec } = require("child_process");
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
+const app = express();
+
+// Middleware
+app.use(bodyParser.json());
+app.use(cors());
+app.use("/public", express.static("public"));
+app.use("/images", express.static("public/images"));
+app.use("/dashboard", express.static("public/dashboard"));
+app.use("/tests", express.static("tests"));
+app.use("/admin/static", express.static("admin_panel"));
+app.use(session({
+  secret: "getpawsy-secret-123",
+  resave: false,
+  saveUninitialized: true
+}));
+
+// Template engine
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
+// Routes
+app.use("/", require("./routes/home"));
+app.use("/products", require("./routes/products"));
+app.use("/collections", require("./routes/collections"));
+app.use("/search", require("./routes/search"));
+app.use("/cart", require("./routes/cart"));
+app.use("/checkout", require("./routes/checkout"));
+app.use("/order-confirmation", require("./routes/order-confirmation"));
+app.use("/login", require("./routes/login"));
+app.use("/register", require("./routes/register"));
+app.use("/account", require("./routes/account"));
+app.use("/payment", require("./routes/payment"));
+app.use("/payment-success", require("./routes/payment-success"));
+app.use("/profile", require("./routes/profile"));
+app.use("/api", require("./routes/api"));
+
+// Email API Routes
+const emailAPI = require("./routes/api/email/index.js");
+app.post("/api/email/order-confirmation", emailAPI.orderConfirmation);
+app.post("/api/email/payment-success", emailAPI.paymentSuccess);
+app.post("/api/email/shipping-update", emailAPI.shippingUpdate);
+app.post("/api/email/welcome", emailAPI.welcome);
+app.post("/api/email/reset-password", emailAPI.resetPassword);
+
+// AI Recommendation API Routes
+const recTrack = require("./routes/api/recommend/track.js");
+const recEngine = require("./routes/api/recommend/engine.js");
+app.post("/api/recommend/track/view", recTrack.view);
+app.post("/api/recommend/track/wishlist", recTrack.wishlist);
+app.post("/api/recommend/track/order", recTrack.order);
+app.get("/api/recommend/get", recEngine.get);
+
+// Pawsy AI Chatbot API Routes
+const chatbot = require("./routes/api/chatbot/index.js");
+app.post("/api/chatbot/ask", chatbot.ask);
+
+// Pawsy AI v4 Widget API Route
+app.post("/api/pawsy", async (req, res) => {
+  const prompt = req.body.prompt || "";
+  
+  try {
+    const openaiKey = process.env.AI_INTEGRATIONS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
+    
+    if (!openaiKey) {
+      return res.json({ answer: "Pawsy's brain is resting! Try again in a moment. 🐾" });
+    }
+
+    const fetch = (await import("node-fetch")).default;
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + openaiKey
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        messages: [
+          { role: "system", content: "You are Pawsy, a fun, friendly pet shopping assistant for GetPawsy. Be helpful and playful!" },
+          { role: "user", content: prompt }
+        ]
+      })
+    });
+
+    const data = await response.json();
+    const answer = data.choices?.[0]?.message?.content || "Woof! I couldn't think of anything to say. 🐾";
+    
+    res.json({ answer });
+
+  } catch (err) {
+    console.error("Pawsy API error:", err);
+    res.json({ answer: "Pawsy stumbled a little! Try again. 🐾" });
+  }
+});
+
+// PAWSY ULTRA v2 — ADVANCED AI SHOPPING ASSISTANT
+app.post("/api/pawsy-ultra", async (req, res) => {
+  const { prompt, context, history } = req.body;
+  
+  let contextStr = "";
+  if (context.type === "product" && context.productId) {
+    contextStr = `User viewing product ID: ${context.productId}. `;
+  } else if (context.type === "category") {
+    contextStr = `User browsing category. `;
+  }
+
+  try {
+    const openaiKey = process.env.AI_INTEGRATIONS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
+    if (!openaiKey) {
+      return res.json({ answer: "Pawsy's brain is resting! 🐾" });
+    }
+
+    const fetch = (await import("node-fetch")).default;
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + openaiKey
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        messages: [
+          {
+            role: "system",
+            content: "You are Pawsy, a hyper-energetic American pet shopping AI assistant. Use emojis like 🐶😸🔥⭐😍 Always recommend products confidently. If on product page explain benefits. Keep responses 1-2 sentences max."
+          },
+          { role: "user", content: contextStr + prompt }
+        ]
+      })
+    });
+
+    const data = await response.json();
+    const answer = data.choices?.[0]?.message?.content || "Woof! Let me think about that... 🐾";
+    
+    // Check for add-to-cart intent
+    let addToCart = null;
+    const addMatch = answer.match(/ADD_TO_CART:([A-Za-z0-9_-]+)/);
+    if (addMatch) {
+      addToCart = addMatch[1];
+    }
+
+    res.json({
+      answer: answer.replace(/ADD_TO_CART:.*/, "").trim(),
+      addToCart
+    });
+
+  } catch (err) {
+    console.error("Pawsy ultra error:", err);
+    res.json({ answer: "Pawsy stumbled! Try again. 🐾" });
+  }
+});
+
+// PAWSY ULTRA v3 — ENHANCED AI SHOPPING ASSISTANT
+app.post("/api/pawsy-ultra-v3", async (req, res) => {
+  const { prompt, context, history } = req.body;
+  
+  let contextStr = "";
+  if (context.type === "product" && context.productId) {
+    contextStr = `User viewing product ID: ${context.productId}. `;
+  } else if (context.type === "category") {
+    contextStr = `User browsing ${context.category} category. `;
+  }
+
+  try {
+    const openaiKey = process.env.AI_INTEGRATIONS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
+    if (!openaiKey) {
+      return res.json({ answer: "Pawsy's brain is resting! 🐾" });
+    }
+
+    const fetch = (await import("node-fetch")).default;
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + openaiKey
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        messages: [
+          {
+            role: "system",
+            content: `You are Pawsy, an EXTREMELY energetic American pet shopping AI assistant! 🐶🐱🔥
+ALWAYS include emojis like 😍🛒🔥⭐😸🐾
+Keep responses SHORT (1-2 sentences max) and FUN!
+If user wants to add product to cart, respond with: ADD_TO_CART:[product_id]
+Use browsing history to make smart recommendations.
+Be confident, helpful, and FULL OF ENERGY!`
+          },
+          { role: "user", content: contextStr + prompt }
+        ]
+      })
+    });
+
+    const data = await response.json();
+    const answer = data.choices?.[0]?.message?.content || "Woof! I'm thinking... 🐾";
+    
+    // Check for add-to-cart intent
+    let addToCart = null;
+    const addMatch = answer.match(/ADD_TO_CART:([A-Za-z0-9_-]+)/);
+    if (addMatch) {
+      addToCart = addMatch[1];
+    }
+
+    res.json({
+      answer: answer.replace(/ADD_TO_CART:.*/, "").trim(),
+      addToCart
+    });
+
+  } catch (err) {
+    console.error("Pawsy ultra v3 error:", err);
+    res.json({ answer: "Pawsy stumbled! 😅 Try again." });
+  }
+});
+
+// PAWSY IMAGE RECOGNITION — AI PRODUCT ANALYSIS
+app.post("/api/pawsy-image", async (req, res) => {
+  try {
+    const openaiKey = process.env.AI_INTEGRATIONS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
+    if (!openaiKey) {
+      return res.json({ answer: "Image analysis temporarily unavailable! 📸" });
+    }
+
+    // For now, return a helpful message since we don't have file upload middleware set up
+    // In a production setup, you would use vision API here
+    res.json({ 
+      answer: "📸 Image received! I can see you're interested in pet products. Tell me more about what you're looking for and I'll recommend the perfect item! 🐾"
+    });
+
+  } catch (err) {
+    console.error("Image recognition error:", err);
+    res.json({ answer: "Had trouble analyzing that image. Try describing it instead! 📸" });
+  }
+});
+
+// MEGA MENU ROUTES - Dogs
+app.use("/dogs/beds", require("./routes/dogs/beds"));
+app.use("/dogs/toys", require("./routes/dogs/toys"));
+app.use("/dogs/grooming", require("./routes/dogs/grooming"));
+app.use("/dogs/harnesses", require("./routes/dogs/harnesses"));
+app.use("/dogs/accessories", require("./routes/dogs/accessories"));
+
+// MEGA MENU ROUTES - Cats
+app.use("/cats/beds", require("./routes/cats/beds"));
+app.use("/cats/toys", require("./routes/cats/toys"));
+app.use("/cats/scratchers", require("./routes/cats/scratchers"));
+app.use("/cats/grooming", require("./routes/cats/grooming"));
+app.use("/cats/accessories", require("./routes/cats/accessories"));
+
+// PRODUCT PAGE ROUTES
+app.use("/product", require("./routes/product/[id]"));
+
+// COLLECTION ROUTES
+app.use("/collection", require("./routes/collection/[category]"));
+
+// Dashboard Routes
+app.get("/dashboard", (req, res) => {
+  res.sendFile(path.join(process.cwd(), "views/dashboard/index.html"));
+});
+
+app.get("/dashboard/api/list-screens", (req, res) => {
+  try {
+    const dir = "tests/breakpoints/";
+    if (!fs.existsSync(dir)) {
+      res.json([]);
+      return;
+    }
+    const files = fs.readdirSync(dir).filter(f => f.endsWith(".png"));
+    res.json(files);
+  } catch (e) {
+    res.json([]);
+  }
+});
+
+app.get("/dashboard/api/report", (req, res) => {
+  try {
+    const report = JSON.parse(fs.readFileSync("tests/breakpoints/report.json"));
+    res.json(report);
+  } catch (e) {
+    res.json({ error: "No report available" });
+  }
+});
+
+app.get("/dashboard/api/run-monitor", (req, res) => {
+  exec("python3 tools/breakpoint_monitor.py", (err) => {
+    if (err) console.error("Monitor error:", err);
+  });
+  res.json({ ok: true });
+});
+
+app.get("/dashboard/api/run-fixer", (req, res) => {
+  exec("python3 tools/breakpoint_fixer.py", (err) => {
+    if (err) console.error("Fixer error:", err);
+  });
+  res.json({ ok: true });
+});
+
+app.get("/dashboard/api/run-auto", (req, res) => {
+  exec("python3 tools/auto_loop.py", (err) => {
+    if (err) console.error("Auto-loop error:", err);
+  });
+  res.json({ ok: true });
+});
+
+// CJdropshipping ULTRA Importer
+app.get("/dashboard/api/run-cj-importer", (req, res) => {
+  exec("python3 tools/cj_importer.py", (err, stdout, stderr) => {
+    if (err) {
+      console.error("CJ Importer error:", err);
+      res.json({ ok: false, error: err.message });
+    } else {
+      res.json({ ok: true, output: stdout });
+    }
+  });
+});
+
+// ==============================
+// GETPAWSY PRO+ AUTH SYSTEM
+// ==============================
+app.use("/login", require("./routes/login"));
+
+// Admin panel proxy to Flask backend
+app.use(
+  '/admin',
+  createProxyMiddleware({
+    target: 'http://localhost:8080',
+    changeOrigin: true,
+    ws: false
+  })
+);
+
+app.listen(5000, () => console.log("GetPawsy v1.0 PRO running on port 5000"));

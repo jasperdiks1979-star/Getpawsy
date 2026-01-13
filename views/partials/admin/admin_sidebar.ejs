@@ -1,0 +1,77 @@
+<aside class="admin-sidebar">
+    <h2 class="admin-logo">🐾 GetPawsy Admin</h2>
+
+    <nav>
+        <span class="nav-section">Overview</span>
+        <a href="/admin" class="<%= typeof active !== 'undefined' && active === 'dashboard' ? 'active' : '' %>">📊 Dashboard</a>
+        <a href="/admin/analytics" class="<%= typeof active !== 'undefined' && active === 'analytics' ? 'active' : '' %>">📈 Analytics</a>
+        
+        <span class="nav-section">Catalog</span>
+        <a href="/admin/products" class="<%= typeof active !== 'undefined' && active === 'products' ? 'active' : '' %>">🛍 Products</a>
+        <a href="/admin/categories" class="<%= typeof active !== 'undefined' && active === 'categories' ? 'active' : '' %>">📁 Categories</a>
+        <a href="/admin/imports" class="<%= typeof active !== 'undefined' && active === 'imports' ? 'active' : '' %>">📥 CJ Imports</a>
+        
+        <span class="nav-section">Commerce</span>
+        <a href="/admin/orders" class="<%= typeof active !== 'undefined' && active === 'orders' ? 'active' : '' %>">📦 Orders</a>
+        <a href="/admin/users" class="<%= typeof active !== 'undefined' && active === 'users' ? 'active' : '' %>">👤 Users</a>
+        <a href="/admin/loyalty" class="<%= typeof active !== 'undefined' && active === 'loyalty' ? 'active' : '' %>">⭐ Loyalty</a>
+        
+        <span class="nav-section">Intelligence</span>
+        <a href="/admin/pawsy-insights" class="<%= typeof active !== 'undefined' && active === 'pawsy-insights' ? 'active' : '' %>">🐾 Pawsy Insights</a>
+        <a href="/admin/seo-studio" class="<%= typeof active !== 'undefined' && active === 'seo-studio' ? 'active' : '' %>">🔍 SEO Categories</a>
+        <a href="/admin/seo-products" class="<%= typeof active !== 'undefined' && active === 'seo-products' ? 'active' : '' %>">🏷️ SEO Products</a>
+        
+        <span class="nav-section">System</span>
+        <a href="/admin/jobs" class="<%= typeof active !== 'undefined' && active === 'jobs' ? 'active' : '' %>">⚡ Jobs</a>
+        <a href="/admin/settings" class="<%= typeof active !== 'undefined' && active === 'settings' ? 'active' : '' %>">⚙️ Settings</a>
+        <a href="/admin/roadmap" class="<%= typeof active !== 'undefined' && active === 'roadmap' ? 'active' : '' %>">🗺️ Roadmap</a>
+    </nav>
+</aside>
+
+<style>
+.admin-sidebar {
+    width: 260px;
+    background: #111;
+    color: #fff;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+.admin-sidebar .admin-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #00c4a7;
+}
+.admin-sidebar nav a {
+    display: block;
+    padding: 12px 15px;
+    color: #ccc;
+    text-decoration: none;
+    border-radius: 6px;
+    margin: 5px 0;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+.admin-sidebar nav a.active,
+.admin-sidebar nav a:hover {
+    background: #00c4a7;
+    color: #000;
+}
+.admin-sidebar .nav-section {
+    display: block;
+    padding: 8px 15px 4px;
+    color: #666;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+}
+.admin-sidebar .nav-section:first-child {
+    margin-top: 0;
+}
+</style>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Categories | GetPawsy Admin</title>
+  <link rel="stylesheet" href="/css/admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #0f0f0f; color: #eaeaea; }
+    .admin-container { display: flex; min-height: 100vh; }
+    .admin-main { margin-left: 260px; padding: 0; flex: 1; background: #1a1a1a; min-height: 100vh; }
+    .admin-content { padding: 25px; }
+    h1 { margin-bottom: 25px; color: #fff; }
+    .category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .category-card { background: #252525; border-radius: 12px; padding: 20px; border: 1px solid #333; }
+    .category-card h3 { color: #00c4a7; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+    .category-card .count { color: #999; font-size: 14px; }
+    .subcategories { margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .subcat-tag { background: #333; padding: 6px 12px; border-radius: 20px; font-size: 12px; color: #ccc; }
+    .btn { background: #00c4a7; color: #000; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+    .btn:hover { background: #00a88f; }
+    .btn-secondary { background: #333; color: #ccc; }
+    .btn-secondary:hover { background: #444; }
+    .actions { display: flex; gap: 10px; margin-top: 15px; }
+    .stats-bar { display: flex; gap: 20px; margin-bottom: 25px; flex-wrap: wrap; }
+    .stat-box { background: #252525; padding: 15px 20px; border-radius: 8px; border: 1px solid #333; }
+    .stat-box .label { color: #999; font-size: 12px; text-transform: uppercase; }
+    .stat-box .value { color: #00c4a7; font-size: 24px; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <%- include("../partials/admin/admin_sidebar", { active: 'categories' }) %>
+    
+    <main class="admin-main">
+      <%- include("../partials/admin/admin_header", { pageTitle: 'Categories' }) %>
+      
+      <div class="admin-content">
+        <h1>📁 Category Manager</h1>
+        
+        <div class="stats-bar">
+          <div class="stat-box">
+            <div class="label">Total Categories</div>
+            <div class="value" id="total-cats">-</div>
+          </div>
+          <div class="stat-box">
+            <div class="label">Dog Categories</div>
+            <div class="value" id="dog-cats">-</div>
+          </div>
+          <div class="stat-box">
+            <div class="label">Cat Categories</div>
+            <div class="value" id="cat-cats">-</div>
+          </div>
+          <div class="stat-box">
+            <div class="label">Uncategorized Products</div>
+            <div class="value" id="uncategorized">-</div>
+          </div>
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+          <button class="btn" onclick="autoAssignCategories()">🤖 Auto-Assign Categories</button>
+          <button class="btn btn-secondary" onclick="refreshCategories()">🔄 Refresh</button>
+        </div>
+        
+        <div class="category-grid" id="category-grid">
+          <div style="color: #666; padding: 40px; text-align: center;">Loading categories...</div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script>
+    async function loadCategories() {
+      try {
+        const res = await fetch('/api/admin/categories/stats');
+        const data = await res.json();
+        
+        if (data.ok) {
+          document.getElementById('total-cats').textContent = data.totalCategories || 0;
+          document.getElementById('dog-cats').textContent = data.dogCategories || 0;
+          document.getElementById('cat-cats').textContent = data.catCategories || 0;
+          document.getElementById('uncategorized').textContent = data.uncategorized || 0;
+          
+          renderCategories(data.categories || []);
+        }
+      } catch (err) {
+        document.getElementById('category-grid').innerHTML = '<div style="color: #f66;">Error loading categories</div>';
+      }
+    }
+    
+    function renderCategories(categories) {
+      const grid = document.getElementById('category-grid');
+      if (!categories.length) {
+        grid.innerHTML = '<div style="color: #666;">No categories found</div>';
+        return;
+      }
+      
+      grid.innerHTML = categories.map(cat => `
+        <div class="category-card">
+          <h3>${cat.icon || '📦'} ${cat.name}</h3>
+          <div class="count">${cat.productCount || 0} products</div>
+          <div class="subcategories">
+            ${(cat.subcategories || []).map(sub => `<span class="subcat-tag">${sub.name} (${sub.count || 0})</span>`).join('')}
+          </div>
+          <div class="actions">
+            <button class="btn btn-secondary" onclick="editCategory('${cat.slug}')">Edit</button>
+          </div>
+        </div>
+      `).join('');
+    }
+    
+    async function autoAssignCategories() {
+      if (!confirm('This will auto-assign categories to uncategorized products. Continue?')) return;
+      
+      try {
+        const res = await fetch('/api/admin/categories/auto-assign', { method: 'POST' });
+        const data = await res.json();
+        alert(`Assigned ${data.assigned || 0} products to categories`);
+        loadCategories();
+      } catch (err) {
+        alert('Error: ' + err.message);
+      }
+    }
+    
+    function editCategory(slug) {
+      alert('Category editor coming soon: ' + slug);
+    }
+    
+    function refreshCategories() {
+      loadCategories();
+    }
+    
+    loadCategories();
+  </script>
+</body>
+</html>

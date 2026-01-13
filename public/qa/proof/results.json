@@ -1,0 +1,135 @@
+{
+  "timestamp": "2025-12-28T10:08:20.582Z",
+  "smallPets": {
+    "API returns topPicksSmallPets": {
+      "passed": true,
+      "details": "10 products"
+    },
+    "API products filter works": {
+      "passed": true,
+      "details": "10 products"
+    },
+    "Collection page has products": {
+      "passed": true,
+      "details": "129 product cards"
+    },
+    "Subcategory pages have products": {
+      "passed": true,
+      "details": "5/5 subcategories with products"
+    }
+  },
+  "images": {
+    "Products have images": {
+      "passed": true,
+      "details": "5/5 products with images"
+    },
+    "Images use local media": {
+      "passed": true,
+      "details": "/media/products/1855860959337140224/0_8eea791c4277"
+    },
+    "Images have lazy loading": {
+      "passed": true,
+      "details": "Found lazy/async attributes"
+    }
+  },
+  "cart": {
+    "CartStore module loaded": {
+      "passed": true,
+      "details": "Uses gp_cart_v2 storage key"
+    },
+    "CartStore has dedup lock": {
+      "passed": true,
+      "details": "500ms lock present"
+    },
+    "CartStore has getCount for badge": {
+      "passed": true,
+      "details": ""
+    },
+    "App delegates to CartStore": {
+      "passed": true,
+      "details": ""
+    },
+    "Badge uses CartStore.getCount": {
+      "passed": true,
+      "details": "SUM of quantities"
+    }
+  },
+  "summary": {
+    "passed": 12,
+    "failed": 0,
+    "tests": [
+      {
+        "category": "smallPets",
+        "name": "API returns topPicksSmallPets",
+        "passed": true,
+        "details": "10 products"
+      },
+      {
+        "category": "smallPets",
+        "name": "API products filter works",
+        "passed": true,
+        "details": "10 products"
+      },
+      {
+        "category": "smallPets",
+        "name": "Collection page has products",
+        "passed": true,
+        "details": "129 product cards"
+      },
+      {
+        "category": "smallPets",
+        "name": "Subcategory pages have products",
+        "passed": true,
+        "details": "5/5 subcategories with products"
+      },
+      {
+        "category": "images",
+        "name": "Products have images",
+        "passed": true,
+        "details": "5/5 products with images"
+      },
+      {
+        "category": "images",
+        "name": "Images use local media",
+        "passed": true,
+        "details": "/media/products/1855860959337140224/0_8eea791c4277"
+      },
+      {
+        "category": "images",
+        "name": "Images have lazy loading",
+        "passed": true,
+        "details": "Found lazy/async attributes"
+      },
+      {
+        "category": "cart",
+        "name": "CartStore module loaded",
+        "passed": true,
+        "details": "Uses gp_cart_v2 storage key"
+      },
+      {
+        "category": "cart",
+        "name": "CartStore has dedup lock",
+        "passed": true,
+        "details": "500ms lock present"
+      },
+      {
+        "category": "cart",
+        "name": "CartStore has getCount for badge",
+        "passed": true,
+        "details": ""
+      },
+      {
+        "category": "cart",
+        "name": "App delegates to CartStore",
+        "passed": true,
+        "details": ""
+      },
+      {
+        "category": "cart",
+        "name": "Badge uses CartStore.getCount",
+        "passed": true,
+        "details": "SUM of quantities"
+      }
+    ]
+  }
+}

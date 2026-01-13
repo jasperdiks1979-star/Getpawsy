@@ -1,0 +1,1995 @@
+{
+  "startTime": "2025-12-21T01:23:39.922Z",
+  "endTime": "2025-12-21T01:23:40.015Z",
+  "totalProducts": 414,
+  "productsWithVariants": 414,
+  "productsWithoutVariants": 0,
+  "totalVariants": 2575,
+  "productsUpdated": 0,
+  "variantsAdded": 0,
+  "skippedNonPet": 80,
+  "errors": [],
+  "topProductsByVariants": [
+    {
+      "id": "2511100247091626600",
+      "spu": "2511100247091626600",
+      "title": "Christmas Puppy Print Polyester Round Neck Sweatshirt Unisex",
+      "variantCount": 98,
+      "optionsSchema": [
+        {
+          "name": "Option1",
+          "values": [
+            "Christmas"
+          ]
+        },
+        {
+          "name": "Option2",
+          "values": [
+            "Puppy"
+          ]
+        },
+        {
+          "name": "Option3",
+          "values": [
+            "Print"
+          ]
+        },
+        {
+          "name": "Option4",
+          "values": [
+            "Polyester"
+          ]
+        },
+        {
+          "name": "Option5",
+          "values": [
+            "Round"
+          ]
+        },
+        {
+          "name": "Option6",
+          "values": [
+            "Neck"
+          ]
+        },
+        {
+          "name": "Option7",
+          "values": [
+            "Sweatshirt"
+          ]
+        },
+        {
+          "name": "Option8",
+          "values": [
+            "Unisex"
+          ]
+        },
+        {
+          "name": "Size",
+          "values": [
+            "2XL",
+            "3XL",
+            "L",
+            "M",
+            "S",
+            "XL",
+            "XS"
+          ]
+        },
+        {
+          "name": "Option10",
+          "values": [
+            "Light"
+          ]
+        },
+        {
+          "name": "Color",
+          "values": [
+            "Gray"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2512120222041607600",
+      "spu": "2512120222041607600",
+      "title": "New Digital Single-sided Printed Air-conditioning Cat Sofa B",
+      "variantCount": 95,
+      "optionsSchema": [
+        {
+          "name": "Option1",
+          "values": [
+            "New"
+          ]
+        },
+        {
+          "name": "Option2",
+          "values": [
+            "Digital"
+          ]
+        },
+        {
+          "name": "Option3",
+          "values": [
+            "Single"
+          ]
+        },
+        {
+          "name": "Option4",
+          "values": [
+            "sided"
+          ]
+        },
+        {
+          "name": "Option5",
+          "values": [
+            "Printed"
+          ]
+        },
+        {
+          "name": "Option6",
+          "values": [
+            "Air"
+          ]
+        },
+        {
+          "name": "Option7",
+          "values": [
+            "conditioning"
+          ]
+        },
+        {
+          "name": "Option8",
+          "values": [
+            "Cat"
+          ]
+        },
+        {
+          "name": "Option9",
+          "values": [
+            "Sofa"
+          ]
+        },
+        {
+          "name": "Option10",
+          "values": [
+            "Blanket"
+          ]
+        },
+        {
+          "name": "Size",
+          "values": [
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "2",
+            "20",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ]
+        },
+        {
+          "name": "Option12",
+          "values": [
+            "Style"
+          ]
+        },
+        {
+          "name": "Option13",
+          "values": [
+            "100X150cm",
+            "130X150cm",
+            "150X200cm",
+            "180X230cm",
+            "70X100cm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2508170940041604600",
+      "spu": "2508170940041604600",
+      "title": "Cartoon Kitten Pattern Sweater European Size",
+      "variantCount": 95,
+      "optionsSchema": [
+        {
+          "name": "Option1",
+          "values": [
+            "Cartoon"
+          ]
+        },
+        {
+          "name": "Option2",
+          "values": [
+            "Kitten"
+          ]
+        },
+        {
+          "name": "Option3",
+          "values": [
+            "Pattern"
+          ]
+        },
+        {
+          "name": "Option4",
+          "values": [
+            "Sweater"
+          ]
+        },
+        {
+          "name": "Option5",
+          "values": [
+            "European"
+          ]
+        },
+        {
+          "name": "Option6",
+          "values": [
+            "Size"
+          ]
+        },
+        {
+          "name": "Color",
+          "values": [
+            "Black",
+            "Blue",
+            "Gray",
+            "Orange",
+            "Pink",
+            "Purple",
+            "Red",
+            "White",
+            "Yellow",
+            "blue"
+          ]
+        },
+        {
+          "name": "Size",
+          "values": [
+            "L",
+            "M",
+            "S",
+            "XL",
+            "XS",
+            "XXL",
+            "XXXL"
+          ]
+        },
+        {
+          "name": "Option7",
+          "values": [
+            "Dark",
+            "Haze",
+            "Khaki",
+            "Light"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2508120206591609200",
+      "spu": "2508120206591609200",
+      "title": "Dopamine Rainbow Kitten Cheese Squeezing Toy Silicone Slow R",
+      "variantCount": 92,
+      "optionsSchema": [
+        {
+          "name": "Option1",
+          "values": [
+            "Dopamine"
+          ]
+        },
+        {
+          "name": "Option2",
+          "values": [
+            "Rainbow"
+          ]
+        },
+        {
+          "name": "Option3",
+          "values": [
+            "Kitten"
+          ]
+        },
+        {
+          "name": "Option4",
+          "values": [
+            "Cheese"
+          ]
+        },
+        {
+          "name": "Option5",
+          "values": [
+            "Squeezing"
+          ]
+        },
+        {
+          "name": "Option6",
+          "values": [
+            "Toy"
+          ]
+        },
+        {
+          "name": "Option7",
+          "values": [
+            "Silicone"
+          ]
+        },
+        {
+          "name": "Option8",
+          "values": [
+            "Slow"
+          ]
+        },
+        {
+          "name": "Option9",
+          "values": [
+            "Rebound"
+          ]
+        },
+        {
+          "name": "Option10",
+          "values": [
+            "Decompression"
+          ]
+        },
+        {
+          "name": "Option11",
+          "values": [
+            "Angel",
+            "Banana",
+            "Big",
+            "Bobo",
+            "Box",
+            "Burnt",
+            "Butter",
+            "Capabala",
+            "Caramel",
+            "Crab",
+            "Cream",
+            "Crystal",
+            "Double",
+            "Durian",
+            "Fat",
+            "Flocking",
+            "Food",
+            "Fried",
+            "Fun",
+            "Gourmet",
+            "Hairy",
+            "Hamster",
+            "Hello",
+            "Honey",
+            "Kitten",
+            "Lop",
+            "Love",
+            "Milky",
+            "Mud",
+            "National",
+            "New",
+            "Octopus",
+            "Oh",
+            "Osmanthus",
+            "Persian",
+            "Plush",
+            "Poached",
+            "Puffer",
+            "Pumpkin",
+            "Puppy",
+            "Rice",
+            "Sandwich",
+            "Sea",
+            "Seal",
+            "Shar",
+            "Shufulei",
+            "Spoiled",
+            "Strawberry",
+            "Sugar",
+            "Sunglasses",
+            "Three",
+            "Transparent",
+            "Triangle",
+            "Ugly",
+            "Waffle",
+            "Zongzi"
+          ]
+        },
+        {
+          "name": "Option12",
+          "values": [
+            "Accessories",
+            "Antler",
+            "Apple",
+            "Baby",
+            "Ball",
+            "Balls",
+            "Bear",
+            "Big",
+            "Boss",
+            "Bread",
+            "Bubble",
+            "Can",
+            "Cat",
+            "Cat's",
+            "Cheese",
+            "Chicken",
+            "Crystal",
+            "Donut",
+            "Doughnuts",
+            "Drum",
+            "Dumplings",
+            "Durian",
+            "Ear",
+            "Egg",
+            "Feeling",
+            "Fish",
+            "Ghost",
+            "Gourd",
+            "Kara",
+            "Kitten",
+            "Kitty",
+            "Layer",
+            "Li",
+            "Little",
+            "Malt",
+            "Milk",
+            "Milky",
+            "Mixed",
+            "Moonlight",
+            "Pei",
+            "Penguin",
+            "Pig",
+            "Pinch",
+            "Puppy",
+            "Rams",
+            "Removable",
+            "Rice",
+            "Salt",
+            "Squeezing",
+            "Strawberry",
+            "Sweet",
+            "Tabby",
+            "Treasure",
+            "Waffle",
+            "West",
+            "Year"
+          ]
+        },
+        {
+          "name": "Option13",
+          "values": [
+            "Accessories",
+            "Baby",
+            "Ball",
+            "Be",
+            "Bear",
+            "Big",
+            "Blueberry",
+            "Bring",
+            "Cat",
+            "Cat's",
+            "Chicks",
+            "Cream",
+            "Ear",
+            "Egg",
+            "Fat",
+            "Feet",
+            "Free",
+            "Gap",
+            "Hair",
+            "Hello",
+            "Highland",
+            "Mac",
+            "Milky",
+            "No",
+            "Nose",
+            "Octopus",
+            "Oh",
+            "Pair",
+            "Panda",
+            "Paw",
+            "Pinch",
+            "Pine",
+            "Potato",
+            "Puppet",
+            "Rainbow",
+            "Random",
+            "Sugar",
+            "Tart",
+            "Toast",
+            "Toy",
+            "Triangle",
+            "Waffle"
+          ]
+        },
+        {
+          "name": "Option14",
+          "values": [
+            "Bag",
+            "Bar",
+            "Bear",
+            "Biscuits",
+            "Bliss",
+            "Cake",
+            "Cat's",
+            "Color",
+            "Dog",
+            "Donut",
+            "Ear",
+            "Face",
+            "Fryer",
+            "Kitty",
+            "Paw",
+            "Pendant",
+            "Praised",
+            "Random",
+            "Rice",
+            "Sandwich",
+            "Strip",
+            "Style",
+            "Tart",
+            "Toast"
+          ]
+        },
+        {
+          "name": "Color",
+          "values": [
+            "Black",
+            "Blue",
+            "Gray",
+            "Green",
+            "Orange",
+            "Pink",
+            "Purple",
+            "Red",
+            "White",
+            "Yellow"
+          ]
+        },
+        {
+          "name": "Option15",
+          "values": [
+            "Ball",
+            "Color",
+            "Dog",
+            "Duck",
+            "Man",
+            "Paw",
+            "Random"
+          ]
+        },
+        {
+          "name": "Size",
+          "values": [
+            "Large",
+            "Small"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2511231000531607800",
+      "spu": "2511231000531607800",
+      "title": "European And American Pointed Soft Leather Kitten Heel Singl",
+      "variantCount": 90,
+      "optionsSchema": [
+        {
+          "name": "Option1",
+          "values": [
+            "European"
+          ]
+        },
+        {
+          "name": "Option2",
+          "values": [
+            "And"
+          ]
+        },
+        {
+          "name": "Option3",
+          "values": [
+            "American"
+          ]
+        },
+        {
+          "name": "Option4",
+          "values": [
+            "Pointed"
+          ]
+        },
+        {
+          "name": "Option5",
+          "values": [
+            "Soft"
+          ]
+        },
+        {
+          "name": "Option6",
+          "values": [
+            "Leather"
+          ]
+        },
+        {
+          "name": "Option7",
+          "values": [
+            "Kitten"
+          ]
+        },
+        {
+          "name": "Option8",
+          "values": [
+            "Heel"
+          ]
+        },
+        {
+          "name": "Option9",
+          "values": [
+            "Single"
+          ]
+        },
+        {
+          "name": "Option10",
+          "values": [
+            "Sole"
+          ]
+        },
+        {
+          "name": "Option11",
+          "values": [
+            "Apricot",
+            "Rose"
+          ]
+        },
+        {
+          "name": "Size",
+          "values": [
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43"
+          ]
+        },
+        {
+          "name": "Color",
+          "values": [
+            "Black",
+            "Blue",
+            "Green",
+            "Orange",
+            "Pink",
+            "Red",
+            "Silver",
+            "White"
+          ]
+        },
+        {
+          "name": "Option12",
+          "values": [
+            "Denim"
+          ]
+        },
+        {
+          "name": "Option13",
+          "values": [
+            "Color"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2510190324351640200",
+      "spu": "2510190324351640200",
+      "title": "Kitten Korean Fashion Casual Denim Jacket",
+      "variantCount": 77,
+      "optionsSchema": [
+        {
+          "name": "Option1",
+          "values": [
+            "Kitten"
+          ]
+        },
+        {
+          "name": "Option2",
+          "values": [
+            "Korean"
+          ]
+        },
+        {
+          "name": "Option3",
+          "values": [
+            "Fashion"
+          ]
+        },
+        {
+          "name": "Option4",
+          "values": [
+            "Casual"
+          ]
+        },
+        {
+          "name": "Option5",
+          "values": [
+            "Denim"
+          ]
+        },
+        {
+          "name": "Option6",
+          "values": [
+            "Jacket"
+          ]
+        },
+        {
+          "name": "Option7",
+          "values": [
+            "Classic",
+            "Colorful",
+            "Flounced",
+            "Flower",
+            "Flowers",
+            "Little",
+            "Pearl",
+            "Rope",
+            "Sequined"
+          ]
+        },
+        {
+          "name": "Option8",
+          "values": [
+            "100cm",
+            "110cm",
+            "120cm",
+            "130cm",
+            "140cm",
+            "80cm",
+            "90cm",
+            "Bear",
+            "Bunny",
+            "Denim",
+            "Sleeve",
+            "Style",
+            "Tinker"
+          ]
+        },
+        {
+          "name": "Size",
+          "values": [
+            "Small"
+          ]
+        },
+        {
+          "name": "Option10",
+          "values": [
+            "100cm",
+            "110cm",
+            "120cm",
+            "130cm",
+            "140cm",
+            "80cm",
+            "90cm",
+            "Cat",
+            "Jacket",
+            "Pearl"
+          ]
+        },
+        {
+          "name": "Option11",
+          "values": [
+            "100cm",
+            "110cm",
+            "120cm",
+            "130cm",
+            "140cm",
+            "80cm",
+            "90cm"
+          ]
+        },
+        {
+          "name": "Option9",
+          "values": [
+            "100cm",
+            "110cm",
+            "120cm",
+            "130cm",
+            "140cm",
+            "80cm",
+            "90cm",
+            "Big",
+            "Denim",
+            "Jacket"
+          ]
+        },
+        {
+          "name": "Color",
+          "values": [
+            "Pink"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2512190632151613800",
+      "spu": "2512190632151613800",
+      "title": "Warm Large Dog Bed Pet Mat Cat Bed Dog Bed Dog Mat",
+      "variantCount": 60,
+      "optionsSchema": [
+        {
+          "name": "Option1",
+          "values": [
+            "Warm"
+          ]
+        },
+        {
+          "name": "Size",
+          "values": [
+            "2XL",
+            "L",
+            "M",
+            "S",
+            "XL"
+          ]
+        },
+        {
+          "name": "Option3",
+          "values": [
+            "Dog"
+          ]
+        },
+        {
+          "name": "Option4",
+          "values": [
+            "Bed"
+          ]
+        },
+        {
+          "name": "Option5",
+          "values": [
+            "Pet"
+          ]
+        },
+        {
+          "name": "Option6",
+          "values": [
+            "Mat"
+          ]
+        },
+        {
+          "name": "Option7",
+          "values": [
+            "Cat"
+          ]
+        },
+        {
+          "name": "Option8",
+          "values": [
+            "Bed"
+          ]
+        },
+        {
+          "name": "Option9",
+          "values": [
+            "Dog"
+          ]
+        },
+        {
+          "name": "Option10",
+          "values": [
+            "Bed"
+          ]
+        },
+        {
+          "name": "Option11",
+          "values": [
+            "Dog"
+          ]
+        },
+        {
+          "name": "Option12",
+          "values": [
+            "Mat"
+          ]
+        },
+        {
+          "name": "Color",
+          "values": [
+            "Beige",
+            "Brown",
+            "Grey"
+          ]
+        },
+        {
+          "name": "Option15",
+          "values": [
+            "Including",
+            "No"
+          ]
+        },
+        {
+          "name": "Option16",
+          "values": [
+            "Including",
+            "No",
+            "inner"
+          ]
+        },
+        {
+          "name": "Option17",
+          "values": [
+            "inner",
+            "jacket",
+            "sleeve"
+          ]
+        },
+        {
+          "name": "Option18",
+          "values": [
+            "included",
+            "jacket",
+            "sleeve"
+          ]
+        },
+        {
+          "name": "Option13",
+          "values": [
+            "Coffee",
+            "Dark",
+            "Khaki",
+            "Light"
+          ]
+        },
+        {
+          "name": "Option19",
+          "values": [
+            "included"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2512130222091603100",
+      "spu": "2512130222091603100",
+      "title": "New Christmas Cat-Print Women's Hoodie",
+      "variantCount": 54,
+      "optionsSchema": [
+        {
+          "name": "Option1",
+          "values": [
+            "New"
+          ]
+        },
+        {
+          "name": "Option2",
+          "values": [
+            "Christmas"
+          ]
+        },
+        {
+          "name": "Option3",
+          "values": [
+            "Cat"
+          ]
+        },
+        {
+          "name": "Option4",
+          "values": [
+            "Print"
+          ]
+        },
+        {
+          "name": "Option5",
+          "values": [
+            "Women's"
+          ]
+        },
+        {
+          "name": "Option6",
+          "values": [
+            "Hoodie"
+          ]
+        },
+        {
+          "name": "Option7",
+          "values": [
+            "CZXTLM01",
+            "CZXTLM02",
+            "CZXTLM03",
+            "CZXTLM04",
+            "CZXTLM05",
+            "CZXTLM06"
+          ]
+        },
+        {
+          "name": "Size",
+          "values": [
+            "2XL",
+            "3XL",
+            "L",
+            "M",
+            "S",
+            "XL",
+            "XS"
+          ]
+        },
+        {
+          "name": "Option8",
+          "values": [
+            "4XL",
+            "5XL"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2512160830511626200",
+      "spu": "2512160830511626200",
+      "title": "Men's T-shirt With A Cat Cartoon Pattern",
+      "variantCount": 48,
+      "optionsSchema": [
+        {
+          "name": "Option1",
+          "values": [
+            "Men's"
+          ]
+        },
+        {
+          "name": "Option2",
+          "values": [
+            "T"
+          ]
+        },
+        {
+          "name": "Option3",
+          "values": [
+            "shirt"
+          ]
+        },
+        {
+          "name": "Option4",
+          "values": [
+            "With"
+          ]
+        },
+        {
+          "name": "Option5",
+          "values": [
+            "A"
+          ]
+        },
+        {
+          "name": "Option6",
+          "values": [
+            "Cat"
+          ]
+        },
+        {
+          "name": "Option7",
+          "values": [
+            "Cartoon"
+          ]
+        },
+        {
+          "name": "Option8",
+          "values": [
+            "Pattern"
+          ]
+        },
+        {
+          "name": "Color",
+          "values": [
+            "Black"
+          ]
+        },
+        {
+          "name": "Size",
+          "values": [
+            "2XL",
+            "3XL",
+            "L",
+            "M",
+            "S",
+            "XL"
+          ]
+        },
+        {
+          "name": "Option9",
+          "values": [
+            "A462",
+            "P0826",
+            "P083501",
+            "P083502",
+            "P083503",
+            "Retro"
+          ]
+        },
+        {
+          "name": "Option10",
+          "values": [
+            "Retro"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2512181002531639000",
+      "spu": "2512181002531639000",
+      "title": "Thickened Heat-Transfer Digital-Print Pet Collar",
+      "variantCount": 48,
+      "optionsSchema": [
+        {
+          "name": "Option1",
+          "values": [
+            "Thickened"
+          ]
+        },
+        {
+          "name": "Option2",
+          "values": [
+            "Heat"
+          ]
+        },
+        {
+          "name": "Option3",
+          "values": [
+            "Transfer"
+          ]
+        },
+        {
+          "name": "Option4",
+          "values": [
+            "Digital"
+          ]
+        },
+        {
+          "name": "Option5",
+          "values": [
+            "Print"
+          ]
+        },
+        {
+          "name": "Option6",
+          "values": [
+            "Pet"
+          ]
+        },
+        {
+          "name": "Option7",
+          "values": [
+            "Collar"
+          ]
+        },
+        {
+          "name": "Color",
+          "values": [
+            "Black",
+            "Blue",
+            "Green",
+            "Pink",
+            "Red",
+            "White",
+            "blue",
+            "green",
+            "red"
+          ]
+        },
+        {
+          "name": "Option9",
+          "values": [
+            "camouflage",
+            "check",
+            "coffee",
+            "dragon",
+            "ethnic",
+            "floret",
+            "on",
+            "with"
+          ]
+        },
+        {
+          "name": "Option10",
+          "values": [
+            "strip"
+          ]
+        },
+        {
+          "name": "Size",
+          "values": [
+            "L",
+            "M",
+            "S",
+            "XL"
+          ]
+        },
+        {
+          "name": "Option11",
+          "values": [
+            "background"
+          ]
+        },
+        {
+          "name": "Option8",
+          "values": [
+            "Lanbailing",
+            "Safflower"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2512160252431632700",
+      "spu": "2512160252431632700",
+      "title": "Thickened Heat-Transfer Digital-Print Pet Collar",
+      "variantCount": 48,
+      "optionsSchema": [
+        {
+          "name": "Option1",
+          "values": [
+            "Thickened"
+          ]
+        },
+        {
+          "name": "Option2",
+          "values": [
+            "Heat"
+          ]
+        },
+        {
+          "name": "Option3",
+          "values": [
+            "Transfer"
+          ]
+        },
+        {
+          "name": "Option4",
+          "values": [
+            "Digital"
+          ]
+        },
+        {
+          "name": "Option5",
+          "values": [
+            "Print"
+          ]
+        },
+        {
+          "name": "Option6",
+          "values": [
+            "Pet"
+          ]
+        },
+        {
+          "name": "Option7",
+          "values": [
+            "Collar"
+          ]
+        },
+        {
+          "name": "Color",
+          "values": [
+            "Black",
+            "Blue",
+            "Brown",
+            "Green",
+            "Pink",
+            "Red",
+            "White"
+          ]
+        },
+        {
+          "name": "Option9",
+          "values": [
+            "And",
+            "Background",
+            "Camouflage",
+            "Coffee",
+            "Ethnic",
+            "On",
+            "Plaid"
+          ]
+        },
+        {
+          "name": "Option10",
+          "values": [
+            "DragonBlack",
+            "Flower",
+            "Stripes"
+          ]
+        },
+        {
+          "name": "Size",
+          "values": [
+            "L",
+            "M",
+            "S",
+            "XL"
+          ]
+        },
+        {
+          "name": "Option8",
+          "values": [
+            "Plaid"
+          ]
+        },
+        {
+          "name": "Option11",
+          "values": [
+            "Background",
+            "Flowers",
+            "Plaid",
+            "Rhombus"
+          ]
+        },
+        {
+          "name": "Option12",
+          "values": [
+            "Plaid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2512131049501635700",
+      "spu": "2512131049501635700",
+      "title": "Loose-fit Pure-cotton Short-sleeve T-shirt With Cat Transpar",
+      "variantCount": 42,
+      "optionsSchema": [
+        {
+          "name": "Option1",
+          "values": [
+            "Loose"
+          ]
+        },
+        {
+          "name": "Option2",
+          "values": [
+            "fit"
+          ]
+        },
+        {
+          "name": "Option3",
+          "values": [
+            "Pure"
+          ]
+        },
+        {
+          "name": "Option4",
+          "values": [
+            "cotton"
+          ]
+        },
+        {
+          "name": "Option5",
+          "values": [
+            "Short"
+          ]
+        },
+        {
+          "name": "Option6",
+          "values": [
+            "sleeve"
+          ]
+        },
+        {
+          "name": "Option7",
+          "values": [
+            "T"
+          ]
+        },
+        {
+          "name": "Option8",
+          "values": [
+            "shirt"
+          ]
+        },
+        {
+          "name": "Option9",
+          "values": [
+            "With"
+          ]
+        },
+        {
+          "name": "Option10",
+          "values": [
+            "Cat"
+          ]
+        },
+        {
+          "name": "Option11",
+          "values": [
+            "Transparent"
+          ]
+        },
+        {
+          "name": "Option12",
+          "values": [
+            "Ghost"
+          ]
+        },
+        {
+          "name": "Option13",
+          "values": [
+            "Design"
+          ]
+        },
+        {
+          "name": "Color",
+          "values": [
+            "Black",
+            "Blue",
+            "Gray",
+            "Pink",
+            "White"
+          ]
+        },
+        {
+          "name": "Size",
+          "values": [
+            "2XL",
+            "3XL",
+            "L",
+            "M",
+            "S",
+            "XL",
+            "XS"
+          ]
+        },
+        {
+          "name": "Option14",
+          "values": [
+            "Coffee"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2509020834451626400",
+      "spu": "2509020834451626400",
+      "title": "Square Head Flip Flops French Style Kitten Heel Women",
+      "variantCount": 39,
+      "optionsSchema": [
+        {
+          "name": "Option1",
+          "values": [
+            "Square"
+          ]
+        },
+        {
+          "name": "Option2",
+          "values": [
+            "Head"
+          ]
+        },
+        {
+          "name": "Option3",
+          "values": [
+            "Flip"
+          ]
+        },
+        {
+          "name": "Option4",
+          "values": [
+            "Flops"
+          ]
+        },
+        {
+          "name": "Option5",
+          "values": [
+            "French"
+          ]
+        },
+        {
+          "name": "Option6",
+          "values": [
+            "Style"
+          ]
+        },
+        {
+          "name": "Option7",
+          "values": [
+            "Kitten"
+          ]
+        },
+        {
+          "name": "Option8",
+          "values": [
+            "Heel"
+          ]
+        },
+        {
+          "name": "Option9",
+          "values": [
+            "Women"
+          ]
+        },
+        {
+          "name": "Option10",
+          "values": [
+            "Khaki",
+            "Low"
+          ]
+        },
+        {
+          "name": "Option11",
+          "values": [
+            "Flat",
+            "Heel"
+          ]
+        },
+        {
+          "name": "Option12",
+          "values": [
+            "Bottom",
+            "Khaki"
+          ]
+        },
+        {
+          "name": "Size",
+          "values": [
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40"
+          ]
+        },
+        {
+          "name": "Color",
+          "values": [
+            "Black",
+            "Brown"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2511280721441614100",
+      "spu": "2511280721441614100",
+      "title": "Autumn And Winter Kitten Heels With Pointed Fashion Boots",
+      "variantCount": 39,
+      "optionsSchema": [
+        {
+          "name": "Option1",
+          "values": [
+            "Autumn"
+          ]
+        },
+        {
+          "name": "Option2",
+          "values": [
+            "And"
+          ]
+        },
+        {
+          "name": "Option3",
+          "values": [
+            "Winter"
+          ]
+        },
+        {
+          "name": "Option4",
+          "values": [
+            "Kitten"
+          ]
+        },
+        {
+          "name": "Option5",
+          "values": [
+            "Heels"
+          ]
+        },
+        {
+          "name": "Option6",
+          "values": [
+            "With"
+          ]
+        },
+        {
+          "name": "Option7",
+          "values": [
+            "Pointed"
+          ]
+        },
+        {
+          "name": "Option8",
+          "values": [
+            "Fashion"
+          ]
+        },
+        {
+          "name": "Option9",
+          "values": [
+            "Boots"
+          ]
+        },
+        {
+          "name": "Color",
+          "values": [
+            "Black",
+            "White",
+            "Yellow"
+          ]
+        },
+        {
+          "name": "Size",
+          "values": [
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2512120602421607000",
+      "spu": "2512120602421607000",
+      "title": "Sofa Cover Cloth To Protect Sofas From Cat Scratches",
+      "variantCount": 33,
+      "optionsSchema": [
+        {
+          "name": "Option1",
+          "values": [
+            "Sofa"
+          ]
+        },
+        {
+          "name": "Option2",
+          "values": [
+            "Cover"
+          ]
+        },
+        {
+          "name": "Option3",
+          "values": [
+            "Cloth"
+          ]
+        },
+        {
+          "name": "Option4",
+          "values": [
+            "To"
+          ]
+        },
+        {
+          "name": "Option5",
+          "values": [
+            "Protect"
+          ]
+        },
+        {
+          "name": "Option6",
+          "values": [
+            "Sofas"
+          ]
+        },
+        {
+          "name": "Option7",
+          "values": [
+            "From"
+          ]
+        },
+        {
+          "name": "Option8",
+          "values": [
+            "Cat"
+          ]
+        },
+        {
+          "name": "Option9",
+          "values": [
+            "Scratches"
+          ]
+        },
+        {
+          "name": "Color",
+          "values": [
+            "Beige",
+            "Brown",
+            "Gray"
+          ]
+        },
+        {
+          "name": "Option11",
+          "values": [
+            "180x130",
+            "180x150",
+            "180x180",
+            "180x230",
+            "180x260",
+            "180x280",
+            "180x300",
+            "180x340",
+            "180x360",
+            "180x380",
+            "180x420"
+          ]
+        },
+        {
+          "name": "Option10",
+          "values": [
+            "Dark"
+          ]
+        },
+        {
+          "name": "Option12",
+          "values": [
+            "180x130",
+            "180x150",
+            "180x180",
+            "180x230",
+            "180x260",
+            "180x280",
+            "180x300",
+            "180x340",
+            "180x360",
+            "180x380",
+            "180x420"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1957383241848623106",
+      "spu": "1957383241848623106",
+      "title": "Coutgo Womens Slingback Heels Closed Pointed Toe Slip-on Kit",
+      "variantCount": 33,
+      "optionsSchema": [
+        {
+          "name": "Type",
+          "values": [
+            "Standard"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2512150533141616100",
+      "spu": "2512150533141616100",
+      "title": "Laser Cat-Eye Glowing Christmas Gift Box",
+      "variantCount": 32,
+      "optionsSchema": [
+        {
+          "name": "Option1",
+          "values": [
+            "Laser"
+          ]
+        },
+        {
+          "name": "Option2",
+          "values": [
+            "Cat"
+          ]
+        },
+        {
+          "name": "Option3",
+          "values": [
+            "Eye"
+          ]
+        },
+        {
+          "name": "Option4",
+          "values": [
+            "Glowing"
+          ]
+        },
+        {
+          "name": "Option5",
+          "values": [
+            "Christmas"
+          ]
+        },
+        {
+          "name": "Option6",
+          "values": [
+            "Gift"
+          ]
+        },
+        {
+          "name": "Option7",
+          "values": [
+            "Box"
+          ]
+        },
+        {
+          "name": "Color",
+          "values": [
+            "Blue",
+            "Green",
+            "Purple",
+            "Red"
+          ]
+        },
+        {
+          "name": "Option9",
+          "values": [
+            "Lighting",
+            "Warm"
+          ]
+        },
+        {
+          "name": "Option10",
+          "values": [
+            "Light",
+            "Lighting"
+          ]
+        },
+        {
+          "name": "Option11",
+          "values": [
+            "Chain",
+            "Channeling"
+          ]
+        },
+        {
+          "name": "Size",
+          "values": [
+            "L",
+            "M",
+            "S"
+          ]
+        },
+        {
+          "name": "Option12",
+          "values": [
+            "3pcs"
+          ]
+        },
+        {
+          "name": "Option13",
+          "values": [
+            "set"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2001948044764160002",
+      "spu": "2001948044764160002",
+      "title": "Tactical Service Dog Harness Strap Set, Car Seat Belt, Colla",
+      "variantCount": 30,
+      "optionsSchema": [
+        {
+          "name": "Type",
+          "values": [
+            "Standard"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2001981223980404738",
+      "spu": "2001981223980404738",
+      "title": "Reflective Breathable Solid Color Polyester Dog Strap",
+      "variantCount": 30,
+      "optionsSchema": [
+        {
+          "name": "Type",
+          "values": [
+            "Standard"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2506260254131626000",
+      "spu": "2506260254131626000",
+      "title": "Women's Leather French-style Retro Open Toe Sandals With Kit",
+      "variantCount": 30,
+      "optionsSchema": [
+        {
+          "name": "Option1",
+          "values": [
+            "Women's"
+          ]
+        },
+        {
+          "name": "Option2",
+          "values": [
+            "Leather"
+          ]
+        },
+        {
+          "name": "Option3",
+          "values": [
+            "French"
+          ]
+        },
+        {
+          "name": "Option4",
+          "values": [
+            "style"
+          ]
+        },
+        {
+          "name": "Option5",
+          "values": [
+            "Retro"
+          ]
+        },
+        {
+          "name": "Option6",
+          "values": [
+            "Open"
+          ]
+        },
+        {
+          "name": "Option7",
+          "values": [
+            "Toe"
+          ]
+        },
+        {
+          "name": "Option8",
+          "values": [
+            "Sandals"
+          ]
+        },
+        {
+          "name": "Option9",
+          "values": [
+            "With"
+          ]
+        },
+        {
+          "name": "Option10",
+          "values": [
+            "Kitten"
+          ]
+        },
+        {
+          "name": "Option11",
+          "values": [
+            "Heel"
+          ]
+        },
+        {
+          "name": "Color",
+          "values": [
+            "Beige",
+            "Black",
+            "Gold",
+            "Red",
+            "Silver",
+            "White"
+          ]
+        },
+        {
+          "name": "Size",
+          "values": [
+            "35",
+            "36",
+            "37",
+            "38",
+            "39"
+          ]
+        }
+      ]
+    }
+  ]
+}

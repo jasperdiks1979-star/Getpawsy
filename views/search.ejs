@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>Search | GetPawsy</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/js/pawsy.js" defer></script>
+</head>
+<body class="pawsy-body">
+  <%- include("partials/header") %>
+  
+  <main class="pawsy-main">
+    <div class="pawsy-container">
+      <div class="pawsy-search-page">
+        <h1 class="pawsy-page-title">Search Results</h1>
+        <p class="pawsy-search-count"><%= results.length %> products found</p>
+
+        <div class="pawsy-search-filters">
+          <form action="/search" method="get" class="pawsy-filter-form">
+            <input type="text" name="q" value="<%= q %>" placeholder="Search products..." class="pawsy-search-input">
+            <select name="category" class="pawsy-filter-select">
+              <option value="">All Categories</option>
+              <option value="dog" <%= category==="dog"?"selected":"" %>>Dogs</option>
+              <option value="cat" <%= category==="cat"?"selected":"" %>>Cats</option>
+            </select>
+            <select name="sort" class="pawsy-filter-select">
+              <option value="">Sort By</option>
+              <option value="price-asc" <%= sort==="price-asc"?"selected":"" %>>Price: Low → High</option>
+              <option value="price-desc" <%= sort==="price-desc"?"selected":"" %>>Price: High → Low</option>
+            </select>
+            <button type="submit" class="pawsy-btn pawsy-btn-primary">Search</button>
+          </form>
+        </div>
+
+        <% if (results.length === 0) { %>
+          <div class="pawsy-empty-state">
+            <p>No products found. Try adjusting your search.</p>
+            <a href="/collections" class="pawsy-btn pawsy-btn-primary">Browse All Products</a>
+          </div>
+        <% } else { %>
+          <div class="pawsy-product-grid">
+            <% results.forEach((p, index) => { %>
+              <article class="pawsy-product-card">
+                <div class="pawsy-product-image">
+                  <img src="<%= p.displayImageProxy %>" alt="<%= p.name %>" loading="<%= index < 8 ? 'eager' : 'lazy' %>" decoding="async" onerror="this.onerror=null;this.src='/images/placeholder-pawsy.webp'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .3s">
+                  <div class="pawsy-product-actions">
+                    <button class="pawsy-quick-add" data-id="<%= p.id %>" title="Quick Add">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="pawsy-product-info">
+                  <h3 class="pawsy-product-name"><%= p.name %></h3>
+                  <div class="pawsy-product-price">
+                    <span class="pawsy-price">$<%= parseFloat(p.price).toFixed(2) %></span>
+                  </div>
+                  <a href="/product/<%= p.id %>" class="pawsy-btn pawsy-btn-outline">View Details</a>
+                </div>
+              </article>
+            <% }) %>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </main>
+
+  <%- include("partials/footer") %>
+  <%- include("partials/pawsy_widget") %>
+
+  <style>
+    .pawsy-search-page { padding: 2rem 0 4rem; }
+    .pawsy-page-title { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .pawsy-search-count { color: var(--pawsy-gray-500); margin-bottom: 2rem; }
+    .pawsy-search-filters { margin-bottom: 2rem; }
+    .pawsy-filter-form {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 1.5rem;
+      background: var(--pawsy-white);
+      border-radius: var(--pawsy-radius-lg);
+    }
+    .pawsy-search-input {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.75rem 1rem;
+      border: 2px solid var(--pawsy-gray-100);
+      border-radius: var(--pawsy-radius);
+      font-size: 1rem;
+    }
+    .pawsy-search-input:focus { outline: none; border-color: var(--pawsy-primary); }
+    .pawsy-filter-select {
+      padding: 0.75rem 1rem;
+      border: 2px solid var(--pawsy-gray-100);
+      border-radius: var(--pawsy-radius);
+      background: var(--pawsy-white);
+    }
+  </style>
+</body>
+</html>

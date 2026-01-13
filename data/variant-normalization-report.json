@@ -1,0 +1,74 @@
+{
+  "startTime": "2026-01-09T15:35:39.887Z",
+  "totalProducts": 539,
+  "productsWithRealVariants": 325,
+  "productsWithDefaultVariants": 214,
+  "totalVariants": 1303,
+  "optionStats": {
+    "Size": 242,
+    "Color": 38
+  },
+  "samples": [
+    {
+      "id": "cj_2003459431347298305",
+      "title": " Rabbit Cage Outdoor, 62\" Wooden Outdoor Rabbit Hu",
+      "variantCount": 1,
+      "options": []
+    },
+    {
+      "id": "cj_2003467052895547394",
+      "title": " 62\" Rabbit Hutch, Wooden Bunny Hutch, Guinea Pig ",
+      "variantCount": 1,
+      "options": []
+    },
+    {
+      "id": "cj_2003288444580573186",
+      "title": "PawHut Two-Tier Antiseptic Wood Rabbit Hutch, 92cm",
+      "variantCount": 1,
+      "options": []
+    },
+    {
+      "id": "cj_2003403386902736898",
+      "title": "PawHut Chinchillas Small Rabbit Guinea Pig Small A",
+      "variantCount": 1,
+      "options": []
+    },
+    {
+      "id": "cj_2003467534565224450",
+      "title": " Large Wooden Rabbit Hutch Small Animal Habitat En",
+      "variantCount": 1,
+      "options": []
+    },
+    {
+      "id": "cj_2003465259402768386",
+      "title": " 54\" 2-Story Weatherproof Stackable Elevated Woode",
+      "variantCount": 1,
+      "options": []
+    },
+    {
+      "id": "cj_2003459502197481474",
+      "title": " 54\" 2-Story Large Rabbit Hutch Bunny Cage Wooden ",
+      "variantCount": 1,
+      "options": []
+    },
+    {
+      "id": "cj_2003465515483721729",
+      "title": " 89\"L Outdoor Rabbit Hutch, Guinea Pig Cage Indoor",
+      "variantCount": 1,
+      "options": []
+    },
+    {
+      "id": "cj_2003465547326877697",
+      "title": " 89\"L Outdoor Rabbit Hutch, Guinea Pig Cage Indoor",
+      "variantCount": 1,
+      "options": []
+    },
+    {
+      "id": "cj_2003468170561363970",
+      "title": " Outdoor Rabbit Cage Elevated Pet House w/ Slide-O",
+      "variantCount": 1,
+      "options": []
+    }
+  ],
+  "endTime": "2026-01-09T15:35:39.966Z"
+}

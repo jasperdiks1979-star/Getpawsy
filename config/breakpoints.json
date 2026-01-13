@@ -1,0 +1,134 @@
+{
+  "version": "1.0.0",
+  "generated": "2025-12-08T17:51:44.786602",
+  "breakpoints": [
+    {
+      "name": "mobile-portrait",
+      "width": 1080,
+      "height": 1350,
+      "aspect_ratio": "1080:1350",
+      "css_query": "@media (max-width: 1080px)",
+      "crop": {
+        "crop_x": 528,
+        "crop_y": 0,
+        "crop_width": 864,
+        "crop_height": 1080,
+        "target_width": 1080,
+        "target_height": 1350
+      },
+      "filename": "hero-mobile-portrait-1080x1350.jpg"
+    },
+    {
+      "name": "mobile-story",
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": "1080:1920",
+      "css_query": "@media (max-width: 1080px)",
+      "crop": {
+        "crop_x": 656,
+        "crop_y": 0,
+        "crop_width": 607,
+        "crop_height": 1080,
+        "target_width": 1080,
+        "target_height": 1920
+      },
+      "filename": "hero-mobile-story-1080x1920.jpg"
+    },
+    {
+      "name": "mobile-square",
+      "width": 1080,
+      "height": 1080,
+      "aspect_ratio": "1080:1080",
+      "css_query": "@media (max-width: 1080px)",
+      "crop": {
+        "crop_x": 420,
+        "crop_y": 0,
+        "crop_width": 1080,
+        "crop_height": 1080,
+        "target_width": 1080,
+        "target_height": 1080
+      },
+      "filename": "hero-mobile-square-1080x1080.jpg"
+    },
+    {
+      "name": "tablet-landscape",
+      "width": 1600,
+      "height": 900,
+      "aspect_ratio": "1600:900",
+      "css_query": "@media (max-width: 1600px)",
+      "crop": {
+        "crop_x": 0,
+        "crop_y": 0,
+        "crop_width": 1920,
+        "crop_height": 1080,
+        "target_width": 1600,
+        "target_height": 900
+      },
+      "filename": "hero-tablet-landscape-1600x900.jpg"
+    },
+    {
+      "name": "desktop-hd",
+      "width": 1920,
+      "height": 1080,
+      "aspect_ratio": "1920:1080",
+      "css_query": "@media (max-width: 1920px)",
+      "crop": {
+        "crop_x": 0,
+        "crop_y": 0,
+        "crop_width": 1920,
+        "crop_height": 1080,
+        "target_width": 1920,
+        "target_height": 1080
+      },
+      "filename": "hero-desktop-hd-1920x1080.jpg"
+    },
+    {
+      "name": "desktop-ultrawide",
+      "width": 2560,
+      "height": 1080,
+      "aspect_ratio": "2560:1080",
+      "css_query": "@media (max-width: 2560px)",
+      "crop": {
+        "crop_x": 0,
+        "crop_y": 135,
+        "crop_width": 1920,
+        "crop_height": 810,
+        "target_width": 2560,
+        "target_height": 1080
+      },
+      "filename": "hero-desktop-ultrawide-2560x1080.jpg"
+    },
+    {
+      "name": "desktop-4k-ultrawide",
+      "width": 3440,
+      "height": 1440,
+      "aspect_ratio": "3440:1440",
+      "css_query": "@media (max-width: 3440px)",
+      "crop": {
+        "crop_x": 0,
+        "crop_y": 138,
+        "crop_width": 1920,
+        "crop_height": 803,
+        "target_width": 3440,
+        "target_height": 1440
+      },
+      "filename": "hero-desktop-4k-ultrawide-3440x1440.jpg"
+    },
+    {
+      "name": "desktop-5k",
+      "width": 3840,
+      "height": 1600,
+      "aspect_ratio": "3840:1600",
+      "css_query": "@media (max-width: 3840px)",
+      "crop": {
+        "crop_x": 0,
+        "crop_y": 140,
+        "crop_width": 1920,
+        "crop_height": 800,
+        "target_width": 3840,
+        "target_height": 1600
+      },
+      "filename": "hero-desktop-5k-3840x1600.jpg"
+    }
+  ]
+}

@@ -1,0 +1,526 @@
+{
+  "themes": [
+    {
+      "id": "theme_dog_chewers",
+      "name": "Chewers & Tough Toys",
+      "petType": "dog",
+      "categoryKeys": [
+        "toys",
+        "chew",
+        "durable",
+        "dental"
+      ],
+      "intentKeywords": [
+        "chew toy",
+        "durable dog toy",
+        "aggressive chewer",
+        "indestructible dog toy",
+        "dental chew",
+        "tough rubber toy",
+        "dog chewing",
+        "strong dog toy"
+      ],
+      "headlineTemplates": [
+        "Shop {ProductShort}",
+        "Built for Chewers",
+        "Durable Dog Toys",
+        "{Pet} Approved Chews",
+        "GetPawsy Top Pick"
+      ],
+      "longHeadlineTemplates": [
+        "Premium durable toys for aggressive chewers — curated by GetPawsy.",
+        "{ProductShort} — built tough for your pup's strongest chews."
+      ],
+      "descriptionTemplates": [
+        "Discover {ProductShort}, designed for dogs who love to chew. Durable materials built to last. Shop GetPawsy today.",
+        "Give your pup a toy that lasts. {ProductShort} is made for aggressive chewers. Free returns, secure checkout."
+      ],
+      "calloutsDefault": [
+        "Durable Design",
+        "Built for Chewers",
+        "Easy Returns",
+        "Secure Checkout",
+        "Quality Picks"
+      ],
+      "structuredSnippetsDefault": [
+        {
+          "header": "Features",
+          "values": [
+            "Durable",
+            "Easy Grip",
+            "Long-Lasting",
+            "Easy Clean"
+          ]
+        }
+      ],
+      "audienceDefaults": {
+        "inMarket": [
+          "Dog Supplies",
+          "Pet Supplies",
+          "Dog Toys"
+        ],
+        "interests": [
+          "Pet Owners",
+          "Dog Lovers"
+        ],
+        "customIntentKeywords": [
+          "buy dog chew toy",
+          "durable dog toys",
+          "indestructible dog toy",
+          "best chew toys for dogs"
+        ]
+      },
+      "isActive": true,
+      "createdAt": "2025-12-13T22:12:58.984Z",
+      "updatedAt": "2025-12-13T22:12:58.984Z"
+    },
+    {
+      "id": "theme_dog_walk",
+      "name": "Walk & Train Essentials",
+      "petType": "dog",
+      "categoryKeys": [
+        "leash",
+        "harness",
+        "collar",
+        "training",
+        "walk"
+      ],
+      "intentKeywords": [
+        "leash",
+        "harness",
+        "no pull",
+        "dog training",
+        "collar",
+        "dog walking",
+        "puppy training",
+        "lead"
+      ],
+      "headlineTemplates": [
+        "Shop {ProductShort}",
+        "Walk & Train Gear",
+        "No-Pull Harnesses",
+        "Everyday Dog Walks",
+        "GetPawsy Essentials"
+      ],
+      "longHeadlineTemplates": [
+        "Premium walking and training gear for your best walks together — GetPawsy.",
+        "{ProductShort} — making daily walks easier and more enjoyable."
+      ],
+      "descriptionTemplates": [
+        "Upgrade your dog walks with {ProductShort}. Comfortable fit, easy control. Shop GetPawsy now.",
+        "Train smarter with {ProductShort}. Designed for comfort and control on every walk."
+      ],
+      "calloutsDefault": [
+        "No-Pull Options",
+        "Comfortable Fit",
+        "Easy Returns",
+        "Secure Checkout",
+        "Quality Picks"
+      ],
+      "structuredSnippetsDefault": [
+        {
+          "header": "Good For",
+          "values": [
+            "Daily Walks",
+            "Training",
+            "Puppies",
+            "Large Dogs"
+          ]
+        }
+      ],
+      "audienceDefaults": {
+        "inMarket": [
+          "Dog Supplies",
+          "Pet Supplies",
+          "Dog Training"
+        ],
+        "interests": [
+          "Pet Owners",
+          "Dog Training"
+        ],
+        "customIntentKeywords": [
+          "buy dog leash",
+          "no pull harness",
+          "dog walking gear",
+          "puppy training supplies"
+        ]
+      },
+      "isActive": true,
+      "createdAt": "2025-12-13T22:12:58.984Z",
+      "updatedAt": "2025-12-13T22:12:58.984Z"
+    },
+    {
+      "id": "theme_dog_beds",
+      "name": "Comfort & Beds",
+      "petType": "dog",
+      "categoryKeys": [
+        "bed",
+        "comfort",
+        "sleep",
+        "orthopedic",
+        "mat",
+        "crate"
+      ],
+      "intentKeywords": [
+        "dog bed",
+        "cozy dog bed",
+        "orthopedic",
+        "washable cover",
+        "crate mat",
+        "pet bed",
+        "sleeping mat"
+      ],
+      "headlineTemplates": [
+        "Shop {ProductShort}",
+        "Cozy Dog Beds",
+        "Comfort for Pups",
+        "Rest & Relaxation",
+        "GetPawsy Comfort"
+      ],
+      "longHeadlineTemplates": [
+        "Premium cozy beds for your pup's best rest — curated by GetPawsy.",
+        "{ProductShort} — where comfort meets quality for happier naps."
+      ],
+      "descriptionTemplates": [
+        "Give your dog the rest they deserve with {ProductShort}. Cozy, washable, and built to last. Shop now.",
+        "Premium comfort for your pup. {ProductShort} features easy-clean materials and superior cushioning."
+      ],
+      "calloutsDefault": [
+        "Cozy Comfort",
+        "Easy Clean",
+        "Easy Returns",
+        "Secure Checkout",
+        "Quality Picks"
+      ],
+      "structuredSnippetsDefault": [
+        {
+          "header": "Types",
+          "values": [
+            "Beds",
+            "Mats",
+            "Covers",
+            "Crate Pads"
+          ]
+        }
+      ],
+      "audienceDefaults": {
+        "inMarket": [
+          "Dog Supplies",
+          "Pet Supplies",
+          "Pet Beds"
+        ],
+        "interests": [
+          "Pet Owners",
+          "Home & Garden"
+        ],
+        "customIntentKeywords": [
+          "buy dog bed",
+          "orthopedic dog bed",
+          "washable dog bed",
+          "cozy pet bed"
+        ]
+      },
+      "isActive": true,
+      "createdAt": "2025-12-13T22:12:58.984Z",
+      "updatedAt": "2025-12-13T22:12:58.984Z"
+    },
+    {
+      "id": "theme_cat_enrichment",
+      "name": "Cat Enrichment & Play",
+      "petType": "cat",
+      "categoryKeys": [
+        "toys",
+        "interactive",
+        "enrichment",
+        "play",
+        "puzzle"
+      ],
+      "intentKeywords": [
+        "interactive cat toy",
+        "enrichment",
+        "boredom",
+        "teaser",
+        "puzzle toy",
+        "cat play",
+        "indoor cat"
+      ],
+      "headlineTemplates": [
+        "Shop {ProductShort}",
+        "Interactive Cat Toys",
+        "Keep Cats Busy",
+        "Indoor Cat Fun",
+        "GetPawsy Cat Picks"
+      ],
+      "longHeadlineTemplates": [
+        "Interactive toys to keep your cat entertained for hours — GetPawsy.",
+        "{ProductShort} — enrichment and play for happier indoor cats."
+      ],
+      "descriptionTemplates": [
+        "Keep your cat engaged with {ProductShort}. Interactive design for endless fun. Shop GetPawsy today.",
+        "Beat boredom with {ProductShort}. Designed to stimulate your cat's natural instincts."
+      ],
+      "calloutsDefault": [
+        "Keeps Cats Busy",
+        "Indoor Fun",
+        "Easy Returns",
+        "Secure Checkout",
+        "Quality Picks"
+      ],
+      "structuredSnippetsDefault": [
+        {
+          "header": "Features",
+          "values": [
+            "Interactive",
+            "Engaging",
+            "Indoor-Friendly",
+            "Stimulating"
+          ]
+        }
+      ],
+      "audienceDefaults": {
+        "inMarket": [
+          "Cat Supplies",
+          "Pet Supplies",
+          "Cat Toys"
+        ],
+        "interests": [
+          "Pet Owners",
+          "Cat Lovers"
+        ],
+        "customIntentKeywords": [
+          "buy cat toys",
+          "interactive cat toy",
+          "indoor cat entertainment",
+          "puzzle toys for cats"
+        ]
+      },
+      "isActive": true,
+      "createdAt": "2025-12-13T22:12:58.984Z",
+      "updatedAt": "2025-12-13T22:12:58.984Z"
+    },
+    {
+      "id": "theme_cat_scratch",
+      "name": "Scratch & Furniture",
+      "petType": "cat",
+      "categoryKeys": [
+        "scratching",
+        "post",
+        "tree",
+        "scratcher",
+        "sisal",
+        "furniture"
+      ],
+      "intentKeywords": [
+        "scratching post",
+        "cat tree",
+        "scratcher",
+        "sisal",
+        "furniture protection",
+        "cat climbing"
+      ],
+      "headlineTemplates": [
+        "Shop {ProductShort}",
+        "Cat Scratching Posts",
+        "Protect Your Furniture",
+        "Cat Trees & More",
+        "GetPawsy Cat Picks"
+      ],
+      "longHeadlineTemplates": [
+        "Premium scratchers and cat trees your feline will love — GetPawsy.",
+        "{ProductShort} — save your furniture while keeping your cat happy."
+      ],
+      "descriptionTemplates": [
+        "Give your cat a scratching outlet with {ProductShort}. Protect your furniture, satisfy their instincts.",
+        "Premium cat furniture from GetPawsy. {ProductShort} combines fun and function for happier cats."
+      ],
+      "calloutsDefault": [
+        "Protect Furniture",
+        "Cat-Approved",
+        "Easy Returns",
+        "Secure Checkout",
+        "Quality Picks"
+      ],
+      "structuredSnippetsDefault": [
+        {
+          "header": "Types",
+          "values": [
+            "Scratchers",
+            "Posts",
+            "Trees",
+            "Loungers"
+          ]
+        }
+      ],
+      "audienceDefaults": {
+        "inMarket": [
+          "Cat Supplies",
+          "Pet Supplies",
+          "Cat Furniture"
+        ],
+        "interests": [
+          "Pet Owners",
+          "Cat Lovers"
+        ],
+        "customIntentKeywords": [
+          "buy cat scratcher",
+          "cat tree",
+          "scratching post",
+          "cat furniture"
+        ]
+      },
+      "isActive": true,
+      "createdAt": "2025-12-13T22:12:58.984Z",
+      "updatedAt": "2025-12-13T22:12:58.984Z"
+    },
+    {
+      "id": "theme_cat_litter",
+      "name": "Litter & Cleaning",
+      "petType": "cat",
+      "categoryKeys": [
+        "litter",
+        "box",
+        "cleaning",
+        "hygiene",
+        "scoop",
+        "mat"
+      ],
+      "intentKeywords": [
+        "litter box",
+        "odor control",
+        "scoop",
+        "mat",
+        "cat hygiene",
+        "litter pan",
+        "cat cleanup"
+      ],
+      "headlineTemplates": [
+        "Shop {ProductShort}",
+        "Litter Box Solutions",
+        "Cleaner Cat Home",
+        "Odor Control Gear",
+        "GetPawsy Cat Care"
+      ],
+      "longHeadlineTemplates": [
+        "Premium litter solutions for a cleaner, fresher home — GetPawsy.",
+        "{ProductShort} — practical cat care for a tidier living space."
+      ],
+      "descriptionTemplates": [
+        "Keep your home fresh with {ProductShort}. Easy setup, effective odor control. Shop GetPawsy now.",
+        "Simplify cat care with {ProductShort}. Designed for easy cleaning and odor management."
+      ],
+      "calloutsDefault": [
+        "Cleaner Home",
+        "Easy Setup",
+        "Easy Returns",
+        "Secure Checkout",
+        "Quality Picks"
+      ],
+      "structuredSnippetsDefault": [
+        {
+          "header": "Features",
+          "values": [
+            "Easy Clean",
+            "Odor Control",
+            "Practical",
+            "Durable"
+          ]
+        }
+      ],
+      "audienceDefaults": {
+        "inMarket": [
+          "Cat Supplies",
+          "Pet Supplies",
+          "Cat Litter"
+        ],
+        "interests": [
+          "Pet Owners",
+          "Cat Lovers"
+        ],
+        "customIntentKeywords": [
+          "buy litter box",
+          "cat litter supplies",
+          "odor control litter",
+          "litter box mat"
+        ]
+      },
+      "isActive": true,
+      "createdAt": "2025-12-13T22:12:58.984Z",
+      "updatedAt": "2025-12-13T22:12:58.984Z"
+    },
+    {
+      "id": "theme_feeding",
+      "name": "Feeding & Hydration",
+      "petType": "both",
+      "categoryKeys": [
+        "bowl",
+        "feeder",
+        "fountain",
+        "food",
+        "water",
+        "hydration",
+        "slow feeder"
+      ],
+      "intentKeywords": [
+        "pet bowl",
+        "slow feeder",
+        "water fountain",
+        "feeder",
+        "hydration",
+        "dog bowl",
+        "cat bowl"
+      ],
+      "headlineTemplates": [
+        "Shop {ProductShort}",
+        "Pet Feeding Bowls",
+        "Daily Pet Essentials",
+        "Hydration Solutions",
+        "GetPawsy Essentials"
+      ],
+      "longHeadlineTemplates": [
+        "Premium feeding and hydration for happier, healthier pets — GetPawsy.",
+        "{ProductShort} — everyday essentials for your pet's well-being."
+      ],
+      "descriptionTemplates": [
+        "Upgrade mealtimes with {ProductShort}. Easy-clean, practical design for daily use. Shop now.",
+        "Keep your pet hydrated and happy with {ProductShort}. Quality feeding solutions from GetPawsy."
+      ],
+      "calloutsDefault": [
+        "Daily Essential",
+        "Easy Clean",
+        "Easy Returns",
+        "Secure Checkout",
+        "Quality Picks"
+      ],
+      "structuredSnippetsDefault": [
+        {
+          "header": "Good For",
+          "values": [
+            "Daily Meals",
+            "Hydration",
+            "All Pets",
+            "Easy Care"
+          ]
+        }
+      ],
+      "audienceDefaults": {
+        "inMarket": [
+          "Pet Supplies",
+          "Dog Supplies",
+          "Cat Supplies"
+        ],
+        "interests": [
+          "Pet Owners"
+        ],
+        "customIntentKeywords": [
+          "buy pet bowl",
+          "slow feeder dog",
+          "cat water fountain",
+          "pet feeding supplies"
+        ]
+      },
+      "isActive": true,
+      "createdAt": "2025-12-13T22:12:58.984Z",
+      "updatedAt": "2025-12-13T22:12:58.984Z"
+    }
+  ]
+}

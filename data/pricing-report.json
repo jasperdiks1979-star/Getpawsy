@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-01-08T23:48:04.638Z",
+  "mode": "fix",
+  "stats": {
+    "total": 539,
+    "valid": 537,
+    "invalid": 2,
+    "lowMargin": 3,
+    "negativeMargin": 2,
+    "badComparePrice": 0,
+    "fixed": 3,
+    "wouldFix": 0
+  },
+  "issues": [
+    {
+      "productId": "1990996021906956290",
+      "title": "Stainless Steel Dog Washing Station, 127",
+      "type": "warning",
+      "message": "Low margin -17% (min: 35%)",
+      "suggestedPrice": 999.99
+    },
+    {
+      "productId": "1990996021906956290",
+      "title": "Stainless Steel Dog Washing Station, 127",
+      "type": "critical",
+      "message": "Negative margin: selling below cost ($1171.56 cost, $999.99 price)"
+    },
+    {
+      "productId": "1990986368192012289",
+      "title": "Stainless Steel Dog Washing Station, 127",
+      "type": "warning",
+      "message": "Low margin -4% (min: 35%)",
+      "suggestedPrice": 999.99
+    },
+    {
+      "productId": "1990986368192012289",
+      "title": "Stainless Steel Dog Washing Station, 127",
+      "type": "critical",
+      "message": "Negative margin: selling below cost ($1043.22 cost, $999.99 price)"
+    },
+    {
+      "productId": "1892139061461774338",
+      "title": "Outdoor Cat House Cat Enclosures 110 Lar",
+      "type": "warning",
+      "message": "Low margin 32% (min: 35%)",
+      "suggestedPrice": 999.99
+    }
+  ]
+}

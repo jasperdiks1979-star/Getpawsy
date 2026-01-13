@@ -1,0 +1,75 @@
+{
+  "timestamp": "2025-12-08T17:51:44.692254",
+  "files": {
+    "version.json": {
+      "exists": true,
+      "size": 209,
+      "status": "OK"
+    },
+    "server.js": {
+      "exists": true,
+      "size": 2402,
+      "status": "OK"
+    },
+    "package.json": {
+      "exists": true,
+      "size": 359,
+      "status": "OK"
+    },
+    "public/css/style.css": {
+      "exists": true,
+      "size": 15549,
+      "status": "OK"
+    },
+    "views/index.ejs": {
+      "exists": true,
+      "size": 1580,
+      "status": "OK"
+    }
+  },
+  "directories": {
+    "engines": {
+      "exists": true,
+      "files": 9,
+      "status": "OK"
+    },
+    "tools": {
+      "exists": true,
+      "files": 5,
+      "status": "OK"
+    },
+    "dashboard": {
+      "exists": true,
+      "files": 1,
+      "status": "OK"
+    },
+    "config": {
+      "exists": true,
+      "files": 2,
+      "status": "OK"
+    },
+    "public": {
+      "exists": true,
+      "files": 4,
+      "status": "OK"
+    },
+    "views": {
+      "exists": true,
+      "files": 8,
+      "status": "OK"
+    },
+    "routes": {
+      "exists": true,
+      "files": 6,
+      "status": "OK"
+    },
+    "logs": {
+      "exists": true,
+      "files": 8,
+      "status": "OK"
+    }
+  },
+  "issues_found": 0,
+  "issues_fixed": 0,
+  "overall_status": "HEALTHY"
+}

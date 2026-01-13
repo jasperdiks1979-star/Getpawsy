@@ -1,0 +1,143 @@
+[
+  {
+    "id": "ORD-001",
+    "userId": "admin-001",
+    "items": [
+      {
+        "productId": "dog-toy-001",
+        "name": "Interactive Squeaky Ball",
+        "quantity": 2,
+        "price": 12.99,
+        "image": "/public/images/products/dog-toy-1.jpg"
+      },
+      {
+        "productId": "dog-bed-001",
+        "name": "Premium Orthopedic Dog Bed",
+        "quantity": 1,
+        "price": 79.99,
+        "image": "/public/images/products/dog-bed-1.jpg"
+      }
+    ],
+    "subtotal": 105.97,
+    "shipping": 5.99,
+    "total": 111.96,
+    "status": "delivered",
+    "shippingAddress": {
+      "name": "Jasper Diks",
+      "street": "123 Pet Street",
+      "city": "Amsterdam",
+      "state": "NH",
+      "zip": "1012AB",
+      "country": "Netherlands"
+    },
+    "createdAt": "2025-11-15T10:30:00.000Z",
+    "updatedAt": "2025-11-20T14:00:00.000Z"
+  },
+  {
+    "id": "ORD-002",
+    "userId": "admin-001",
+    "items": [
+      {
+        "productId": "cat-toy-001",
+        "name": "Feather Wand Teaser",
+        "quantity": 3,
+        "price": 8.99,
+        "image": "/public/images/products/cat-toy-1.jpg"
+      }
+    ],
+    "subtotal": 26.97,
+    "shipping": 0,
+    "total": 26.97,
+    "status": "shipped",
+    "shippingAddress": {
+      "name": "Jasper Diks",
+      "street": "123 Pet Street",
+      "city": "Amsterdam",
+      "state": "NH",
+      "zip": "1012AB",
+      "country": "Netherlands"
+    },
+    "trackingNumber": "1Z999AA10123456784",
+    "createdAt": "2025-12-01T08:15:00.000Z",
+    "updatedAt": "2025-12-05T16:30:00.000Z"
+  },
+  {
+    "id": "ORD-003",
+    "userId": "admin-001",
+    "items": [
+      {
+        "productId": "dog-groom-001",
+        "name": "Professional Grooming Kit",
+        "quantity": 1,
+        "price": 34.99,
+        "image": "/public/images/products/grooming-1.jpg"
+      }
+    ],
+    "subtotal": 34.99,
+    "shipping": 5.99,
+    "total": 40.98,
+    "status": "processing",
+    "shippingAddress": {
+      "name": "Jasper Diks",
+      "street": "456 Paw Avenue",
+      "city": "Rotterdam",
+      "state": "ZH",
+      "zip": "3011AB",
+      "country": "Netherlands"
+    },
+    "createdAt": "2025-12-08T14:45:00.000Z",
+    "updatedAt": "2025-12-08T14:45:00.000Z"
+  },
+  {
+    "id": 1766269060316,
+    "date": "2025-12-20T22:17:40.316Z",
+    "status": "TEST_PAID",
+    "contact": {
+      "name": "Jasper Diks",
+      "email": "jasperdiks@hotmail.com"
+    },
+    "shipping": {
+      "address": "123 Test Street",
+      "city": "Amsterdam",
+      "country": "NL",
+      "zip": "1234AB"
+    },
+    "items": [
+      {
+        "id": "2507010558291608100",
+        "title": "Kitten Entrance Door Mat Entrance Entrance Entrance Dust Removal Wear-resistant Wire",
+        "price": 9.99,
+        "qty": 1
+      }
+    ],
+    "total": 9.99,
+    "paymentMethod": "TEST_MOCK",
+    "testOrder": true
+  },
+  {
+    "id": 1766269095758,
+    "date": "2025-12-20T22:18:15.758Z",
+    "status": "TEST_PAID",
+    "contact": {
+      "name": "Jasper Diks",
+      "email": "jasperdiks@hotmail.com"
+    },
+    "shipping": {
+      "address": "123 Test Street",
+      "city": "Amsterdam",
+      "country": "NL",
+      "zip": "1234AB"
+    },
+    "items": [
+      {
+        "id": "2507010558291608100",
+        "title": "Kitten Entrance Door Mat Entrance Entrance Entrance Dust Removal Wear-resistant Wire",
+        "price": 9.99,
+        "qty": 1
+      }
+    ],
+    "total": 9.99,
+    "paymentMethod": "TEST_MOCK",
+    "testOrder": true
+  }
+]

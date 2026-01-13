@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta name="description" content="<%= typeof metaDescription !== 'undefined' ? metaDescription : 'GetPawsy — Premium toys, beds & essentials for happy dogs and cats. Fast U.S. shipping.' %>">
+  <title><%= typeof title !== 'undefined' ? title : 'GetPawsy — Premium Pet Products' %></title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/styles.css?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : 'dev' %>">
+  
+  <% if (typeof pageCSS !== "undefined" && pageCSS) { %>
+    <% pageCSS.forEach(f => { %>
+      <link rel="stylesheet" href="<%= f %>?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : 'dev' %>">
+    <% }) %>
+  <% } %>
+  
+  <style>
+    html, body {
+      overflow-x: hidden !important;
+      max-width: 100% !important;
+      margin: 0;
+      padding: 0;
+    }
+    * { box-sizing: border-box !important; }
+  </style>
+  
+  <script>
+    window.__BUILD__ = {
+      fingerprint: "<%= typeof BUILD_FINGERPRINT !== 'undefined' ? BUILD_FINGERPRINT : 'dev' %>",
+      version: "<%= typeof version !== 'undefined' ? version : '2.7.3' %>",
+      commit: "<%= typeof gitCommit !== 'undefined' ? gitCommit : 'dev' %>"
+    };
+    console.log('[Build] fingerprint=' + window.__BUILD__.fingerprint);
+    console.log('[Build] version=' + window.__BUILD__.version + ', commit=' + window.__BUILD__.commit);
+    
+    (function() {
+      // Global Build/Fingerprint ensure
+      const fp = "<%= typeof BUILD_FINGERPRINT !== 'undefined' ? BUILD_FINGERPRINT : '' %>";
+      const timestamp = 'v' + Date.now();
+      window.__BUILD__ = {
+        fingerprint: (fp && fp !== 'dev' && !fp.includes('?')) ? fp : timestamp,
+        version: "<%= typeof version !== 'undefined' ? version : '2.7.4' %>",
+        commit: "<%= typeof gitCommit !== 'undefined' ? gitCommit : 'dev' %>"
+      };
+      
+      // SAFARI BFCACHE FIX: Reset stale route state on pageshow (back/forward nav)
+      window.addEventListener('pageshow', function(e) {
+        if (e.persisted) {
+          console.log('[Safari] BFCache restore detected - forcing route state reset');
+          window.__CURRENT_PET_TYPE__ = null;
+          window.__CURRENT_SUBCATEGORY__ = null;
+          window.__LAST_CATEGORY_QUERY__ = null;
+          window.__URL_PET_TYPE__ = null;
+          window.__URL_SUBCATEGORY__ = null;
+          // Force re-route to current URL
+          if (typeof handleRoute === 'function') {
+            setTimeout(function() { handleRoute(); }, 0);
+          }
+        }
+      });
+      
+      // Log initial route info
+      console.log('[Init] pathname=' + window.location.pathname + ', search=' + window.location.search);
+      console.log('[Init] fingerprint=' + window.__BUILD__.fingerprint);
+      
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(regs) {
+          regs.forEach(function(reg) {
+            reg.unregister();
+            console.log('[SW] Unregistered service worker');
+          });
+        }).catch(function(e) { console.log('[SW] Cleanup error:', e); });
+      }
+      if ('caches' in window) {
+        caches.keys().then(function(names) {
+          names.forEach(function(name) {
+            caches.delete(name);
+            console.log('[SW] Cache deleted:', name);
+          });
+        }).catch(function(e) {});
+      }
+      console.log('[SW] Service worker purge complete');
+    })();
+  </script>
+</head>
+<body class="pawsy-body">
+  <%- include("partials/header") %>
+  
+  <main class="pawsy-main">
+    <%- body %>
+  </main>
+  
+  <%- include("partials/footer") %>
+  <%- include("partials/pawsy_widget") %>
+  
+  <script src="/js/cart-store.js?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : 'dev' %>"></script>
+  <script src="/js/cart-ui.js?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : 'dev' %>"></script>
+  <script src="/js/cart-delegate.js?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : 'dev' %>"></script>
+  <script src="/app.js?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : 'dev' %>" defer></script>
+  <script src="/i18n.js?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : 'dev' %>" defer></script>
+  <script src="/js/debug-overlay.js?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : 'dev' %>" defer></script>
+  <!-- Fingerprint Badge (debug mode only) -->
+  <% if (typeof debug !== 'undefined' && debug) { %>
+  <div id="fpBadge" style="position:fixed;bottom:8px;left:8px;z-index:99999;background:rgba(0,0,0,0.9);color:#0f0;font-family:monospace;font-size:10px;padding:4px 8px;border-radius:4px;pointer-events:none;">LIVE: <%= typeof BUILD_FINGERPRINT !== 'undefined' ? BUILD_FINGERPRINT : 'unknown' %></div>
+  <% } %>
+</body>
+</html>

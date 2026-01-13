@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetPawsy - Premium Pet Products</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/megaMenu.css">
+    <link rel="stylesheet" href="/public/css/homepage/homepage.css">
+    <link rel="stylesheet" href="/public/css/product/product.css">
+    <link rel="stylesheet" href="/public/css/collections/collections.css">
+    <link rel="stylesheet" href="/public/css/cart/minicart.css">
+    <link rel="stylesheet" href="/public/css/cart/cartPage.css">
+    <link rel="stylesheet" href="/public/css/checkout/checkout.css">
+    <link rel="stylesheet" href="/public/css/auth/auth.css">
+    <link rel="stylesheet" href="/public/css/payment/payment.css">
+</head>
+<body>
+    <!-- MEGA MENU -->
+    <nav class="mega-nav">
+      <div class="nav-section">
+        <span class="nav-title">Dogs</span>
+        <div class="mega-panel">
+          <a href="/dogs/beds"><img src="/public/icons/bed.svg" alt="Beds">Beds</a>
+          <a href="/dogs/toys"><img src="/public/icons/toy.svg" alt="Toys">Toys</a>
+          <a href="/dogs/grooming"><img src="/public/icons/grooming.svg" alt="Grooming">Grooming</a>
+          <a href="/dogs/harnesses"><img src="/public/icons/harness.svg" alt="Harnesses">Harnesses</a>
+          <a href="/dogs/accessories"><img src="/public/icons/accessories.svg" alt="Accessories">Accessories</a>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <span class="nav-title">Cats</span>
+        <div class="mega-panel">
+          <a href="/cats/beds"><img src="/public/icons/bed.svg" alt="Beds">Beds</a>
+          <a href="/cats/toys"><img src="/public/icons/toy.svg" alt="Toys">Toys</a>
+          <a href="/cats/scratchers"><img src="/public/icons/scratcher.svg" alt="Scratchers">Scratchers</a>
+          <a href="/cats/grooming"><img src="/public/icons/grooming.svg" alt="Grooming">Grooming</a>
+          <a href="/cats/accessories"><img src="/public/icons/accessories.svg" alt="Accessories">Accessories</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MOBILE MENU TRIGGER -->
+    <div id="mobile-nav-trigger" style="display: none;">
+      <button id="open-mobile-menu">☰ Menu</button>
+    </div>
+
+    <!-- MOBILE DRAWER MENU -->
+    <div id="mobile-menu" class="mobile-menu">
+      <button class="close">×</button>
+
+      <h2>Dogs</h2>
+      <a href="/dogs/beds">Beds</a>
+      <a href="/dogs/toys">Toys</a>
+      <a href="/dogs/grooming">Grooming</a>
+      <a href="/dogs/harnesses">Harnesses</a>
+      <a href="/dogs/accessories">Accessories</a>
+
+      <h2>Cats</h2>
+      <a href="/cats/beds">Beds</a>
+      <a href="/cats/toys">Toys</a>
+      <a href="/cats/scratchers">Scratchers</a>
+      <a href="/cats/grooming">Grooming</a>
+      <a href="/cats/accessories">Accessories</a>
+    </div>
+    <!-- HOMEPAGE PRO -->
+    <div class="homepage">
+      
+      <!-- HERO SECTION -->
+      <section class="hero-section">
+        <picture>
+          <source media="(min-width:1400px)" srcset="/images/hero/hero-1.png">
+          <source media="(min-width:992px)" srcset="/images/hero/hero-2.png">
+          <source media="(min-width:600px)" srcset="/images/hero/hero-2.png">
+          <img src="/images/hero/hero-3.png" alt="GetPawsy Hero" class="hero-img">
+        </picture>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <h1>Find the Best for Your Best Friend</h1>
+          <p>Premium dog & cat essentials, shipped fast across the USA.</p>
+          <a href="/collections" class="cta-btn">Shop Now</a>
+        </div>
+      </section>
+
+      <!-- USP SECTION -->
+      <section class="usp-section">
+        <div class="usp-item">
+          <svg class="usp-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm11 0c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+          </svg>
+          <span>Fast US Shipping</span>
+        </div>
+        <div class="usp-item">
+          <svg class="usp-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+          </svg>
+          <span>Vet Approved</span>
+        </div>
+        <div class="usp-item">
+          <svg class="usp-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+          </svg>
+          <span>30-day Returns</span>
+        </div>
+        <div class="usp-item">
+          <svg class="usp-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+          </svg>
+          <span>Secure Checkout</span>
+        </div>
+      </section>
+
+      <!-- FEATURED COLLECTIONS -->
+      <section class="collections-section">
+        <h2>Shop by Category</h2>
+        <div class="collections-grid">
+          <a href="/dogs/toys" class="collection-card">
+            <div class="collection-img" style="background: linear-gradient(135deg, #FF6B9D 0%, #FFA502 100%);">
+              <span class="collection-label">Dog Toys</span>
+            </div>
+          </a>
+          <a href="/dogs/beds" class="collection-card">
+            <div class="collection-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+              <span class="collection-label">Dog Beds</span>
+            </div>
+          </a>
+          <a href="/cats/toys" class="collection-card">
+            <div class="collection-img" style="background: linear-gradient(135deg, #F093FB 0%, #F5576C 100%);">
+              <span class="collection-label">Cat Toys</span>
+            </div>
+          </a>
+          <a href="/cats/scratchers" class="collection-card">
+            <div class="collection-img" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+              <span class="collection-label">Cat Scratchers</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- REVIEWS -->
+      <section class="reviews-section">
+        <h2>What Pet Owners Say</h2>
+        <div class="review-slider">
+          <div class="review-card">
+            <p>"Amazing quality and fast delivery! My pup is so happy!"</p>
+            <span class="review-stars">★★★★★</span>
+            <span class="review-author">- Sarah M.</span>
+          </div>
+          <div class="review-card">
+            <p>"My dog LOVES the new bed! It's incredibly comfortable."</p>
+            <span class="review-stars">★★★★★</span>
+            <span class="review-author">- Mike T.</span>
+          </div>
+          <div class="review-card">
+            <p>"Great customer service. Will shop again for sure!"</p>
+            <span class="review-stars">★★★★★</span>
+            <span class="review-author">- Jessica R.</span>
+          </div>
+          <div class="review-card">
+            <p>"Best prices I've found for premium pet products."</p>
+            <span class="review-stars">★★★★★</span>
+            <span class="review-author">- David L.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- BRAND STORY -->
+      <section class="story-section">
+        <div class="story-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px;"></div>
+        <div class="story-content">
+          <h2>Why Choose GetPawsy?</h2>
+          <p>
+            We curate the best-quality pet products so your furry friends
+            live happier, healthier lives. Fast shipping. Trusted brands.
+            A community of pet lovers dedicated to your pets' wellbeing.
+          </p>
+          <a href="/collections" class="cta-btn">Start Shopping</a>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Mini Cart HTML -->
+    <div id="mini-cart" class="mini-cart">
+      <div class="mini-cart-header">
+        <h3>Your Cart</h3>
+        <button id="close-cart">×</button>
+      </div>
+
+      <div id="mini-cart-items" class="mini-cart-items"></div>
+
+      <div class="mini-cart-footer">
+        <div class="subtotal">
+          <span>Subtotal:</span>
+          <strong id="cart-subtotal">$0.00</strong>
+        </div>
+        <a href="/cart" class="checkout-btn">Go to Cart</a>
+      </div>
+    </div>
+
+    <button id="open-cart" class="cart-icon">🛒 <span id="cart-count">0</span></button>
+
+    <script src="/public/js/main.js" defer></script>
+    <script src="/public/js/mobileMenu.js" defer></script>
+    <script src="/public/js/product/product.js" defer></script>
+    <script src="/public/js/collections/collections.js" defer></script>
+    <script src="/public/js/cart/minicart.js" defer></script>
+    <script src="/public/js/checkout/checkout.js" defer></script>
+    <script src="/public/js/auth/auth.js" defer></script>
+    <script src="/public/js/payment/payment.js" defer></script>
+</body>
+</html>

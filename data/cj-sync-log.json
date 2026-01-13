@@ -1,0 +1,710 @@
+{
+  "timestamp": "2026-01-08T23:46:37.039Z",
+  "totalProducts": 539,
+  "synced": 539,
+  "priceUpdates": 0,
+  "marginIssues": 3,
+  "errors": [],
+  "marginReport": [
+    {
+      "id": "1996064726721794050",
+      "title": "Stylish And Spacious Foldable Soft Pet C",
+      "cost": 45.5,
+      "price": 149.99,
+      "margin": 70
+    },
+    {
+      "id": "1996111912750710786",
+      "title": "Dog Bed - Warm Plush Pet Bed With Remova",
+      "cost": 46.79,
+      "price": 99.99,
+      "margin": 53
+    },
+    {
+      "id": "1996100265990180865",
+      "title": "Outdoor Cat Play Tent With Tunnel, Porta",
+      "cost": 59.83,
+      "price": 149.99,
+      "margin": 60
+    },
+    {
+      "id": "1993916062320009218",
+      "title": "Gardner Small Dog Outdoor Waterproof Por",
+      "cost": 31.1,
+      "price": 69.99,
+      "margin": 56
+    },
+    {
+      "id": "1993885211980353537",
+      "title": "Pet Tear Stain Removal Powder - Natural ",
+      "cost": 13.79,
+      "price": 39.99,
+      "margin": 66
+    },
+    {
+      "id": "1993882260050169858",
+      "title": "Pet Dental Powder - Freshens Breath, Pro",
+      "cost": 13.79,
+      "price": 39.99,
+      "margin": 66
+    },
+    {
+      "id": "1993155042347737090",
+      "title": "2-in-1 Pet Grooming Gloves & Brushes For",
+      "cost": 11.49,
+      "price": 29.99,
+      "margin": 62
+    },
+    {
+      "id": "1993006928471289857",
+      "title": "Pet Stroller 4-Wheels Dog Stroller Carri",
+      "cost": 143.4,
+      "price": 329.99,
+      "margin": 57
+    },
+    {
+      "id": "1993039311227625473",
+      "title": "Wood Pet Stairs/Pet Steps, 2-in-1 Foldab",
+      "cost": 64.47,
+      "price": 149.99,
+      "margin": 57
+    },
+    {
+      "id": "1993007032305479682",
+      "title": "Pet Stroller Foldable 4 Wheels Travel Do",
+      "cost": 91.98,
+      "price": 211.99,
+      "margin": 57
+    },
+    {
+      "id": "1993006996016361474",
+      "title": "Pet Stroller Foldable 4 Wheels Dog Strol",
+      "cost": 69.36,
+      "price": 199.99,
+      "margin": 65
+    },
+    {
+      "id": "1992955820617003009",
+      "title": "Elevated Lounge Pet Bed Foldable Bunk Do",
+      "cost": 92.08,
+      "price": 199.99,
+      "margin": 54
+    },
+    {
+      "id": "1993007067604742145",
+      "title": "Pet Stroller, 4 Wheels Dog Stroller Rota",
+      "cost": 151.78,
+      "price": 364.99,
+      "margin": 58
+    },
+    {
+      "id": "1993006962566787073",
+      "title": "Pet Stroller Foldable 3 Wheels Dog Strol",
+      "cost": 66.86,
+      "price": 199.99,
+      "margin": 67
+    },
+    {
+      "id": "1992488017443860482",
+      "title": "Cat Walking Rope, Vest Style Dog Cartoon",
+      "cost": 3.63,
+      "price": 9.99,
+      "margin": 64
+    },
+    {
+      "id": "1992473230051815426",
+      "title": "Dog Toys, Sound-sounding, Food-hiding, E",
+      "cost": 4.25,
+      "price": 14.99,
+      "margin": 72
+    },
+    {
+      "id": "1992483683275927554",
+      "title": "Pet Colorful Teething Toy Balls, Teethin",
+      "cost": 2.98,
+      "price": 9.99,
+      "margin": 70
+    },
+    {
+      "id": "1991786961910530050",
+      "title": "Pet Stroller For Dogs And Cats - Foldabl",
+      "cost": 53.09,
+      "price": 149.99,
+      "margin": 65
+    },
+    {
+      "id": "1991750114320744449",
+      "title": "Cross-border Dog Bowl, Double-ear Handle",
+      "cost": 6.67,
+      "price": 19.99,
+      "margin": 67
+    },
+    {
+      "id": "1991773771676569602",
+      "title": "Pet Playpen, Small Animal Cage Indoor Po",
+      "cost": 25.74,
+      "price": 59.99,
+      "margin": 57
+    },
+    {
+      "id": "1991244926845751298",
+      "title": "2-in-1 Pet Bike Trailer for Small Dogs",
+      "cost": 152.48,
+      "price": 365.99,
+      "margin": 58
+    },
+    {
+      "id": "1991249014612287489",
+      "title": "Pet Feeding Station Pet Dish Bowl Set wi",
+      "cost": 75.13,
+      "price": 199.99,
+      "margin": 62
+    },
+    {
+      "id": "1991248814751649793",
+      "title": "Raised Pet Food Elevated Feeder with 2 S",
+      "cost": 38.66,
+      "price": 99.99,
+      "margin": 61
+    },
+    {
+      "id": "1991061266784509954",
+      "title": "Dog Chew Toy With Rubber Tire & Tug Of W",
+      "cost": 7.66,
+      "price": 19.99,
+      "margin": 62
+    },
+    {
+      "id": "1991089054435762178",
+      "title": "Pet Stroller, 4 Wheels Dog Stroller Rota",
+      "cost": 181.51,
+      "price": 435.99,
+      "margin": 58
+    },
+    {
+      "id": "1991245205112655874",
+      "title": "Foldable Pet Swimming Pool",
+      "cost": 29.56,
+      "price": 79.99,
+      "margin": 63
+    },
+    {
+      "id": "1991249103250513921",
+      "title": "Pet Feeding Station",
+      "cost": 134.8,
+      "price": 323.99,
+      "margin": 58
+    },
+    {
+      "id": "1991247435350597634",
+      "title": "Pet Sofa Dog Sofa for Small Dogs with St",
+      "cost": 91.7,
+      "price": 220.99,
+      "margin": 59
+    },
+    {
+      "id": "1991244853858525186",
+      "title": "Pet Stroller Foldable Dog Cat Travel Car",
+      "cost": 352.48,
+      "price": 810.99,
+      "margin": 57
+    },
+    {
+      "id": "1991245633315397633",
+      "title": "44'' Strong Pet Dog Crate Mobility Cage ",
+      "cost": 240.88,
+      "price": 554.99,
+      "margin": 57
+    },
+    {
+      "id": "1998322673329934337",
+      "title": "Tiara-Shaped Convertible Dog Bed And Sof",
+      "cost": 52.21,
+      "price": 149.99,
+      "margin": 65
+    },
+    {
+      "id": "1998322616719413249",
+      "title": "Large Dog Bed 67x43x8 Inches - Super Sof",
+      "cost": 94.3,
+      "price": 199.99,
+      "margin": 53
+    },
+    {
+      "id": "1996839415274844162",
+      "title": "Dog Ramp",
+      "cost": 224.54,
+      "price": 538.99,
+      "margin": 58
+    },
+    {
+      "id": "1996846464031129601",
+      "title": "The New Dual-Color Embossed Pet Leash Se",
+      "cost": 15.86,
+      "price": 39.99,
+      "margin": 60
+    },
+    {
+      "id": "1996830523526524930",
+      "title": "UV Printing Camouflage Embossed Pet Leas",
+      "cost": 15.21,
+      "price": 39.99,
+      "margin": 62
+    },
+    {
+      "id": "1996836586367791105",
+      "title": "2-in-1 Dog Crate End Table - Rustic Brow",
+      "cost": 115.49,
+      "price": 265.99,
+      "margin": 57
+    },
+    {
+      "id": "1996870075989405697",
+      "title": "Honeycomb Embossed Dual-Color Pet Leash ",
+      "cost": 13.52,
+      "price": 39.99,
+      "margin": 66
+    },
+    {
+      "id": "1996493861430915074",
+      "title": "Adjustable Bandana Leather Pet Collar Tr",
+      "cost": 12.31,
+      "price": 29.99,
+      "margin": 59
+    },
+    {
+      "id": "1996128475470004225",
+      "title": "Premium Plush Dog Bed With Removable Was",
+      "cost": 37.57,
+      "price": 79.99,
+      "margin": 53
+    },
+    {
+      "id": "1995425463360872450",
+      "title": "Dog Playpen Indoor Fence Height Metal Ex",
+      "cost": 166.93,
+      "price": 400.99,
+      "margin": 58
+    },
+    {
+      "id": "1994702521858703361",
+      "title": "47.2 Mobile Dog Crate With Flip-Top Feed",
+      "cost": 237.99,
+      "price": 571.99,
+      "margin": 58
+    },
+    {
+      "id": "1993164615406215169",
+      "title": "Interactive Dog Treat Ball, A Chewing To",
+      "cost": 14.2,
+      "price": 39.99,
+      "margin": 64
+    },
+    {
+      "id": "1992943318395023361",
+      "title": "Dog Ramp, Folding Pet Ramp For Bed, Adju",
+      "cost": 74.14,
+      "price": 199.99,
+      "margin": 63
+    },
+    {
+      "id": "1992942895668576257",
+      "title": "Dog Dryer, 2800W/4.3HP Dog Blow Dryer, P",
+      "cost": 76.53,
+      "price": 199.99,
+      "margin": 62
+    },
+    {
+      "id": "1992943707889639426",
+      "title": "Dog Whelping Box With Window Transparent",
+      "cost": 159.06,
+      "price": 381.99,
+      "margin": 58
+    },
+    {
+      "id": "1993013779396075521",
+      "title": "Puppy Dog Whelping Pen Box Adjustable Do",
+      "cost": 224.83,
+      "price": 539.99,
+      "margin": 58
+    },
+    {
+      "id": "1992943361081131009",
+      "title": "Dog Ramp, Folding Pet Ramp For Bed, Adju",
+      "cost": 102.84,
+      "price": 215.99,
+      "margin": 52
+    },
+    {
+      "id": "1992955763424149505",
+      "title": "Elevated Dog Bed For Large Dogs Portable",
+      "cost": 52.61,
+      "price": 149.99,
+      "margin": 65
+    },
+    {
+      "id": "1992943667305553921",
+      "title": "Dog Whelping Box With Window Transparent",
+      "cost": 251.15,
+      "price": 602.99,
+      "margin": 58
+    },
+    {
+      "id": "1992943746850529281",
+      "title": "Dog Whelping Box With Window Transparent",
+      "cost": 180.58,
+      "price": 433.99,
+      "margin": 58
+    },
+    {
+      "id": "1992955595612528642",
+      "title": "Elevated Dog Bed For Large Dog Portable ",
+      "cost": 38.26,
+      "price": 99.99,
+      "margin": 62
+    },
+    {
+      "id": "1992942857831084034",
+      "title": "Dog Dryer, 2800W/4.3HP Dog Blow Dryer, P",
+      "cost": 80.12,
+      "price": 199.99,
+      "margin": 60
+    },
+    {
+      "id": "1991492625343873025",
+      "title": "Scooby-Doo Durable Squeaky Set Of Dog Ba",
+      "cost": 18.2,
+      "price": 49.99,
+      "margin": 64
+    },
+    {
+      "id": "1991407459189784578",
+      "title": "Dog Car Seat, Dog Booster Seat For Car W",
+      "cost": 56.65,
+      "price": 149.99,
+      "margin": 62
+    },
+    {
+      "id": "1991247020261302274",
+      "title": "Automatic Dog Ball Launcher with 26-79 F",
+      "cost": 102.75,
+      "price": 267.99,
+      "margin": 62
+    },
+    {
+      "id": "1990996021906956290",
+      "title": "Stainless Steel Dog Washing Station, 127",
+      "cost": 1171.56,
+      "price": 999.99,
+      "margin": -17
+    },
+    {
+      "id": "1991180368349270017",
+      "title": "Dog Bike Trailer",
+      "cost": 109.38,
+      "price": 262.99,
+      "margin": 58
+    },
+    {
+      "id": "1991247361706332161",
+      "title": "Dog Sofa Couch Bed with Washable Cushion",
+      "cost": 81.76,
+      "price": 199.99,
+      "margin": 59
+    },
+    {
+      "id": "1991245237379436545",
+      "title": "Outdoor Dog Kennel Galvanized Fence with",
+      "cost": 585.64,
+      "price": 999.99,
+      "margin": 41
+    },
+    {
+      "id": "1991248488560627714",
+      "title": "6 Piece Dog Agility Set with Adjustable ",
+      "cost": 66.29,
+      "price": 199.99,
+      "margin": 67
+    },
+    {
+      "id": "1991248375670935554",
+      "title": "Dog Car Ramp, 75\" x 20\" Extra Long and W",
+      "cost": 77.34,
+      "price": 199.99,
+      "margin": 61
+    },
+    {
+      "id": "1991245594123821058",
+      "title": "Dog Kennel Heavy Duty Playpen with Galva",
+      "cost": 622.1,
+      "price": 999.99,
+      "margin": 38
+    },
+    {
+      "id": "1991245035423698945",
+      "title": "2-in-1 Dog Bike Trailer Pet Stroller Car",
+      "cost": 204.41,
+      "price": 470.99,
+      "margin": 57
+    },
+    {
+      "id": "1991249060212760577",
+      "title": "Dog Food Storage Cabinet with Bowls & Do",
+      "cost": 61.87,
+      "price": 149.99,
+      "margin": 59
+    },
+    {
+      "id": "1991247777249288193",
+      "title": "Elevated Dog Ramp for Bed",
+      "cost": 67.59,
+      "price": 149.99,
+      "margin": 55
+    },
+    {
+      "id": "1991245302634418177",
+      "title": "Outdoor Dog Kennel with Roof",
+      "cost": 351.38,
+      "price": 843.99,
+      "margin": 58
+    },
+    {
+      "id": "1991248004710588418",
+      "title": "Wooden Dog Ramp with Removable Guardrail",
+      "cost": 139.22,
+      "price": 334.99,
+      "margin": 58
+    },
+    {
+      "id": "1991245895694278658",
+      "title": "Dog Crate",
+      "cost": 132.59,
+      "price": 304.99,
+      "margin": 57
+    },
+    {
+      "id": "1991245703133782017",
+      "title": "Outdoor Dog Kennel with Rotating Bowl Ho",
+      "cost": 274.03,
+      "price": 657.99,
+      "margin": 58
+    },
+    {
+      "id": "1991245470326886401",
+      "title": "Dog House Outdoor with Canopy",
+      "cost": 103.86,
+      "price": 249.99,
+      "margin": 58
+    },
+    {
+      "id": "1991248973839458305",
+      "title": "Large Elevated Dog Bowls with Storage Ca",
+      "cost": 70.71,
+      "price": 199.99,
+      "margin": 65
+    },
+    {
+      "id": "1991246085775941634",
+      "title": "Dog House for Medium and Small Dogs",
+      "cost": 69.6,
+      "price": 199.99,
+      "margin": 65
+    },
+    {
+      "id": "1990986368192012289",
+      "title": "Stainless Steel Dog Washing Station, 127",
+      "cost": 1043.22,
+      "price": 999.99,
+      "margin": -4
+    },
+    {
+      "id": "1991247477595627521",
+      "title": "Elevated Dog Bed with Removable Canopy",
+      "cost": 72.92,
+      "price": 199.99,
+      "margin": 64
+    },
+    {
+      "id": "1991180407968665602",
+      "title": "Dog Bike Trailer 2-In-1 Pet Stroller wit",
+      "cost": 176.79,
+      "price": 424.99,
+      "margin": 58
+    },
+    {
+      "id": "1991248909085741057",
+      "title": "Elevated Dog Bowls with Storage",
+      "cost": 74.02,
+      "price": 199.99,
+      "margin": 63
+    },
+    {
+      "id": "1991245809144815618",
+      "title": "34'' 2-in-1 Dog Kennel",
+      "cost": 127.06,
+      "price": 304.99,
+      "margin": 58
+    },
+    {
+      "id": "1991246649321250817",
+      "title": "Outdoor Dog Kennel with Two-Room Design",
+      "cost": 243.09,
+      "price": 583.99,
+      "margin": 58
+    },
+    {
+      "id": "1991246557196881922",
+      "title": "Outdoor Dog Bed with Canopy",
+      "cost": 71.81,
+      "price": 199.99,
+      "margin": 64
+    },
+    {
+      "id": "1991245737925533698",
+      "title": "Dog Playpen with Door & Removable Cover ",
+      "cost": 116.01,
+      "price": 278.99,
+      "margin": 58
+    },
+    {
+      "id": "1991246152146608129",
+      "title": "Cabin-Style Dog House for Large Dogs wit",
+      "cost": 237.56,
+      "price": 570.99,
+      "margin": 58
+    },
+    {
+      "id": "1991251206486396930",
+      "title": "Dog Crate End Table",
+      "cost": 127.06,
+      "price": 292.99,
+      "margin": 57
+    },
+    {
+      "id": "1991244999902138370",
+      "title": "Dog Stroller for Large Medium Small Dogs",
+      "cost": 175.68,
+      "price": 421.99,
+      "margin": 58
+    },
+    {
+      "id": "1991245102712918018",
+      "title": "Dog Bed",
+      "cost": 69.6,
+      "price": 149.99,
+      "margin": 54
+    },
+    {
+      "id": "1991247975203659778",
+      "title": "Dog Ramp with Removable Guardrails",
+      "cost": 86.18,
+      "price": 206.99,
+      "margin": 58
+    },
+    {
+      "id": "1991247398553968642",
+      "title": "Raised Dog Sofa",
+      "cost": 102.75,
+      "price": 246.99,
+      "margin": 58
+    },
+    {
+      "id": "1991245383584485378",
+      "title": "Dog House Outdoor",
+      "cost": 362.43,
+      "price": 869.99,
+      "margin": 58
+    },
+    {
+      "id": "1991246685539065857",
+      "title": "L Dog House Outdoor Indoor for Small",
+      "cost": 229.83,
+      "price": 551.99,
+      "margin": 58
+    },
+    {
+      "id": "1998279478282907650",
+      "title": "Cat Toys - Interactive Toy For Cat , Kit",
+      "cost": 13.52,
+      "price": 39.99,
+      "margin": 66
+    },
+    {
+      "id": "1996395851484209154",
+      "title": "Interactive Rolling Cat Ball",
+      "cost": 16.9,
+      "price": 49.99,
+      "margin": 66
+    },
+    {
+      "id": "1996402356062965762",
+      "title": "Interactive Rolling Cat Ball",
+      "cost": 16.9,
+      "price": 49.99,
+      "margin": 66
+    },
+    {
+      "id": "1996404100507553794",
+      "title": "Interactive Rolling Cat Ball",
+      "cost": 16.3,
+      "price": 49.99,
+      "margin": 67
+    },
+    {
+      "id": "1996097390082297857",
+      "title": "33in Cat Tree, Multi-level Cat Tower Wit",
+      "cost": 44.23,
+      "price": 99.99,
+      "margin": 56
+    },
+    {
+      "id": "1996058560674942978",
+      "title": "Multi-level Natural Pear Wood Cat Tree, ",
+      "cost": 144.69,
+      "price": 376.99,
+      "margin": 62
+    },
+    {
+      "id": "1996066115422294017",
+      "title": "33in Cat Tree, Multi-level Cat Tower Wit",
+      "cost": 44.23,
+      "price": 99.99,
+      "margin": 56
+    },
+    {
+      "id": "1996062625648119810",
+      "title": "27.5in Cat Tree, Multi-level Cat Tower W",
+      "cost": 47.76,
+      "price": 149.99,
+      "margin": 68
+    },
+    {
+      "id": "1996092785891045377",
+      "title": "27.5in Cat Tree, Multi-level Cat Tower W",
+      "cost": 47.76,
+      "price": 149.99,
+      "margin": 68
+    },
+    {
+      "id": "1996088933869965313",
+      "title": "33in Cat Tree, Multi-level Cat Tower Wit",
+      "cost": 44.23,
+      "price": 99.99,
+      "margin": 56
+    },
+    {
+      "id": "1993889907646898178",
+      "title": "Gardner Pets Large Cat Tree For Medium T",
+      "cost": 64.9,
+      "price": 199.99,
+      "margin": 68
+    },
+    {
+      "id": "1993528254033338369",
+      "title": "71 Inch Flower Cat Tree With Large Condo",
+      "cost": 135.19,
+      "price": 283.99,
+      "margin": 52
+    }
+  ]
+}

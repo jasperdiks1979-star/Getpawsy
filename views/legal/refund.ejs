@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Refund Policy | GetPawsy</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .legal-page { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    .legal-page h1 { color: var(--pawsy-primary, #6366f1); margin-bottom: 10px; }
+    .legal-page .last-updated { color: #666; font-size: 14px; margin-bottom: 30px; }
+    .legal-page h2 { color: #333; margin: 30px 0 15px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
+    .legal-page p, .legal-page li { line-height: 1.8; color: #444; }
+    .legal-page ul { padding-left: 25px; margin: 15px 0; }
+    .legal-page .highlight { background: #f8f9ff; padding: 20px; border-radius: 12px; border-left: 4px solid var(--pawsy-primary, #6366f1); margin: 20px 0; }
+    .legal-page .success-box { background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #22c55e; margin: 20px 0; }
+    .legal-page .warning-box { background: #fffbeb; padding: 20px; border-radius: 12px; border-left: 4px solid #f59e0b; margin: 20px 0; }
+    .legal-page table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .legal-page th, .legal-page td { border: 1px solid #e0e0e0; padding: 12px; text-align: left; }
+    .legal-page th { background: #f8f9ff; }
+  </style>
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+  <main class="legal-page">
+    <h1>Refund Policy</h1>
+    <p class="last-updated">Last Updated: December 2024</p>
+
+    <div class="success-box">
+      <p><strong>Hassle-Free Refunds!</strong> We stand behind our products and want you to be completely satisfied. If you're not happy, we'll make it right.</p>
+    </div>
+
+    <h2>Refund Eligibility</h2>
+    <p>You may be eligible for a refund if:</p>
+    <ul>
+      <li>You return an item within 30 days of delivery</li>
+      <li>The item is in original, unused condition</li>
+      <li>The item is defective or damaged upon arrival</li>
+      <li>You received the wrong item</li>
+      <li>Your order was lost in transit</li>
+    </ul>
+
+    <h2>Refund Processing Time</h2>
+    <table>
+      <tr>
+        <th>Stage</th>
+        <th>Timeline</th>
+      </tr>
+      <tr>
+        <td>Return Received & Inspected</td>
+        <td>1-3 business days</td>
+      </tr>
+      <tr>
+        <td>Refund Processed</td>
+        <td>1-2 business days after inspection</td>
+      </tr>
+      <tr>
+        <td>Refund Appears on Statement</td>
+        <td>5-10 business days (depends on bank)</td>
+      </tr>
+    </table>
+    <p><strong>Total Time:</strong> 7-15 business days from when we receive your return.</p>
+
+    <h2>Refund Methods</h2>
+    <ul>
+      <li><strong>Original Payment Method:</strong> Refund to credit/debit card used</li>
+      <li><strong>Store Credit:</strong> Available immediately, 10% bonus added</li>
+      <li><strong>Loyalty Points:</strong> Points used will be restored to your account</li>
+    </ul>
+
+    <h2>Full Refunds</h2>
+    <div class="success-box">
+      <p>You'll receive a <strong>full refund</strong> for:</p>
+      <ul>
+        <li>Defective or damaged products</li>
+        <li>Wrong items shipped</li>
+        <li>Items never received (lost in transit)</li>
+        <li>Unused items returned within 30 days</li>
+      </ul>
+    </div>
+
+    <h2>Partial Refunds</h2>
+    <div class="warning-box">
+      <p><strong>Partial refunds</strong> may be issued for:</p>
+      <ul>
+        <li>Items returned after 30 days (up to 60 days): 75% refund</li>
+        <li>Items with missing parts or accessories: Deduction applied</li>
+        <li>Items showing signs of use: Evaluated case by case</li>
+        <li>Shipping costs for non-defective returns: $5.99 deducted</li>
+      </ul>
+    </div>
+
+    <h2>Non-Refundable Items</h2>
+    <p>The following items cannot be refunded:</p>
+    <ul>
+      <li>Opened pet food and treats (for safety reasons)</li>
+      <li>Personalized or custom-made items</li>
+      <li>Items marked as "Final Sale" or "Clearance"</li>
+      <li>Gift cards</li>
+      <li>Downloadable products</li>
+      <li>Items damaged through customer misuse</li>
+    </ul>
+
+    <h2>Fraud Protection</h2>
+    <div class="highlight">
+      <p><strong>AI-Powered Fraud Detection:</strong> GetPawsy uses advanced fraud detection systems to protect our business and ensure fair treatment for all customers.</p>
+      <p>Refund requests may be reviewed if:</p>
+      <ul>
+        <li>Unusual return patterns are detected</li>
+        <li>Multiple refund requests from the same account</li>
+        <li>Evidence of product misuse or tampering</li>
+        <li>Inconsistent return claims</li>
+      </ul>
+      <p>Fraudulent refund requests may result in account suspension and legal action.</p>
+    </div>
+
+    <h2>Order Cancellation Refunds</h2>
+    <ul>
+      <li><strong>Before Shipping:</strong> Full refund, processed within 24 hours</li>
+      <li><strong>After Shipping:</strong> Must wait for delivery and follow return process</li>
+      <li><strong>Refused Delivery:</strong> Full refund minus return shipping cost</li>
+    </ul>
+
+    <h2>Promotional & Discount Orders</h2>
+    <p>For orders placed with discounts or promotions:</p>
+    <ul>
+      <li>Refund amount reflects the discounted price paid</li>
+      <li>Free items may need to be returned to receive full refund</li>
+      <li>Gift-with-purchase must be returned for full refund</li>
+    </ul>
+
+    <h2>Loyalty Points Refunds</h2>
+    <p>If you paid partially with loyalty points:</p>
+    <ul>
+      <li>Points will be restored to your account</li>
+      <li>Cash portion refunded to original payment method</li>
+      <li>Bonus points earned from purchase will be deducted</li>
+    </ul>
+
+    <h2>How to Request a Refund</h2>
+    <ul>
+      <li>Log into your account and go to "Order History"</li>
+      <li>Select the order and click "Request Refund"</li>
+      <li>Our AI Returns Assistant will process your request</li>
+      <li>Follow instructions to return the item (if applicable)</li>
+    </ul>
+
+    <h2>Contact Us</h2>
+    <p>Questions about your refund?</p>
+    <ul>
+      <li>Email: refunds@getpawsy.com</li>
+      <li>Use the Pawsy AI chatbot for instant assistance</li>
+      <li>Visit: <a href="/contact">Contact Page</a></li>
+    </ul>
+  </main>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>

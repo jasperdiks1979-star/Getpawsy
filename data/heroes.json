@@ -1,0 +1,34 @@
+{
+  "heroes": [
+    {
+      "id": "hero_1765843654314_1hirh3",
+      "category": "dogs",
+      "stylePreset": "bright-premium",
+      "promptUsed": "happy healthy dog, beautiful golden retriever or labrador, friendly expression, pet lifestyle, bright natural lighting, premium product photography style, clean white and gold accents, luxurious feel, high-end pet lifestyle, space for text overlay on left side, clean area for brand messaging, ultra high quality, 4K resolution, professional photography, sharp focus",
+      "paths": {
+        "ultrawide": "/images/hero/dogs/hero_1765843654314_1hirh3-ultrawide.png",
+        "desktop": "/images/hero/dogs/hero_1765843654314_1hirh3-desktop.png",
+        "mobile": "/images/hero/dogs/hero_1765843654314_1hirh3-mobile.png"
+      },
+      "createdAt": "2025-12-16T00:08:48.083Z",
+      "active": false
+    },
+    {
+      "id": "hero_1765843835826_dboq5j",
+      "category": "cats",
+      "stylePreset": "bright-premium",
+      "promptUsed": "elegant cat, beautiful fluffy feline, curious expression, graceful pose, pet lifestyle, bright natural lighting, premium product photography style, clean white and gold accents, luxurious feel, high-end pet lifestyle, space for text overlay on left side, clean area for brand messaging, ultra high quality, 4K resolution, professional photography, sharp focus",
+      "paths": {
+        "ultrawide": "/images/hero/cats/hero_1765843835826_dboq5j-ultrawide.png",
+        "desktop": "/images/hero/cats/hero_1765843835826_dboq5j-desktop.png",
+        "mobile": "/images/hero/cats/hero_1765843835826_dboq5j-mobile.png"
+      },
+      "createdAt": "2025-12-16T00:11:21.248Z",
+      "active": false
+    }
+  ],
+  "activeHeroes": {
+    "dogs": "hero_1765843654314_1hirh3",
+    "cats": "hero_1765843835826_dboq5j"
+  }
+}

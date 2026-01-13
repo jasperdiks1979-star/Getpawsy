@@ -1,0 +1,29 @@
+{
+  "runId": "20251227_101207",
+  "mode": "full",
+  "baseUrl": "https://ad4651eb-04dc-4511-8d1e-8ab38af776d9-00-14rjwa0yfp52y.janeway.replit.dev",
+  "startedAt": "2025-12-27T10:12:07.062Z",
+  "durationMs": 4014,
+  "pass": false,
+  "dataChecks": {
+    "pass": true,
+    "errors": [],
+    "totalProducts": 480,
+    "missingImagesCount": 0,
+    "categoryCounts": {
+      "dogs": 190,
+      "cats": 136,
+      "smallPets": 72,
+      "other": 0
+    },
+    "smallPetsContaminationCount": 0
+  },
+  "uiChecks": {
+    "pass": false,
+    "errors": [
+      "Browser launch failed: browserType.launch: Executable doesn't exist at /home/runner/workspace/.cache/ms-playwright/chromium_headless_shell-1200/chrome-headless-shell-linux64/chrome-headless-shell\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+    ],
+    "screenshots": [],
+    "consoleErrors": []
+  }
+}

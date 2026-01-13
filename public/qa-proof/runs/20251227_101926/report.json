@@ -1,0 +1,25 @@
+{
+  "runId": "20251227_101926",
+  "mode": "fast",
+  "baseUrl": "https://ad4651eb-04dc-4511-8d1e-8ab38af776d9-00-14rjwa0yfp52y.janeway.replit.dev",
+  "startedAt": "2025-12-27T10:19:26.116Z",
+  "durationMs": 3680,
+  "pass": true,
+  "dataChecks": {
+    "pass": true,
+    "errors": [],
+    "totalProducts": 480,
+    "missingImagesCount": 0,
+    "categoryCounts": {
+      "dogs": 190,
+      "cats": 136,
+      "smallPets": 72,
+      "other": 0
+    },
+    "smallPetsContaminationCount": 0
+  },
+  "uiChecks": {
+    "skipped": true,
+    "reason": "fast mode"
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "timestamp": "2025-12-20T22:18:15.662Z",
+  "customer": {
+    "name": "Jasper Diks",
+    "email": "jasperdiks@hotmail.com"
+  },
+  "paymentMode": "STRIPE_TEST",
+  "emailProvider": {
+    "type": "nodemailer",
+    "smtp": "smtp.gmail.com:587",
+    "from": "GetPawsy <no-reply@getpawsy.pet>",
+    "configured": true,
+    "mailUserSet": true,
+    "mailPassSet": true
+  },
+  "orderId": 1766269095758,
+  "orderTotal": 9.99,
+  "emailSent": "FAILED",
+  "emailError": "Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials a1e0cc1a2514c-9434168cb10sm1795730241.7 - gsmtp",
+  "phases": [
+    {
+      "phase": "PHASE 1",
+      "message": "Checking payment provider...",
+      "data": {},
+      "time": "2025-12-20T22:18:15.671Z"
+    },
+    {
+      "phase": "PHASE 1",
+      "message": "Stripe TEST mode confirmed",
+      "data": {},
+      "time": "2025-12-20T22:18:15.671Z"
+    },
+    {
+      "phase": "PHASE 1",
+      "message": "Payment check complete",
+      "data": {
+        "mode": "STRIPE_TEST",
+        "stripeConfigured": true,
+        "webhookConfigured": true
+      },
+      "time": "2025-12-20T22:18:15.672Z"
+    },
+    {
+      "phase": "PHASE 2",
+      "message": "Checking email system...",
+      "data": {},
+      "time": "2025-12-20T22:18:15.674Z"
+    },
+    {
+      "phase": "PHASE 2",
+      "message": "Email system configured",
+      "data": {
+        "provider": "Nodemailer + Gmail SMTP",
+        "from": "GetPawsy <no-reply@getpawsy.pet>"
+      },
+      "time": "2025-12-20T22:18:15.674Z"
+    },
+    {
+      "phase": "PHASE 3",
+      "message": "Creating test order...",
+      "data": {},
+      "time": "2025-12-20T22:18:15.675Z"
+    },
+    {
+      "phase": "PHASE 3",
+      "message": "Order prepared",
+      "data": {
+        "items": 1,
+        "total": "$9.99",
+        "customer": "jasperdiks@hotmail.com"
+      },
+      "time": "2025-12-20T22:18:15.758Z"
+    },
+    {
+      "phase": "PHASE 3",
+      "message": "Order created successfully",
+      "data": {
+        "orderId": 1766269095758,
+        "total": "$9.99",
+        "status": "TEST_PAID",
+        "itemCount": 1
+      },
+      "time": "2025-12-20T22:18:15.760Z"
+    },
+    {
+      "phase": "PHASE 4",
+      "message": "Sending confirmation email...",
+      "data": {},
+      "time": "2025-12-20T22:18:15.760Z"
+    },
+    {
+      "phase": "PHASE 4",
+      "message": "Email send failed",
+      "data": {
+        "error": "Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials a1e0cc1a2514c-9434168cb10sm1795730241.7 - gsmtp"
+      },
+      "time": "2025-12-20T22:18:15.953Z"
+    },
+    {
+      "phase": "PHASE 4",
+      "message": "Email content (SIMULATED)",
+      "data": {
+        "to": "jasperdiks@hotmail.com",
+        "subject": "Your GetPawsy Order #1766269095758 is Confirmed!",
+        "htmlLength": 534
+      },
+      "time": "2025-12-20T22:18:15.953Z"
+    },
+    {
+      "phase": "PHASE 5",
+      "message": "Verifying order in admin...",
+      "data": {},
+      "time": "2025-12-20T22:18:15.954Z"
+    },
+    {
+      "phase": "PHASE 5",
+      "message": "Order found in database",
+      "data": {
+        "id": 1766269095758,
+        "customer": "Jasper Diks",
+        "email": "jasperdiks@hotmail.com",
+        "total": 9.99,
+        "status": "TEST_PAID",
+        "items": 1
+      },
+      "time": "2025-12-20T22:18:15.954Z"
+    },
+    {
+      "phase": "PHASE 6",
+      "message": "Generating report...",
+      "data": {},
+      "time": "2025-12-20T22:18:15.955Z"
+    }
+  ],
+  "summary": {
+    "paymentModeUsed": "STRIPE_TEST",
+    "orderId": 1766269095758,
+    "orderTotal": "$9.99",
+    "emailSent": "FAILED",
+    "emailProvider": "nodemailer",
+    "emailError": "Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials a1e0cc1a2514c-9434168cb10sm1795730241.7 - gsmtp",
+    "canJasperReceiveEmails": "NO",
+    "missingForRealEmails": "Check SMTP credentials",
+    "checkoutProductionReady": "YES",
+    "checkoutMissingFor": null
+  }
+}

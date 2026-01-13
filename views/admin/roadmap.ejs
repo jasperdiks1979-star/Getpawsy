@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Roadmap | GetPawsy Admin</title>
+  <link rel="stylesheet" href="/css/admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #0f0f0f; color: #eaeaea; }
+    .admin-container { display: flex; min-height: 100vh; }
+    .admin-main { margin-left: 260px; padding: 0; flex: 1; background: #1a1a1a; min-height: 100vh; }
+    .admin-content { padding: 25px; }
+    h1 { margin-bottom: 25px; color: #fff; }
+    .phase-card { background: #252525; border-radius: 12px; padding: 25px; border: 1px solid #333; margin-bottom: 20px; }
+    .phase-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+    .phase-title { font-size: 1.2rem; font-weight: 600; color: #00c4a7; }
+    .phase-status { padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .phase-complete { background: #065f46; color: #6ee7b7; }
+    .phase-active { background: #1e40af; color: #93c5fd; }
+    .phase-upcoming { background: #333; color: #999; }
+    .feature-list { list-style: none; }
+    .feature-list li { padding: 10px 0; border-bottom: 1px solid #333; display: flex; align-items: center; gap: 10px; }
+    .feature-list li:last-child { border-bottom: none; }
+    .feature-check { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+    .check-done { background: #065f46; color: #6ee7b7; }
+    .check-pending { background: #333; color: #666; }
+    .checklist-section { background: #252525; border-radius: 12px; padding: 25px; border: 1px solid #333; margin-bottom: 20px; }
+    .checklist-section h2 { color: #00c4a7; margin-bottom: 20px; font-size: 1.1rem; }
+    .checklist-item { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #333; }
+    .checklist-item:last-child { border-bottom: none; }
+    .check-icon { font-size: 18px; }
+    .check-ok { color: #6ee7b7; }
+    .check-missing { color: #fca5a5; }
+    .flags-section { background: #252525; border-radius: 12px; padding: 25px; border: 1px solid #333; }
+    .flags-section h2 { color: #00c4a7; margin-bottom: 20px; font-size: 1.1rem; }
+    .flag-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #333; }
+    .flag-row:last-child { border-bottom: none; }
+    .toggle { width: 50px; height: 26px; background: #333; border-radius: 13px; position: relative; cursor: pointer; transition: background 0.2s; }
+    .toggle.on { background: #00c4a7; }
+    .toggle::after { content: ''; position: absolute; width: 22px; height: 22px; background: #fff; border-radius: 50%; top: 2px; left: 2px; transition: left 0.2s; }
+    .toggle.on::after { left: 26px; }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <%- include("../partials/admin/admin_sidebar", { active: 'roadmap' }) %>
+    
+    <main class="admin-main">
+      <%- include("../partials/admin/admin_header", { pageTitle: 'Roadmap' }) %>
+      
+      <div class="admin-content">
+        <h1>🗺️ GetPawsy Roadmap</h1>
+        
+        <div class="checklist-section">
+          <h2>📋 Release Checklist</h2>
+          <div id="checklist">Loading...</div>
+        </div>
+        
+        <div class="flags-section" style="margin-bottom: 20px;">
+          <h2>🎛️ Feature Flags</h2>
+          <div id="flags">Loading...</div>
+        </div>
+        
+        <div class="phase-card">
+          <div class="phase-header">
+            <span class="phase-title">Phase 0: Stability</span>
+            <span class="phase-status phase-complete">Complete</span>
+          </div>
+          <ul class="feature-list">
+            <li><span class="feature-check check-done">✓</span> Safe boot system</li>
+            <li><span class="feature-check check-done">✓</span> Health endpoints</li>
+            <li><span class="feature-check check-done">✓</span> Job controls</li>
+            <li><span class="feature-check check-done">✓</span> Error handling</li>
+          </ul>
+        </div>
+        
+        <div class="phase-card">
+          <div class="phase-header">
+            <span class="phase-title">Phase 1: Catalog Quality</span>
+            <span class="phase-status phase-complete">Complete</span>
+          </div>
+          <ul class="feature-list">
+            <li><span class="feature-check check-done">✓</span> Pet eligibility filter</li>
+            <li><span class="feature-check check-done">✓</span> US shipping filter</li>
+            <li><span class="feature-check check-done">✓</span> Image validation</li>
+            <li><span class="feature-check check-done">✓</span> Category system</li>
+          </ul>
+        </div>
+        
+        <div class="phase-card">
+          <div class="phase-header">
+            <span class="phase-title">Phase 2: Conversion</span>
+            <span class="phase-status phase-active">Active</span>
+          </div>
+          <ul class="feature-list">
+            <li><span class="feature-check check-done">✓</span> Pawsy AI chatbot</li>
+            <li><span class="feature-check check-done">✓</span> Pawsy Boxes bundles</li>
+            <li><span class="feature-check check-done">✓</span> Pet profiles</li>
+            <li><span class="feature-check check-pending">○</span> Trending badges</li>
+            <li><span class="feature-check check-pending">○</span> SEO Studio</li>
+          </ul>
+        </div>
+        
+        <div class="phase-card">
+          <div class="phase-header">
+            <span class="phase-title">Phase 3: Scale</span>
+            <span class="phase-status phase-upcoming">Upcoming</span>
+          </div>
+          <ul class="feature-list">
+            <li><span class="feature-check check-pending">○</span> Ad assets generator</li>
+            <li><span class="feature-check check-pending">○</span> Email flows</li>
+            <li><span class="feature-check check-pending">○</span> Inventory sync</li>
+            <li><span class="feature-check check-pending">○</span> Fulfillment automation</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script>
+    async function loadChecklist() {
+      try {
+        const res = await fetch('/api/admin/roadmap/checklist');
+        const data = await res.json();
+        
+        if (data.ok) {
+          renderChecklist(data.checklist);
+        }
+      } catch (err) {
+        document.getElementById('checklist').innerHTML = '<div style="color: #f66;">Error loading checklist</div>';
+      }
+    }
+    
+    function renderChecklist(checklist) {
+      const items = [
+        { key: 'ADMIN_PASSWORD', label: 'Admin Password Set' },
+        { key: 'OPENAI_API_KEY', label: 'OpenAI API Key' },
+        { key: 'CJ_API_KEY', label: 'CJ API Credentials' },
+        { key: 'STRIPE_SECRET_KEY', label: 'Stripe API Key' },
+        { key: 'DATABASE_URL', label: 'Database Connected' },
+        { key: 'BACKGROUND_JOBS_ENABLED', label: 'Background Jobs Enabled' }
+      ];
+      
+      document.getElementById('checklist').innerHTML = items.map(item => `
+        <div class="checklist-item">
+          <span class="check-icon ${checklist[item.key] ? 'check-ok' : 'check-missing'}">${checklist[item.key] ? '✓' : '✗'}</span>
+          <span>${item.label}</span>
+        </div>
+      `).join('');
+    }
+    
+    async function loadFlags() {
+      try {
+        const res = await fetch('/api/admin/roadmap/flags');
+        const data = await res.json();
+        
+        if (data.ok) {
+          renderFlags(data.flags);
+        }
+      } catch (err) {
+        document.getElementById('flags').innerHTML = '<div style="color: #f66;">Error loading flags</div>';
+      }
+    }
+    
+    function renderFlags(flags) {
+      const flagList = [
+        { key: 'ENABLE_TRENDING_BADGES', label: 'Trending Badges' },
+        { key: 'ENABLE_PAWSY_INSIGHTS', label: 'Pawsy Insights' },
+        { key: 'ENABLE_SEO_STUDIO', label: 'SEO Studio' },
+        { key: 'ENABLE_AI_PRICING', label: 'AI Pricing' },
+        { key: 'ENABLE_AUTO_FIX_QUEUE', label: 'Auto-Fix Queue' }
+      ];
+      
+      document.getElementById('flags').innerHTML = flagList.map(item => `
+        <div class="flag-row">
+          <span>${item.label}</span>
+          <div class="toggle ${flags[item.key] ? 'on' : ''}" onclick="toggleFlag('${item.key}', ${!flags[item.key]})"></div>
+        </div>
+      `).join('');
+    }
+    
+    async function toggleFlag(key, value) {
+      if (!confirm(`${value ? 'Enable' : 'Disable'} ${key}?`)) return;
+      
+      try {
+        await fetch('/api/admin/roadmap/flags', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ key, value })
+        });
+        loadFlags();
+      } catch (err) {
+        alert('Error: ' + err.message);
+      }
+    }
+    
+    loadChecklist();
+    loadFlags();
+  </script>
+</body>
+</html>

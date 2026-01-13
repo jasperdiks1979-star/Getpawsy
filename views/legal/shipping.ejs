@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Shipping Policy | GetPawsy</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .legal-page { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    .legal-page h1 { color: var(--pawsy-primary, #6366f1); margin-bottom: 10px; }
+    .legal-page .last-updated { color: #666; font-size: 14px; margin-bottom: 30px; }
+    .legal-page h2 { color: #333; margin: 30px 0 15px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
+    .legal-page p, .legal-page li { line-height: 1.8; color: #444; }
+    .legal-page ul { padding-left: 25px; margin: 15px 0; }
+    .legal-page .highlight { background: #f8f9ff; padding: 20px; border-radius: 12px; border-left: 4px solid var(--pawsy-primary, #6366f1); margin: 20px 0; }
+    .legal-page .success-box { background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #22c55e; margin: 20px 0; }
+    .legal-page table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .legal-page th, .legal-page td { border: 1px solid #e0e0e0; padding: 12px; text-align: left; }
+    .legal-page th { background: #f8f9ff; }
+    .legal-page .shipping-icon { font-size: 24px; margin-right: 10px; }
+  </style>
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+  <main class="legal-page">
+    <h1>Shipping Policy</h1>
+    <p class="last-updated">Last Updated: December 2024</p>
+
+    <div class="success-box">
+      <p><span class="shipping-icon">🚚</span><strong>Free Shipping on Orders $50+!</strong> We ship to all 50 US states with fast, reliable delivery.</p>
+    </div>
+
+    <h2>Shipping Coverage</h2>
+    <p>GetPawsy currently ships to:</p>
+    <ul>
+      <li><strong>All 50 US States</strong> including Alaska and Hawaii</li>
+      <li><strong>US Territories:</strong> Puerto Rico, Guam, US Virgin Islands (additional fees may apply)</li>
+      <li><strong>APO/FPO Addresses:</strong> We proudly ship to military addresses</li>
+    </ul>
+    <p><em>Note: We do not currently ship internationally. We're working on expanding our shipping coverage.</em></p>
+
+    <h2>Shipping Options & Delivery Times</h2>
+    <table>
+      <tr>
+        <th>Shipping Method</th>
+        <th>Estimated Delivery</th>
+        <th>Cost</th>
+      </tr>
+      <tr>
+        <td><strong>Standard Shipping</strong></td>
+        <td>5-7 business days</td>
+        <td>$5.99 (Free on orders $50+)</td>
+      </tr>
+      <tr>
+        <td><strong>Express Shipping</strong></td>
+        <td>2-3 business days</td>
+        <td>$12.99</td>
+      </tr>
+      <tr>
+        <td><strong>Priority Shipping</strong></td>
+        <td>1-2 business days</td>
+        <td>$19.99</td>
+      </tr>
+      <tr>
+        <td><strong>Alaska/Hawaii</strong></td>
+        <td>7-10 business days</td>
+        <td>$9.99 (Free on orders $75+)</td>
+      </tr>
+    </table>
+    <p><em>* Business days exclude weekends and federal holidays.</em></p>
+
+    <h2>AI-Powered Delivery Estimates</h2>
+    <div class="highlight">
+      <p>GetPawsy uses AI technology to provide accurate delivery estimates:</p>
+      <ul>
+        <li>Real-time carrier data integration</li>
+        <li>Historical delivery pattern analysis</li>
+        <li>Weather and seasonal delay predictions</li>
+        <li>Updated ETA throughout shipping process</li>
+      </ul>
+      <p>You'll see your personalized delivery estimate at checkout and in order confirmation emails.</p>
+    </div>
+
+    <h2>Order Processing</h2>
+    <ul>
+      <li>Orders placed before 2:00 PM EST typically ship the same business day</li>
+      <li>Orders placed after 2:00 PM EST or on weekends ship the next business day</li>
+      <li>During peak seasons (holidays), processing may take 1-2 additional days</li>
+      <li>You'll receive a shipping confirmation email with tracking number</li>
+    </ul>
+
+    <h2>Shipping Carriers</h2>
+    <p>We partner with trusted carriers to ensure your package arrives safely:</p>
+    <ul>
+      <li><strong>USPS:</strong> Standard and Priority Mail</li>
+      <li><strong>UPS:</strong> Ground and Express services</li>
+      <li><strong>FedEx:</strong> Express and Priority services</li>
+    </ul>
+    <p>The carrier is selected automatically based on your location, package size, and selected shipping speed.</p>
+
+    <h2>Order Tracking</h2>
+    <p>Track your order easily:</p>
+    <ul>
+      <li>Click the tracking link in your shipping confirmation email</li>
+      <li>Log into your account and view "Order History"</li>
+      <li>Ask our Pawsy AI chatbot for tracking updates</li>
+    </ul>
+
+    <h2>Shipping Delays</h2>
+    <p>While we strive for on-time delivery, delays may occur due to:</p>
+    <ul>
+      <li>Weather conditions (storms, natural disasters)</li>
+      <li>High volume periods (holidays, sales events)</li>
+      <li>Carrier delays beyond our control</li>
+      <li>Address verification issues</li>
+    </ul>
+    <p>If your package is significantly delayed, please contact our support team for assistance.</p>
+
+    <h2>Address Accuracy</h2>
+    <p>Please ensure your shipping address is complete and accurate:</p>
+    <ul>
+      <li>Include apartment, suite, or unit numbers</li>
+      <li>Verify ZIP code is correct</li>
+      <li>Provide a valid phone number for delivery notifications</li>
+    </ul>
+    <p>We are not responsible for packages delivered to incorrect addresses provided by customers.</p>
+
+    <h2>Signature Requirements</h2>
+    <ul>
+      <li>Orders under $100: No signature required (left at door)</li>
+      <li>Orders $100+: Signature may be required</li>
+      <li>Request signature confirmation at checkout if desired</li>
+    </ul>
+
+    <h2>Lost or Stolen Packages</h2>
+    <p>If your tracking shows "delivered" but you haven't received your package:</p>
+    <ul>
+      <li>Check with neighbors or building management</li>
+      <li>Look for a carrier notice of attempted delivery</li>
+      <li>Wait 24-48 hours as packages sometimes show delivered early</li>
+      <li>Contact us within 7 days for assistance</li>
+    </ul>
+
+    <h2>Contact Us</h2>
+    <p>Questions about shipping?</p>
+    <ul>
+      <li>Email: shipping@getpawsy.com</li>
+      <li>Use the Pawsy AI chatbot for instant tracking updates</li>
+      <li>Visit: <a href="/contact">Contact Page</a></li>
+    </ul>
+  </main>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>

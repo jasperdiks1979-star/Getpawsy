@@ -1,0 +1,91 @@
+{
+  "mode": "suggest_only",
+  "maxActionsPerRun": 3,
+  "rules": [
+    {
+      "action": "CLEAR_CACHE_REINDEX",
+      "risk": "low",
+      "allowed": true,
+      "requiresApproval": true,
+      "description": "Clear product cache and reindex catalog"
+    },
+    {
+      "action": "REGENERATE_SEO_FOR_MISSING",
+      "risk": "low",
+      "allowed": true,
+      "requiresApproval": true,
+      "description": "Generate SEO content for products missing titles/descriptions"
+    },
+    {
+      "action": "DISABLE_NON_PET_PRODUCTS",
+      "risk": "medium",
+      "allowed": true,
+      "constraints": ["disable_only", "no_delete"],
+      "requiresApproval": true,
+      "description": "Deactivate products that fail pet-only validation"
+    },
+    {
+      "action": "PRODUCT_DEACTIVATE",
+      "risk": "medium",
+      "allowed": true,
+      "constraints": ["disable_only", "no_delete"],
+      "requiresApproval": true,
+      "description": "Deactivate a specific product"
+    },
+    {
+      "action": "FIX_MISSING_IMAGES",
+      "risk": "low",
+      "allowed": true,
+      "requiresApproval": true,
+      "description": "Attempt to resolve missing product images from CJ"
+    },
+    {
+      "action": "PRICE_CHANGES",
+      "risk": "high",
+      "allowed": false,
+      "description": "Price modifications are not allowed"
+    },
+    {
+      "action": "CODE_CHANGES",
+      "risk": "critical",
+      "allowed": false,
+      "description": "Code modifications are never allowed"
+    },
+    {
+      "action": "DELETE_PRODUCT",
+      "risk": "critical",
+      "allowed": false,
+      "description": "Product deletion is not allowed"
+    },
+    {
+      "action": "SCHEMA_CHANGES",
+      "risk": "critical",
+      "allowed": false,
+      "description": "Database schema changes are not allowed"
+    }
+  ],
+  "levelRequirements": {
+    "0": {
+      "name": "Observe Only",
+      "canRunProbe": true,
+      "canRunTriage": true,
+      "canDryRun": true,
+      "canApply": false
+    },
+    "1": {
+      "name": "Suggest Only",
+      "canRunProbe": true,
+      "canRunTriage": true,
+      "canDryRun": true,
+      "canApply": false
+    },
+    "2": {
+      "name": "Safe Fixes",
+      "canRunProbe": true,
+      "canRunTriage": true,
+      "canDryRun": true,
+      "canApply": true,
+      "requiresApproval": true
+    }
+  }
+}

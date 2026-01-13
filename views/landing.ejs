@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta name="description" content="<%= seoMeta.description %>">
+  <meta name="keywords" content="<%= seoMeta.keywords %>">
+  <link rel="canonical" href="<%= seoMeta.canonical %>">
+  <title><%= seoMeta.title %></title>
+  
+  <meta property="og:title" content="<%= seoMeta.title %>">
+  <meta property="og:description" content="<%= seoMeta.description %>">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="<%= seoMeta.canonical %>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/styles.css?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : 'dev' %>">
+  <script src="/app.js?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : 'dev' %>" defer></script>
+  
+  <script type="application/ld+json"><%- structuredData %></script>
+  
+  <style>
+    :root {
+      --bg-warm: #FFF9F5;
+      --bg-warm-alt: #FFF6EE;
+      --text-dark: #1a1a2e;
+      --text-muted: #6b7280;
+      --accent-orange: #f97316;
+      --accent-orange-hover: #ea580c;
+      --card-bg: #ffffff;
+      --shadow-soft: 0 4px 20px rgba(0,0,0,0.06);
+      --shadow-hover: 0 8px 30px rgba(0,0,0,0.1);
+      --radius-lg: 16px;
+      --radius-md: 12px;
+    }
+    
+    .landing-hero {
+      background: linear-gradient(135deg, var(--bg-warm) 0%, var(--bg-warm-alt) 100%);
+      padding: 80px 20px;
+      text-align: center;
+    }
+    
+    .landing-hero h1 {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    
+    .landing-hero p {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+    
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn-primary {
+      background: var(--accent-orange);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .btn-primary:hover {
+      background: var(--accent-orange-hover);
+      transform: translateY(-2px);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: var(--text-dark);
+      padding: 14px 32px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid #e5e7eb;
+      transition: all 0.2s;
+    }
+    
+    .btn-outline:hover {
+      border-color: var(--accent-orange);
+      color: var(--accent-orange);
+    }
+    
+    .trust-bar {
+      background: white;
+      padding: 24px 20px;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    
+    .trust-items {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px 48px;
+    }
+    
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    
+    .trust-item svg {
+      color: #10b981;
+      flex-shrink: 0;
+    }
+    
+    .section-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .categories-section {
+      background: var(--bg-warm);
+      padding: 60px 20px;
+    }
+    
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 20px;
+    }
+    
+    .category-tile {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 24px 16px;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.3s;
+    }
+    
+    .category-tile:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .category-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    
+    .category-tile h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    
+    .category-tile p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    
+    .products-section {
+      background: white;
+      padding: 60px 20px;
+    }
+    
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    
+    .product-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.3s;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .product-image-wrap {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: #f9fafb;
+    }
+    
+    .product-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    
+    .product-card:hover .product-image-wrap img {
+      transform: scale(1.05);
+    }
+    
+    .product-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--accent-orange);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    
+    .product-info {
+      padding: 16px;
+    }
+    
+    .product-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .product-price {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    
+    .product-compare-price {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-decoration: line-through;
+      margin-left: 8px;
+    }
+    
+    .view-all-btn {
+      display: block;
+      text-align: center;
+      margin-top: 40px;
+    }
+    
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+    }
+    
+    .empty-state p {
+      margin-bottom: 20px;
+    }
+    
+    @media (max-width: 640px) {
+      .landing-hero {
+        padding: 48px 16px;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .category-tile {
+        padding: 16px 12px;
+      }
+      .category-icon {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body class="pawsy-body" style="background: var(--bg-warm);">
+  <%- include("partials/header") %>
+  
+  <main>
+    <section class="landing-hero">
+      <h1>
+        <% if (petType === 'dog') { %>🐶<% } else { %>🐱<% } %>
+        <%= copy.headline || (petType === 'dog' ? 'Premium Dog Essentials' : 'Purrfect Cat Finds') %>
+      </h1>
+      <p>
+        <%= copy.subheadline || (petType === 'dog' ? 'Hand-picked toys, beds, and gear for your best friend. Fast US shipping.' : 'Curated scratchers, toys, and comfort items for happy cats. Fast US shipping.') %>
+      </p>
+      
+      <div class="hero-ctas">
+        <a href="#products" class="btn-primary">
+          <%= petType === 'dog' ? '🐕 Shop Dog Products' : '🐱 Shop Cat Products' %>
+        </a>
+        <a href="/" class="btn-outline">Browse All</a>
+      </div>
+    </section>
+
+    <section class="trust-bar">
+      <div class="trust-items">
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>US Shipping (3-7 days)</span>
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>AI Curated Picks</span>
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>30-Day Returns</span>
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Secure Checkout</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories-section">
+      <div class="section-container">
+        <h2 class="section-title">Shop by Category</h2>
+        
+        <% if (petType === 'dog') { %>
+        <div class="category-grid">
+          <a href="/dogs/toys" class="category-tile">
+            <span class="category-icon">🎾</span>
+            <h3>Toys & Games</h3>
+            <p>Play time fun</p>
+          </a>
+          <a href="/dogs/beds" class="category-tile">
+            <span class="category-icon">🛏️</span>
+            <h3>Beds & Blankets</h3>
+            <p>Cozy comfort</p>
+          </a>
+          <a href="/dogs/feeding" class="category-tile">
+            <span class="category-icon">🍽️</span>
+            <h3>Feeding</h3>
+            <p>Bowls & feeders</p>
+          </a>
+          <a href="/dogs/travel" class="category-tile">
+            <span class="category-icon">🚗</span>
+            <h3>Travel Gear</h3>
+            <p>On the go</p>
+          </a>
+          <a href="/dogs/grooming" class="category-tile">
+            <span class="category-icon">✨</span>
+            <h3>Grooming</h3>
+            <p>Looking fresh</p>
+          </a>
+          <a href="/dogs/health" class="category-tile">
+            <span class="category-icon">💊</span>
+            <h3>Health</h3>
+            <p>Wellness care</p>
+          </a>
+        </div>
+        <% } else { %>
+        <div class="category-grid">
+          <a href="/cats/toys" class="category-tile">
+            <span class="category-icon">🐭</span>
+            <h3>Toys & Teasers</h3>
+            <p>Play time fun</p>
+          </a>
+          <a href="/cats/beds" class="category-tile">
+            <span class="category-icon">🛏️</span>
+            <h3>Beds & Hideaways</h3>
+            <p>Cozy spots</p>
+          </a>
+          <a href="/cats/scratchers" class="category-tile">
+            <span class="category-icon">🪵</span>
+            <h3>Scratchers & Trees</h3>
+            <p>Claw care</p>
+          </a>
+          <a href="/cats/feeding" class="category-tile">
+            <span class="category-icon">🍽️</span>
+            <h3>Feeding</h3>
+            <p>Bowls & fountains</p>
+          </a>
+          <a href="/cats/litter" class="category-tile">
+            <span class="category-icon">🧹</span>
+            <h3>Litter & Boxes</h3>
+            <p>Clean & fresh</p>
+          </a>
+          <a href="/cats/health" class="category-tile">
+            <span class="category-icon">💊</span>
+            <h3>Health</h3>
+            <p>Wellness care</p>
+          </a>
+        </div>
+        <% } %>
+      </div>
+    </section>
+
+    <section id="products" class="products-section">
+      <div class="section-container">
+        <h2 class="section-title">
+          <% if (petType === 'dog') { %>Popular Dog Products<% } else { %>Popular Cat Products<% } %>
+        </h2>
+        
+        <% 
+          const validProducts = (products || []).filter(p => {
+            const img = p.image || (p.images && p.images[0]);
+            return img && !img.includes('placeholder') && img !== '';
+          });
+        %>
+        
+        <% if (validProducts.length === 0) { %>
+          <div class="empty-state">
+            <p>No products available yet. Check back soon!</p>
+            <a href="/" class="btn-primary">Browse All Products</a>
+          </div>
+        <% } else { %>
+          <div class="product-grid">
+            <% validProducts.slice(0, 12).forEach((p, index) => { %>
+              <a href="/product/<%= p.slug || p.id %>" class="product-card">
+                <div class="product-image-wrap">
+                  <img 
+                    src="<%= p.image || p.images?.[0] %>" 
+                    alt="<%= p.title || p.name %>"
+                    loading="<%= index < 4 ? 'eager' : 'lazy' %>"
+                    onerror="this.closest('.product-card').style.display='none'"
+                  >
+                  <% if (p.badge) { %>
+                    <span class="product-badge"><%= p.badge %></span>
+                  <% } %>
+                </div>
+                <div class="product-info">
+                  <h3 class="product-title"><%= p.title || p.name %></h3>
+                  <div>
+                    <span class="product-price">$<%= parseFloat(p.price).toFixed(2) %></span>
+                    <% if (p.comparePrice || p.compare_price) { %>
+                      <span class="product-compare-price">$<%= parseFloat(p.comparePrice || p.compare_price).toFixed(2) %></span>
+                    <% } %>
+                  </div>
+                </div>
+              </a>
+            <% }) %>
+          </div>
+          
+          <div class="view-all-btn">
+            <a href="/collections?category=<%= petType === 'dog' ? 'dogs' : 'cats' %>" class="btn-primary">
+              View All <%= petType === 'dog' ? 'Dog' : 'Cat' %> Products
+            </a>
+          </div>
+        <% } %>
+      </div>
+    </section>
+  </main>
+
+  <%- include("partials/footer") %>
+  <%- include("partials/pawsy_widget") %>
+  <!-- Fingerprint Badge (debug mode only) -->
+  <% if (typeof debug !== 'undefined' && debug) { %>
+  <div id="fpBadge" style="position:fixed;bottom:8px;left:8px;z-index:99999;background:rgba(0,0,0,0.9);color:#0f0;font-family:monospace;font-size:10px;padding:4px 8px;border-radius:4px;pointer-events:none;">LIVE: <%= typeof BUILD_FINGERPRINT !== 'undefined' ? BUILD_FINGERPRINT : 'unknown' %></div>
+  <% } %>
+</body>
+</html>

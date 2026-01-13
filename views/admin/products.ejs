@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title><%= typeof title !== 'undefined' ? title : 'Products' %> | GetPawsy Admin</title>
+  <link rel="stylesheet" href="/css/admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #0f0f0f; color: #eaeaea; }
+    .admin-container { display: flex; min-height: 100vh; }
+    .admin-main { margin-left: 260px; padding: 0; flex: 1; background: #1a1a1a; min-height: 100vh; }
+    .admin-content { padding: 25px; }
+    .table { width: 100%; border-collapse: collapse; background: #222; border-radius: 8px; overflow: hidden; }
+    .table th, .table td { padding: 15px; text-align: left; border-bottom: 1px solid #333; }
+    .table th { background: #1a1a1a; color: #00c4a7; font-weight: 600; }
+    .table img { width: 60px; height: 60px; object-fit: cover; border-radius: 8px; }
+    h1 { margin-bottom: 25px; color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <%- include("../partials/admin/admin_sidebar", { active: typeof active !== 'undefined' ? active : 'products' }) %>
+    
+    <main class="admin-main">
+      <%- include("../partials/admin/admin_header", { pageTitle: typeof pageTitle !== 'undefined' ? pageTitle : 'Products' }) %>
+      
+      <div class="admin-content">
+        <h1>🛒 Products</h1>
+        
+        <!-- CJ Import Pro Section -->
+        <div class="import-pro-section" style="background: #252525; border-radius: 8px; padding: 20px; margin-bottom: 25px; border: 1px solid #333;">
+          <h3 style="margin-bottom: 15px; color: #00c4a7;">🚀 CJ Import Pro</h3>
+          <p style="color: #999; margin-bottom: 15px; font-size: 14px;">Bulk import pet products from CJ Dropshipping with smart filtering, US-fast shipping, and automatic pricing.</p>
+          
+          <div style="display: flex; gap: 15px; flex-wrap: wrap; align-items: center;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <label style="color: #ccc; font-size: 14px;">Products:</label>
+              <select id="import-count" style="background: #333; border: 1px solid #444; color: #fff; padding: 8px 12px; border-radius: 6px;">
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="250" selected>250</option>
+                <option value="500">500</option>
+              </select>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <label style="color: #ccc; font-size: 14px;">Pet Types:</label>
+              <select id="import-pet-types" style="background: #333; border: 1px solid #444; color: #fff; padding: 8px 12px; border-radius: 6px;">
+                <option value="dog,cat,both">All Pets</option>
+                <option value="dog">Dogs Only</option>
+                <option value="cat">Cats Only</option>
+              </select>
+            </div>
+            
+            <button onclick="startImportPro()" id="import-pro-btn" class="import-pro-btn">
+              🚀 Start Import Pro
+            </button>
+            
+            <button onclick="checkImportStatus()" class="status-btn">
+              📊 Check Status
+            </button>
+          </div>
+          
+          <div id="import-pro-status" style="margin-top: 15px; padding: 12px; background: #1a1a1a; border-radius: 6px; display: none;">
+            <div id="import-progress-bar" style="height: 8px; background: #333; border-radius: 4px; overflow: hidden; margin-bottom: 10px;">
+              <div id="import-progress-fill" style="height: 100%; width: 0%; background: linear-gradient(90deg, #00c4a7, #00a88f); transition: width 0.3s;"></div>
+            </div>
+            <div id="import-status-text" style="color: #ccc; font-size: 13px;"></div>
+          </div>
+        </div>
+        
+        <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+          <button onclick="translateAllProducts('nl')" class="translate-btn">🇳🇱 Translate All to Dutch</button>
+          <span id="translate-status" style="color: #00c4a7; line-height: 40px;"></span>
+        </div>
+        
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Category</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (typeof products !== 'undefined' && products.length > 0) { %>
+              <% products.slice(0, 50).forEach(product => { %>
+              <tr>
+                <td><% const adminImgSrc = (product.images && product.images.length && product.images[0]) || product.image || '/images/placeholder.png'; %><img src="<%= adminImgSrc %>" alt="<%= product.name || product.title %>" onerror="this.src='/images/placeholder.png'"/></td>
+                <td><%= product.name || product.title %></td>
+                <td>$<%= (product.price || 0).toFixed(2) %></td>
+                <td><%= product.stock || 0 %></td>
+                <td><%= product.category || 'N/A' %></td>
+                <td>
+                  <button onclick="translateProduct('<%= product.id %>', 'nl')" class="action-btn" title="Translate to Dutch">🇳🇱</button>
+                </td>
+              </tr>
+              <% }); %>
+            <% } else { %>
+              <tr>
+                <td colspan="6" style="text-align: center; color: #666;">No products found</td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+        
+        <style>
+          .translate-btn { background: #00c4a7; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+          .translate-btn:hover { background: #00a88f; }
+          .translate-btn:disabled { background: #444; cursor: not-allowed; }
+          .action-btn { background: #333; border: 1px solid #444; padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 16px; }
+          .action-btn:hover { background: #444; }
+          .import-pro-btn { background: linear-gradient(135deg, #00c4a7, #00a88f); color: #fff; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 14px; transition: all 0.2s; }
+          .import-pro-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 196, 167, 0.3); }
+          .import-pro-btn:disabled { background: #444; transform: none; box-shadow: none; cursor: not-allowed; }
+          .status-btn { background: #333; color: #ccc; border: 1px solid #444; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-weight: 500; font-size: 14px; transition: all 0.2s; }
+          .status-btn:hover { background: #444; border-color: #555; }
+        </style>
+        
+        <script>
+          async function translateProduct(productId, lang) {
+            const status = document.getElementById('translate-status');
+            status.textContent = 'Translating...';
+            try {
+              const res = await fetch(`/api/products/${productId}/translate/${lang}`);
+              const data = await res.json();
+              if (data.error) {
+                status.textContent = 'Error: ' + data.error;
+              } else if (data.translation) {
+                status.textContent = `Translated: ${data.translation.title || 'done'}`;
+              } else if (data.cached) {
+                status.textContent = 'Already cached';
+              } else {
+                status.textContent = 'Translation not available';
+              }
+            } catch (err) {
+              status.textContent = 'Error: ' + err.message;
+            }
+          }
+          
+          async function translateAllProducts(lang) {
+            const btn = document.querySelector('.translate-btn');
+            const status = document.getElementById('translate-status');
+            btn.disabled = true;
+            status.textContent = 'Starting batch translation (max 50 products)...';
+            
+            try {
+              const res = await fetch(`/api/admin/translate-all/${lang}`, { method: 'POST' });
+              const data = await res.json();
+              if (data.error) {
+                status.textContent = 'Error: ' + data.error;
+              } else {
+                status.textContent = `Done: ${data.translated || 0} new, ${data.cached || 0} cached`;
+              }
+            } catch (err) {
+              status.textContent = 'Error: ' + err.message;
+            } finally {
+              btn.disabled = false;
+            }
+          }
+          
+          // CJ Import Pro Functions
+          let importStatusInterval = null;
+          
+          async function startImportPro() {
+            const btn = document.getElementById('import-pro-btn');
+            const statusDiv = document.getElementById('import-pro-status');
+            const statusText = document.getElementById('import-status-text');
+            const progressFill = document.getElementById('import-progress-fill');
+            
+            const count = parseInt(document.getElementById('import-count').value);
+            const petTypesRaw = document.getElementById('import-pet-types').value;
+            const petTypes = petTypesRaw.split(',');
+            
+            btn.disabled = true;
+            btn.textContent = '⏳ Importing...';
+            statusDiv.style.display = 'block';
+            statusText.textContent = 'Starting import...';
+            progressFill.style.width = '0%';
+            
+            try {
+              const res = await fetch('/api/admin/cj/import-pro', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ count, petTypes, usOnly: true, maxShipDays: 7 })
+              });
+              
+              const data = await res.json();
+              
+              if (data.ok) {
+                statusText.textContent = 'Import started! Checking progress...';
+                startStatusPolling();
+              } else {
+                statusText.textContent = 'Error: ' + (data.error || 'Unknown error');
+                btn.disabled = false;
+                btn.textContent = '🚀 Start Import Pro';
+              }
+            } catch (err) {
+              statusText.textContent = 'Error: ' + err.message;
+              btn.disabled = false;
+              btn.textContent = '🚀 Start Import Pro';
+            }
+          }
+          
+          function startStatusPolling() {
+            if (importStatusInterval) clearInterval(importStatusInterval);
+            importStatusInterval = setInterval(checkImportStatus, 3000);
+          }
+          
+          function resetImportUI() {
+            if (importStatusInterval) {
+              clearInterval(importStatusInterval);
+              importStatusInterval = null;
+            }
+            const btn = document.getElementById('import-pro-btn');
+            btn.disabled = false;
+            btn.textContent = '🚀 Start Import Pro';
+          }
+          
+          async function checkImportStatus() {
+            const statusDiv = document.getElementById('import-pro-status');
+            const statusText = document.getElementById('import-status-text');
+            const progressFill = document.getElementById('import-progress-fill');
+            const btn = document.getElementById('import-pro-btn');
+            
+            statusDiv.style.display = 'block';
+            
+            try {
+              const res = await fetch('/api/admin/cj/import-pro/status');
+              const data = await res.json();
+              
+              if (data.ok) {
+                const { status, importedCount, failedCount, totalProcessed, targetCount } = data;
+                const progress = targetCount > 0 ? Math.round((totalProcessed / targetCount) * 100) : 0;
+                
+                progressFill.style.width = progress + '%';
+                
+                if (status === 'running') {
+                  statusText.innerHTML = `<strong>🔄 Running:</strong> ${importedCount || 0} imported, ${failedCount || 0} failed (${progress}% complete)`;
+                } else if (status === 'completed') {
+                  statusText.innerHTML = `<strong>✅ Completed:</strong> ${importedCount || 0} products imported, ${failedCount || 0} failed`;
+                  progressFill.style.width = '100%';
+                  resetImportUI();
+                } else if (status === 'idle') {
+                  statusText.textContent = 'No import running. Click "Start Import Pro" to begin.';
+                  resetImportUI();
+                } else if (status === 'error') {
+                  statusText.innerHTML = `<strong>❌ Error:</strong> ${data.error || 'Import failed'}`;
+                  resetImportUI();
+                } else {
+                  statusText.textContent = 'Status: ' + status;
+                }
+              } else {
+                statusText.innerHTML = `<strong>❌ Error:</strong> ${data.error || 'Failed to check status'}`;
+                resetImportUI();
+              }
+            } catch (err) {
+              statusText.innerHTML = `<strong>❌ Error:</strong> ${err.message}`;
+              resetImportUI();
+            }
+          }
+        </script>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

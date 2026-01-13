@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="<%= typeof locale !== 'undefined' ? locale : 'en-US' %>">
+<head>
+  <%
+    const safeProduct = typeof product !== 'undefined' && product ? product : { 
+      id: '', name: 'Product Not Found', title: 'Product Not Found', 
+      description: 'This product is no longer available.', 
+      price: 0, images: ['/images/placeholder.png'], image: '/images/placeholder.png', 
+      category: 'all', reviews: 0 
+    };
+    const productTitle = safeProduct.title || safeProduct.name || 'Product';
+    
+    // Collect all images: resolved_image, main images + variant images (deduplicated)
+    let allImages = [];
+    // Start with resolved_image if available (product normalization)
+    if (safeProduct.resolved_image) {
+      allImages.push(safeProduct.resolved_image);
+    }
+    // Add from images array
+    if (safeProduct.images && safeProduct.images.length > 0) {
+      allImages.push(...safeProduct.images);
+    } else if (safeProduct.image && !allImages.includes(safeProduct.image)) {
+      allImages.push(safeProduct.image);
+    }
+    // Add variant images if they exist
+    if (Array.isArray(safeProduct.variants)) {
+      safeProduct.variants.forEach(v => {
+        if (v.image && !allImages.includes(v.image)) {
+          allImages.push(v.image);
+        }
+      });
+    }
+    // Deduplicate and limit to 10 images max
+    const seenImages = new Set();
+    allImages = allImages.filter(img => {
+      if (!img || seenImages.has(img)) return false;
+      seenImages.add(img);
+      return true;
+    }).slice(0, 10);
+    
+    const productImages = allImages.length > 0 ? allImages : ['/images/placeholder.png'];
+    const firstImage = productImages[0] || '/images/placeholder.png';
+    
+    // Collect videos if available
+    const productVideos = [];
+    if (safeProduct.videos && Array.isArray(safeProduct.videos)) {
+      productVideos.push(...safeProduct.videos.filter(v => v && (v.endsWith('.mp4') || v.endsWith('.webm') || v.endsWith('.mov'))));
+    }
+    if (safeProduct.video && (safeProduct.video.endsWith('.mp4') || safeProduct.video.endsWith('.webm'))) {
+      productVideos.push(safeProduct.video);
+    }
+    
+    const comparePrice = safeProduct.comparePrice || safeProduct.compare_price || null;
+    const savings = comparePrice ? (parseFloat(comparePrice) - parseFloat(safeProduct.price)).toFixed(2) : null;
+    
+    const titleLower = (productTitle || '').toLowerCase();
+    const categoryLower = (safeProduct.category || '').toLowerCase();
+    const isCarBarrier = titleLower.includes('car barrier') || titleLower.includes('vehicle barrier') || categoryLower.includes('car barrier');
+    
+    const seo = typeof localizedSeo !== 'undefined' && localizedSeo ? localizedSeo : null;
+    const metaDesc = seo?.meta_description || safeProduct.seo_description || 
+      (productTitle + ' - Premium pet product at GetPawsy. ' + (safeProduct.description || '').substring(0, 120));
+  %>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  
+  <title><%= productTitle %> | GetPawsy</title>
+  <meta name="description" content="<%= metaDesc %>">
+  
+  <meta property="og:title" content="<%= productTitle %> | GetPawsy">
+  <meta property="og:description" content="<%= metaDesc %>">
+  <meta property="og:image" content="<%= firstImage %>">
+  <meta property="og:type" content="product">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/styles.css?v=<%= typeof assetVersion !== 'undefined' ? assetVersion : 'dev' %>">
+  <style>
+    .pdp-wrapper {
+      padding: var(--space-4) 0 var(--space-16);
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding-left: var(--space-4);
+      padding-right: var(--space-4);
+      overflow-x: hidden;
+      box-sizing: border-box;
+    }
+    
+    /* Mobile overflow prevention */
+    @media (max-width: 767px) {
+      html, body {
+        overflow-x: hidden;
+        max-width: 100%;
+        width: 100%;
+      }
+      .pdp-wrapper {
+        padding-left: var(--space-3);
+        padding-right: var(--space-3);
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+    }
+    
+    .pdp-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: var(--space-4) 0;
+      font-size: var(--text-sm);
+      color: var(--muted);
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .pdp-breadcrumb::-webkit-scrollbar { display: none; }
+    .pdp-breadcrumb a { color: var(--text-secondary); text-decoration: none; flex-shrink: 0; }
+    .pdp-breadcrumb a:hover { color: var(--brand); }
+    .pdp-breadcrumb > span:last-child { 
+      overflow: hidden; 
+      text-overflow: ellipsis; 
+      max-width: 200px; 
+    }
+    
+    .pdp-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+    @media (min-width: 768px) {
+      .pdp-grid { grid-template-columns: 1fr 1fr; gap: var(--space-12); }
+    }
+    
+    .pdp-gallery {}
+    .pdp-main-image {
+      position: relative;
+      aspect-ratio: 1;
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card-premium);
+    }
+    .pdp-main-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .pdp-badge {
+      position: absolute;
+      top: var(--space-3);
+      left: var(--space-3);
+      background: var(--brand);
+      color: white;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    .pdp-thumbs {
+      display: flex;
+      gap: var(--space-3);
+      margin-top: var(--space-4);
+      overflow-x: auto;
+      padding-bottom: var(--space-2);
+    }
+    .pdp-thumb {
+      flex-shrink: 0;
+      width: 72px;
+      height: 72px;
+      border: 2px solid transparent;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--surface);
+      transition: border-color var(--dur) var(--ease-out);
+    }
+    .pdp-thumb.active { border-color: var(--brand); }
+    .pdp-thumb:hover { border-color: var(--brand); }
+    .pdp-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    
+    .pdp-info {}
+    .pdp-category {
+      display: inline-block;
+      color: var(--brand);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-2);
+    }
+    .pdp-title {
+      font-size: var(--text-3xl);
+      font-weight: 800;
+      color: var(--text);
+      line-height: var(--leading-tight);
+      margin-bottom: var(--space-3);
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      width: 100%;
+      max-width: 100%;
+    }
+    @media (min-width: 768px) {
+      .pdp-title { font-size: var(--text-4xl); }
+    }
+    .pdp-subheadline {
+      font-size: var(--text-lg);
+      color: var(--text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-6);
+    }
+    
+    .pdp-rating {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-bottom: var(--space-4);
+    }
+    .pdp-stars { color: #f59e0b; font-size: 1.1rem; letter-spacing: 2px; }
+    .pdp-rating-count { font-size: var(--text-sm); color: var(--muted); }
+    
+    .pdp-pricing {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-bottom: var(--space-6);
+    }
+    .pdp-price {
+      font-size: var(--text-3xl);
+      font-weight: 800;
+      color: var(--text);
+    }
+    .pdp-compare-price {
+      font-size: var(--text-xl);
+      color: var(--muted);
+      text-decoration: line-through;
+    }
+    .pdp-save-badge {
+      background: var(--success);
+      color: white;
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 600;
+    }
+    
+    .pdp-stock {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-bottom: var(--space-6);
+      font-size: var(--text-sm);
+    }
+    .pdp-stock-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+    }
+    .pdp-stock-text { color: var(--success); font-weight: 500; }
+    
+    .pdp-section {
+      margin-bottom: var(--space-6);
+      padding: var(--space-5);
+      background: var(--surface-2);
+      border-radius: var(--radius-lg);
+    }
+    .pdp-section-title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: var(--space-4);
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .pdp-section-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--brand);
+    }
+    
+    .pdp-benefits-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .pdp-benefits-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      padding: var(--space-2) 0;
+      font-size: var(--text-base);
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .pdp-benefits-list li svg {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      color: var(--success);
+      margin-top: 2px;
+    }
+    
+    .pdp-steps {
+      counter-reset: step-counter;
+    }
+    .pdp-step {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+      padding: var(--space-3) 0;
+    }
+    .pdp-step-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--brand);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-sm);
+      font-weight: 700;
+    }
+    .pdp-step-text {
+      font-size: var(--text-base);
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    
+    .pdp-variants {
+      margin-bottom: var(--space-6);
+    }
+    .pdp-variant-group { margin-bottom: var(--space-4); }
+    .pdp-variant-label {
+      display: block;
+      font-weight: 600;
+      font-size: var(--text-sm);
+      color: var(--text);
+      margin-bottom: var(--space-2);
+    }
+    .pdp-variant-options { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+    .pdp-variant-btn {
+      padding: 0.6rem 1.2rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      font-weight: 500;
+      font-size: var(--text-sm);
+      cursor: pointer;
+      transition: all var(--dur) var(--ease-out);
+    }
+    .pdp-variant-btn:hover { border-color: var(--brand); }
+    .pdp-variant-btn.active {
+      border-color: var(--brand);
+      background: var(--brand);
+      color: white;
+    }
+    
+    .pdp-actions {
+      display: flex;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+    .pdp-qty {
+      display: flex;
+      align-items: center;
+      background: var(--surface-2);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .pdp-qty-btn {
+      width: 44px;
+      height: 48px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: background var(--dur);
+    }
+    .pdp-qty-btn:hover { background: var(--border-light); }
+    .pdp-qty input {
+      width: 50px;
+      text-align: center;
+      border: none;
+      background: transparent;
+      font-size: var(--text-base);
+      font-weight: 600;
+      color: var(--text);
+    }
+    
+    .pdp-atc-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-4) var(--space-6);
+      background: var(--brand);
+      color: white;
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: var(--text-base);
+      font-weight: 700;
+      cursor: pointer;
+      transition: background var(--dur) var(--ease-out), transform var(--dur-fast);
+    }
+    .pdp-atc-btn:hover { background: var(--brand-hover); }
+    .pdp-atc-btn:active { transform: scale(0.98); }
+    .pdp-atc-btn:disabled {
+      background: var(--muted);
+      cursor: not-allowed;
+    }
+    .pdp-atc-btn svg { width: 20px; height: 20px; }
+    
+    .pdp-wishlist-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      width: 100%;
+      padding: var(--space-3);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      background: transparent;
+      cursor: pointer;
+      margin-bottom: var(--space-6);
+      transition: all var(--dur);
+    }
+    .pdp-wishlist-btn:hover { border-color: var(--danger); color: var(--danger); }
+    .pdp-wishlist-btn svg { width: 18px; height: 18px; }
+    
+    .pdp-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-3);
+      margin-bottom: var(--space-6);
+    }
+    @media (min-width: 480px) {
+      .pdp-trust-bar { grid-template-columns: repeat(4, 1fr); }
+    }
+    .pdp-trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: var(--space-3);
+      background: var(--surface-2);
+      border-radius: var(--radius-md);
+    }
+    .pdp-trust-item svg {
+      width: 24px;
+      height: 24px;
+      color: var(--brand);
+      margin-bottom: var(--space-2);
+    }
+    .pdp-trust-item span {
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    
+    .pdp-accordion {
+      border-top: 1px solid var(--border);
+    }
+    .pdp-accordion-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .pdp-accordion-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: var(--space-4) 0;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: var(--text-base);
+      font-weight: 600;
+      color: var(--text);
+      text-align: left;
+    }
+    .pdp-accordion-header svg {
+      width: 20px;
+      height: 20px;
+      color: var(--muted);
+      transition: transform var(--dur);
+    }
+    .pdp-accordion-item.open .pdp-accordion-header svg {
+      transform: rotate(180deg);
+    }
+    .pdp-accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--dur-slow) var(--ease-out);
+    }
+    .pdp-accordion-item.open .pdp-accordion-content {
+      max-height: 500px;
+    }
+    .pdp-accordion-inner {
+      padding-bottom: var(--space-4);
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .pdp-accordion-inner p { margin-bottom: var(--space-3); }
+    .pdp-faq-item { margin-bottom: var(--space-4); }
+    .pdp-faq-q { font-weight: 600; color: var(--text); margin-bottom: var(--space-1); }
+    .pdp-faq-a { color: var(--text-secondary); }
+    
+    .pdp-related {
+      margin-top: var(--space-16);
+      padding-top: var(--space-8);
+      border-top: 1px solid var(--border);
+    }
+    .pdp-related-title {
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      margin-bottom: var(--space-6);
+      text-align: center;
+    }
+    .pdp-related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+    }
+    @media (min-width: 768px) {
+      .pdp-related-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .pdp-related-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: box-shadow var(--dur), transform var(--dur);
+      text-decoration: none;
+    }
+    .pdp-related-card:hover {
+      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-4px);
+    }
+    .pdp-related-card-img {
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+    .pdp-related-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .pdp-related-card-info {
+      padding: var(--space-4);
+    }
+    .pdp-related-card-title {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: var(--space-2);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .pdp-related-card-price {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--brand);
+    }
+    
+    .pdp-sticky-bar {
+      display: none; /* Controlled by PawsyRouter lifecycle */
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      max-width: 100%;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: var(--space-3) var(--space-4);
+      /* Respect iOS Safe Area */
+      padding-bottom: calc(var(--space-3) + env(safe-area-inset-bottom, 12px));
+      z-index: 999;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+      transition: transform 0.3s ease-in-out;
+    }
+    @media (max-width: 767px) {
+      .pdp-sticky-bar { display: flex; align-items: center; gap: var(--space-3); }
+      .pdp-wrapper { padding-bottom: calc(100px + env(safe-area-inset-bottom, 0)); }
+    }
+    .pdp-sticky-thumb {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .pdp-sticky-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .pdp-sticky-price {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--text);
+    }
+    .pdp-sticky-atc {
+      flex: 1;
+      padding: var(--space-3) var(--space-4);
+      background: var(--brand);
+      color: white;
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: var(--text-base);
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .pdp-sticky-atc:disabled { background: var(--muted); cursor: not-allowed; }
+    
+    .pdp-toast {
+      position: fixed;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--text);
+      color: white;
+      padding: var(--space-3) var(--space-5);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: all var(--dur-slow) var(--ease-out);
+      z-index: 101;
+    }
+    .pdp-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    @media (min-width: 768px) {
+      .pdp-toast { bottom: 40px; }
+    }
+    
+    .pdp-video-section {
+      margin-top: var(--space-6);
+      background: var(--surface-2);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
+    }
+    .pdp-video-title {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-base);
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: var(--space-3);
+    }
+    .pdp-video-title svg {
+      color: var(--brand);
+    }
+    .pdp-video-wrapper {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #000;
+    }
+    .pdp-video-wrapper video {
+      width: 100%;
+      max-height: 400px;
+      display: block;
+    }
+  </style>
+</head>
+<body class="page-product">
+  <%- include("partials/header") %>
+  
+  <main class="pdp-wrapper">
+    <nav class="pdp-breadcrumb">
+      <a href="/">Home</a>
+      <span>›</span>
+      <a href="/collection/<%= safeProduct.category || 'all' %>"><%= safeProduct.category ? safeProduct.category.charAt(0).toUpperCase() + safeProduct.category.slice(1) : 'Products' %></a>
+      <span>›</span>
+      <span><%= productTitle %></span>
+    </nav>
+    
+    <div class="pdp-grid">
+      <div class="pdp-gallery">
+        <div class="pdp-main-image">
+          <%
+            const heroImgSrc = firstImage.startsWith('/') ? firstImage : '/api/img?u=' + encodeURIComponent(firstImage) + '&w=900&fm=webp';
+          %>
+          <img 
+            id="pdpMainImage"
+            src="<%= heroImgSrc %>" 
+            alt="<%= productTitle %>"
+            loading="eager"
+            decoding="async"
+            onerror="this.onerror=null;this.src='/images/placeholder-pawsy.webp'"
+            onload="this.style.opacity=1"
+            style="opacity:0;transition:opacity .3s"
+          >
+          <% if (safeProduct.badge) { %>
+            <span class="pdp-badge"><%= safeProduct.badge %></span>
+          <% } %>
+        </div>
+        <% if (productImages.length > 1) { %>
+          <div class="pdp-thumbs">
+            <% productImages.forEach((img, i) => { 
+              const thumbSrc = img.startsWith('/') ? img : '/api/img?u=' + encodeURIComponent(img) + '&w=72&fm=webp';
+              const fullSrc = img.startsWith('/') ? img : '/api/img?u=' + encodeURIComponent(img) + '&w=900&fm=webp';
+            %>
+              <button type="button" class="pdp-thumb <%= i === 0 ? 'active' : '' %>" data-img="<%= fullSrc %>">
+                <img src="<%= thumbSrc %>" alt="<%= productTitle %> view <%= i + 1 %>" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .3s">
+              </button>
+            <% }) %>
+          </div>
+        <% } %>
+        <% if (productVideos.length > 0) { %>
+          <div class="pdp-video-section">
+            <h3 class="pdp-video-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Product Video
+            </h3>
+            <% productVideos.forEach((videoUrl, i) => { %>
+              <div class="pdp-video-wrapper">
+                <video controls preload="metadata" playsinline>
+                  <source src="<%= videoUrl %>" type="video/mp4">
+                  Your browser does not support video playback.
+                </video>
+              </div>
+            <% }) %>
+          </div>
+        <% } %>
+      </div>
+      
+      <div class="pdp-info">
+        <span class="pdp-category"><%= safeProduct.category || 'Pet Products' %></span>
+        
+        <% if (isCarBarrier) { %>
+          <h1 class="pdp-title">Keep Your Dog Safe — Every Single Drive</h1>
+          <p class="pdp-subheadline">Drive distraction-free while your dog rides safely in the back. Our heavy-duty dog car barrier creates a secure space for your dog and peace of mind for you.</p>
+        <% } else { %>
+          <h1 class="pdp-title"><%= productTitle %></h1>
+          <% if (safeProduct.description) { %>
+            <% const cleanDesc = safeProduct.description.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').trim(); %>
+            <p class="pdp-subheadline"><%= cleanDesc.substring(0, 160) %><%= cleanDesc.length > 160 ? '...' : '' %></p>
+          <% } %>
+        <% } %>
+        
+        <div class="pdp-rating">
+          <span class="pdp-stars">★★★★★</span>
+          <span class="pdp-rating-count">(<%= safeProduct.reviews || Math.floor(Math.random() * 40) + 15 %> reviews)</span>
+        </div>
+        
+        <div class="pdp-pricing">
+          <span class="pdp-price">$<%= parseFloat(safeProduct.price || 0).toFixed(2) %></span>
+          <% if (comparePrice && parseFloat(comparePrice) > parseFloat(safeProduct.price)) { %>
+            <span class="pdp-compare-price">$<%= parseFloat(comparePrice).toFixed(2) %></span>
+            <span class="pdp-save-badge">Save $<%= savings %></span>
+          <% } %>
+        </div>
+        
+        <div class="pdp-stock">
+          <span class="pdp-stock-dot"></span>
+          <span class="pdp-stock-text">In Stock — Ready to Ship</span>
+        </div>
+        
+        <div class="pdp-section">
+          <div class="pdp-section-title">
+            <svg class="pdp-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            Why You'll Love It
+          </div>
+          <ul class="pdp-benefits-list">
+            <% if (isCarBarrier) { %>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><circle cx="12" cy="12" r="10"/></svg> Improves driving safety by keeping your dog securely in the back</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><circle cx="12" cy="12" r="10"/></svg> Reduces stress for both you and your dog</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><circle cx="12" cy="12" r="10"/></svg> Prevents sudden movements during braking or turns</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><circle cx="12" cy="12" r="10"/></svg> Strong & stable design — no rattling or bending</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><circle cx="12" cy="12" r="10"/></svg> Installs in minutes (no tools required)</li>
+            <% } else { %>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><circle cx="12" cy="12" r="10"/></svg> Premium quality materials built to last</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><circle cx="12" cy="12" r="10"/></svg> Designed with your pet's comfort in mind</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><circle cx="12" cy="12" r="10"/></svg> Easy to clean and maintain</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><circle cx="12" cy="12" r="10"/></svg> Safe, non-toxic materials</li>
+            <% } %>
+          </ul>
+        </div>
+        
+        <div class="pdp-section">
+          <div class="pdp-section-title">
+            <svg class="pdp-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+            Designed for Real Life
+          </div>
+          <ul class="pdp-benefits-list">
+            <% if (isCarBarrier) { %>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><circle cx="12" cy="12" r="10"/></svg> Fits most SUVs, hatchbacks & larger sedans</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><circle cx="12" cy="12" r="10"/></svg> Adjustable width & height</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><circle cx="12" cy="12" r="10"/></svg> Attaches securely to headrests</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><circle cx="12" cy="12" r="10"/></svg> Allows airflow & visibility</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><circle cx="12" cy="12" r="10"/></svg> Dog-safe materials (no sharp edges)</li>
+            <% } else { %>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><circle cx="12" cy="12" r="10"/></svg> Works for dogs and cats of all sizes</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><circle cx="12" cy="12" r="10"/></svg> Durable for everyday use</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><circle cx="12" cy="12" r="10"/></svg> Perfect for home or travel</li>
+            <% } %>
+          </ul>
+        </div>
+        
+        <div class="pdp-section">
+          <div class="pdp-section-title">
+            <svg class="pdp-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+            <% if (isCarBarrier) { %>How to Install<% } else { %>Easy Setup<% } %>
+          </div>
+          <div class="pdp-steps">
+            <% if (isCarBarrier) { %>
+              <div class="pdp-step"><span class="pdp-step-num">1</span><span class="pdp-step-text">Adjust the barrier to your car's width</span></div>
+              <div class="pdp-step"><span class="pdp-step-num">2</span><span class="pdp-step-text">Attach it to the rear headrests</span></div>
+              <div class="pdp-step"><span class="pdp-step-num">3</span><span class="pdp-step-text">Tighten — you're ready to go</span></div>
+            <% } else { %>
+              <div class="pdp-step"><span class="pdp-step-num">1</span><span class="pdp-step-text">Unbox and inspect all parts</span></div>
+              <div class="pdp-step"><span class="pdp-step-num">2</span><span class="pdp-step-text">Follow the simple assembly guide</span></div>
+              <div class="pdp-step"><span class="pdp-step-num">3</span><span class="pdp-step-text">Let your pet enjoy!</span></div>
+            <% } %>
+          </div>
+        </div>
+        
+        <% 
+          const variants = safeProduct.variants || [];
+          const optionTypes = {};
+          variants.forEach(v => {
+            const opts = v.options || v.optionValues || {};
+            if (Object.keys(opts).length > 0) {
+              Object.entries(opts).forEach(([key, val]) => {
+                if (!optionTypes[key]) optionTypes[key] = new Set();
+                optionTypes[key].add(val);
+              });
+            }
+          });
+          const hasVariantOptions = Object.keys(optionTypes).length > 0;
+        %>
+        <% if (variants.length > 1) { %>
+          <div class="pdp-variants" id="variantSelectors">
+            <% if (hasVariantOptions) { %>
+              <% Object.entries(optionTypes).forEach(([optionName, values]) => { %>
+                <div class="pdp-variant-group" data-option-name="<%= optionName %>">
+                  <label class="pdp-variant-label"><%= optionName %></label>
+                  <div class="pdp-variant-options">
+                    <% Array.from(values).forEach((val, idx) => { %>
+                      <button type="button" class="pdp-variant-btn <%= idx === 0 ? 'active' : '' %>" 
+                              data-option="<%= optionName %>" 
+                              data-value="<%= val %>">
+                        <%= val %>
+                      </button>
+                    <% }) %>
+                  </div>
+                </div>
+              <% }) %>
+            <% } else { %>
+              <div class="pdp-variant-group">
+                <label class="pdp-variant-label">Select Option</label>
+                <div class="pdp-variant-options">
+                  <% variants.forEach((v, idx) => { 
+                    const displayTitle = v.title || v.variantNameEn || v.name || ('Option ' + (idx + 1));
+                    const truncatedTitle = displayTitle.length > 40 ? displayTitle.substring(0, 37) + '...' : displayTitle;
+                  %>
+                    <button type="button" class="pdp-variant-btn <%= idx === 0 ? 'active' : '' %>" 
+                            data-variant-id="<%= v.id %>"
+                            data-variant-sku="<%= v.sku || v.cjSku || v.id %>"
+                            data-variant-price="<%= v.price %>"
+                            data-variant-image="<%= v.image || '' %>">
+                      <%= truncatedTitle %>
+                    </button>
+                  <% }) %>
+                </div>
+              </div>
+            <% } %>
+          </div>
+          <input type="hidden" id="selectedVariantId" value="<%= variants[0]?.id || '' %>">
+          <input type="hidden" id="selectedVariantSku" value="<%= variants[0]?.sku || variants[0]?.cjSku || '' %>">
+        <% } else if (variants.length === 1) { %>
+          <input type="hidden" id="selectedVariantId" value="<%= variants[0]?.id || safeProduct.id %>">
+          <input type="hidden" id="selectedVariantSku" value="<%= variants[0]?.sku || variants[0]?.cjSku || '' %>">
+        <% } else { %>
+          <input type="hidden" id="selectedVariantId" value="<%= safeProduct.id %>">
+          <input type="hidden" id="selectedVariantSku" value="">
+        <% } %>
+
+        <div class="pdp-actions">
+          <div class="pdp-qty">
+            <button type="button" class="pdp-qty-btn" id="qtyMinus">−</button>
+            <input type="number" id="pdpQty" value="1" min="1" max="99" readonly>
+            <button type="button" class="pdp-qty-btn" id="qtyPlus">+</button>
+          </div>
+          <button 
+            type="button" 
+            class="pdp-atc-btn" 
+            id="addToCartBtn"
+            data-pdp-handled="true"
+            data-product-id="<%= safeProduct.id %>"
+            data-product-title="<%= productTitle %>"
+            data-product-price="<%= safeProduct.price %>"
+            data-product-image="<%= firstImage %>"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+            <% if (isCarBarrier) { %>Give Your Dog a Safe Ride<% } else { %>Add to Cart<% } %>
+          </button>
+        </div>
+        
+        <button type="button" class="pdp-wishlist-btn" id="wishlistBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          Add to Wishlist
+        </button>
+        
+        <div class="pdp-trust-bar">
+          <div class="pdp-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <span>Fast US Shipping<br>3-7 Business Days</span>
+          </div>
+          <div class="pdp-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Pet-Safe<br>Materials</span>
+          </div>
+          <div class="pdp-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Secure<br>Checkout</span>
+          </div>
+          <div class="pdp-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span>Friendly<br>Support</span>
+          </div>
+        </div>
+        
+        <div class="pdp-accordion">
+          <div class="pdp-accordion-item">
+            <button type="button" class="pdp-accordion-header">
+              Shipping & Delivery
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="pdp-accordion-content">
+              <div class="pdp-accordion-inner">
+                <p><strong>Processing Time:</strong> Orders are processed within 1-2 business days.</p>
+                <p><strong>Shipping Time:</strong> Standard US shipping takes 3-7 business days after processing.</p>
+                <p><strong>Free Shipping:</strong> Orders over $50 qualify for free standard shipping within the US.</p>
+                <p>Tracking information will be emailed once your order ships.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="pdp-accordion-item">
+            <button type="button" class="pdp-accordion-header">
+              Returns & Exchanges
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="pdp-accordion-content">
+              <div class="pdp-accordion-inner">
+                <p>We want you and your pet to be 100% happy with your purchase.</p>
+                <p><strong>30-Day Returns:</strong> Return any unused item within 30 days for a full refund.</p>
+                <p><strong>Easy Process:</strong> Contact our support team to initiate a return or exchange.</p>
+                <p>Return shipping costs may apply for non-defective items.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="pdp-accordion-item">
+            <button type="button" class="pdp-accordion-header">
+              Frequently Asked Questions
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="pdp-accordion-content">
+              <div class="pdp-accordion-inner">
+                <% if (isCarBarrier) { %>
+                  <div class="pdp-faq-item">
+                    <div class="pdp-faq-q">Will this fit my car?</div>
+                    <div class="pdp-faq-a">Our barrier fits most SUVs, hatchbacks, and sedans. Check the dimensions in the product description to ensure compatibility.</div>
+                  </div>
+                  <div class="pdp-faq-item">
+                    <div class="pdp-faq-q">Will it block my rear view?</div>
+                    <div class="pdp-faq-a">No! The mesh design allows full visibility through your rear-view mirror.</div>
+                  </div>
+                  <div class="pdp-faq-item">
+                    <div class="pdp-faq-q">Is it noisy while driving?</div>
+                    <div class="pdp-faq-a">Not at all. The solid construction means no rattling or vibration noises.</div>
+                  </div>
+                  <div class="pdp-faq-item">
+                    <div class="pdp-faq-q">Can my dog still see me?</div>
+                    <div class="pdp-faq-a">Yes! The mesh allows airflow and full visibility, so your dog can see you while staying safely in the back.</div>
+                  </div>
+                <% } else { %>
+                  <div class="pdp-faq-item">
+                    <div class="pdp-faq-q">Is this product safe for my pet?</div>
+                    <div class="pdp-faq-a">Yes! All our products are made with pet-safe, non-toxic materials and undergo quality testing.</div>
+                  </div>
+                  <div class="pdp-faq-item">
+                    <div class="pdp-faq-q">What if my pet doesn't like it?</div>
+                    <div class="pdp-faq-a">We offer a 30-day return policy. If it's not the right fit, contact us for an easy return.</div>
+                  </div>
+                  <div class="pdp-faq-item">
+                    <div class="pdp-faq-q">How do I clean this product?</div>
+                    <div class="pdp-faq-a">Most products can be wiped clean with a damp cloth. Check specific care instructions included with your order.</div>
+                  </div>
+                  <div class="pdp-faq-item">
+                    <div class="pdp-faq-q">Do you ship internationally?</div>
+                    <div class="pdp-faq-a">Currently we ship within the US only. International shipping coming soon!</div>
+                  </div>
+                <% } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <% 
+    // Rebuild recommendation logic in-template to ensure strict type matching
+    // Filter relatedProducts to ensure they have the same petType as current product
+    let prioritizedRelated = [];
+    if (typeof relatedProducts !== 'undefined' && relatedProducts) {
+      prioritizedRelated = relatedProducts.filter(rp => {
+        // Must be a different product
+        if (rp.id === safeProduct.id) return false;
+        // Should match petType if possible
+        return rp.petType === safeProduct.petType;
+      }).slice(0, 4);
+    }
+    
+    if (prioritizedRelated.length > 0) { %>
+      <div class="pdp-related">
+        <h2 class="pdp-related-title">You May Also Like</h2>
+        <div class="pdp-related-grid">
+          <% prioritizedRelated.forEach(rp => { %>
+            <a href="/product/<%= rp.id %>" class="pdp-related-card">
+              <div class="pdp-related-card-img">
+                <img src="<%= rp.displayImageProxy || rp.resolved_image || rp.image %>" alt="<%= rp.title || rp.name %>" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/images/placeholder-pawsy.webp'" onload="this.style.opacity=1" style="opacity:0;transition:opacity .3s">
+              </div>
+              <div class="pdp-related-card-info">
+                <div class="pdp-related-card-title"><%= rp.title || rp.name %></div>
+                <div class="pdp-related-card-price">$<%= parseFloat(rp.price || 0).toFixed(2) %></div>
+              </div>
+            </a>
+          <% }) %>
+        </div>
+      </div>
+    <% } %>
+  </main>
+  
+  <div class="pdp-sticky-bar">
+    <div class="pdp-sticky-thumb">
+      <img src="<%= heroImgSrc %>" alt="<%= productTitle %>" loading="eager" onerror="this.onerror=null;this.src='/images/placeholder-pawsy.webp'">
+    </div>
+    <span class="pdp-sticky-price">$<%= parseFloat(safeProduct.price || 0).toFixed(2) %></span>
+    <button type="button" class="pdp-sticky-atc" id="stickyAtcBtn" data-pdp-handled="true">Add to Cart</button>
+  </div>
+  
+  <div class="pdp-toast" id="pdpToast">Added to cart!</div>
+
+  <%- include("partials/footer") %>
+  <%- include("partials/pawsy_widget") %>
+
+  <script>
+    (function() {
+      const productId = '<%= safeProduct.id %>';
+      const productVariants = <%- JSON.stringify(safeProduct.variants || []) %>;
+      const selectedOptions = {};
+      
+      if (productVariants.length > 0) {
+        const firstOpts = productVariants[0].options || productVariants[0].optionValues || {};
+        Object.entries(firstOpts).forEach(([k, v]) => {
+          selectedOptions[k] = v;
+        });
+      }
+      
+      document.querySelectorAll('.pdp-thumb').forEach(thumb => {
+        thumb.addEventListener('click', function() {
+          const imgSrc = this.dataset.img;
+          document.getElementById('pdpMainImage').src = imgSrc;
+          document.querySelectorAll('.pdp-thumb').forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+      
+      const qtyInput = document.getElementById('pdpQty');
+      document.getElementById('qtyMinus').addEventListener('click', () => {
+        const val = parseInt(qtyInput.value) || 1;
+        if (val > 1) qtyInput.value = val - 1;
+      });
+      document.getElementById('qtyPlus').addEventListener('click', () => {
+        const val = parseInt(qtyInput.value) || 1;
+        if (val < 99) qtyInput.value = val + 1;
+      });
+      
+      document.querySelectorAll('.pdp-variant-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const group = this.closest('.pdp-variant-options');
+          group.querySelectorAll('.pdp-variant-btn').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          
+          if (this.dataset.variantId) {
+            const variantIdInput = document.getElementById('selectedVariantId');
+            const skuInput = document.getElementById('selectedVariantSku');
+            if (variantIdInput) variantIdInput.value = this.dataset.variantId || '';
+            if (skuInput) skuInput.value = this.dataset.variantSku || '';
+            
+            if (this.dataset.variantPrice) {
+              const price = parseFloat(this.dataset.variantPrice).toFixed(2);
+              const priceEl = document.querySelector('.pdp-price');
+              const stickyPriceEl = document.querySelector('.pdp-sticky-price');
+              if (priceEl) priceEl.textContent = '$' + price;
+              if (stickyPriceEl) stickyPriceEl.textContent = '$' + price;
+            }
+            
+            if (this.dataset.variantImage) {
+              const imgSrc = this.dataset.variantImage.startsWith('/') ? this.dataset.variantImage : '/api/img?u=' + encodeURIComponent(this.dataset.variantImage);
+              document.getElementById('pdpMainImage').src = imgSrc;
+            }
+          } else {
+            const optionName = this.dataset.option;
+            const value = this.dataset.value;
+            selectedOptions[optionName] = value;
+            
+            const matched = productVariants.find(v => {
+              const opts = v.options || v.optionValues || {};
+              if (Object.keys(opts).length === 0) return false;
+              return Object.entries(selectedOptions).every(([k, val]) => opts[k] === val);
+            });
+            
+            if (matched) {
+              const variantIdInput = document.getElementById('selectedVariantId');
+              const skuInput = document.getElementById('selectedVariantSku');
+              if (variantIdInput) variantIdInput.value = matched.id || '';
+              if (skuInput) skuInput.value = matched.sku || '';
+              
+              if (matched.price) {
+                document.querySelector('.pdp-price').textContent = '$' + parseFloat(matched.price).toFixed(2);
+                document.querySelector('.pdp-sticky-price').textContent = '$' + parseFloat(matched.price).toFixed(2);
+              }
+              
+              if (matched.image) {
+                const imgSrc = matched.image.startsWith('/') ? matched.image : '/api/img?u=' + encodeURIComponent(matched.image);
+                document.getElementById('pdpMainImage').src = imgSrc;
+              }
+            }
+          }
+        });
+      });
+      
+      document.querySelectorAll('.pdp-accordion-header').forEach(header => {
+        header.addEventListener('click', function() {
+          const item = this.closest('.pdp-accordion-item');
+          item.classList.toggle('open');
+        });
+      });
+      
+      function showLocalToast(msg) {
+        const toast = document.getElementById('pdpToast');
+        if (toast) {
+          toast.textContent = msg || 'Added to cart!';
+          toast.classList.add('show');
+          setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+      }
+      
+      const isMultiVariant = productVariants.length > 1;
+      const isSingleVariant = productVariants.length === 1;
+      const hasNoVariants = productVariants.length === 0;
+      
+      async function handleAddToCart(btn, e, source) {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        
+        const qty = parseInt(qtyInput.value) || 1;
+        const variantIdInput = document.getElementById('selectedVariantId');
+        let variantId = variantIdInput ? variantIdInput.value : null;
+        
+        // Validation for multi-variant
+        if (productVariants.length > 1 && (!variantId || variantId === '')) {
+          if (window.showToast) window.showToast('Please select a size or option first', 'warning');
+          return;
+        }
+
+        const matchedVariant = productVariants.find(v => String(v.id) === String(variantId));
+        const price = matchedVariant ? matchedVariant.price : <%= safeProduct.price || 0 %>;
+        const image = (matchedVariant && matchedVariant.image) ? matchedVariant.image : '<%= firstImage %>';
+
+        const success = await window.addToCartUnified({
+          productId: productId,
+          variantId: variantId || productId,
+          qty: qty,
+          title: '<%= productTitle.replace(/'/g, "\\'") %>',
+          price: price,
+          image: image,
+          source: source || 'pdp'
+        });
+
+        if (success) {
+          btn.classList.add('added');
+          setTimeout(() => btn.classList.remove('added'), 1000);
+        }
+      }
+      
+      document.getElementById('addToCartBtn').addEventListener('click', function(e) {
+        handleAddToCart(this, e, 'pdp-main-button');
+      }, { capture: true });
+      
+      document.getElementById('stickyAtcBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        handleAddToCart(document.getElementById('addToCartBtn'), e, 'pdp-sticky-bar');
+      }, { capture: true });
+      
+      document.getElementById('wishlistBtn').addEventListener('click', function() {
+        if (window.Wishlist && typeof window.Wishlist.toggle === 'function') {
+          window.Wishlist.toggle(productId);
+        } else {
+          showToast('Added to wishlist!');
+        }
+      });
+      
+      if (typeof ga4TrackViewItem === 'function') {
+        ga4TrackViewItem({
+          id: productId,
+          title: '<%= productTitle.replace(/'/g, "\\'") %>',
+          price: <%= safeProduct.price || 0 %>,
+          category: '<%= safeProduct.category || "Pet Products" %>'
+        });
+      }
+    })();
+  </script>
+  <!-- Fingerprint Badge (debug mode only) -->
+  <% if (typeof debug !== 'undefined' && debug) { %>
+  <div id="fpBadge" style="position:fixed;bottom:8px;left:8px;z-index:99999;background:rgba(0,0,0,0.9);color:#0f0;font-family:monospace;font-size:10px;padding:4px 8px;border-radius:4px;pointer-events:none;">LIVE: <%= typeof BUILD_FINGERPRINT !== 'undefined' ? BUILD_FINGERPRINT : 'unknown' %></div>
+  <% } %>
+</body>
+</html>

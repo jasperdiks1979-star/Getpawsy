@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title><%= typeof title !== 'undefined' ? title : 'Analytics' %> | GetPawsy Admin</title>
+  <link rel="stylesheet" href="/css/admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #0f0f0f; color: #eaeaea; }
+    .admin-container { display: flex; min-height: 100vh; }
+    .admin-main { margin-left: 260px; padding: 0; flex: 1; background: #1a1a1a; min-height: 100vh; }
+    .admin-content { padding: 25px; }
+    h1 { margin-bottom: 25px; color: #fff; }
+    h2 { margin: 30px 0 15px; color: #fff; font-size: 1.2rem; }
+    
+    .config-card {
+      background: #222;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    .config-card h3 {
+      color: #00c4a7;
+      margin-bottom: 15px;
+    }
+    .config-card p {
+      color: #999;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    .config-card code {
+      background: #333;
+      padding: 2px 8px;
+      border-radius: 4px;
+      color: #00c4a7;
+      font-size: 13px;
+    }
+    .config-card .status {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .config-card .status.configured {
+      background: rgba(0,196,167,0.2);
+      color: #00c4a7;
+    }
+    .config-card .status.not-configured {
+      background: rgba(255,152,0,0.2);
+      color: #ff9800;
+    }
+    
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-primary {
+      background: #00c4a7;
+      color: #111;
+    }
+    .btn-secondary {
+      background: #333;
+      color: #fff;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+    
+    .iframe-container {
+      background: #222;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    .iframe-container iframe {
+      width: 100%;
+      min-height: 900px;
+      border: none;
+      display: block;
+    }
+    
+    .setup-steps {
+      background: #1e1e1e;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 15px;
+    }
+    .setup-steps h4 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+    .setup-steps ol {
+      color: #bbb;
+      padding-left: 20px;
+    }
+    .setup-steps li {
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .setup-steps a {
+      color: #00c4a7;
+    }
+    
+    .input-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .input-group input {
+      flex: 1;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background: #1a1a1a;
+      color: #fff;
+      font-size: 14px;
+    }
+    .input-group input::placeholder {
+      color: #666;
+    }
+    
+    @media (max-width: 768px) {
+      .admin-main { margin-left: 0; }
+      .iframe-container iframe { min-height: 700px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <%- include("../partials/admin/admin_sidebar", { active: typeof active !== 'undefined' ? active : 'analytics' }) %>
+    
+    <main class="admin-main">
+      <%- include("../partials/admin/admin_header", { pageTitle: typeof pageTitle !== 'undefined' ? pageTitle : 'Analytics' }) %>
+      
+      <div class="admin-content">
+        <h1>Analytics</h1>
+        
+        <div class="config-card">
+          <h3>Google Analytics 4</h3>
+          <p>
+            Status: 
+            <% if (typeof ga4Configured !== 'undefined' && ga4Configured) { %>
+              <span class="status configured">Configured</span>
+            <% } else { %>
+              <span class="status not-configured">Not Configured</span>
+            <% } %>
+          </p>
+          <p>
+            To enable Google Analytics tracking, add your GA4 Measurement ID to the Secrets tab.
+          </p>
+          <p>
+            Secret key: <code>GA4_MEASUREMENT_ID</code> (format: <code>G-XXXXXXXXXX</code>)
+          </p>
+          <div class="btn-row">
+            <a href="https://analytics.google.com/" target="_blank" class="btn btn-primary">
+              Open Google Analytics
+            </a>
+            <a href="https://support.google.com/analytics/answer/9304153" target="_blank" class="btn btn-secondary">
+              Setup Guide
+            </a>
+          </div>
+        </div>
+        
+        <h2>Embedded Dashboard</h2>
+        
+        <% if (typeof lookerUrl !== 'undefined' && lookerUrl) { %>
+          <div class="iframe-container">
+            <iframe src="<%= lookerUrl %>" allowfullscreen></iframe>
+          </div>
+        <% } else { %>
+          <div class="config-card">
+            <h3>Looker Studio Dashboard</h3>
+            <p>
+              Embed your GA4 dashboard from Looker Studio (formerly Google Data Studio) to view analytics directly in the admin panel.
+            </p>
+            
+            <div class="setup-steps">
+              <h4>Setup Steps:</h4>
+              <ol>
+                <li>Go to <a href="https://lookerstudio.google.com/" target="_blank">Looker Studio</a></li>
+                <li>Create a new report and connect your GA4 property as a data source</li>
+                <li>Design your dashboard with the metrics you want to track</li>
+                <li>Click "Share" → "Get report link" and enable "Anyone with the link can view"</li>
+                <li>Copy the embed URL (click "Embed report" → copy the src URL)</li>
+                <li>Add the URL to your Secrets as <code>LOOKER_STUDIO_REPORT_URL</code></li>
+              </ol>
+            </div>
+            
+            <div class="btn-row">
+              <a href="https://lookerstudio.google.com/" target="_blank" class="btn btn-primary">
+                Open Looker Studio
+              </a>
+              <a href="https://support.google.com/looker-studio/answer/9171315" target="_blank" class="btn btn-secondary">
+                Embedding Guide
+              </a>
+            </div>
+          </div>
+        <% } %>
+        
+        <h2>GA4 Data API (Pro Mode)</h2>
+        <div class="config-card">
+          <h3>Direct API Access</h3>
+          <p>
+            Status: 
+            <% if (typeof ga4ApiEnabled !== 'undefined' && ga4ApiEnabled) { %>
+              <span class="status configured">Enabled</span>
+            <% } else { %>
+              <span class="status not-configured">Not Configured</span>
+            <% } %>
+          </p>
+          <p>
+            For advanced analytics directly in the dashboard, configure the GA4 Data API with a service account.
+          </p>
+          <p>
+            Required secrets:<br>
+            <code>GA4_PROPERTY_ID</code> - Your GA4 property ID (numeric)<br>
+            <code>GOOGLE_SERVICE_ACCOUNT_JSON</code> - Service account credentials (JSON string)
+          </p>
+          <div class="btn-row">
+            <a href="https://console.cloud.google.com/apis/library/analyticsdata.googleapis.com" target="_blank" class="btn btn-secondary">
+              Enable API
+            </a>
+            <a href="https://developers.google.com/analytics/devguides/reporting/data/v1/quickstart-client-libraries" target="_blank" class="btn btn-secondary">
+              API Quickstart
+            </a>
+          </div>
+        </div>
+        
+        <h2>Pawsy Conversion Tracking</h2>
+        <div class="config-card" id="pawsy-analytics-section">
+          <h3>Pawsy AI Assistant Funnel</h3>
+          <p>Track how users interact with Pawsy and convert to purchases.</p>
+          <div class="btn-row" style="margin-bottom:15px;">
+            <button class="btn btn-secondary" onclick="loadPawsyAnalytics('24h')">24h</button>
+            <button class="btn btn-primary" onclick="loadPawsyAnalytics('7d')">7 Days</button>
+            <button class="btn btn-secondary" onclick="loadPawsyAnalytics('30d')">30 Days</button>
+          </div>
+          <div id="pawsy-funnel-data" style="color:#999;">Click a time range to load data...</div>
+          <div id="pawsy-top-products" style="margin-top:20px;"></div>
+        </div>
+        
+        <h2>Top Products by Category</h2>
+        <div class="config-card" id="category-analytics-section">
+          <h3>Category Performance</h3>
+          <p>See which products perform best in each category.</p>
+          <div class="btn-row" style="margin-bottom:15px;">
+            <button class="btn btn-secondary" onclick="loadCategoryAnalytics('24h')">24h</button>
+            <button class="btn btn-primary" onclick="loadCategoryAnalytics('7d')">7 Days</button>
+            <button class="btn btn-secondary" onclick="loadCategoryAnalytics('30d')">30 Days</button>
+          </div>
+          <div id="category-filter" style="margin-bottom:15px;">
+            <select id="petTypeFilter" onchange="filterCategories()" style="padding:8px 12px; background:#333; color:#fff; border:1px solid #444; border-radius:6px;">
+              <option value="all">All Pet Types</option>
+              <option value="dogs">Dogs</option>
+              <option value="cats">Cats</option>
+            </select>
+          </div>
+          <div id="category-data" style="color:#999;">Click a time range to load data...</div>
+        </div>
+        
+        <script>
+          let pawsyData = null;
+          let categoryData = null;
+          
+          async function loadPawsyAnalytics(range) {
+            const container = document.getElementById('pawsy-funnel-data');
+            const topProducts = document.getElementById('pawsy-top-products');
+            container.innerHTML = '<span style="color:#00c4a7;">Loading...</span>';
+            
+            try {
+              const res = await fetch('/api/admin/analytics/pawsy?range=' + range, { credentials: 'include' });
+              pawsyData = await res.json();
+              
+              if (pawsyData.error) {
+                container.innerHTML = '<span style="color:#f44;">Error: ' + pawsyData.error + '</span>';
+                return;
+              }
+              
+              const f = pawsyData.funnel || {};
+              const rates = pawsyData.conversionRates || {};
+              
+              container.innerHTML = `
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:12px; margin-bottom:20px;">
+                  <div style="background:#1e1e1e; padding:15px; border-radius:8px; text-align:center;">
+                    <div style="font-size:24px; color:#00c4a7; font-weight:bold;">${f.pawsy_open || 0}</div>
+                    <div style="font-size:12px; color:#888;">Opens</div>
+                  </div>
+                  <div style="background:#1e1e1e; padding:15px; border-radius:8px; text-align:center;">
+                    <div style="font-size:24px; color:#00c4a7; font-weight:bold;">${f.pawsy_message || 0}</div>
+                    <div style="font-size:12px; color:#888;">Messages</div>
+                    <div style="font-size:10px; color:#666;">${rates.open_to_message || '0%'}</div>
+                  </div>
+                  <div style="background:#1e1e1e; padding:15px; border-radius:8px; text-align:center;">
+                    <div style="font-size:24px; color:#00c4a7; font-weight:bold;">${f.pawsy_products_shown || 0}</div>
+                    <div style="font-size:12px; color:#888;">Products Shown</div>
+                    <div style="font-size:10px; color:#666;">${rates.message_to_products || '0%'}</div>
+                  </div>
+                  <div style="background:#1e1e1e; padding:15px; border-radius:8px; text-align:center;">
+                    <div style="font-size:24px; color:#00c4a7; font-weight:bold;">${f.pawsy_product_click || 0}</div>
+                    <div style="font-size:12px; color:#888;">Clicks</div>
+                    <div style="font-size:10px; color:#666;">${rates.products_to_click || '0%'}</div>
+                  </div>
+                  <div style="background:#1e1e1e; padding:15px; border-radius:8px; text-align:center;">
+                    <div style="font-size:24px; color:#00c4a7; font-weight:bold;">${f.pawsy_atc || 0}</div>
+                    <div style="font-size:12px; color:#888;">Add to Cart</div>
+                    <div style="font-size:10px; color:#666;">${rates.click_to_atc || '0%'}</div>
+                  </div>
+                  <div style="background:#1e1e1e; padding:15px; border-radius:8px; text-align:center;">
+                    <div style="font-size:24px; color:#00c4a7; font-weight:bold;">${f.pawsy_purchase || 0}</div>
+                    <div style="font-size:12px; color:#888;">Purchases</div>
+                    <div style="font-size:10px; color:#666;">${rates.atc_to_purchase || '0%'}</div>
+                  </div>
+                </div>
+                <div style="color:#888; font-size:12px;">
+                  Unique Sessions: ${pawsyData.uniqueSessions || 0} | Range: ${range} | Generated: ${pawsyData.generated ? new Date(pawsyData.generated).toLocaleString() : 'N/A'}
+                </div>
+              `;
+              
+              const clicked = pawsyData.topClickedProducts || [];
+              const atc = pawsyData.topAtcProducts || [];
+              
+              if (clicked.length > 0 || atc.length > 0) {
+                topProducts.innerHTML = `
+                  <h4 style="color:#fff; margin-bottom:10px;">Top Pawsy-Driven Products</h4>
+                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+                    <div>
+                      <h5 style="color:#00c4a7; margin-bottom:8px; font-size:12px;">Most Clicked</h5>
+                      ${clicked.slice(0, 5).map((p, i) => `<div style="color:#ddd; font-size:12px; padding:4px 0;">${i+1}. ${(p.title || p.id).substring(0, 30)} (${p.count})</div>`).join('')}
+                    </div>
+                    <div>
+                      <h5 style="color:#00c4a7; margin-bottom:8px; font-size:12px;">Most Added to Cart</h5>
+                      ${atc.slice(0, 5).map((p, i) => `<div style="color:#ddd; font-size:12px; padding:4px 0;">${i+1}. ${(p.title || p.id).substring(0, 30)} (${p.count})</div>`).join('')}
+                    </div>
+                  </div>
+                `;
+              } else {
+                topProducts.innerHTML = '<p style="color:#666; font-size:12px;">No product click data yet.</p>';
+              }
+            } catch (e) {
+              container.innerHTML = '<span style="color:#f44;">Failed to load: ' + e.message + '</span>';
+            }
+          }
+          
+          async function loadCategoryAnalytics(range) {
+            const container = document.getElementById('category-data');
+            container.innerHTML = '<span style="color:#00c4a7;">Loading...</span>';
+            
+            try {
+              const res = await fetch('/api/admin/analytics/categories?range=' + range, { credentials: 'include' });
+              categoryData = await res.json();
+              
+              if (categoryData.error) {
+                container.innerHTML = '<span style="color:#f44;">Error: ' + categoryData.error + '</span>';
+                return;
+              }
+              
+              filterCategories();
+            } catch (e) {
+              container.innerHTML = '<span style="color:#f44;">Failed to load: ' + e.message + '</span>';
+            }
+          }
+          
+          function filterCategories() {
+            if (!categoryData || !categoryData.topByCategory) {
+              document.getElementById('category-data').innerHTML = '<span style="color:#999;">No data available</span>';
+              return;
+            }
+            
+            const filter = document.getElementById('petTypeFilter').value;
+            const container = document.getElementById('category-data');
+            
+            const entries = Object.entries(categoryData.topByCategory)
+              .filter(([key]) => filter === 'all' || key.startsWith(filter + '|'))
+              .sort((a, b) => {
+                const aTotal = (a[1].views?.reduce((s, p) => s + p.count, 0) || 0) + (a[1].atc?.reduce((s, p) => s + p.count, 0) || 0);
+                const bTotal = (b[1].views?.reduce((s, p) => s + p.count, 0) || 0) + (b[1].atc?.reduce((s, p) => s + p.count, 0) || 0);
+                return bTotal - aTotal;
+              })
+              .slice(0, 10);
+            
+            if (entries.length === 0) {
+              container.innerHTML = '<span style="color:#999;">No category data available for this filter</span>';
+              return;
+            }
+            
+            container.innerHTML = entries.map(([key, data]) => {
+              const [petType, category, subcategory] = key.split('|');
+              const label = [petType, category, subcategory].filter(Boolean).join(' > ');
+              
+              const topViews = (data.views || []).slice(0, 3);
+              const topAtc = (data.atc || []).slice(0, 3);
+              
+              return `
+                <div style="background:#1e1e1e; padding:15px; border-radius:8px; margin-bottom:10px;">
+                  <h4 style="color:#00c4a7; font-size:14px; margin-bottom:10px;">${label}</h4>
+                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+                    <div>
+                      <div style="color:#888; font-size:11px; margin-bottom:6px;">Top Viewed</div>
+                      ${topViews.length > 0 ? topViews.map((p, i) => `<div style="color:#ddd; font-size:12px; padding:2px 0;">${i+1}. ${(p.title || p.id || '').substring(0, 25)} (${p.count})</div>`).join('') : '<div style="color:#666; font-size:11px;">No data</div>'}
+                    </div>
+                    <div>
+                      <div style="color:#888; font-size:11px; margin-bottom:6px;">Top Add to Cart</div>
+                      ${topAtc.length > 0 ? topAtc.map((p, i) => `<div style="color:#ddd; font-size:12px; padding:2px 0;">${i+1}. ${(p.title || p.id || '').substring(0, 25)} (${p.count})</div>`).join('') : '<div style="color:#666; font-size:11px;">No data</div>'}
+                    </div>
+                  </div>
+                </div>
+              `;
+            }).join('');
+          }
+        </script>
+        
+      </div>
+    </main>
+  </div>
+</body>
+</html>

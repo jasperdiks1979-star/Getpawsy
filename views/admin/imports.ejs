@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>CJ Imports | GetPawsy Admin</title>
+  <link rel="stylesheet" href="/css/admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #0f0f0f; color: #eaeaea; }
+    .admin-container { display: flex; min-height: 100vh; }
+    .admin-main { margin-left: 260px; padding: 0; flex: 1; background: #1a1a1a; min-height: 100vh; }
+    .admin-content { padding: 25px; }
+    h1 { margin-bottom: 25px; color: #fff; }
+    .imports-table { width: 100%; border-collapse: collapse; background: #222; border-radius: 8px; overflow: hidden; }
+    .imports-table th, .imports-table td { padding: 15px; text-align: left; border-bottom: 1px solid #333; }
+    .imports-table th { background: #1a1a1a; color: #00c4a7; font-weight: 600; }
+    .status-badge { padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+    .status-completed { background: #065f46; color: #6ee7b7; }
+    .status-running { background: #1e40af; color: #93c5fd; }
+    .status-failed { background: #991b1b; color: #fca5a5; }
+    .btn { background: #00c4a7; color: #000; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 13px; }
+    .btn:hover { background: #00a88f; }
+    .btn-small { padding: 6px 12px; font-size: 12px; }
+    .expand-row { background: #1a1a1a; }
+    .expand-content { padding: 20px; }
+    .rejection-list { list-style: none; max-height: 200px; overflow-y: auto; }
+    .rejection-list li { padding: 8px 0; border-bottom: 1px solid #333; color: #999; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <%- include("../partials/admin/admin_sidebar", { active: 'imports' }) %>
+    
+    <main class="admin-main">
+      <%- include("../partials/admin/admin_header", { pageTitle: 'CJ Imports' }) %>
+      
+      <div class="admin-content">
+        <h1>📥 CJ Import Logs</h1>
+        
+        <div style="margin-bottom: 20px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+          <button class="btn" id="btn-import-250" onclick="startCjListImport()">🐾 Import 250 Pet Products (US)</button>
+          <a href="/admin/products" class="btn" style="background: #444; color: #fff;">🚀 Go to Products</a>
+          <button class="btn btn-small" style="background: #333;" onclick="loadCjStatus()">🔄 Refresh Status</button>
+        </div>
+        
+        <div id="import-progress-box" style="display: none; background: #1e293b; border-radius: 8px; padding: 20px; margin-bottom: 20px; border: 1px solid #334155;">
+          <h3 style="margin-bottom: 15px; color: #00c4a7;">🔄 Import Progress</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px;">
+            <div style="text-align: center;">
+              <div style="font-size: 24px; font-weight: 700; color: #6ee7b7;" id="stat-imported">0</div>
+              <div style="font-size: 12px; color: #999;">Imported</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 24px; font-weight: 700; color: #fbbf24;" id="stat-skipped-us">0</div>
+              <div style="font-size: 12px; color: #999;">No US Warehouse</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 24px; font-weight: 700; color: #fb7185;" id="stat-skipped-pet">0</div>
+              <div style="font-size: 12px; color: #999;">Non-Pet</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 24px; font-weight: 700; color: #94a3b8;" id="stat-duplicates">0</div>
+              <div style="font-size: 12px; color: #999;">Duplicates</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 24px; font-weight: 700; color: #f87171;" id="stat-errors">0</div>
+              <div style="font-size: 12px; color: #999;">Errors</div>
+            </div>
+          </div>
+          <div style="margin-top: 15px;">
+            <div style="height: 8px; background: #334155; border-radius: 4px; overflow: hidden;">
+              <div id="progress-bar" style="height: 100%; background: linear-gradient(90deg, #00c4a7, #6ee7b7); width: 0%; transition: width 0.3s;"></div>
+            </div>
+            <div style="text-align: center; margin-top: 8px; font-size: 13px; color: #94a3b8;" id="progress-text">Starting...</div>
+          </div>
+        </div>
+        
+        <table class="imports-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Imported</th>
+              <th>Rejected</th>
+              <th>Errors</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="imports-body">
+            <tr><td colspan="7" style="text-align: center; color: #666;">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+  
+  <script>
+    async function loadImports() {
+      try {
+        const res = await fetch('/api/admin/imports/logs');
+        const data = await res.json();
+        
+        if (data.ok && data.imports) {
+          renderImports(data.imports);
+        } else {
+          document.getElementById('imports-body').innerHTML = '<tr><td colspan="7" style="text-align: center; color: #666;">No import logs found</td></tr>';
+        }
+      } catch (err) {
+        document.getElementById('imports-body').innerHTML = '<tr><td colspan="7" style="color: #f66;">Error loading imports</td></tr>';
+      }
+    }
+    
+    function renderImports(imports) {
+      const tbody = document.getElementById('imports-body');
+      if (!imports.length) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: #666;">No import logs yet</td></tr>';
+        return;
+      }
+      
+      tbody.innerHTML = imports.map((imp, idx) => `
+        <tr>
+          <td>${new Date(imp.startedAt).toLocaleString()}</td>
+          <td>${imp.type || 'CJ Import'}</td>
+          <td style="color: #6ee7b7;">${imp.imported || 0}</td>
+          <td style="color: #fca5a5;">${imp.rejected || 0}</td>
+          <td style="color: #fca5a5;">${imp.errors || 0}</td>
+          <td><span class="status-badge status-${imp.status || 'completed'}">${imp.status || 'completed'}</span></td>
+          <td>
+            <button class="btn btn-small" onclick="toggleDetails(${idx})">Details</button>
+          </td>
+        </tr>
+        <tr class="expand-row" id="details-${idx}" style="display: none;">
+          <td colspan="7">
+            <div class="expand-content">
+              <strong>Rejection Reasons:</strong>
+              <ul class="rejection-list">
+                ${(imp.rejectionReasons || []).map(r => `<li>${r.reason}: ${r.count} products</li>`).join('') || '<li>No rejections</li>'}
+              </ul>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+    }
+    
+    function toggleDetails(idx) {
+      const row = document.getElementById('details-' + idx);
+      row.style.display = row.style.display === 'none' ? 'table-row' : 'none';
+    }
+    
+    let pollInterval = null;
+    
+    async function startCjListImport() {
+      const btn = document.getElementById('btn-import-250');
+      btn.disabled = true;
+      btn.textContent = '⏳ Starting...';
+      
+      try {
+        const res = await fetch('/api/admin/cj/list-import', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ limit: 250, resume: false })
+        });
+        
+        const data = await res.json();
+        
+        if (data.success) {
+          document.getElementById('import-progress-box').style.display = 'block';
+          btn.textContent = '🔄 Running...';
+          pollProgress();
+          pollInterval = setInterval(pollProgress, 2000);
+        } else {
+          alert(data.error || 'Failed to start import');
+          btn.disabled = false;
+          btn.textContent = '🐾 Import 250 Pet Products (US)';
+        }
+      } catch (err) {
+        alert('Error: ' + err.message);
+        btn.disabled = false;
+        btn.textContent = '🐾 Import 250 Pet Products (US)';
+      }
+    }
+    
+    async function pollProgress() {
+      try {
+        const res = await fetch('/api/admin/cj/import-status');
+        const data = await res.json();
+        
+        if (data.success && data.job) {
+          const p = data.job.progress || {};
+          document.getElementById('stat-imported').textContent = p.imported || 0;
+          document.getElementById('stat-skipped-us').textContent = p.skippedNonUs || 0;
+          document.getElementById('stat-skipped-pet').textContent = p.skippedNonPet || 0;
+          document.getElementById('stat-duplicates').textContent = p.duplicates || 0;
+          document.getElementById('stat-errors').textContent = p.errors || 0;
+          
+          const pct = Math.min(100, Math.round((p.imported / 250) * 100));
+          document.getElementById('progress-bar').style.width = pct + '%';
+          
+          if (data.job.running) {
+            document.getElementById('progress-text').textContent = `Importing... ${p.imported}/250 (${pct}%)`;
+          } else {
+            document.getElementById('progress-text').textContent = `Completed: ${p.imported} imported`;
+            if (pollInterval) {
+              clearInterval(pollInterval);
+              pollInterval = null;
+            }
+            const btn = document.getElementById('btn-import-250');
+            btn.disabled = false;
+            btn.textContent = '🐾 Import 250 Pet Products (US)';
+            loadImports();
+          }
+        }
+      } catch (err) {
+        console.error('Poll error:', err);
+      }
+    }
+    
+    async function loadCjStatus() {
+      const res = await fetch('/api/admin/cj/import-status');
+      const data = await res.json();
+      
+      if (data.job && data.job.running) {
+        document.getElementById('import-progress-box').style.display = 'block';
+        const btn = document.getElementById('btn-import-250');
+        btn.disabled = true;
+        btn.textContent = '🔄 Running...';
+        pollProgress();
+        if (!pollInterval) {
+          pollInterval = setInterval(pollProgress, 2000);
+        }
+      }
+    }
+    
+    loadImports();
+    loadCjStatus();
+  </script>
+</body>
+</html>
