@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # 1) Controleer of GITHUB_TOKEN bestaat
 if [ -z "$GITHUB_TOKEN" ]; then
@@ -9,30 +10,33 @@ fi
 echo "--- GIT STATUS ---"
 git status
 echo ""
-echo "--- GIT DIFF STAT ---"
-git diff --stat
 
-# Origin zetten
+# Origin zetten naar token-URL (voor authenticatie)
+echo "Configuring origin with GITHUB_TOKEN..."
 git remote remove origin 2>/dev/null || true
-git remote add origin https://github.com/jasperdiks1979-star/Getpawsy.git
+git remote add origin https://x-access-token:$GITHUB_TOKEN@github.com/jasperdiks1979-star/GetPawsy.git
 
 # Git config (nodig voor commit)
 git config user.email "replit-agent@replit.com"
 git config user.name "Replit Agent"
 
-# 4) Alles toevoegen en committen
+# 2) Alles toevoegen en committen indien nodig
+echo "Staging changes..."
 git add -A
+
 if git diff-index --quiet HEAD --; then
   echo "Geen wijzigingen om te committen."
 else
-  git commit -m "Fix footer stamp + image fallback"
+  echo "Committing changes..."
+  git commit -m "Auto: sync from Replit"
 fi
 
-# 5) Pushen met token
-echo "Pushing to GitHub..."
-git push https://$GITHUB_TOKEN@github.com/jasperdiks1979-star/Getpawsy.git main
+# 3) Pushen naar main
+echo "Pushing to GitHub (main branch)..."
+git push -u origin main
 
-# 6) Laatste commit printen
+# 4) Rapportage
 echo ""
-echo "--- LATEST COMMIT ---"
-git log -1 --oneline
+echo "--- SUCCESS ---"
+echo "Laatste commit hash: $(git rev-parse --short HEAD)"
+echo "Remote URL: https://github.com/jasperdiks1979-star/GetPawsy.git"
