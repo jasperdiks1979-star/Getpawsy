@@ -1,0 +1,124 @@
+DOEL: Restore GetPawsy vanuit GetPawsy_part01.zip t/m part10.zip (in deze Replit repo-root) naar een werkende codebase met correcte folderstructuur, daarna de webshop direct debug/fixen (grid/layout, cart, varianten, prijzen, navigatie, Pawsy). Werk volledig autonoom: voer commando’s uit, inspecteer bestanden, pas code aan, commit niet nodig. Geef na elke fase een korte status + wat je hebt aangepast.
+
+========================================
+FASE A — RESTORE (ZIP PARTS → CODEBASE)
+========================================
+
+1) Controle: toon welke zip-parts aanwezig zijn:
+- Run: ls -lh GetPawsy_part*.zip || true
+- Als er parts missen: stop en meld exact welke ontbreken.
+
+2) Extract alle parts naar een tijdelijke map `restored/`:
+- Run:
+  mkdir -p restored
+  for z in GetPawsy_part*.zip; do echo "==> extracting $z"; unzip -o "$z" -d restored; done
+
+3) Detecteer waar de echte project-root zit (waar package.json staat):
+- Run:
+  echo "Searching for package.json..."
+  find restored -maxdepth 6 -name package.json -print
+- Kies de BESTE root (prioriteit):
+  a) package.json die scripts bevat zoals dev/start/build
+  b) mapstructuur met src/ of client/server
+  c) vermijd nested node_modules of build output
+
+4) Kopieer die gekozen root naar de Replit root (.) zonder extra submap:
+- Als er precies één topmap onder restored staat (bijv. restored/GetPawsy/*), kopieer de inhoud daarvan.
+- Anders kopieer direct restored/. naar .
+- Gebruik veilige kopie zonder de zip files te verwijderen.
+
+5) Sanity-check: bevestig dat package.json nu in de Replit root staat of dat er een duidelijke monorepo structuur is:
+- Run:
+  ls -la | head -n 50
+  find . -maxdepth 4 -name package.json -print
+
+========================================
+FASE B — INSTALL & RUN (RUNNABLE APP)
+========================================
+
+6) Bepaal of het single-app is of monorepo:
+- Als er één package.json in root is: single-app
+- Als er bijv. client/package.json en server/package.json zijn: monorepo
+
+7) Installeer dependencies:
+- Single-app:
+  npm ci || npm install
+- Monorepo:
+  (a) cd client && (npm ci || npm install)
+  (b) cd ../server && (npm ci || npm install)
+  (c) terug naar root
+
+8) Start de app op de juiste manier voor Replit:
+- Gebruik PORT uit env als aanwezig.
+- Zorg dat server bindt op 0.0.0.0.
+- Als scripts bestaan:
+  - probeer npm run dev
+  - anders npm start
+- Log duidelijk welke command gebruikt wordt en op welke poort hij luistert.
+
+9) Health check:
+- Bevestig dat de homepage (/) een 200 geeft (of /home als dat de route is).
+- Als er een backend is, test basis endpoints (bijv. /api/*) en log eventuele errors.
+
+========================================
+FASE C — FIXES (WEB SHOP)
+========================================
+Werk deze issues systematisch af. Voor elke categorie:
+- Identificeer relevante bestanden
+- Reproduceer issue (of reason based on code)
+- Fix met minimale, correcte patch
+- Herstart app en bevestig effect
+
+C1) LAYOUT / GRID
+- Zoek product grid component + CSS.
+- Maak responsive grid:
+  - grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))
+  - gap: 16px
+  - container max-width 1200 + padding
+- Fix card images met aspect-ratio + object-fit.
+
+C2) CART (kritisch: badge telt wel maar items niet zichtbaar)
+- Vind addToCart logic + cart drawer/page rendering.
+- Check of er:
+  A) aparte count-state bestaat los van items
+  B) meerdere cart stores/contexts bestaan
+  C) localStorage key/shape mismatch is
+- Maak 1 bron van waarheid voor cart items.
+- Laat badge count afleiden uit items (reduce qty).
+- Zorg dat UI items rendert uit dezelfde store als addToCart.
+- Normaliseer localStorage key: "getpawsy_cart_v1" (als localStorage gebruikt wordt).
+- Voeg defensieve parsing toe (try/catch) zodat corrupt storage niet cart breekt.
+
+C3) VARIANTEN
+- Zorg dat geselecteerde variant bestaat (selectedVariant).
+- AddToCart moet variantId/SKU, prijs, afbeelding/naam van variant meenemen.
+- Variant switch moet prijs/afbeelding updaten.
+- Valideer: zonder variant selectie → kies default (eerste variant).
+
+C4) PRIJZEN
+- Normaliseer price type: altijd number.
+- Format in UI met Intl.NumberFormat en USD.
+- Voorkom cents/dollars mix.
+- Als er rounding naar .99 gewenst is: implementeer één helper functie en gebruik die consistent (niet verspreid).
+
+C5) NAVIGATIE
+- Gebruik SPA routing consequent (Link component) i.p.v. full page refresh.
+- Mobile menu: sluit na klik en voorkom overlap.
+- Active state styling.
+
+C6) PAWSY WIDGET
+- Zorg dat Pawsy assets correct laden uit public/ of juiste static path.
+- Position fixed rechts-onder; mobiel bottom offset zodat het cart UI niet overlapt.
+- Zorg dat Pawsy niet z-index issues veroorzaakt met menu/cart.
+
+========================================
+FASE D — OUTPUT (WAT IK WIL TERUGZIEN)
+========================================
+Aan het einde: geef een compact rapport met:
+1) Welke restore-root gekozen + waarom
+2) Welke start command(s) werken
+3) Welke bestanden aangepast per categorie (grid/cart/variants/prices/nav/pawsy)
+4) Belangrijkste code snippets van de fixes
+5) Eventuele resterende bekende issues (met concrete next steps)
+
+Ga nu direct aan de slag.
