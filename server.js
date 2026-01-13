@@ -2085,6 +2085,10 @@ app.get("/", (req, res) => {
       setNoCacheHeaders(res);
       let html = fs.readFileSync(indexPath, "utf8");
       
+      // Inject DeployedFixStamp into index.html if it's there
+      const deployStamp = `<p style="opacity:0.7;font-size:11px;margin-top:4px;font-family:monospace;text-align:center;">DeployedFixStamp: ${SERVER_START_TIME}</p>`;
+      html = html.replace('</footer>', deployStamp + '</footer>');
+
       // Dynamic cache-busting: replace static versions with BUILD_FINGERPRINT
       html = html.replace(/\?v=[^"'\s]+/g, `?v=${BUILD_FINGERPRINT}`);
       

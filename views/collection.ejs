@@ -76,11 +76,11 @@
                   <a href="/product/<%= p.slug || p.id %>" class="pawsy-product-link">
                   <div class="pawsy-product-image">
                     <img 
-                      src="<%= p.displayImageProxy %>" 
+                      src="<%= p.displayImageProxy || '/images/placeholder.png' %>" 
                       alt="<%= p.title || p.name || 'Product' %>"
                       loading="<%= index < 8 ? 'eager' : 'lazy' %>"
                       decoding="async"
-                      onerror="this.onerror=null;this.src='/images/placeholder-pawsy.webp'"
+                      onerror="this.onerror=null;this.src='/images/placeholder.png'"
                       onload="this.style.opacity=1"
                       style="opacity:0;transition:opacity .3s"
                     >
